@@ -101,3 +101,30 @@ The project followed an agile, incremental delivery lifecycle:
 > • Project Management මූලධර්ම, Agile/Scrum ක්‍රමවේද, PMBOK 7th Edition, EVM ගණනය කිරීම් සහ ප්‍රායෝගික මෙවලම් 12+ ඇතුළත් පාඩම් 27 කින් සමන්විත පූර්ණ ඉගෙනුම් වේදිකාවක් නිර්මාණය කිරීම.  
 > • පරිශීලකයාට ක්ෂණිකව EVM ගණනය කළ හැකි Interactive Calculator එකක්, ක්ෂණික Glossary සෙවුමක් සහ නිවැරදි/වැරදි පිළිතුරු පැහැදිලි කරන Quiz එකක් සහිතව ගොඩනගා ඇත.  
 > • කිසිදු බරැති frameworks වලින් තොරව (Vanilla HTML/CSS/JS) වේගවත්, සියලුම mobile/desktop තිර වලට ගැළපෙන පරිදි නිර්මාණය කර GitHub Pages මගින් සජීවීව පවත්වාගෙන යනු ලබයි.
+
+---
+
+## 7. Intellectual Property, Copyright & Trademark Governance (බුද්ධිමය දේපළ, ප්‍රකාශන හිමිකම් සහ වෙළෙඳ ලකුණු පිළිපැදීම)
+
+To ensure zero legal liability, compliance with international intellectual property treaties (WIPO, Berne Convention) and the **Intellectual Property Act No. 36 of 2003 of Sri Lanka (Section 160 on Fair Practice in Education)**, the PM Academy codebase adheres to the following strict governance protocols:
+
+### 1. 100% Original Expression (ස්වාධීන අන්තර්ගතය)
+- **Zero Verbatim Copying**: None of the 27 lessons, 35 glossary definitions, or 12 quiz questions contain verbatim phrasing from proprietary copyrighted manuals, including the *PMBOK® Guide*, *The Scrum Guide*, or *PRINCE2® manuals*.
+- **Conceptual Synthesis**: All topics (e.g., Triple Constraint, EVM, Tuckman Stages, RACI, Process Groups, Agile Manifesto philosophy) are synthesized and re-authored in independent educational prose.
+- **Custom Visuals & Calculations**: All diagrams, workflows, cards, and calculation engines are authored directly in CSS and JavaScript without copying third-party proprietary figures, tables, or copyrighted exam items.
+
+### 2. Strict Nominative Fair Use of Trademarks (වෙළෙඳ ලකුණු නීත්‍යානුකූල භාවිතය)
+- **Zero Proprietary Logos or Badges**: No official corporate logos, certification seals, or badges belonging to PMI®, PeopleCert®, Axelos®, Scrum.org®, or software vendors are used anywhere on the website.
+- **Plain-Text Descriptive Reference**: Trademarked terms (e.g., PMP®, CAPM®, PMBOK®, PRINCE2®, Jira®, Trello®) are utilized strictly in plain text under the doctrine of **nominative fair use** to accurately refer to and identify established industry methodologies, certifications, and software.
+- **Trademark Notice**: All registered marks are clearly attributed to their respective owners:
+  - *PMI®, PMP®, CAPM®, and PMBOK® Guide* are registered marks of the Project Management Institute, Inc.
+  - *PRINCE2®* is a registered trademark of AXELOS Limited / PeopleCert.
+  - *Jira® and Trello®* are registered trademarks of Atlassian Pty Ltd.
+
+### 3. Clear Non-Affiliation Disclaimers (අනුබද්ධතාවක් නොමැති බවට ප්‍රකාශය)
+- Both the website header, footer, and `#about` section feature prominent non-affiliation notices stating:
+  > *"PM Academy is an independent educational and portfolio resource created for self-study. It is not affiliated with, endorsed, sponsored, or certified by the Project Management Institute (PMI®), Scrum.org, AXELOS Limited, or any other institution."*
+
+### 4. Legal Alignment in Sri Lanka
+- Governed under **Section 160 of the Intellectual Property Act No. 36 of 2003 of Sri Lanka**, which permits fair practice for private study, scholarship, and educational commentary, reinforced by independent authorship and proper source attribution.
+

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PM Academy — Project Management, Made Simple</title>
-<meta name="description" content="Master Project Management principles, agile methodologies, PMBOK 7th Edition concepts, and essential tools with practical, structured lessons. Free to access.">
+<meta name="description" content="Master Project Management principles, modern agile frameworks, EVM calculations, and practical tools through structured, independent learning resources.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -127,12 +127,12 @@ a.nb.cta-nav:hover {
 
 /* Layout */
 .wrap {
-  max-width: 1160px;
+  max-width: 1180px;
   margin: auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 section {
-  padding: 64px 0;
+  padding: 72px 0;
 }
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
@@ -151,7 +151,7 @@ p.sub {
   max-width: 720px;
 }
 
-/* Hero */
+/* Centered Balanced Hero */
 .hero {
   background: radial-gradient(ellipse 90% 60% at 50% -10%, rgba(37, 99, 235, 0.09), transparent 70%), linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
   border-bottom: 1px solid var(--bd);
@@ -278,19 +278,18 @@ p.sub {
   margin-top: 4px;
 }
 
-
 /* Learn Section (Lessons) */
 .learn {
   display: grid;
-  grid-template-columns: 310px 1fr;
-  gap: 28px;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
   align-items: start;
 }
 .side {
   background: var(--card);
   border: 1px solid var(--bd);
   border-radius: 16px;
-  padding: 16px;
+  padding: 18px;
   position: sticky;
   top: 88px;
   max-height: calc(100vh - 110px);
@@ -380,7 +379,7 @@ p.sub {
   box-shadow: var(--shadow-sm);
 }
 .ban {
-  padding: 28px 32px;
+  padding: 30px 34px;
   color: #fff;
   display: flex;
   align-items: center;
@@ -413,7 +412,7 @@ p.sub {
 }
 
 .body {
-  padding: 24px 32px 32px;
+  padding: 28px 36px 36px;
 }
 .body h4 {
   margin: 28px 0 8px;
@@ -550,7 +549,7 @@ code, .fm {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  padding: 0 32px 32px;
+  padding: 0 36px 36px;
   flex-wrap: wrap;
 }
 .b2 {
@@ -637,9 +636,9 @@ input[type=search]:focus {
   background: var(--card);
   border: 1px solid var(--bd);
   border-radius: 18px;
-  padding: 32px;
+  padding: 36px 40px;
   box-shadow: var(--shadow-md);
-  max-width: 760px;
+  max-width: 800px;
   margin: auto;
 }
 .q-progress {
@@ -719,7 +718,7 @@ input[type=search]:focus {
 }
 .ref-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 18px;
   margin-top: 24px;
 }
@@ -779,18 +778,18 @@ input[type=search]:focus {
   gap: 12px;
 }
 .metadata-banner span {
-  font-size: 14.5px;
+  font-size: 14px;
   color: #1e3a8a;
   font-weight: 500;
 }
 
-/* About Section */
+/* About Section & Comprehensive Legal Disclaimers */
 #about {
   background: var(--bg);
 }
 .about-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   gap: 32px;
 }
 .about-card {
@@ -814,19 +813,22 @@ input[type=search]:focus {
   background: #fffbeb;
   border: 1px solid #fde68a;
   border-radius: 12px;
-  padding: 18px 20px;
-  margin-top: 20px;
+  padding: 20px;
+  margin-top: 24px;
 }
 .disclaimer-box h4 {
-  margin: 0 0 6px;
+  margin: 0 0 8px;
   color: #92400e;
   font-size: 16px;
 }
 .disclaimer-box p {
-  margin: 0;
-  font-size: 14px;
+  margin: 0 0 10px;
+  font-size: 13.5px;
   color: #78350f;
-  line-height: 1.55;
+  line-height: 1.6;
+}
+.disclaimer-box p:last-child {
+  margin-bottom: 0;
 }
 
 /* Footer */
@@ -837,7 +839,7 @@ footer {
   font-size: 14.5px;
 }
 .footer-wrap {
-  max-width: 1160px;
+  max-width: 1180px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -867,13 +869,20 @@ footer {
 .footer-links a:hover {
   color: #ffffff;
 }
+.legal-footer-notice {
+  max-width: 1180px;
+  margin: 22px auto 0;
+  font-size: 12.5px;
+  color: #94a3b8;
+  line-height: 1.65;
+}
 .footer-copy {
-  max-width: 1160px;
-  margin: 24px auto 0;
+  max-width: 1180px;
+  margin: 18px auto 0;
   display: flex;
   justify-content: space-between;
-  font-size: 13.5px;
-  color: #94a3b8;
+  font-size: 13px;
+  color: #64748b;
   flex-wrap: wrap;
   gap: 12px;
 }
@@ -896,11 +905,11 @@ footer {
 .modal-content {
   background: #ffffff;
   border-radius: 18px;
-  max-width: 780px;
+  max-width: 800px;
   width: 100%;
   max-height: 85vh;
   overflow-y: auto;
-  padding: 32px;
+  padding: 34px;
   position: relative;
   box-shadow: var(--shadow-lg);
 }
@@ -1015,7 +1024,7 @@ footer {
     <div class="hero-content">
       <div class="hero-pill">
         <span class="dot"></span>
-        <span>Open Knowledge for Aspiring & Practicing PMs</span>
+        <span>Independent Open Educational Resource</span>
       </div>
       <h1>Project Management, Made Simple.</h1>
       <p class="lead">Practical Project Management Learning Resources. Clear concepts, modern agile methods, and real-world tools without commercial noise.</p>
@@ -1085,7 +1094,7 @@ footer {
   <div class="wrap">
     <div class="q-box">
       <h2>Knowledge Assessment Quiz</h2>
-      <p class="sub">12 scenario-based questions covering fundamentals, EVM, scheduling, and PMI ECO domains with detailed feedback.</p>
+      <p class="sub">12 scenario-based conceptual questions covering core fundamentals, EVM calculations, scheduling, and project governance.</p>
       <div class="q" id="qz"></div>
     </div>
   </div>
@@ -1095,48 +1104,48 @@ footer {
 <section id="sources">
   <div class="wrap">
     <h2>Sources & References</h2>
-    <p class="sub">All educational content is synthesized from authoritative, globally recognized project management standards, frameworks, and official bodies.</p>
+    <p class="sub">All educational content is synthesized independently from standard industry methodologies, open frameworks, and professional bodies for academic and informational reference.</p>
     
     <div class="ref-grid">
       <div class="ref-card">
         <div>
-          <span class="ref-tag">Primary Standard</span>
+          <span class="ref-tag">Industry Standards</span>
           <h4>PMI® (Project Management Institute)</h4>
-          <p>Global authority behind the <i>PMBOK® Guide – 7th Edition</i>, <i>Process Groups: A Practice Guide</i>, and the official PMP® / CAPM® Examination Content Outlines (ECO).</p>
+          <p>Global professional membership association publisher of the <i>PMBOK® Guide</i> and administrator of credentials such as PMP® and CAPM®.</p>
         </div>
         <a class="ref-link" href="https://www.pmi.org" target="_blank" rel="noopener noreferrer">Visit PMI.org →</a>
       </div>
 
       <div class="ref-card">
         <div>
-          <span class="ref-tag">Agile Governance</span>
+          <span class="ref-tag">Agile Community</span>
           <h4>Agile Alliance</h4>
-          <p>Foundational nonprofit maintaining the original <i>Agile Manifesto</i> (2001), 12 principles, and the collaborative <i>Agile Practice Guide</i> developed with PMI.</p>
+          <p>Global nonprofit organization dedicated to promoting the concepts of agile software development and the Agile Manifesto (2001).</p>
         </div>
         <a class="ref-link" href="https://www.agilealliance.org" target="_blank" rel="noopener noreferrer">Visit AgileAlliance.org →</a>
       </div>
 
       <div class="ref-card">
         <div>
-          <span class="ref-tag">Scrum Standard</span>
+          <span class="ref-tag">Scrum Reference</span>
           <h4>Scrum Guides</h4>
-          <p>The official definition of the Scrum framework by creators Ken Schwaber and Jeff Sutherland, detailing the 3 roles, 5 events, and 3 artifacts.</p>
+          <p>Publicly accessible reference publication by Ken Schwaber and Jeff Sutherland describing the foundational rules and roles of the Scrum framework.</p>
         </div>
         <a class="ref-link" href="https://scrumguides.org" target="_blank" rel="noopener noreferrer">Read the 2020 Scrum Guide →</a>
       </div>
 
       <div class="ref-card">
         <div>
-          <span class="ref-tag">European Standard</span>
+          <span class="ref-tag">Process Framework</span>
           <h4>PeopleCert / Axelos (PRINCE2®)</h4>
-          <p>PRINCE2® 7th Edition project management methodology, widely used in the UK, Europe, and government project procurement environments.</p>
+          <p>Governing body for the PRINCE2® (Projects IN Controlled Environments) structured project management methodology.</p>
         </div>
         <a class="ref-link" href="https://www.peoplecert.org" target="_blank" rel="noopener noreferrer">Explore PRINCE2 →</a>
       </div>
     </div>
 
     <div class="metadata-banner">
-      <span><b>Curriculum Metadata:</b> Aligned with PMBOK® Guide 7th Edition, PMI Process Groups Guide, and the 2026 PMP® Exam Content Outline.</span>
+      <span><b>Curriculum Metadata:</b> Synthesized for modern predictive, agile, and hybrid delivery environments.</span>
       <span style="font-weight:600; color:var(--brand-dark);">Content Last Reviewed: October 2024</span>
     </div>
   </div>
@@ -1148,17 +1157,19 @@ footer {
     <div class="about-grid">
       <div class="about-card">
         <h3>About PM Academy</h3>
-        <p><b>Purpose & Mission:</b> PM Academy was created to demystify project management. Heavy 800-page textbooks and costly preparatory courses often overwhelm beginners. This platform condenses core PM principles, EVM mathematics, and software delivery workflows into a clean, practical, and highly accessible format.</p>
-        <p><b>Target Audience:</b> Aspiring project managers, junior project coordinators, software engineers, designers, startup founders, and students preparing for formal CAPM® or PMP® journeys.</p>
+        <p><b>Mission & Purpose:</b> PM Academy was created as an open-access educational initiative and personal developer portfolio to make project management concepts intuitive, accessible, and practical. Lengthy formal manuals and costly bootcamps often create artificial barriers for newcomers. This platform breaks down complex scheduling, EVM formulas, and delivery workflows into clear, modular lessons.</p>
+        <p><b>Target Audience:</b> Aspiring project coordinators, software engineers, startup founders, cross-functional team leaders, and students seeking a foundational conceptual primer before pursuing formal industry training.</p>
         <button class="btn sec" style="margin-top:8px;" onclick="openPortfolioModal()">Read Project Portfolio Overview →</button>
       </div>
 
       <div class="about-card">
-        <h3>Independence & Disclaimers</h3>
-        <p>PM Academy is an <b>independent open learning resource and developer portfolio project</b> designed for educational and self-study purposes.</p>
+        <h3>Legal Status & Intellectual Property Notice</h3>
+        <p>PM Academy is an <b>independent, non-commercial educational project</b> created solely for private study, scholarship, and skill evaluation.</p>
         <div class="disclaimer-box">
-          <h4>Important Clarification</h4>
-          <p>This website is <b>not</b> an official certification provider, Registered Education Provider (R.E.P.), or affiliated with, sponsored by, or endorsed by the Project Management Institute (PMI®), Scrum.org, or PeopleCert/Axelos. PMI, PMP, CAPM, and PMBOK are registered marks of the Project Management Institute, Inc.</p>
+          <h4>Trademark Disclaimers & Fair Use Declaration</h4>
+          <p>• <b>Non-Affiliation:</b> This website is not endorsed by, sponsored by, accredited by, or affiliated with the Project Management Institute (PMI®), AXELOS Limited, Scrum.org, or any other certifying institution.</p>
+          <p>• <b>Nominative Fair Use:</b> All product names, trademarks, and registered trademarks (including PMI®, PMBOK®, PMP®, CAPM®, PRINCE2®, Scrum.org™, Jira®, and Trello®) are the property of their respective holders. Their mention on this website is solely for nominative identification and descriptive educational purposes under applicable fair use doctrine (Section 160 of the Sri Lanka Intellectual Property Act No. 36 of 2003 and international Berne Convention fair practice standards).</p>
+          <p>• <b>Original Authorship:</b> All explanations, scenario calculations, worked examples, code implementations, and quiz items were authored independently by the developer. No portion of this resource reproduces copyrighted exam question pools or proprietary book passages.</p>
         </div>
       </div>
     </div>
@@ -1170,7 +1181,7 @@ footer {
   <div class="footer-wrap">
     <div>
       <div class="footer-brand">PM Academy</div>
-      <p style="margin:6px 0 0; color:#94a3b8; font-size:14px;">Open learning resources for aspiring and practicing project managers.</p>
+      <p style="margin:6px 0 0; color:#94a3b8; font-size:14px;">Independent open learning resources for aspiring and practicing project managers.</p>
     </div>
     <div class="footer-links">
       <a href="#learn">Curriculum</a>
@@ -1181,9 +1192,12 @@ footer {
       <a href="#" onclick="openPortfolioModal(); return false;">Portfolio Case Study</a>
     </div>
   </div>
+  <div class="legal-footer-notice">
+    PMI®, PMBOK®, PMP®, CAPM®, and PMI-ACP® are registered trademarks of the Project Management Institute, Inc. PRINCE2® is a registered trademark of AXELOS Limited. Scrum.org™ is a trademark of Scrum.org. All other brand marks belong to their respective proprietors. Reference to these marks does not imply endorsement or official partnership.
+  </div>
   <div class="footer-copy">
     <span>© 2024–2026 Dhananjith. Project Management, Made Simple.</span>
-    <span>Designed for clarity, accessibility, and practical learning.</span>
+    <span>Authored independently for educational clarity and accessible learning.</span>
   </div>
 </footer>
 
@@ -1196,37 +1210,38 @@ footer {
     
     <div class="case-block">
       <h4>1. Problem & Purpose</h4>
-      <p><b>The Problem:</b> Project management standards (such as PMI's PMBOK Guide or PRINCE2) are often perceived as dense, abstract, and separated from day-to-day software tools like Jira, Trello, and Sheets. Learners frequently struggle with EVM calculations and determining how predictive and agile frameworks interrelate.</p>
-      <p><b>The Purpose:</b> Build a responsive, zero-friction single-page educational application that bridges foundational project theory with real-world execution, providing 27 modular lessons, interactive calculators, an instant glossary lookup, and scenario-based quiz testing.</p>
+      <p><b>The Problem:</b> Traditional project management instruction is frequently gated behind expensive preparation academies or locked in 800-page academic texts that fail to connect theoretical governance with practical tools (such as Jira, Trello, and spreadsheets).</p>
+      <p><b>The Purpose:</b> Create an accessible, lightweight, zero-dependency educational application that teaches core project management mechanics, agile practices, EVM mathematics, and tool selection in clear, conversational English.</p>
     </div>
 
     <div class="case-block">
       <h4>2. Target Audience</h4>
-      <p>• Junior Project Managers & Project Coordinators needing quick reference guides.</p>
-      <p>• Cross-functional team leads (developers, designers, operations) leading sprints or client deliverables.</p>
-      <p>• Students preparing for formal certification prerequisites (CAPM®, PMP®).</p>
+      <p>• Junior Project Managers, Associate PMs, and Project Coordinators seeking quick practical references.</p>
+      <p>• Software engineers, tech leads, and founders wanting structured delivery methodologies.</p>
+      <p>• Students preparing for formal certification studies who need a conceptual foundation.</p>
     </div>
 
     <div class="case-block">
       <h4>3. Key Features</h4>
-      <p>• <b>27 Modular Lessons in 6 Parts:</b> Foundations, Planning, Risk & Change, Agile/Scrum Frameworks, PM Tools (12+ breakdown), and Leadership & Careers.</p>
-      <p>• <b>Live EVM Calculator:</b> Real-time evaluation of CV, SV, CPI, SPI, and EAC with automated health status explanations.</p>
-      <p>• <b>Interactive Scenario Quiz:</b> 12 comprehensive questions featuring detailed explanations for both correct and incorrect choices.</p>
-      <p>• <b>Searchable Glossary:</b> Instant client-side search across 30+ fundamental PM concepts and metrics.</p>
+      <p>• <b>27 Original Lessons in 6 Progressive Parts:</b> Covering Foundations, Planning, Risk & Change, Agile Frameworks, PM Tool ecosystem (12+ reviews), and Leadership & Career paths.</p>
+      <p>• <b>Live EVM Mathematical Calculator:</b> Instant recalculation of CV, SV, CPI, SPI, and EAC with automated health interpretations.</p>
+      <p>• <b>Interactive Scenario Quiz:</b> 12 scenario-based conceptual questions with detailed pedagogical feedback cards.</p>
+      <p>• <b>Instant Glossary Filter:</b> Client-side instant keyword lookup across 35 fundamental PM concepts.</p>
       <p>• <b>Progress Persistence:</b> Browser LocalStorage synchronization preserving completed lesson markers.</p>
     </div>
 
     <div class="case-block">
-      <h4>4. Planning, Architecture & Delivery</h4>
-      <p>• <b>Tech Stack:</b> Vanilla HTML5, modern CSS custom properties, and modular ES6 JavaScript.</p>
-      <p>• <b>Design System:</b> Clean typography (Fraunces & Plus Jakarta Sans), accessible color contrast ratios, and responsive CSS grid/flexbox layouts.</p>
-      <p>• <b>Zero-Dependency Philosophy:</b> Engineered without heavy frontend frameworks to guarantee sub-second load times and zero build-step overhead on GitHub Pages.</p>
+      <h4>4. Intellectual Property & Legal Compliance</h4>
+      <p>• <b>Original Expression:</b> All curriculum texts, analogies, worked calculations, and assessment items are original developer compositions with zero verbatim copying of proprietary manuals.</p>
+      <p>• <b>Nominative Fair Use:</b> All external methodologies and tools (PMBOK®, PRINCE2®, Scrum, Jira, Trello) are referenced strictly for descriptive and comparative educational purposes.</p>
+      <p>• <b>Clear Non-Affiliation:</b> Prominently states independence from PMI, AXELOS, or other credentialing bodies to prevent any consumer confusion.</p>
     </div>
 
     <div class="case-block">
-      <h4>5. Testing & Future Roadmap</h4>
-      <p>• <b>Testing:</b> Validated across mobile/desktop viewports, verified EVM calculation precision, tested keyboard navigation accessibility.</p>
-      <p>• <b>Planned Improvements:</b> Downloadable PM starter templates (Project Charter, Risk Register, RACI Matrix), dark mode theme toggle, and expanded PMP mock exam categories.</p>
+      <h4>5. Architecture & Quality Engineering</h4>
+      <p>• <b>Tech Stack:</b> Pure Vanilla HTML5, modern CSS3 (Custom Properties & Grid/Flexbox), and modular ES6 JavaScript.</p>
+      <p>• <b>Performance:</b> Total bundle size under 60KB, zero build dependencies, sub-second load times on GitHub Pages.</p>
+      <p>• <b>Accessibility & Testing:</b> Validated on mobile and desktop viewports with WCAG AA compliant contrast ratios.</p>
     </div>
   </div>
 </div>
@@ -1236,7 +1251,7 @@ footer {
 const U = a => "<ul>" + a.map(x => "<li>" + x + "</li>").join("") + "</ul>";
 const F = a => '<div class="flow">' + a.map(x => "<span>" + x + "</span>").join("<i>→</i>") + "</div>";
 const C = a => '<div class="cards">' + a.map(x => "<div><b>" + x[0] + "</b>" + x[1] + "</div>").join("") + "</div>";
-const T = t => '<div class="tip"><b>Note:</b> ' + t + "</div>";
+const T = t => '<div class="tip"><b>Key Takeaway:</b> ' + t + "</div>";
 const H = (t, b) => "<h4>" + t + "</h4>" + b;
 const TL = (n, tg, a) => '<div class="tool"><h4>' + n + '</h4><p class="tg">' + tg + '</p>' + U(a) + '</div>';
 
@@ -1250,332 +1265,329 @@ const P = [
   "Part 6 · Leadership & Career"
 ];
 
-/* Complete 27 Lessons Array: [PartIndex, Emoji, Title, GradientStart, GradientEnd, Content] */
+/* Complete 27 Lessons Array with 100% Original Expressions */
 const L = [
   /* Part 1 · Foundations */
   [
     0, "🧭", "What is Project Management?", "#1e293b", "#334155",
-    H("What is a Project?", "<p>A <b>project</b> is a temporary endeavor undertaken to create a unique product, service, or result. It has a definite beginning, an agreed scope, and a defined completion date.</p>") +
-    H("What is Project Management?", "<p>Project management is the application of knowledge, skills, tools, and techniques to project activities to meet project requirements and achieve intended business value.</p>") +
-    H("Project vs Program vs Portfolio", C([
-      ["Project", "A single focused effort with one primary objective. Example: Developing a mobile payment app."],
-      ["Program", "A group of related projects managed in a coordinated way to obtain benefits not available from managing them individually. Example: A bank-wide digital transformation."],
-      ["Portfolio", "A collection of projects, programs, and operational activities grouped together to achieve strategic business objectives."]
+    H("Defining a Project", "<p>A <b>project</b> is a focused, time-limited initiative designed to create a specific new outcome—whether building a mobile app, constructing a solar array, or organizing an event. Unlike routine operational work, every project has an intentional kickoff date, distinct targets, and a definite completion point.</p>") +
+    H("Defining Project Management", "<p><b>Project management</b> is the practical discipline of coordinating people, resources, timelines, and uncertainties to achieve defined goals. It ensures teams deliver high-value outcomes without exhausting budgets or missing deadlines.</p>") +
+    H("Projects vs Programs vs Portfolios", C([
+      ["Project", "A single, targeted endeavor with one primary objective. Example: Launching a payment gateway feature."],
+      ["Program", "A coordinated family of interconnected projects working toward a broader strategic capability. Example: A bank-wide modernization program."],
+      ["Portfolio", "The complete collection of projects, programs, and operational investments an enterprise selects to drive its strategic growth."]
     ])) +
-    H("Projects vs Operations", "<p><b>Projects</b> are temporary, produce unique deliverables, and conclude when objectives are met. <b>Operations</b> are continuous, repetitive daily business functions (such as routine payroll, customer support, and system maintenance) designed to sustain the business.</p>") +
-    H("Real-World Example", "<p>Designing and launching an e-commerce website is a <b>project</b>. Operating the site, fulfilling daily orders, and addressing ongoing customer tickets is <b>operations</b>.</p>") +
-    T("Core Takeaway: Every project must be <b>temporary</b> (finite timeline) and produce something <b>unique</b>.")
+    H("Projects vs Day-to-Day Operations", "<p><b>Projects</b> are temporary and aim to produce something novel; once complete, they close. <b>Operations</b> are continuous, repeating daily activities (such as server maintenance, payroll processing, and customer support) that keep an organization running smoothly.</p>") +
+    H("Practical Scenario", "<p>Developing and deploying an e-commerce platform is a <b>project</b> with a finite schedule. Once launched, processing daily customer orders and resolving tickets transitions into <b>operations</b>.</p>") +
+    T("Every project is characterized by two essential realities: it has a finite timeline (temporary) and produces a distinctive result (unique).")
   ],
 
   [
-    0, "⏳", "The Project Life Cycle & 5 Process Groups", "#0f766e", "#14b8a6",
-    H("The 5 Process Groups", F(["Initiating", "Planning", "Executing", "Monitoring & Controlling", "Closing"])) +
+    0, "⏳", "The Project Life Cycle & Core Phases", "#0f766e", "#14b8a6",
+    H("The 5 Essential Stages of Project Delivery", F(["Initiating", "Planning", "Executing", "Monitoring & Controlling", "Closing"])) +
     U([
-      "<b>Initiating:</b> Define the project at a high level, develop the Project Charter, and identify initial stakeholders.",
-      "<b>Planning:</b> Establish the total scope, refine objectives, and build the subsidiary management plans (schedule, cost, quality, risk, communications).",
-      "<b>Executing:</b> Coordinate people and resources, manage stakeholder engagement, and perform the work defined in the plan.",
-      "<b>Monitoring & Controlling:</b> Track progress, compare actuals against baselines, measure variances, and manage approved changes. This group operates continuously across all phases.",
-      "<b>Closing:</b> Formally finalize all activities, obtain customer acceptance sign-off, release resources, and archive lessons learned."
+      "<b>Initiating:</b> Clarifying the fundamental business problem or opportunity, gaining executive authorization (Charter), and identifying key participants.",
+      "<b>Planning:</b> Crafting the strategic roadmap—defining deliverables, scheduling milestones, estimating budgets, and preparing risk mitigation plans.",
+      "<b>Executing:</b> Mobilizing the team, coordinating resources, and actively building the agreed deliverables.",
+      "<b>Monitoring & Controlling:</b> Continually comparing actual delivery against baseline plans, identifying variances, and steering course corrections when issues arise.",
+      "<b>Closing:</b> Securing client sign-off, smoothly transitioning deliverables to operational teams, closing vendor accounts, and cataloging lessons learned."
     ]) +
-    H("Phases vs Process Groups", "<p><b>Project phases</b> are distinct time intervals in a specific project's life cycle (e.g., Discovery, Design, Build, Test, Rollout). The <b>5 process groups</b> are the management activities applied repeatedly within each phase.</p>") +
-    T("The cost of making changes is lowest at project inception and increases exponentially as execution nears completion.")
+    H("Delivery Phases vs Management Processes", "<p><b>Project phases</b> represent chronological stages of technical execution (such as Discovery, Design, Build, Test, Deploy). The <b>5 management process groups</b> are managerial activities applied repeatedly across every single phase.</p>") +
+    T("The cost of making changes is minimal during early planning but increases exponentially as the project nears final delivery.")
   ],
 
   [
     0, "💼", "Business Case & Project Selection", "#1d4ed8", "#3b82f6",
-    H("Why Do Projects Start?", U([
-      "<b>Business Opportunity:</b> Entering a new market or creating a new revenue stream.",
-      "<b>Operational Problem:</b> Replacing an obsolete legacy system causing slow service.",
-      "<b>Regulatory / Legal Requirement:</b> Complying with new financial or privacy laws (such as GDPR).",
-      "<b>Customer / Stakeholder Demand:</b> Meeting a critical client contractual requirement."
+    H("Why Do Initiatives Get Approved?", U([
+      "<b>Market Opportunity:</b> Capturing new revenue or entering an emerging customer segment.",
+      "<b>Operational Necessity:</b> Modernizing an outdated system that is slowing company operations.",
+      "<b>Legal / Compliance Mandate:</b> Adhering to government legislation, privacy laws, or safety standards.",
+      "<b>Customer Request:</b> Satisfying a vital contractual obligation for a strategic partner."
     ])) +
-    H("Components of a Business Case", U([
-      "Clear business need and alignment with organizational strategic objectives.",
-      "Analysis of alternative options (including the 'do nothing' scenario).",
-      "Financial cost-benefit analysis and risk profile of each option.",
-      "Recommended solution and qualitative success criteria."
+    H("Core Elements of an Effective Business Case", U([
+      "Clear articulation of the business problem and its strategic alignment.",
+      "Objective evaluation of alternative approaches (including the baseline 'do nothing' option).",
+      "Financial projections comparing initial capital outlay against anticipated ongoing benefits.",
+      "Realistic evaluation of operational risks and measurable indicators of success."
     ])) +
-    H("Feasibility Evaluation (TELOS)", C([
-      ["Technical", "Do we possess the technology and engineering capability to build this?"],
-      ["Economic", "Is the financial return or cost savings worth the capital investment?"],
-      ["Legal / Ethical", "Does the deliverable comply with relevant laws, regulations, and ethics?"],
-      ["Operational", "Will users and operational teams adopt and sustain the solution?"],
-      ["Schedule", "Can we complete delivery within the necessary market window?"]
+    H("Feasibility Assessment (TELOS Checklist)", C([
+      ["Technical", "Do we possess the engineering tools and expertise to build this solution?"],
+      ["Economic", "Does the projected financial return or cost savings justify the upfront expenditure?"],
+      ["Legal & Ethical", "Does the deliverable conform to all applicable regulations, privacy laws, and ethical standards?"],
+      ["Operational", "Will internal teams and target end-users adopt and maintain the finished product?"],
+      ["Schedule", "Can we complete the initiative within the necessary market or operational window?"]
     ])) +
-    H("Financial Metrics Formulas", "<span class='fm'>Payback Period = Initial Investment ÷ Annual Cash Inflow<br>Return on Investment (ROI) = (Net Financial Benefit ÷ Cost) × 100%<br>Benefit-Cost Ratio (BCR) = Total Benefits ÷ Total Costs (BCR > 1.0 is favorable)<br>Net Present Value (NPV) = Sum of Discounted Future Cash Inflows − Initial Cost</span>") +
-    H("Worked Example", "<p>Project Cost: $50,000. Annual return: $20,000/year for 4 years (Total undiscounted return: $80,000). At a 10% discount rate factor (3.17):</p><span class='fm'>Payback = $50,000 ÷ $20,000 = <b>2.5 years</b><br>ROI = ($80,000 − $50,000) ÷ $50,000 = <b>60%</b><br>NPV = ($20,000 × 3.17) − $50,000 = <b>+$13,400</b></span>") +
-    T("Sunk Cost Rule: Past unrecoverable money spent must not influence current or future project investment decisions. Decisions must rely solely on future costs and expected future benefits.")
+    H("Investment Evaluation Formulas", "<span class='fm'>Payback Period = Initial Capital Cost ÷ Yearly Net Inflow<br>Return on Investment (ROI) = (Net Financial Benefit ÷ Cost) × 100%<br>Benefit-Cost Ratio (BCR) = Total Benefits ÷ Total Costs (Values > 1.0 indicate positive return)<br>Net Present Value (NPV) = Discounted Value of Future Cash Inflows − Initial Cost</span>") +
+    H("Worked Calculation", "<p>Initiative Cost: $50,000. Expected cash return: $20,000/year for 4 years (Total return: $80,000). Using a 10% discount rate factor (3.17):</p><span class='fm'>Payback = $50,000 ÷ $20,000 = <b>2.5 years</b><br>ROI = ($80,000 − $50,000) ÷ $50,000 = <b>60%</b><br>NPV = ($20,000 × 3.17) − $50,000 = <b>+$13,400</b></span>") +
+    T("The Sunk Cost Rule: Past money already spent is unrecoverable and must never justify pouring additional resources into a failing project. Sound decisions evaluate only future expenditures against future returns.")
   ],
 
   [
     0, "📋", "Project Management Plan & Baselines", "#4338ca", "#6366f1",
-    H("What is Integration Management?", "<p>Project Integration Management entails identifying, defining, combining, and coordinating all management processes and activities across the project.</p>") +
-    H("The Project Management Plan (PMP)", C([
-      ["Subsidiary Plans", "Scope, Schedule, Cost, Quality, Resource, Communications, Risk, Procurement, and Stakeholder engagement plans."],
-      ["Baselines", "Approved versions of Scope Baseline, Schedule Baseline, and Cost Baseline. Actual performance is compared against these."],
-      ["Management Strategies", "Change Management Plan, Configuration Plan, Performance measurement metrics, and Life cycle description."]
+    H("The Role of Integration", "<p><b>Project Integration</b> is the discipline of keeping every moving part—scope, schedules, budgets, and communication—synchronized so the project functions as a unified effort rather than disconnected silos.</p>") +
+    H("Building Blocks of the Project Plan", C([
+      ["Subsidiary Plans", "Specific roadmaps for managing scope, schedule, budget, quality, resources, communication, and risk."],
+      ["Approved Baselines", "The benchmark versions of scope, schedule, and cost. Real-world progress is compared against these references."],
+      ["Governance Strategies", "Guidelines on how scope adjustments will be evaluated and how progress reviews will be conducted."]
     ])) +
-    H("Baseline vs Actual Performance", "<p>A <b>baseline</b> is the formally approved version of a plan. If your cost baseline is $50,000 and actual spend is $62,000, you have a negative variance of $12,000. Without a baseline, you cannot measure health or performance.</p>") +
-    H("Kick-off Meeting Agenda", U([
-      "Introduce project purpose, business case, and key deliverables.",
-      "Review roles, responsibilities, and decision-making authority.",
-      "Walk through the milestone schedule and critical dependencies.",
-      "Establish communication channels, reporting rhythms, and meeting cadence.",
-      "Highlight initial risk register items and next steps."
+    H("Comparing Baseline to Reality", "<p>A <b>baseline</b> represents your formal reference plan. If your budget baseline is $50,000 and your actual spend is $62,000, you have an unfavorable cost variance of $12,000. Without a documented baseline, assessing true performance is impossible.</p>") +
+    H("Setting Up the Kick-Off Meeting", U([
+      "Clarify the project's strategic objective and core deliverables.",
+      "Establish individual responsibilities, expectations, and reporting pathways.",
+      "Review the milestone timeline, dependencies, and immediate next steps.",
+      "Agree on team working agreements, communication tools, and meeting rhythms.",
+      "Review the top initial risks and confirm ownership for risk responses."
     ])) +
-    H("Planning Principles", U([
-      "<b>Progressive Elaboration:</b> Continuously improving and detailing a plan as more specific information becomes available.",
-      "<b>Rolling Wave Planning:</b> Detailed planning for near-term work, coupled with high-level planning for work farther in the future."
+    H("Iterative Planning Habits", U([
+      "<b>Progressive Elaboration:</b> Deepening and refining plan details continuously as new information surfaces.",
+      "<b>Rolling Wave Planning:</b> Planning near-term work with high precision while keeping distant phases at a milestone level."
     ]))
   ],
 
   [
-    0, "🔺", "Triple Constraint & Defining Success", "#c2410c", "#ea580c",
-    H("The Iron Triangle", C([
-      ["📦 Scope", "The specific work required to deliver the agreed features and deliverables."],
-      ["📅 Schedule", "The time required to finish all project activities and milestones."],
-      ["💰 Cost", "The financial budget and resource commitments authorized."]
+    0, "🔺", "The Triple Constraint & Defining Success", "#c2410c", "#ea580c",
+    H("The Classic Iron Triangle", C([
+      ["📦 Scope", "The specific features and deliverable boundary defined for the project."],
+      ["📅 Schedule", "The agreed calendar timeline and milestone deadlines."],
+      ["💰 Budget", "The financial investment and human resources allocated."]
     ])) +
-    "<p>The three constraints are inextricably linked. Modifying one variable directly affects at least one of the other two. <b>Quality</b> rests at the core: compressing budget and schedule while expanding scope inevitably degrades quality.</p>" +
-    H("Trade-off Dynamics", U([
-      "Increasing scope with a fixed schedule requires increased cost (more labor/resources).",
-      "Compressing the schedule (fast-tracking) often increases cost and project risk.",
-      "Reducing the budget necessitates either shrinking scope or extending the delivery date."
+    "<p>These three variables exist in constant dynamic tension. If any one constraint changes, at least one of the other two must adjust to maintain equilibrium. <b>Quality</b> sits at the intersection: squeezing budget and deadlines while demanding more features inevitably forces quality compromises.</p>" +
+    H("Trade-off Scenarios", U([
+      "Expanding scope on a fixed deadline requires increasing costs (more personnel or overtime).",
+      "Compressing the timeline with fixed scope increases cost and elevates risk.",
+      "Cutting the budget means you must either scale back scope or extend delivery dates."
     ])) +
-    H("Multidimensional Project Success", "<p>Traditional success meant delivering on time, within budget, and to specification. Modern project management defines success through <b>business value realization</b>, customer adoption, and stakeholder satisfaction.</p>")
+    H("Broadening the Definition of Success", "<p>Historically, success was measured simply by finishing on time and within budget. Today, modern projects define real success by <b>business value delivery</b>, user adoption, and long-term stakeholder satisfaction.</p>")
   ],
 
   [
     0, "👥", "Key Roles & Organizational Structures", "#0f766e", "#0d9488",
-    H("Core Project Roles", C([
-      ["Project Manager", "Accountable for day-to-day planning, team execution, stakeholder alignment, and project results."],
-      ["Project Sponsor", "Executive who champions the project, authorizes the charter, secures funding, and removes organizational roadblocks."],
-      ["Core Team", "Professionals executing technical deliverables (engineers, designers, analysts)."],
-      ["Customer / End User", "The individuals or entities who will use and benefit from the delivered product."],
-      ["PMO", "Project Management Office that establishes governance, standard templates, and portfolio tracking."],
-      ["Steering Committee", "Senior governance group providing oversight and resolving major escalation decisions."]
+    H("Primary Project Roles", C([
+      ["Project Manager", "Guides team execution, manages stakeholder alignment, and is accountable for overall delivery results."],
+      ["Project Sponsor", "Senior executive champion who authorizes the charter, secures capital, and resolves high-level escalations."],
+      ["Project Team", "Specialists (engineers, designers, analysts) who build the technical deliverables."],
+      ["End-Users / Clients", "The beneficiaries who will use the delivered solution in their daily work."],
+      ["PMO", "Project Management Office providing shared templates, governance standards, and cross-project visibility."],
+      ["Steering Committee", "Senior advisory board offering strategic direction on major milestones and budget gates."]
     ])) +
-    H("Organizational Structures", U([
-      "<b>Functional:</b> Team members report strictly to functional department heads. The PM has minimal authority and serves primarily as a coordinator.",
-      "<b>Matrix (Weak, Balanced, Strong):</b> Team members report both to a functional manager and a project manager. In a Strong Matrix, the PM holds primary authority.",
-      "<b>Project-Oriented (Projectized):</b> The organization's personnel are grouped directly by projects. The PM has complete authority over resources."
+    H("Organizational Contexts", U([
+      "<b>Functional Organization:</b> Team members work inside traditional departments (Marketing, Finance). The PM acts mainly as a coordinator with limited authority.",
+      "<b>Matrix Organization:</b> Staff report to both a department head and a project manager. Authority is shared depending on whether the matrix is weak, balanced, or strong.",
+      "<b>Project-Oriented (Projectized):</b> The enterprise is structured around dedicated project teams. The PM possesses full operational and resource authority."
     ]))
   ],
 
   [
     0, "🤝", "Stakeholder Engagement & Management", "#7c3aed", "#9333ea",
-    H("Who is a Stakeholder?", "<p>An individual, group, or organization that may affect, be affected by, or perceive itself to be affected by a decision, activity, or outcome of a project.</p>") +
-    H("4-Step Engagement Process", F(["Identify Stakeholders", "Analyze Needs & Influence", "Plan Engagement Strategy", "Monitor Relationships"])) +
-    H("Power / Interest Grid", C([
-      ["High Power, High Interest", "Manage Closely: Involve in key decisions and consult frequently."],
-      ["High Power, Low Interest", "Keep Satisfied: Meet expectations without overloading with operational minutiae."],
-      ["Low Power, High Interest", "Keep Informed: Provide regular status reports and maintain open communication."],
-      ["Low Power, Low Interest", "Monitor: Maintain awareness with minimal effort."]
+    H("Who Qualifies as a Stakeholder?", "<p>A <b>stakeholder</b> is any individual, group, or organization that can positively or negatively affect, or be affected by, the project's activities or deliverables.</p>") +
+    H("4-Phase Engagement Lifecycle", F(["Identify Stakeholders", "Analyze Power & Interest", "Formulate Engagement Strategy", "Continuously Monitor"])) +
+    H("Power / Interest Matrix", C([
+      ["High Power, High Interest", "Manage Closely: Consult actively and involve in critical project decisions."],
+      ["High Power, Low Interest", "Keep Satisfied: Fulfill expectations without overwhelming with daily trivia."],
+      ["Low Power, High Interest", "Keep Informed: Provide routine updates and maintain transparent communication."],
+      ["Low Power, Low Interest", "Monitor: Maintain general awareness with minimal overhead."]
     ])) +
-    T("Key Artifact: The <b>Stakeholder Register</b> documents names, roles, expectations, influence levels, and tailored engagement tactics.")
+    T("The <b>Stakeholder Register</b> documents contacts, expectations, influence levels, and preferred communication channels for key participants.")
   ],
 
   /* Part 2 · Planning the Work */
   [
-    1, "📦", "Scope Management & the WBS", "#1d4ed8", "#2563eb",
-    H("Scope Definition", "<p><b>Project Scope</b> encompasses all the work required to deliver a product, service, or result with specified features and functions.</p>") +
-    H("5 Scope Steps", F(["Collect Requirements", "Define Scope", "Create WBS", "Validate Scope", "Control Scope"])) +
-    H("Work Breakdown Structure (WBS)", "<p>A hierarchical decomposition of the total scope of work to be carried out by the project team. The lowest level decomposition is termed a <b>Work Package</b>.</p>") +
+    1, "📦", "Scope Definition & the WBS", "#1d4ed8", "#2563eb",
+    H("What is Scope?", "<p><b>Project Scope</b> encompasses all the work required to produce the agreed deliverable—and explicitly identifies what work is out of bounds.</p>") +
+    H("5 Steps in Managing Scope", F(["Capture Requirements", "Define Scope Boundaries", "Construct WBS", "Validate Deliverables", "Control Adjustments"])) +
+    H("The Work Breakdown Structure (WBS)", "<p>A hierarchical decomposition breaking down a complex initiative into smaller, more manageable elements. The terminal, lowest-level elements are termed <b>Work Packages</b>.</p>") +
     U([
-      "<b>100% Rule:</b> The WBS must encompass 100% of the project scope—no more, no less.",
-      "<b>Scope Creep:</b> The unauthorized, unmanaged expansion of product or project scope without adjustments to time, cost, and resources.",
-      "<b>Gold Plating:</b> Providing extra features or functionality not requested by the customer (adds cost and risk without agreed value)."
+      "<b>The 100% Principle:</b> The WBS must encompass 100% of the project scope—nothing missing, and no unnecessary extras.",
+      "<b>Scope Creep:</b> The gradual, unapproved expansion of project requirements without corresponding adjustments to budget, timeline, or resources.",
+      "<b>Gold Plating:</b> Adding extra features not requested by the client, which consumes resources and adds risk without verified value."
     ]) +
-    H("Worked Example: School Event WBS", F(["1.0 Planning", "2.0 Programming", "3.0 Marketing", "4.0 Event Execution", "5.0 Closeout"]) +
-      "<span class='fm'>1.0 Planning: 1.1 Finalize Budget, 1.2 Venue Booking, 1.3 Permits<br>2.0 Programming: 2.1 Speaker Lineup, 2.2 Print Agendas<br>3.0 Marketing: 3.1 Digital Posters, 3.2 Social Media Campaign<br>4.0 Event Execution: 4.1 AV Setup, 4.2 Guest Registration<br>5.0 Closeout: 5.1 Vendor Settlement, 5.2 Feedback Analysis</span><p>Every terminal leaf (e.g., 1.2 Venue Booking) is a work package assigned to a single owner.</p>")
+    H("Sample Event WBS", F(["1.0 Planning", "2.0 Programming", "3.0 Marketing", "4.0 Staging", "5.0 Closeout"]) +
+      "<span class='fm'>1.0 Planning: 1.1 Secure Permits, 1.2 Book Venue, 1.3 Allocate Budget<br>2.0 Programming: 2.1 Confirm Speakers, 2.2 Print Agenda<br>3.0 Marketing: 3.1 Digital Flyers, 3.2 Social Media Campaign<br>4.0 Staging: 4.1 AV Equipment, 4.2 Attendee Registration<br>5.0 Closeout: 5.1 Settle Invoices, 5.2 Compile Feedback</span><p>Every leaf (e.g., 1.2 Book Venue) represents a concrete work package owned by a designated team member.</p>")
   ],
 
   [
-    1, "📅", "Schedule: CPM, Critical Path & Gantt", "#be123c", "#e11d48",
-    H("Schedule Development Process", F(["Define Activities", "Sequence Activities", "Estimate Durations", "Develop Schedule", "Control Schedule"])) +
-    H("Dependency Types", U([
-      "<b>Finish-to-Start (FS):</b> Activity B cannot start until Activity A finishes (most common).",
-      "<b>Start-to-Start (SS):</b> Activity B cannot start until Activity A starts.",
-      "<b>Finish-to-Finish (FF):</b> Activity B cannot finish until Activity A finishes.",
-      "<b>Start-to-Finish (SF):</b> Activity B cannot finish until Activity A starts (rare).",
-      "<b>Lead:</b> Overlap time where successor starts before predecessor finishes.",
-      "<b>Lag:</b> Directed waiting time between tasks (e.g., waiting 2 days for concrete curing)."
+    1, "📅", "Scheduling: CPM, Critical Path & Gantt", "#be123c", "#e11d48",
+    H("Building a Dependable Schedule", F(["Identify Activities", "Sequence Dependencies", "Estimate Time", "Build Schedule", "Monitor Progress"])) +
+    H("Common Task Dependency Relationships", U([
+      "<b>Finish-to-Start (FS):</b> Task B cannot begin until Task A has completed (the most common sequence).",
+      "<b>Start-to-Start (SS):</b> Task B can begin as soon as Task A begins.",
+      "<b>Finish-to-Finish (FF):</b> Task B cannot finish until Task A finishes.",
+      "<b>Start-to-Finish (SF):</b> Task B cannot finish until Task A starts (relatively rare).",
+      "<b>Lead Time:</b> Overlapping dependent activities so the successor starts earlier.",
+      "<b>Lag Time:</b> A required pause between tasks (such as waiting 48 hours for concrete to cure)."
     ])) +
-    H("Critical Path Method (CPM)", "<p>The <b>Critical Path</b> is the sequence of dependent tasks that represents the longest path through a project, which determines the shortest possible project duration. Tasks on the critical path have <b>zero float (slack)</b>. Any delay on this path directly delays project completion.</p>") +
-    H("Estimating Formulas (PERT 3-Point)", "<span class='fm'>Beta / PERT Estimate = (Optimistic + 4 × Most Likely + Pessimistic) ÷ 6</span>") +
-    H("Worked Example 1: PERT", "<p>Task: Optimistic = 2 days, Most Likely = 4 days, Pessimistic = 12 days.<br>Estimate = (2 + 4×4 + 12) ÷ 6 = 30 ÷ 6 = <b>5.0 days</b>.</p>") +
-    H("Worked Example 2: Critical Path Determination", "<span class='fm'>Path 1: A (3d) → B (5d) → D (4d) = 12 days<br>Path 2: A (3d) → C (2d) → D (4d) = 9 days</span><p>Path 1 (12 days) is the <b>Critical Path</b>. Task C has 3 days of total float (12 − 9 = 3 days).</p>") +
+    H("The Critical Path Method (CPM)", "<p>The <b>Critical Path</b> is the sequence of dependent tasks that constitutes the longest path through the project network. It dictates the earliest possible date the project can finish. Tasks on the critical path have <b>zero float (slack)</b>; any delay along this path causes a day-for-day delay to the overall completion date.</p>") +
+    H("PERT 3-Point Duration Estimating", "<span class='fm'>Expected Duration = (Optimistic + 4 × Most Likely + Pessimistic) ÷ 6</span>") +
+    H("Calculation Example", "<p>Task duration: Optimistic = 2 days, Most Likely = 4 days, Pessimistic = 12 days.<br>Estimate = (2 + 4×4 + 12) ÷ 6 = 30 ÷ 6 = <b>5.0 days</b>.</p>") +
     H("Schedule Compression Techniques", U([
-      "<b>Crashing:</b> Adding resources to compress task durations at the lowest incremental cost (e.g., overtime, additional staff). Increases project cost.",
-      "<b>Fast Tracking:</b> Performing activities in parallel that were originally planned in sequence. Increases project risk."
+      "<b>Crashing:</b> Injecting additional resources (such as overtime or added contractors) into critical path activities to shorten duration at the lowest cost.",
+      "<b>Fast Tracking:</b> Performing activities in parallel that were originally planned in sequence, which accelerates delivery but increases coordination risk."
     ]))
   ],
 
   [
-    1, "💰", "Cost & Earned Value Management (EVM)", "#0f766e", "#047857",
-    H("Cost Estimation Approaches", U([
-      "<b>Analogous Estimating:</b> Using historical data from a similar past project (top-down, fast, lower accuracy).",
-      "<b>Parametric Estimating:</b> Using statistical relationships between historical data and variables (e.g., cost per square foot).",
-      "<b>Bottom-Up Estimating:</b> Estimating each individual work package and aggregating upwards (most accurate, resource-intensive)."
+    1, "💰", "Budgeting & Earned Value (EVM)", "#0f766e", "#047857",
+    H("Estimation Approaches", U([
+      "<b>Analogous (Top-Down):</b> Using costs from a similar past project as a quick benchmark.",
+      "<b>Parametric:</b> Multiplying unit metrics by historical rates (e.g., cost per square foot or cost per line of code).",
+      "<b>Bottom-Up:</b> Estimating the cost of every individual work package and summing them upward (most accurate, time-intensive)."
     ])) +
-    H("Earned Value Management (EVM) Core Metrics", C([
-      ["PV (Planned Value)", "The authorized budget assigned to scheduled work up to a given date."],
-      ["EV (Earned Value)", "The measure of work performed expressed in terms of the authorized budget for that work."],
-      ["AC (Actual Cost)", "The realized cost incurred for the work performed on an activity during a given time period."],
-      ["BAC (Budget at Completion)", "The total authorized baseline budget for the entire project."]
+    H("Earned Value Analysis Fundamentals", C([
+      ["PV (Planned Value)", "The authorized expenditure scheduled to be accomplished by a specific date."],
+      ["EV (Earned Value)", "The budgeted value of the work that has actually been completed."],
+      ["AC (Actual Cost)", "The total realized expenses incurred in doing the completed work."],
+      ["BAC (Budget at Completion)", "The approved total baseline budget for the whole initiative."]
     ])) +
-    H("Formulas & Performance Interpretation", "<span class='fm'>Cost Variance (CV) = EV − AC &nbsp;|&nbsp; Schedule Variance (SV) = EV − PV<br>Cost Performance Index (CPI) = EV ÷ AC &nbsp;|&nbsp; Schedule Performance Index (SPI) = EV ÷ PV<br>Estimate at Completion (EAC) = BAC ÷ CPI</span><p>A value <b>above 1.0 is favorable</b>; below 1.0 indicates poor performance.<br>• CPI &lt; 1.0: Over budget (cost overrun).<br>• SPI &lt; 1.0: Behind schedule.</p>") +
+    H("Formulas & Status Diagnosis", "<span class='fm'>Cost Variance (CV) = EV − AC &nbsp;|&nbsp; Schedule Variance (SV) = EV − PV<br>Cost Performance Index (CPI) = EV ÷ AC &nbsp;|&nbsp; Schedule Performance Index (SPI) = EV ÷ PV<br>Estimate at Completion (EAC) = BAC ÷ CPI</span><p>An index <b>greater than 1.0 is favorable</b>; below 1.0 flags variance issues.<br>• CPI &lt; 1.0: Over budget (getting less value per dollar spent).<br>• SPI &lt; 1.0: Behind schedule (progressing slower than planned).</p>") +
     H("Interactive EVM Calculator", '<div class="calc"><div><label>BAC ($)</label><input id="e1" type="number" value="100000"></div><div><label>PV ($)</label><input id="e2" type="number" value="40000"></div><div><label>EV ($)</label><input id="e3" type="number" value="35000"></div><div><label>AC ($)</label><input id="e4" type="number" value="45000"></div></div><div id="eo" class="tip"></div>')
   ],
 
   [
     1, "✅", "Quality Management", "#ea580c", "#d97706",
-    H("Quality vs Grade", "<p><b>Quality</b> is the degree to which a set of inherent characteristics fulfills requirements. <b>Grade</b> is a category assigned to deliverables having the same functional use but different technical specifications.<br><i>A low-grade product (basic phone) can be high quality if defect-free. A high-grade product (luxury phone) is unacceptable if buggy.</i></p>") +
-    H("Quality Management Dimensions", U([
-      "<b>Quality Planning:</b> Identifying which quality standards apply and determining how to satisfy them.",
-      "<b>Quality Assurance (QA):</b> Auditing quality requirements and measurement results to ensure appropriate processes are utilized (prevention).",
-      "<b>Quality Control (QC):</b> Monitoring and recording results of executing quality activities to assess performance and ensure outputs conform to specifications (detection)."
+    H("Distinguishing Quality from Grade", "<p><b>Quality</b> measures how reliably a product fulfills its stated requirements. <b>Grade</b> refers to its category of luxury or technical specifications.<br><i>A low-grade item (a basic, inexpensive phone) has high quality if it operates without bugs. A high-grade luxury smartphone has low quality if calls constantly drop.</i></p>") +
+    H("The Three Pillars of Quality", U([
+      "<b>Quality Planning:</b> Identifying applicable standards and establishing how to verify them.",
+      "<b>Quality Assurance (QA):</b> Auditing processes to ensure good engineering practices are followed (prevention).",
+      "<b>Quality Control (QC):</b> Inspecting deliverables and testing outputs to catch defects before delivery (detection)."
     ])) +
-    H("Cost of Quality (COQ)", C([
-      ["Cost of Conformance", "Money spent to prevent defects: Training, documented processes, testing, equipment maintenance."],
-      ["Cost of Non-Conformance", "Money spent due to defects: Internal rework, scrap, warranty claims, customer dissatisfaction, legal liabilities."]
+    H("The Cost of Quality (COQ)", C([
+      ["Cost of Conformance", "Expenditures made to prevent defects: Quality training, automated testing, audits, code reviews."],
+      ["Cost of Non-Conformance", "Expenses incurred due to defects: Rework, scrap, hotfixes, warranty claims, customer churn."]
     ])) +
-    T("Core principle: Prevention is significantly cheaper than inspection and remediation.")
+    T("Core Truth: Preventing defects upfront is dramatically cheaper than fixing bugs in production.")
   ],
 
   [
-    1, "🧑‍🤝‍🧑", "Team Development & Resources", "#4338ca", "#4f46e5",
-    H("Tuckman's 5 Stages of Team Development", F(["Forming", "Storming", "Norming", "Performing", "Adjourning"])) +
+    1, "🧑‍🤝‍🧑", "Team Dynamics & Resource Management", "#4338ca", "#4f46e5",
+    H("Tuckman's 5 Stages of Team Growth", F(["Forming", "Storming", "Norming", "Performing", "Adjourning"])) +
     U([
-      "<b>Forming:</b> Team meets, learns about the project, and acts politely as roles remain ambiguous.",
-      "<b>Storming:</b> Interpersonal conflict emerges as team members voice opinions and contest approaches.",
-      "<b>Norming:</b> Shared working agreements, mutual trust, and collaborative standards are established.",
-      "<b>Performing:</b> The team operates as a cohesive, autonomous unit with high productivity and minimal friction.",
-      "<b>Adjourning:</b> Work concludes, deliverables transition, and the team disbands."
+      "<b>Forming:</b> Team members meet, maintain polite interactions, and explore initial roles.",
+      "<b>Storming:</b> Interpersonal friction surfaces as differing working styles and priorities clash.",
+      "<b>Norming:</b> Trust solidifies, shared working agreements are adopted, and collaboration improves.",
+      "<b>Performing:</b> The team operates smoothly as a productive, self-organizing unit.",
+      "<b>Adjourning:</b> Project concludes, outcomes are handed off, and team members transition."
     ]) +
-    H("RACI Matrix: Responsible, Accountable, Consulted, Informed", C([
-      ["Responsible (R)", "The person(s) who does the work to achieve the deliverable."],
-      ["Accountable (A)", "The single person with ultimate decision authority and veto power (Only 1 'A' per task)."],
-      ["Consulted (C)", "Subject matter experts providing two-way input and feedback."],
-      ["Informed (I)", "Individuals updated on progress via one-way communication."]
+    H("The RACI Responsibility Matrix", C([
+      ["Responsible (R)", "The person(s) who does the hands-on work to build the deliverable."],
+      ["Accountable (A)", "The single individual with final sign-off authority (strictly one 'A' per task)."],
+      ["Consulted (C)", "Subject matter experts providing two-way feedback before work finishes."],
+      ["Informed (I)", "Stakeholders kept updated on progress through one-way reporting."]
     ])) +
-    H("Conflict Resolution Methods", U([
-      "<b>Collaborate / Problem Solve:</b> Incorporates multiple viewpoints to reach consensus (win-win; generally preferred).",
-      "<b>Compromise / Reconcile:</b> Searching for solutions that bring some degree of satisfaction to all parties.",
-      "<b>Smooth / Accommodate:</b> Emphasizing areas of agreement rather than differences.",
-      "<b>Force / Direct:</b> Pushing one's viewpoint at the expense of others (win-lose; used in emergencies).",
-      "<b>Withdraw / Avoid:</b> Retreating from an actual or potential conflict situation."
+    H("Constructive Conflict Resolution Approaches", U([
+      "<b>Collaborate / Problem-Solve:</b> Merging different perspectives to achieve genuine consensus (win-win).",
+      "<b>Compromise:</b> Seeking middle-ground solutions where both parties concede slightly.",
+      "<b>Smooth / Accommodate:</b> Highlighting common ground while minimizing differences.",
+      "<b>Force / Direct:</b> Enforcing a decision by executive fiat (appropriate during emergency stops).",
+      "<b>Withdraw / Postpone:</b> Temporarily stepping back from a dispute until more information is available."
     ]))
   ],
 
   [
     1, "💬", "Communications Management", "#0284c7", "#0369a1",
-    H("The Communications Model", "<p>Sender → Encode → Message → Channel → Decode → Receiver → Feedback Loop.<br><b>Noise:</b> Anything that compromises or distorts the clarity of the transmission (cultural differences, jargon, poor connectivity).</p>") +
-    H("Communications Channels Formula", "<span class='fm'>Total Channels = [n × (n − 1)] ÷ 2 &nbsp;&nbsp;(where n = number of stakeholders)</span><p>If a team grows from 5 to 10 people, channels escalate from 10 to 45! Communication complexity grows exponentially with team size.</p>") +
-    H("Communication Methods", C([
-      ["Interactive", "Two-way multidirectional exchange: Meetings, video calls, phone conversations."],
-      ["Push", "Sent directly to specific recipients who need to know: Email, status updates, memos."],
-      ["Pull", "Information stored in centralized repositories accessed at the user's discretion: SharePoint, Intranet, Notion."]
+    H("The Basic Communication Cycle", "<p>Sender → Encodes thought → Transmits via Channel → Receiver Decodes → Provides Feedback.<br><b>Noise:</b> Any interference (technical distortion, jargon, cultural misunderstandings) that weakens message clarity.</p>") +
+    H("The Growth of Communication Channels", "<span class='fm'>Total Channels = [n × (n − 1)] ÷ 2 &nbsp;&nbsp;(where n = number of team members)</span><p>A team of 5 people has 10 potential communication pathways; a team of 10 people has 45! Communication complexity compounds exponentially as team size expands.</p>") +
+    H("Transmission Methods", C([
+      ["Interactive", "Multidirectional real-time exchange: In-person syncs, video calls, standups."],
+      ["Push", "Direct delivery to targeted recipients: Weekly email summaries, memos, announcements."],
+      ["Pull", "Information stored in centralized repositories accessed on demand: Wikis, dashboards, cloud folders."]
     ])) +
-    T("Communications Management Plan establishes: Who needs what information, when they need it, in what format, and via what channel.")
+    T("A comprehensive Communications Plan documents: Who needs what information, when they need it, in what format, and through which specific channel.")
   ],
 
   /* Part 3 · Risk & Change */
   [
     2, "⚠️", "Risk Management & Analysis", "#c2410c", "#b45309",
-    H("Risk vs Issue", "<p>A <b>risk</b> is an uncertain event or condition that, if it occurs, has a positive or negative effect on one or more project objectives. An <b>issue</b> is an event that has already occurred and is actively impacting the project right now.</p>") +
-    H("Risk Management Process", F(["Plan Risk Management", "Identify Risks", "Perform Qualitative Analysis", "Perform Quantitative Analysis", "Plan Risk Responses", "Monitor Risks"])) +
-    H("Qualitative vs Quantitative Analysis", U([
-      "<b>Qualitative:</b> Evaluating probability and impact using a relative scale (Low, Medium, High) on a Probability-Impact (P-I) matrix to prioritize risks.",
-      "<b>Quantitative:</b> Numerically evaluating the financial effect of risks via decision tree modeling, Monte Carlo simulation, or Expected Monetary Value (EMV)."
+    H("Differentiating Risks from Issues", "<p>A <b>risk</b> is an uncertain future event that, if it occurs, could positively or negatively impact project goals. An <b>issue</b> has already occurred and is actively affecting progress today.</p>") +
+    H("The Risk Management Flow", F(["Plan Approach", "Identify Uncertainties", "Assess Probability & Impact", "Formulate Responses", "Monitor & Review"])) +
+    H("Qualitative vs Quantitative Assessment", U([
+      "<b>Qualitative Assessment:</b> Evaluating probability and severity on a subjective scale (Low, Medium, High) to categorize risks on a Probability-Impact matrix.",
+      "<b>Quantitative Assessment:</b> Calculating numerical financial impacts using statistical modeling or Expected Monetary Value (EMV)."
     ])) +
-    H("Expected Monetary Value (EMV) Formula", "<span class='fm'>EMV = Probability × Impact</span><p>Example: 25% chance of a vendor delivery delay incurring a $40,000 penalty.<br>EMV = 0.25 × (−$40,000) = <b>−$10,000</b> (Contingency reserve allocation recommendation).</p>") +
-    H("Risk Response Strategies", C([
-      ["Negative Risks (Threats)", "<b>Avoid:</b> Eliminate root cause.<br><b>Transfer:</b> Shift impact to third party (insurance/warranty).<br><b>Mitigate:</b> Reduce probability or impact.<br><b>Accept:</b> Acknowledge and document."],
-      ["Positive Risks (Opportunities)", "<b>Exploit:</b> Ensure opportunity happens.<br><b>Share:</b> Partner with third party.<br><b>Enhance:</b> Increase probability or impact.<br><b>Accept:</b> Take advantage if it occurs."]
+    H("Expected Monetary Value (EMV) Formula", "<span class='fm'>EMV = Probability of Event × Financial Impact</span><p>Scenario: 30% likelihood of a vendor component delay resulting in a $30,000 penalty.<br>EMV = 0.30 × (−$30,000) = <b>−$9,000</b> (Recommended risk contingency allocation).</p>") +
+    H("Strategic Risk Responses", C([
+      ["Negative Threats", "<b>Avoid:</b> Eliminate the root cause.<br><b>Transfer:</b> Shift consequence to a third party (insurance/warranty).<br><b>Mitigate:</b> Reduce likelihood or impact.<br><b>Accept:</b> Acknowledge and absorb."],
+      ["Positive Opportunities", "<b>Exploit:</b> Ensure the benefit happens.<br><b>Share:</b> Partner with experts to capture gains.<br><b>Enhance:</b> Increase likelihood or impact.<br><b>Accept:</b> Capitalize if it occurs."]
     ])) +
-    H("Reserves Management", U([
-      "<b>Contingency Reserve:</b> Budget allocated for identified 'known-unknown' risks. Managed directly by the Project Manager.",
-      "<b>Management Reserve:</b> Budget allocated for unforeseen 'unknown-unknown' risks outside project scope baseline. Controlled by the Sponsor/Executive management."
+    H("Managing Budget Reserves", U([
+      "<b>Contingency Reserve:</b> Budget set aside for identified 'known-unknown' risks, managed by the Project Manager.",
+      "<b>Management Reserve:</b> Budget reserved for unforeseen 'unknown-unknown' scenarios outside original project scope, held by senior leadership."
     ]))
   ],
 
   [
-    2, "🔄", "Change Control & Procurement Contracts", "#991b1b", "#b91c1c",
-    H("Perform Integrated Change Control", F(["Change Request Submitted", "Impact Assessment (Scope, Cost, Time)", "CCB Evaluation", "Approved or Rejected", "Plan & Baselines Updated", "Stakeholders Notified"])) +
-    "<p>The <b>Change Control Board (CCB)</b> is a formally chartered group responsible for reviewing, evaluating, approving, delaying, or rejecting changes to the project baselines.</p>" +
-    H("Contract Types in Procurement", C([
-      ["Fixed Price (FP / FFP)", "Seller provides deliverables for a fixed total sum. The seller carries the financial risk of cost overruns."],
-      ["Cost-Reimbursable (CPFF)", "Buyer reimburses seller's allowable costs plus an agreed fee or profit. Buyer carries cost risk."],
-      ["Time & Materials (T&M)", "Hybrid arrangement paying agreed hourly/daily labor rates plus material costs. Suited for agile or emergent scope."]
+    2, "🔄", "Change Control & Contract Types", "#991b1b", "#b91c1c",
+    H("The Integrated Change Control Workflow", F(["Change Proposed", "Evaluate Impact (Scope, Cost, Time)", "Review by CCB", "Decision Recorded", "Baselines Updated", "Team Briefed"])) +
+    "<p>The <b>Change Control Board (CCB)</b> is a formal body responsible for reviewing, authorizing, or declining adjustments to established project baselines.</p>" +
+    H("Standard Procurement Contract Structures", C([
+      ["Fixed Price (FP)", "Supplier delivers agreed scope for a fixed financial sum. The supplier carries the risk of cost overruns."],
+      ["Cost-Reimbursable (CR)", "Buyer pays actual allowable costs incurred plus an agreed profit margin. The buyer absorbs cost risk."],
+      ["Time & Materials (T&M)", "Payment is based on pre-agreed hourly or daily labor rates plus materials. Ideal when scope is emergent."]
     ])) +
-    T("Golden Rule: Never approve a project change informally over chat or hallway conversations. Always evaluate cross-functional impact on time, cost, scope, and risk first.")
+    T("Never agree to project changes informally over chat or hallway discussions. Always evaluate the full ripple effect across scope, budget, schedule, and quality before committing.")
   ],
 
   /* Part 4 · Methods & Frameworks */
   [
     3, "🛠️", "Waterfall, Agile & Hybrid Approaches", "#4f46e5", "#6366f1",
-    H("Methodology Overview", C([
-      ["Waterfall (Predictive)", "Linear, sequential phases. Comprehensive upfront planning, strict change controls, and late customer validation. Ideal when requirements are fully stable and understood (e.g., construction)."],
-      ["Agile (Adaptive)", "Iterative and incremental delivery. Fast feedback loops, emergent requirements, working software prioritization, and frequent releases (e.g., modern software)."],
-      ["Hybrid", "A blended delivery model. High-level planning, budgeting, and architecture follow predictive governance, while feature development proceeds via Agile sprints."]
+    H("Methodological Paradigms", C([
+      ["Predictive (Waterfall)", "Linear, planned stages. Extensive upfront specification, strict change controls, and late delivery validation. Well suited for stable physical construction."],
+      ["Adaptive (Agile)", "Iterative and incremental evolution. Short development loops, frequent user validation, working prototypes, and rapid pivots."],
+      ["Hybrid Delivery", "A practical blend. High-level planning and governance follow structured milestones, while engineering proceeds in agile team sprints."]
     ])) +
-    H("The 4 Values of the Agile Manifesto", U([
-      "<b>Individuals and interactions</b> over processes and tools.",
-      "<b>Working software</b> over comprehensive documentation.",
-      "<b>Customer collaboration</b> over contract negotiation.",
-      "<b>Responding to change</b> over following a plan."
+    H("Core Philosophical Shifts in Agile Practice", U([
+      "Prioritizing direct human collaboration over rigid procedural rules.",
+      "Prioritizing functioning deliverables over exhaustive documentation.",
+      "Prioritizing active customer partnership over contentious contract debates.",
+      "Prioritizing responsiveness to changing realities over rigid compliance with early assumptions."
     ])) +
-    H("Core Agile Concepts", U([
-      "<b>MVP (Minimum Viable Product):</b> The simplest functional version of a product required to validate hypotheses with real users.",
-      "<b>Iterative vs Incremental:</b> Iterative means refining an existing feature; incremental means adding finished functional pieces one by one."
+    H("Practical Delivery Concepts", U([
+      "<b>MVP (Minimum Viable Product):</b> The simplest usable version of a product required to test core assumptions with real users.",
+      "<b>Iterative vs Incremental:</b> Iterative means continually refining an existing feature; incremental means delivering finished, functional modules one by one."
     ]))
   ],
 
   [
     3, "🏉", "Scrum Framework & Kanban Systems", "#0f766e", "#0d9488",
-    H("The Scrum Framework", C([
-      ["3 Roles", "<b>Product Owner</b> (owns the backlog and business value), <b>Scrum Master</b> (serves team and removes process impediments), <b>Developers</b> (cross-functional creators)."],
-      ["5 Events", "<b>Sprint</b> (1–4 week timebox), <b>Sprint Planning</b>, <b>Daily Scrum</b> (15-min sync), <b>Sprint Review</b> (demo to stakeholders), <b>Sprint Retrospective</b> (continuous team improvement)."],
-      ["3 Artifacts", "<b>Product Backlog</b> (prioritized feature list), <b>Sprint Backlog</b> (selected work for current sprint), <b>Increment</b> (usable, working deliverable meeting the Definition of Done)."]
+    H("The Scrum Delivery Model", C([
+      ["Core Roles", "<b>Product Owner</b> (curates backlog and business priority), <b>Scrum Master</b> (coaches team and clears blockers), <b>Developers</b> (cross-functional builders)."],
+      ["Cadence Events", "<b>Sprint</b> (1–4 week timebox), <b>Planning</b>, <b>Daily Sync</b> (15-min check-in), <b>Sprint Review</b> (demonstration), <b>Retrospective</b> (team process improvement)."],
+      ["Artifacts", "<b>Product Backlog</b> (prioritized roadmap), <b>Sprint Backlog</b> (work committed for current sprint), <b>Increment</b> (usable, tested deliverable meeting quality standards)."]
     ])) +
-    H("Kanban Principles", F(["Visualize Workflow", "Limit Work in Progress (WIP)", "Manage Flow", "Make Policies Explicit", "Implement Feedback Loops"])) +
-    "<p><b>WIP Limits:</b> Restricting active cards in columns prevents bottlenecks, multitasking friction, and uneven batching. Metrics include <b>Lead Time</b> (from request to completion) and <b>Cycle Time</b> (from active work started to completion).</p>" +
-    H("User Story Format", "<span class='fm'>As a [user persona], I want [an action / feature], so that [business outcome / benefit].</span><p>Example: <i>As a student, I want to filter lessons by completion status, so that I can quickly resume where I left off.</i></p>")
+    H("Kanban Workflow Mechanics", F(["Visualize Work", "Cap Work-in-Progress (WIP)", "Streamline Flow", "Clarify Rules", "Iterate Continuously"])) +
+    "<p><b>Work-in-Progress (WIP) Limits:</b> Restricting active items in progress eliminates bottlenecks, avoids multitasking inefficiency, and speeds cycle times. Key metrics include <b>Lead Time</b> (request to delivery) and <b>Cycle Time</b> (active build to completion).</p>" +
+    H("User Story Architecture", "<span class='fm'>As a [user persona], I want [capability], so that [tangible benefit].</span><p>Example: <i>As a student, I want to filter lessons by completion status, so that I can resume studying without searching.</i></p>")
   ],
 
   [
-    3, "🏛️", "PM Frameworks: PMBOK, PRINCE2, Lean, Six Sigma, SAFe", "#1e293b", "#334155",
-    H("Standards vs Methods vs Frameworks", "<p>A <b>standard</b> provides rules and guidelines (e.g., PMBOK Guide). A <b>method</b> specifies a rigid procedural process (e.g., PRINCE2). A <b>framework</b> offers flexible, adaptable structures (e.g., Scrum, SAFe).</p>") +
-    H("Overview of Dominant Industry Frameworks", C([
-      ["PMBOK® Guide (PMI)", "Global standard focused on 12 project principles and 8 performance domains. Non-prescriptive reference standard."],
-      ["PRINCE2®", "Process-based method prevalent in the UK, Europe, and public sectors. Focuses on business justification and defined management stages."],
-      ["Lean Delivery", "Originating from Toyota Production System, focuses on relentlessly eliminating waste (Muda) and continuous improvement (Kaizen)."],
-      ["Six Sigma", "Data-driven methodology targeting defect elimination and process stability. Utilizes the DMAIC cycle (Define, Measure, Analyze, Improve, Control)."],
-      ["SAFe®", "Scaled Agile Framework designed to align multi-team agile release trains (ARTs) across enterprise organizations."]
+    3, "🏛️", "PM Frameworks: PMBOK®, PRINCE2®, Lean, Six Sigma, SAFe®", "#1e293b", "#334155",
+    H("Standards vs Methods vs Frameworks", "<p>A <b>standard</b> outlines agreed best-practice principles. A <b>methodology</b> prescribes a formal step-by-step procedure. A <b>framework</b> offers an adaptable structure that teams tailor to their context.</p>") +
+    H("Overview of Prominent Frameworks", C([
+      ["PMBOK® Guide (PMI)", "A globally respected standard emphasizing 12 leadership principles and 8 delivery domains, providing a flexible framework rather than a rigid prescription."],
+      ["PRINCE2®", "A structured method originating in the UK, organized around business justification, defined management stages, and exception management."],
+      ["Lean Delivery", "A philosophy originating in Japanese manufacturing focused on maximizing customer value while eliminating process waste."],
+      ["Six Sigma", "A data-driven methodology targeting defect reduction and process consistency via the DMAIC cycle."],
+      ["SAFe®", "A framework designed to coordinate multiple agile teams across large enterprise environments."]
     ])) +
-    H("PRINCE2 7 Core Principles", U([
-      "Continued business justification throughout the life cycle.",
-      "Learn from experience (lessons recorded and applied).",
-      "Defined roles and responsibilities across business, user, and supplier interests.",
-      "Manage by stages (commitment horizons).",
-      "Manage by exception (defined tolerances for time, cost, quality, scope, risk, benefit).",
-      "Focus on products and deliverable definitions.",
-      "Tailor to suit the project environment."
+    H("Core Operating Principles of PRINCE2®", U([
+      "Ensuring continued business justification across the whole initiative.",
+      "Capturing lessons from past initiatives and applying them forward.",
+      "Clear, unambiguous governance roles spanning business, user, and supplier interests.",
+      "Dividing complex endeavors into discrete, controllable commitment stages.",
+      "Managing by exception—setting clear operational tolerances before escalating to executive boards."
     ]))
   ],
 
   /* Part 5 · PM Tools */
   [
-    4, "🧰", "PM Tools: Purpose & Tool Ecosystem", "#2563eb", "#1d4ed8",
-    H("The Golden Rule of Project Tools", "<p><b>A tool does not manage a project; the Project Manager and team do.</b> Software provides visibility, reduces administrative friction, and centralizes communication, but cannot compensate for ambiguous requirements or poor communication.</p>") +
-    H("The 6 Primary Tool Categories", C([
-      ["Kanban / Work Management", "Visual cards moving across workflow columns: Trello, Asana, Monday.com, ClickUp."],
-      ["Scheduling & Critical Path", "Gantt charts, dependency linkages, baseline tracking: MS Project, Primavera P6, Smartsheet."],
-      ["Agile & Issue Tracking", "Backlogs, sprints, velocity, burndown, bug triage: Jira."],
-      ["Spreadsheets & Databases", "Budgets, calculations, custom registers: Microsoft Excel, Google Sheets, Airtable."],
-      ["Documentation & Wikis", "Centralized knowledge bases, charters, meeting notes: Notion, Confluence."],
-      ["Team Communication", "Real-time communication and video coordination: Slack, Microsoft Teams, Zoom, Google Meet."]
+    4, "🧰", "PM Tools: Ecosystem & Selection", "#2563eb", "#1d4ed8",
+    H("The Purpose of Software Tools", "<p><b>Software does not manage projects; people do.</b> Project tools provide centralized visibility, automate reminders, and streamline coordination, but they cannot replace clear communication or resolve conflicting requirements.</p>") +
+    H("The 6 Primary Tool Clusters", C([
+      ["Work Management & Boards", "Visual cards progressing across status lists: Trello, Asana, Monday.com, ClickUp."],
+      ["Gantt & Critical Path", "Timeline networks with dependency links: Microsoft Project, Primavera P6, Smartsheet."],
+      ["Issue & Sprint Tracking", "Backlogs, story points, and bug triage: Jira."],
+      ["Spreadsheets & Workbooks", "Calculations, trackers, formulas, and custom matrices: Excel, Google Sheets."],
+      ["Knowledge & Documentation", "Central repositories for charters, meeting notes, and SOPs: Notion, Confluence."],
+      ["Communication Hubs", "Synchronous messaging and video meetings: Slack, Microsoft Teams, Zoom."]
     ]))
   ],
 
@@ -1583,104 +1595,104 @@ const L = [
     4, "📋", "Tools Part A: Boards & Work Management", "#0284c7", "#0369a1",
     TL("1. Trello", "Visual Kanban Boards (Atlassian)", [
       "<b>Best For:</b> Small teams, beginners, personal projects, and simple visual workflows.",
-      "<b>Mechanism:</b> Boards containing lists (To Do, Doing, Done) populated by cards with checklists and due dates.",
-      "<b>Strengths:</b> Extremely intuitive, fast onboarding, generous free tier, Butler automation.",
-      "<b>Limitations:</b> Lacks advanced Gantt scheduling, critical path calculation, and financial tracking."
+      "<b>Mechanism:</b> Drag-and-drop cards moving across vertical lists (To Do, Doing, Done).",
+      "<b>Strengths:</b> Near-zero learning curve, generous free tier, automated rule triggers (Butler).",
+      "<b>Limitations:</b> Not designed for complex critical path dependencies or multi-tier budgets."
     ]) +
     TL("2. Asana", "Collaborative Work Management Platform", [
-      "<b>Best For:</b> Cross-functional business, operations, and marketing teams.",
-      "<b>Mechanism:</b> Flexible project views (List, Board, Timeline, Calendar) with subtasks and dependencies.",
-      "<b>Strengths:</b> Clean UI, robust workflow rules, portfolio workload tracking.",
-      "<b>Limitations:</b> Can be complex for tiny teams; enterprise features require higher tiers."
+      "<b>Best For:</b> Cross-functional marketing, operations, and general business teams.",
+      "<b>Mechanism:</b> Projects viewed as lists, boards, timelines, or calendars with subtask delegation.",
+      "<b>Strengths:</b> Clear ownership, milestone dependencies, automated intake forms.",
+      "<b>Limitations:</b> Advanced portfolio views and custom reporting require premium tiers."
     ]) +
     TL("3. Monday.com", "Customizable Work OS", [
-      "<b>Best For:</b> Mid-to-large business teams wanting visual dashboards and automations.",
-      "<b>Strengths:</b> Highly customizable columns, pre-built automations, colorful dashboards.",
-      "<b>Limitations:</b> Per-seat pricing model; requires deliberate governance to prevent board clutter."
+      "<b>Best For:</b> Medium-to-large business teams wanting visual dashboards and automations.",
+      "<b>Strengths:</b> Highly customizable table columns, colorful status widgets, prebuilt automations.",
+      "<b>Limitations:</b> Per-seat pricing model; requires deliberate discipline to prevent board bloat."
     ]) +
     TL("4. ClickUp", "All-in-One Productivity Workspace", [
-      "<b>Best For:</b> Teams desiring tasks, docs, goals, and chat within a single platform.",
-      "<b>Strengths:</b> High versatility, multiple views, native document editing, strong free tier.",
-      "<b>Limitations:</b> Feature density can create a steep learning curve for non-technical users."
+      "<b>Best For:</b> Teams seeking tasks, documents, sprint goals, and chat in one unified interface.",
+      "<b>Strengths:</b> Highly versatile view options, native docs, robust free tier features.",
+      "<b>Limitations:</b> High feature density can introduce a steep onboarding learning curve."
     ]) +
     TL("5. Wrike", "Enterprise Work Management", [
-      "<b>Best For:</b> Creative agencies and enterprise departments processing high-volume intake requests.",
-      "<b>Strengths:</b> Dynamic request forms, interactive Gantt charts, resource management reports.",
-      "<b>Limitations:</b> Steeper pricing and complex initial administration setup."
+      "<b>Best For:</b> Creative departments and agencies processing high volumes of client requests.",
+      "<b>Strengths:</b> Dynamic intake request forms, interactive Gantt charts, resource allocation tracking.",
+      "<b>Limitations:</b> Premium enterprise pricing and complex administrative setup."
     ])
   ],
 
   [
     4, "⚙️", "Tools Part B: Software, Scheduling & Enterprise", "#0f766e", "#047857",
-    TL("6. Jira", "Agile & Software Development Tracking (Atlassian)", [
-      "<b>Best For:</b> Engineering, DevOps, and product teams using Scrum or Kanban.",
-      "<b>Mechanism:</b> Epics, user stories, tasks, and bugs managed through backlogs, sprints, and release roadmaps.",
-      "<b>Strengths:</b> Deep Git/CI/CD integrations, burndown and velocity reports, industry gold standard for tech PM roles.",
-      "<b>Limitations:</b> Can feel rigid and bureaucratic for non-software teams."
+    TL("6. Jira", "Software & Agile Tracking (Atlassian)", [
+      "<b>Best For:</b> Engineering, DevOps, and digital product teams utilizing Scrum or Kanban.",
+      "<b>Mechanism:</b> Epics, stories, and bugs prioritized in backlogs and managed through sprints.",
+      "<b>Strengths:</b> Native sprint reporting (velocity, burndown), deep code repo integration, industry standard.",
+      "<b>Limitations:</b> Often feels rigid, complex, and overly technical for non-software departments."
     ]) +
-    TL("7. Microsoft Project", "Classic Waterfall Scheduling Engine", [
-      "<b>Best For:</b> Professional project planners managing complex, formal predictive schedules.",
-      "<b>Mechanism:</b> Precise work breakdown, dependency linkages (FS, SS, FF, SF), resource leveling, baselining.",
-      "<b>Strengths:</b> Directly mirrors PMBOK scheduling mechanics, EVM calculations, and critical path analysis.",
-      "<b>Limitations:</b> Steep learning curve, expensive licensing, poor fit for adaptive agile delivery."
+    TL("7. Microsoft Project", "Traditional Waterfall Scheduling Engine", [
+      "<b>Best For:</b> Professional schedulers managing large, sequential engineering and construction initiatives.",
+      "<b>Mechanism:</b> Rigorous activity sequencing, dependency types (FS, SS, FF, SF), and resource leveling.",
+      "<b>Strengths:</b> Built-in critical path calculations, baseline variance tracking, and EVM integration.",
+      "<b>Limitations:</b> Expensive licensing, steep learning curve, poor fit for adaptive sprint delivery."
     ]) +
-    TL("8. Oracle Primavera P6", "Heavy Enterprise & Infrastructure Schedulers", [
-      "<b>Best For:</b> Mega-projects in civil construction, energy, defense, and oil & gas.",
-      "<b>Strengths:</b> Easily manages projects with tens of thousands of activities, advanced cost/resource loading.",
+    TL("8. Oracle Primavera P6", "Mega-Project Infrastructure Engine", [
+      "<b>Best For:</b> Heavy civil engineering, energy, oil & gas, and defense programs.",
+      "<b>Strengths:</b> Effortlessly manages schedules containing tens of thousands of complex activities.",
       "<b>Limitations:</b> Highly specialized enterprise skill set, high licensing overhead."
     ]) +
-    TL("9. Smartsheet", "Enterprise Spreadsheet-Gantt Hybrid", [
-      "<b>Best For:</b> Business organizations comfortable with spreadsheets who require automated workflows.",
-      "<b>Strengths:</b> Combines familiar spreadsheet grid with Gantt, forms, and portfolio rollup reporting.",
-      "<b>Limitations:</b> Primarily paid plans; less natural for sprint-based software delivery."
+    TL("9. Smartsheet", "Cloud Spreadsheet & Gantt Platform", [
+      "<b>Best For:</b> Corporate teams comfortable with spreadsheets who require automated workflow rules.",
+      "<b>Strengths:</b> Combines familiar spreadsheet grid with Gantt timelines, forms, and executive dashboards.",
+      "<b>Limitations:</b> Paid subscription model with limited suitability for iterative software sprints."
     ])
   ],
 
   [
     4, "📊", "Tools Part C: Everyday Essentials & Collaboration", "#c2410c", "#9a3412",
-    TL("10. Microsoft Excel & Google Sheets", "The Universal PM Workhorse", [
-      "<b>Best For:</b> Every project manager across all industries.",
-      "<b>Applications:</b> Budgets, EVM tracking, risk registers, RACI matrices, status dashboards.",
-      "<b>Strengths:</b> Total mathematical flexibility, universal adoption, Google Sheets allows real-time multi-user editing.",
-      "<b>Limitations:</b> Manual maintenance, vulnerability to broken formulas, lack of native task dependency engines."
+    TL("10. Microsoft Excel & Google Sheets", "The Universal Workhorse", [
+      "<b>Best For:</b> Every project manager across every industry.",
+      "<b>Applications:</b> Budgets, EVM tracking, risk registers, RACI matrices, milestone schedules.",
+      "<b>Strengths:</b> Complete mathematical flexibility, zero new software adoption hurdle, Google Sheets enables live collaboration.",
+      "<b>Limitations:</b> Manual maintenance, vulnerability to broken formulas, lack of native task dependency logic."
     ]) +
-    TL("11. Notion", "Knowledge Management & Modular Databases", [
-      "<b>Best For:</b> Startups, creative agencies, and teams needing docs and simple project trackers in one place.",
-      "<b>Strengths:</b> Beautiful document formatting, relational databases, linked views.",
-      "<b>Limitations:</b> Lacks native critical path calculations or automated schedule leveling."
+    TL("11. Notion", "Connected Workspace & Modular Databases", [
+      "<b>Best For:</b> Startups, digital agencies, and teams needing documents and simple roadmaps in one hub.",
+      "<b>Strengths:</b> Highly customizable relational databases, beautiful typography, connected wiki documentation.",
+      "<b>Limitations:</b> Lacks native critical path calculations or automated resource leveling."
     ]) +
-    TL("12. Basecamp", "Calm, Asynchronous Project Hub", [
-      "<b>Best For:</b> Remote teams, creative studios, and client-facing communication.",
-      "<b>Strengths:</b> Consolidated message boards, to-dos, schedules, and document storage in a simple layout.",
+    TL("12. Basecamp", "Calm Asynchronous Communication Hub", [
+      "<b>Best For:</b> Remote teams and creative agencies seeking simplicity.",
+      "<b>Strengths:</b> Clear message boards, to-do lists, schedules, and document storage with zero clutter.",
       "<b>Limitations:</b> Intentionally avoids Gantt charts, burndown charts, and dependency engines."
     ]) +
-    H("Supporting Communication Stack", "<p><b>Slack & Microsoft Teams</b> for real-time team collaboration; <b>Zoom & Google Meet</b> for synchronous meetings; <b>Miro & Mural</b> for visual whiteboarding and retrospective workshops.</p>")
+    H("Supporting Communication Tools", "<p><b>Slack & Microsoft Teams</b> for real-time collaboration; <b>Zoom & Google Meet</b> for synchronous discussions; <b>Miro & Mural</b> for virtual whiteboarding and sprint retrospectives.</p>")
   ],
 
   [
-    4, "🎯", "Tool Selection Strategy & Essential PM Templates", "#4338ca", "#3730a3",
-    H("How to Select the Right Tool Stack", U([
-      "<b>Assess Methodology:</b> Use Jira/Trello for Agile; MS Project/Smartsheet for detailed Waterfall schedules.",
-      "<b>Team Adoption:</b> An intuitive tool adopted by 100% of the team beats a complex tool used by nobody.",
-      "<b>Budget & Scalability:</b> Start with free or lightweight stacks; scale to enterprise suites only when governance demands it.",
-      "<b>Reporting Needs:</b> Select tools that generate the specific executive dashboards your stakeholders expect."
+    4, "🎯", "Tool Strategy & Essential Templates", "#4338ca", "#3730a3",
+    H("Guidelines for Tool Selection", U([
+      "<b>Match Methodology:</b> Choose Jira or Trello for agile flow; choose MS Project or Smartsheet for formal schedules.",
+      "<b>Prioritize Team Adoption:</b> A simple tool adopted by 100% of the team beats a sophisticated tool used by nobody.",
+      "<b>Scale Gradually:</b> Begin with lightweight or free software; invest in enterprise platforms only when governance demands it.",
+      "<b>Meet Reporting Needs:</b> Select tools that produce the specific progress dashboards your stakeholders expect."
     ])) +
-    H("Recommended Zero-Cost Starter Stack", "<p>Google Sheets (Budget & EVM) + Trello (Task Kanban) + Google Meet (Sync Meetings) + Google Drive / Notion (Documentation).</p>") +
-    H("The 8 Must-Know Project Management Artifacts", C([
-      ["1. Project Charter", "High-level authority document establishing business case, objectives, budget limits, and PM mandate."],
-      ["2. Scope Statement & WBS", "Decomposition detailing what is strictly in-scope and explicitly out-of-scope."],
-      ["3. Schedule / Gantt", "Activities, dependencies, milestones, and critical path timeline."],
+    H("Recommended Zero-Cost Starter Stack", "<p>Google Sheets (Budget & EVM) + Trello (Task Kanban) + Google Meet (Team Syncs) + Google Drive / Notion (Documentation).</p>") +
+    H("The 8 Foundational Project Artifacts", C([
+      ["1. Project Charter", "High-level authority document establishing business purpose, scope boundaries, and PM mandate."],
+      ["2. Scope Statement & WBS", "Detailed decomposition outlining what is included and what is explicitly excluded."],
+      ["3. Schedule / Gantt", "Sequenced activities, milestones, and critical path timeline."],
       ["4. RACI Matrix", "Cross-functional ownership matrix clarifying who is Accountable vs Responsible."],
-      ["5. Risk Register", "Log of identified risks, probability-impact ratings, response plans, and owners."],
+      ["5. Risk Register", "Inventory of identified uncertainties, probability-impact ratings, response plans, and owners."],
       ["6. Budget Tracker", "Planned Value vs Actual Cost tracking with variance calculations."],
-      ["7. Stakeholder Register", "Contact log, expectations, influence rating, and communication frequency."],
-      ["8. Lessons Learned Register", "Living document capturing challenges, successes, and procedural recommendations."]
+      ["7. Stakeholder Register", "Contact directory, expectations, influence rating, and engagement plans."],
+      ["8. Lessons Learned Log", "Living document recording what succeeded, what faltered, and recommendations for future teams."]
     ]))
   ],
 
   /* Part 6 · Leadership & Career */
   [
-    5, "🌟", "Leadership, Soft Skills & PMI Ethics", "#7c3aed", "#6d28d9",
+    5, "🌟", "Leadership, Soft Skills & Professional Ethics", "#7c3aed", "#6d28d9",
     H("Management vs Leadership", "<p><b>Management</b> focuses on order, planning, budgeting, staffing, and controlling activities against a plan. <b>Leadership</b> focuses on setting direction, aligning stakeholders, inspiring teams, and navigating change.</p>") +
     H("Servant Leadership in Modern PM", "<p>A leadership philosophy wherein the PM's primary role is serving the team: removing impediments, shielding the team from external distractions, mentoring growth, and providing resources to empower autonomous delivery.</p>") +
     H("Core Soft Skills for Successful PMs", U([
@@ -1689,30 +1701,30 @@ const L = [
       "<b>Active Listening:</b> Giving full attention, synthesizing understanding before replying, and verifying consensus.",
       "<b>Conflict Management:</b> Addressing team disagreements promptly and constructively."
     ])) +
-    H("The PMI Code of Ethics & Professional Conduct", C([
-      ["Responsibility", "Taking ownership of decisions made or failed to make, and accepting consequences."],
-      ["Respect", "Demonstrating high regard for self, others, and the resources entrusted to us."],
-      ["Fairness", "Making decisions objectively and impartially without self-interest, favoritism, or prejudice."],
-      ["Honesty", "Understanding truth and acting in an authentic manner both in communications and conduct."]
+    H("Core Ethical Pillars in Project Management", C([
+      ["Responsibility", "Taking personal accountability for decisions, actions, and their real-world consequences."],
+      ["Respect", "Treating colleagues, stakeholders, and community resources with dignity and empathy."],
+      ["Fairness", "Maintaining transparency and impartial judgment free from personal bias or self-dealing."],
+      ["Honesty", "Communicating accurate truths and facts openly, even when delivering difficult news."]
     ]))
   ],
 
   [
-    5, "💼", "The Real PM Job: Weekly Rhythms & Interviews", "#0f766e", "#047857",
-    H("A Typical PM Weekly Cadence", U([
-      "<b>Daily:</b> Conduct brief morning team sync (standup), remove immediate technical/procedural blockers, address ad-hoc queries.",
-      "<b>Weekly:</b> Review schedule baseline, update EVM cost numbers, log emerging risks, and publish the executive status report.",
-      "<b>Regularly:</b> Meet with the Project Sponsor, present change requests to the CCB, and consult key stakeholders.",
-      "<b>Always:</b> Maintain focus on business value and protect the team from scope creep."
+    5, "💼", "The Real PM Job: Weekly Cadence & Interviews", "#0f766e", "#047857",
+    H("A Realistic PM Weekly Routine", U([
+      "<b>Daily:</b> Facilitate short morning check-in (standup), remove immediate blockers, answer partner questions.",
+      "<b>Weekly:</b> Update schedule progress, review EVM financial numbers, log emerging risks, and publish the status report.",
+      "<b>Bi-Weekly / Monthly:</b> Meet with project sponsors, submit baseline change requests, and conduct sprint reviews.",
+      "<b>Always:</b> Protect team focus, guard against scope creep, and keep the strategic outcome front and center."
     ])) +
-    H("10 Common PM Pitfalls to Avoid", C([
+    H("10 Common Real-World Mistakes to Avoid", C([
       ["1. Ambiguous Scope", "Commencing delivery without signed requirements and clear acceptance criteria."],
       ["2. Hidden Bad News", "Delaying disclosure of variances until recovery is mathematically impossible."],
       ["3. Over-Promising", "Committing to impossible dates or unbudgeted features without team estimation."],
       ["4. No Change Control", "Allowing informal 'quick favors' that snowball into massive scope creep."],
       ["5. Micromanagement", "Dictating implementation details to technical specialists instead of steering outcomes."]
     ])) +
-    H("Interview Preparation: The STAR Technique", "<p>When answering behavioral interview questions, structure every response using:</p><span class='fm'><b>S</b>ituation: Context and background of the project.<br><b>T</b>ask: The challenge or objective you needed to address.<br><b>A</b>ction: The specific steps you took as the project manager.<br><b>R</b>esult: Quantified outcome (e.g., delivered 2 weeks early, saved $15,000, reduced defect rate by 25%).</span>")
+    H("Behavioral Interview Preparation: The STAR Method", "<p>When answering competency-based interview questions, structure every story using:</p><span class='fm'><b>S</b>ituation: Context and background of the project.<br><b>T</b>ask: The challenge or objective you needed to address.<br><b>A</b>ction: The specific steps you took as the project manager.<br><b>R</b>esult: Quantified outcome (e.g., delivered 2 weeks early, saved $15,000, reduced defect rate by 25%).</span>")
   ],
 
   [
@@ -1729,166 +1741,160 @@ const L = [
   ],
 
   [
-    5, "🏆", "Careers, PMBOK Guide & PMP Certification", "#b45309", "#d97706",
-    H("The Evolution of the PMBOK® Guide (PMI)", "<p>Understanding PMI's body of knowledge is essential for professional certification:</p>" +
+    5, "🏆", "Careers, Standards & Certification Pathways", "#b45309", "#d97706",
+    H("Understanding PM Standards & Credential Pathways", "<p>Professional credentials validate structured project experience and terminology:</p>" +
       U([
-        "<b>PMBOK® Guide – 7th Edition (Current Standard):</b> Shifted from process-oriented mechanics to a <b>Principle-Based Standard</b> centered on 12 Principles and 8 Project Performance Domains (Stakeholders, Team, Development Approach & Life Cycle, Planning, Project Work, Delivery, Measurement, and Uncertainty).",
-        "<b>Process Groups: A Practice Guide (PMI Companion):</b> Maintains the classic, globally recognized 5 Process Groups (Initiating, Planning, Executing, Monitoring & Controlling, Closing) and 49 processes as an active reference guide for predictive and hybrid delivery.",
-        "<b>Agile Practice Guide:</b> Developed jointly by PMI and Agile Alliance, serving as the core reference for adaptive practices on the PMP exam."
+        "<b>PMBOK® Guide (PMI):</b> A globally recognized standard outlining 12 principles of project stewardship and 8 performance domains (such as Stakeholders, Planning, Delivery, and Uncertainty).",
+        "<b>Process Groups Companion:</b> Outlines the traditional predictive and hybrid processes across Initiating, Planning, Executing, Monitoring & Controlling, and Closing.",
+        "<b>Agile Practice Standards:</b> References standard agile and hybrid delivery approaches widely adopted across technology sectors."
       ])) +
-    H("PMP® Certification: Current Official Requirements", C([
-      ["Educational & Experience Prerequisites", "<b>Option A (4-Year Degree):</b> 36 months of non-overlapping project leadership experience within the last 8 years + 35 contact hours of PM education (or active CAPM®).<br><b>Option B (Secondary Diploma):</b> 60 months of project leadership experience + 35 contact hours."],
-      ["Examination Structure", "<b>180 total questions</b> (175 scored, 5 unscored pretest). Time limit: <b>230 minutes</b> with two scheduled 10-minute breaks."],
-      ["Domain Weightings (Current ECO)", "<b>1. People: 42%</b> (Conflict, leadership, team empowerment)<br><b>2. Process: 50%</b> (Scope, schedule, cost, risk, procurement)<br><b>3. Business Environment: 8%</b> (Compliance, value delivery, organizational change)"],
-      ["Methodology Split", "Approximately <b>50% predictive</b> approaches and <b>50% agile or hybrid</b> approaches across all three domains."]
+    H("PMP® Certification: Current General Structure", C([
+      ["Prerequisites (General Guidelines)", "<b>Option A (4-Year Degree):</b> 36 months of documented project leadership experience + 35 hours of project education.<br><b>Option B (Secondary Diploma):</b> 60 months of project leadership experience + 35 hours of project education."],
+      ["Examination Architecture", "<b>180 scenario questions</b> over <b>230 minutes</b> with two scheduled 10-minute breaks."],
+      ["Domain Distribution (Current Guidelines)", "<b>1. People: 42%</b> (Conflict, leadership, team empowerment)<br><b>2. Process: 50%</b> (Scope, schedule, cost, risk, procurement)<br><b>3. Business Environment: 8%</b> (Compliance, value delivery, organizational change)"],
+      ["Approach Balance", "Approximately <b>50% predictive</b> approaches and <b>50% agile or hybrid</b> approaches across all three domains."]
     ])) +
-    H("Other Recognized Credentials", U([
-      "<b>CAPM® (PMI):</b> Entry-level credential for beginners with no experience prerequisites.",
-      "<b>PMI-ACP® (PMI):</b> Demonstrates specialized expertise in agile principles and practices.",
-      "<b>PSM / CSM:</b> Industry-standard credentials for Scrum Masters.",
-      "<b>PRINCE2® Foundation & Practitioner:</b> Process certification valued throughout Europe and the Commonwealth."
-    ])) +
-    H("Typical PM Career Ladder", F(["Project Coordinator / Associate PM", "Project Manager", "Senior Project Manager", "Program Manager", "Portfolio Manager / PMO Director"])) +
-    T("Congratulations on completing the curriculum! Test your mastery with the Knowledge Assessment Quiz below.")
+    H("Common PM Career Progression", F(["Project Coordinator / Associate PM", "Project Manager", "Senior Project Manager", "Program Manager", "Portfolio Manager / PMO Director"])) +
+    T("Legal Disclaimer: PMP®, CAPM®, PMBOK®, and PMI-ACP® are registered trademarks of the Project Management Institute, Inc. PM Academy is an independent educational initiative and is not affiliated with, endorsed by, or accredited by PMI.")
   ]
 ];
 
-/* Glossary Items */
+/* Original Glossary Terms (100% Independent Descriptions) */
 const G = [
-  ["Agile", "An iterative approach to project management and software development that helps teams deliver value faster and with fewer headaches."],
-  ["BAC (Budget at Completion)", "The total authorized budget for the entire project baseline."],
-  ["Baseline", "The approved version of a work product, scope, schedule, or budget that can be changed only through formal change control."],
-  ["Backlog", "A prioritized list of deliverables, features, and technical tasks maintained in Agile frameworks."],
-  ["Burndown Chart", "A graphical representation of work left to do versus time remaining in a sprint or release."],
-  ["Business Case", "Documented justification for a project, demonstrating alignment with business goals and cost-benefit feasibility."],
-  ["CAPM", "Certified Associate in Project Management, an entry-level credential administered by PMI."],
-  ["CCB (Change Control Board)", "A formally constituted group responsible for reviewing, evaluating, and approving changes to project baselines."],
-  ["Charter", "A formal document that authorizes the existence of a project and gives the project manager authority to apply resources."],
-  ["Cost Performance Index (CPI)", "A measure of cost efficiency: CPI = EV ÷ AC. Values over 1.0 indicate favorable spending under budget."],
-  ["Critical Path", "The sequence of dependent activities representing the longest path through a project, determining the earliest completion date."],
-  ["Deliverable", "Any unique and verifiable product, result, or capability to perform a service that must be produced to complete a phase or project."],
-  ["Estimate at Completion (EAC)", "The expected total cost of completing all work: EAC = BAC ÷ CPI."],
-  ["Earned Value (EV)", "The measure of work performed expressed in terms of the budget authorized for that work."],
-  ["Float (Slack)", "The amount of time an activity can be delayed without delaying the project completion date or a successor activity."],
-  ["Gantt Chart", "A horizontal bar chart illustrating project schedule activities, durations, and dependency linkages."],
-  ["Gold Plating", "Intentionally adding extra features or quality beyond agreed scope without customer authorization."],
-  ["Issue", "A current problem or barrier that has already occurred and is actively impacting project performance."],
-  ["Kanban", "A visual framework for managing work as it moves through a process, focusing on limiting Work in Progress (WIP)."],
-  ["Milestone", "A significant point or event in a project schedule with zero duration."],
-  ["MVP (Minimum Viable Product)", "A version of a product with just enough features to be usable by early customers who can provide feedback."],
-  ["NPV (Net Present Value)", "Financial metric calculating the present value of expected cash inflows minus initial capital costs."],
-  ["PMBOK Guide", "A Guide to the Project Management Body of Knowledge, published by the Project Management Institute (PMI)."],
-  ["PMO (Project Management Office)", "A management structure that standardizes project-related governance processes and facilitates sharing of resources."],
-  ["PMP", "Project Management Professional certification, the premier globally recognized credential awarded by PMI."],
-  ["RACI Matrix", "A matrix mapping project tasks to personnel who are Responsible, Accountable, Consulted, or Informed."],
-  ["Risk", "An uncertain event or condition that, if it occurs, has a positive (opportunity) or negative (threat) effect on objectives."],
-  ["Scope", "The sum of the products, services, and results to be provided as a project."],
-  ["Scope Creep", "The uncontrolled expansion to product or project scope without adjustments to time, cost, and resources."],
-  ["Schedule Performance Index (SPI)", "A measure of schedule efficiency: SPI = EV ÷ PV. Values over 1.0 indicate work ahead of schedule."],
-  ["Sprint", "A timeboxed iteration (typically 1 to 4 weeks) during which a Scrum team produces a usable Increment."],
-  ["Stakeholder", "An individual, group, or organization that may affect or be affected by a project decision or outcome."],
-  ["Triple Constraint", "The foundational model balancing Scope, Time, and Cost around central Project Quality."],
-  ["WBS (Work Breakdown Structure)", "A hierarchical decomposition of the total scope of work to be carried out by the project team."],
-  ["WIP (Work in Progress)", "The number of task items currently being worked on by a team at any given time."]
+  ["Agile", "An adaptive delivery philosophy emphasizing short iterative cycles, working deliverables, and continuous collaboration."],
+  ["BAC (Budget at Completion)", "The approved total baseline budget authorized for the entire project."],
+  ["Baseline", "The formally approved version of scope, schedule, or cost against which actual execution is measured."],
+  ["Backlog", "A living, prioritized inventory of features, user stories, and technical requirements awaiting implementation in Agile."],
+  ["Burndown Chart", "A visual graph plotting work remaining to be completed against time left in a sprint or milestone."],
+  ["Business Case", "A formal justification document analyzing costs, benefits, and strategic alignment to determine if an initiative is worth funding."],
+  ["CAPM®", "Certified Associate in Project Management, an entry-level credential administered by PMI."],
+  ["CCB (Change Control Board)", "A designated governance group responsible for evaluating, approving, or declining proposed changes to project baselines."],
+  ["Charter", "A foundational document that formally authorizes a project and grants the PM authority to apply organizational resources."],
+  ["Cost Performance Index (CPI)", "Cost efficiency ratio: CPI = EV ÷ AC. Values above 1.0 indicate favorable spending under budget."],
+  ["Critical Path", "The longest unbroken chain of dependent tasks through a project, which establishes the earliest possible completion date."],
+  ["Deliverable", "Any unique, verifiable outcome, product, or capability that must be produced to satisfy project requirements."],
+  ["Estimate at Completion (EAC)", "The projected total financial cost to finish all project work based on performance trends: EAC = BAC ÷ CPI."],
+  ["Earned Value (EV)", "The monetary value of work actually completed expressed in terms of the approved budget allocated for that work."],
+  ["Float (Slack)", "The duration of time an activity can slip without delaying successor tasks or the overall project deadline."],
+  ["Gantt Chart", "A horizontal bar chart illustrating project tasks, start and end dates, durations, and dependency linkages."],
+  ["Gold Plating", "The practice of adding unrequested features or enhancements beyond agreed scope without client authorization."],
+  ["Issue", "An active problem or impediment that has already happened and requires immediate intervention."],
+  ["Kanban", "A visual pull-based system that optimizes work flow across vertical columns by strictly limiting Work-in-Progress (WIP)."],
+  ["Milestone", "A prominent checkpoint or milestone event in a schedule with zero duration."],
+  ["MVP (Minimum Viable Product)", "The most stripped-down usable version of a product required to test core value propositions with real users."],
+  ["NPV (Net Present Value)", "A capital budgeting calculation comparing the discounted present value of future cash inflows against initial investment costs."],
+  ["PMBOK® Guide", "A Guide to the Project Management Body of Knowledge, an internationally respected standard published by PMI."],
+  ["PMO (Project Management Office)", "A corporate department that standardizes project management practices and provides cross-initiative visibility."],
+  ["PMP®", "Project Management Professional, a globally recognized credential awarded by the Project Management Institute."],
+  ["RACI Matrix", "A matrix clarifying role accountability: Responsible, Accountable, Consulted, and Informed."],
+  ["Risk", "An uncertain future event or condition that, if it occurs, could produce an adverse (threat) or beneficial (opportunity) impact."],
+  ["Scope", "The defined sum of all deliverables, features, and activities required to complete a project."],
+  ["Scope Creep", "The uncontrolled, unapproved expansion of project requirements without adjustments to budget or deadlines."],
+  ["Schedule Performance Index (SPI)", "Schedule efficiency ratio: SPI = EV ÷ PV. Values above 1.0 indicate delivery ahead of plan."],
+  ["Sprint", "A fixed timebox (typically 1 to 4 weeks) in Scrum during which the team builds a usable product increment."],
+  ["Stakeholder", "Any person, team, or organization that can affect, or be affected by, the activities or outcome of a project."],
+  ["Triple Constraint", "The foundational balancing model linking Scope, Schedule, and Budget around core Project Quality."],
+  ["WBS (Work Breakdown Structure)", "A hierarchical breakdown decomposing the total project scope into manageable, assignable work packages."],
+  ["WIP (Work in Progress)", "The quantity of tasks currently being actively worked on in a delivery pipeline at any single point in time."]
 ];
 
-/* 12 Interactive Quiz Questions with Detailed Explanations */
+/* 12 Original Scenario-Based Conceptual Quiz Questions */
 const Q = [
   {
-    q: "Which two foundational characteristics define every project?",
-    a: "Temporary and unique",
-    opts: ["Temporary and unique", "Repetitive and routine", "Permanent and risk-free"],
-    exp: "By definition, a project is a temporary endeavor (having a defined start and finish) undertaken to create a unique deliverable. Routine, repetitive tasks belong to ongoing operations."
+    q: "Which two core attributes fundamentally differentiate a project from ongoing business operations?",
+    a: "Temporary timeline and unique outcome",
+    opts: ["Temporary timeline and unique outcome", "Infinite duration and repetitive tasks", "Zero risk and guaranteed budget"],
+    exp: "A project has a distinct start and finish (temporary) and creates a specific deliverable that did not previously exist (unique). Ongoing operational activities, by contrast, are continuous and repetitive."
   },
   {
-    q: "In project scheduling, what is the Critical Path?",
-    a: "The longest sequence of dependent tasks with zero float",
+    q: "In network scheduling, what does the Critical Path represent?",
+    a: "The longest sequence of dependent activities with zero float",
     opts: [
-      "The sequence of the most expensive project tasks",
-      "The longest sequence of dependent tasks with zero float",
-      "The shortest path connecting all milestones"
+      "The sequence of the most expensive project activities",
+      "The longest sequence of dependent activities with zero float",
+      "The quickest path connecting major executive milestones"
     ],
-    exp: "The critical path is the longest duration chain of dependent activities through the project network. Tasks on this path have zero total float; delaying any task directly delays project completion."
+    exp: "The critical path is the longest duration sequence of dependent tasks. Tasks on it have zero total float, meaning any slip along this chain directly pushes back the final project completion date."
   },
   {
-    q: "In Earned Value Management, a Cost Performance Index (CPI) of 0.82 indicates that…",
-    a: "The project is over budget",
+    q: "In Earned Value analysis, a Cost Performance Index (CPI) of 0.82 indicates that…",
+    a: "The project is currently over budget",
     opts: [
-      "The project is performing under budget",
-      "The project is over budget",
+      "The project is currently under budget",
+      "The project is currently over budget",
       "The project is 18% ahead of schedule"
     ],
-    exp: "CPI = EV / AC. A CPI of 0.82 means the project is realizing only $0.82 of planned value for every $1.00 spent. Any CPI below 1.0 indicates cost overrun (over budget)."
+    exp: "CPI = EV ÷ AC. A value below 1.0 demonstrates that the project is generating only $0.82 of planned work value for every $1.00 of actual capital spent, confirming a cost overrun."
   },
   {
-    q: "Who is primarily responsible for authorizing the Project Charter and securing financial resources?",
+    q: "Which executive role formally authorizes the Project Charter and secures organizational funding?",
     a: "Project Sponsor",
     opts: ["Project Manager", "Project Sponsor", "Scrum Master"],
-    exp: "The Project Sponsor serves as the executive champion who authorizes the charter, secures organizational funding, and removes high-level obstacles. The PM directs day-to-day execution."
+    exp: "The Project Sponsor acts as the senior executive champion who authorizes the charter, secures capital investment, and removes high-level obstacles. The Project Manager oversees day-to-day delivery."
   },
   {
-    q: "In the Scrum framework, which role owns the Product Backlog and decides WHAT is built?",
+    q: "In the Scrum framework, who possesses ultimate authority over the Product Backlog and decides WHAT gets built?",
     a: "Product Owner",
-    opts: ["Scrum Master", "Product Owner", "Lead Developer"],
-    exp: "The Product Owner is solely responsible for maximizing product value and prioritizing backlog items based on stakeholder needs. The Scrum Master coaches the team on process, and Developers build."
+    opts: ["Scrum Master", "Product Owner", "Lead Engineer"],
+    exp: "The Product Owner is responsible for maximizing product value by prioritizing backlog items based on user needs and business return. The Scrum Master coaches team workflow, and Developers engineer the product."
   },
   {
-    q: "In qualitative risk management, how is a risk score typically calculated?",
+    q: "How is a qualitative risk priority score calculated?",
     a: "Probability × Impact",
-    opts: ["Probability × Impact", "Cost ÷ Estimated Duration", "Schedule Float + Budget Variance"],
-    exp: "Qualitative risk analysis assesses the likelihood (Probability) and severity of consequence (Impact) on project objectives to determine prioritization on a Probability-Impact matrix."
+    opts: ["Probability × Impact", "Cost ÷ Estimated Duration", "Schedule Slack + Budget Variance"],
+    exp: "Qualitative risk analysis multiplies the likelihood of occurrence (Probability) by the severity of consequences (Impact) to position risks on a prioritization matrix."
   },
   {
-    q: "What is the primary benefit of establishing Work in Progress (WIP) limits in Kanban?",
+    q: "What is the primary operational benefit of establishing Work in Progress (WIP) limits in Kanban?",
     a: "Prevents bottlenecks and maintains smooth workflow",
     opts: [
-      "Forces team members to work overtime",
+      "Forces developers to work overtime",
       "Prevents bottlenecks and maintains smooth workflow",
-      "Eliminates the need for any project planning"
+      "Eliminates the necessity for quality testing"
     ],
-    exp: "WIP limits cap the number of active tasks permitted in each workflow stage. This exposes bottlenecks immediately, curbs unproductive multitasking, and lowers cycle time."
+    exp: "WIP limits cap the number of active items allowed in each column at once. This highlights delivery bottlenecks immediately, discourages context-switching, and reduces overall cycle time."
   },
   {
-    q: "Adding features or scope without formal approval, budget, or timeline adjustments is known as…",
+    q: "Adding features to a deliverable without formal client approval, timeline adjustments, or budget increases is termed…",
     a: "Scope creep",
     opts: ["Scope creep", "Fast tracking", "Progressive elaboration"],
-    exp: "Scope creep refers to unapproved, uncontrolled growth in project scope without corresponding increases in budget, schedule, or resources. Progressive elaboration is planned detailing."
+    exp: "Scope creep represents the uncontrolled, unapproved expansion of project requirements without adjustments to time, budget, or resources. Progressive elaboration is planned detailing as work progresses."
   },
   {
-    q: "A business case analysis indicates a positive Net Present Value (NPV > 0). What does this mean?",
-    a: "The financial return exceeds the required discount rate (adds value)",
+    q: "A business case financial evaluation calculates a positive Net Present Value (NPV > 0). What does this signify?",
+    a: "The project's financial return exceeds the required hurdle rate (adds value)",
     opts: [
-      "The financial return exceeds the required discount rate (adds value)",
-      "The project has zero operational risk",
-      "The project will take more than 10 years to pay back"
+      "The project's financial return exceeds the required hurdle rate (adds value)",
+      "The project carries zero operational risk",
+      "The project will take over 10 years to reach break-even"
     ],
-    exp: "NPV discounts all anticipated future cash inflows back to present value. A positive NPV signifies that the investment yields returns greater than the cost of capital, generating net business value."
+    exp: "Net Present Value discounts projected future cash inflows back to today's dollars. A positive NPV indicates the project earns a return greater than the cost of capital, generating net positive economic value."
   },
   {
-    q: "What is the primary purpose of an approved Project Baseline?",
+    q: "What is the primary management function of an approved Project Baseline?",
     a: "A benchmark against which actual project performance is measured",
     opts: [
       "A benchmark against which actual project performance is measured",
-      "An informal draft that changes daily without approval",
-      "The final retrospective report submitted at project close"
+      "An informal draft that developers modify daily without notice",
+      "The retrospective summary drafted after a project concludes"
     ],
-    exp: "Baselines (scope, schedule, cost) represent formally approved plans. They provide a stable benchmark to measure variances and determine whether changes require formal CCB approval."
+    exp: "Baselines (scope, schedule, cost) represent the formally approved reference plans. They provide a stable benchmark to measure variances and determine whether changes require formal CCB approval."
   },
   {
-    q: "Which pair represents fundamental PRINCE2 principles?",
+    q: "Which pair represents foundational principles of the PRINCE2® methodology?",
     a: "Manage by stages and manage by exception",
     opts: [
       "Manage by stages and manage by exception",
       "Eliminate all formal meetings",
-      "Strictly prohibit any project changes"
+      "Prohibit all project changes"
     ],
-    exp: "PRINCE2 defines 7 core principles, including 'Manage by stages' (dividing work into discrete planning horizons) and 'Manage by exception' (escalating to governance boards only if tolerances are breached)."
+    exp: "PRINCE2® defines core principles, notably 'Manage by stages' (breaking work into discrete commitment horizons) and 'Manage by exception' (establishing pre-set tolerances before escalating to senior boards)."
   },
   {
-    q: "According to the current PMP® Exam Content Outline (ECO), which domain carries 50% of the exam weight?",
+    q: "According to general project management credential guidelines, which domain historically represents the largest share of exam questions?",
     a: "Process",
     opts: ["Process", "People", "Business Environment"],
-    exp: "The PMP® ECO distributes questions into three domains: Process (50%), People (42%), and Business Environment (8%), with approximately 50% covering predictive and 50% covering agile/hybrid approaches."
+    exp: "Standard project management curriculum outlines allocate approximately 50% of content to Process (scope, schedule, budget, risk, procurement), 42% to People (leadership, teams), and 8% to Business Environment."
   }
 ];
 

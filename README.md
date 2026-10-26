@@ -49,8 +49,14 @@
 
 For a full project description covering Problem/Purpose, Target Audience, Features, Planning & Delivery, and Testing, refer to [PORTFOLIO_DESCRIPTION.md](PORTFOLIO_DESCRIPTION.md).
 
----
+## ⚖️ Intellectual Property, Copyright & Legal Notice
 
-## ⚖️ Disclaimer
+- **Independent Educational Resource**: PM Academy is an independent educational and portfolio initiative developed for self-study and learning purposes. It is **not** endorsed by, sponsored by, or officially affiliated with the Project Management Institute (PMI®), Scrum.org, AXELOS Limited, or any other professional body.
+- **100% Original Authorship**: All lesson texts, curriculum syntheses, glossary explanations, and scenario-based quiz questions are independently authored with zero verbatim copying from proprietary standards or third-party exam banks.
+- **Nominative Fair Use of Trademarks**:
+  - *PMI®, PMP®, CAPM®, and PMBOK® Guide* are registered marks of the Project Management Institute, Inc.
+  - *PRINCE2®* is a registered trademark of AXELOS Limited / PeopleCert.
+  - *Jira® and Trello®* are registered trademarks of Atlassian Pty Ltd.
+  - All trademark references are purely nominative and descriptive. No official corporate logos, certification seals, or badges are used.
+- **Legal Compliance**: Aligned with Section 160 of the Intellectual Property Act No. 36 of 2003 of Sri Lanka and international fair use standards (Berne Convention/WIPO) for educational commentary, research, and non-commercial scholarship.
 
-PM Academy is an independent educational resource created for self-study and learning purposes. It is **not** affiliated with, endorsed by, or sponsored by the Project Management Institute (PMI®), Scrum.org, or PeopleCert/Axelos. PMI, PMP, CAPM, and PMBOK are registered marks of the Project Management Institute, Inc.
