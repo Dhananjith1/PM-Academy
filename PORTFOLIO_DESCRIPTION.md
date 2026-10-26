@@ -10,9 +10,9 @@
 ## 1. Problem & Purpose (ගැටලුව සහ අරමුණ)
 
 ### The Problem (ගැටලුව)
-Traditional Project Management education suffers from several key friction points:
-1. **Commercial Gatekeeping & High Costs**: Most structured PM learning materials are locked behind expensive certification bootcamps ($500–$2,500) or subscriptions.
-2. **Abstract & Overwhelming Literature**: The standard literature (such as 800+ page reference manuals or academic textbooks) can be excessively dense for junior professionals, students, and software engineers who need practical, real-world clarity.
+Traditional Project Management education can present several common challenges:
+1. **Length & Cost of Formal Preparation**: Some formal reference publications and exam-preparation programs can be lengthy or costly, creating hurdles for early-career learners.
+2. **Abstract Literature**: Comprehensive reference manuals are thorough, but can feel overwhelming for junior professionals, students, and software engineers who need an approachable, practical primer.
 3. **Disconnection Between Theory & Tools**: Courses often teach theory in isolation without demonstrating how it translates into everyday tools (e.g., Jira, Trello, Asana, Google Sheets) or mathematical mechanics (EVM formulas, Critical Path calculation).
 
 ### The Purpose & Solution (අරමුණ සහ විසඳුම)
@@ -115,7 +115,7 @@ To maintain high ethical standards, avoid consumer confusion, and clearly deline
 ### 2. Descriptive Reference to Industry Terminology
 - All external product names, certifications, and frameworks (including PMI®, PMP®, CAPM®, PMBOK® Guide, PRINCE2®, Scrum.org™, Jira®, and Trello®) remain the property of their respective trademark holders.
 - Mentions on this platform are strictly descriptive to identify recognized methodologies and software tools discussed in modern project environments.
-- Zero official logos, corporate trademarks, or certification seals are utilized anywhere on the site.
+- No official logos or certification seals are displayed; product and framework names are used strictly in plain text for identification and comparative discussion. All third-party marks remain the property of their respective rights holders.
 
 ### 3. Clear Non-Affiliation Notice
 - PM Academy is an independent educational and developer portfolio project. It is not affiliated with, endorsed by, sponsored by, or an official training provider of PMI (Project Management Institute), PeopleCert, Scrum.org, Atlassian, or any other institution.
