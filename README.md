@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-0d9488?style=for-the-badge)](LICENSE)
 [![Curriculum](https://img.shields.io/badge/Curriculum-27_Lessons_•_6_Parts-1e293b?style=for-the-badge)](#curriculum-structure)
 
-**PM Academy** is an open, fast, zero-dependency educational web application designed to help aspiring and practicing project managers master fundamental principles, modern agile delivery, EVM mathematics, and essential software tools.
+**PM Academy** is a free-to-access, zero-dependency educational web application designed to help aspiring and practicing project managers master fundamental principles, modern agile delivery, EVM mathematics, and essential software tools.
 
 🔗 **Live Website**: [https://dhananjith1.github.io/PM-Academy/](https://dhananjith1.github.io/PM-Academy/)
 
@@ -13,12 +13,12 @@
 ## 🚀 Key Highlights
 
 - **27 Structured Lessons in 6 Parts**: Comprehensive coverage from foundational principles to advanced EVM formulas, PM tools, and career pathways.
-- **Aligned with Modern Global Standards**: Incorporates **PMBOK® Guide – 7th Edition** (12 Principles & 8 Performance Domains), **Process Groups: A Practice Guide**, Agile Alliance principles, and the 2026 PMP® Exam Content Outline (ECO).
+- **Aligned with Modern Global Frameworks**: Synthesizes principles from the **PMBOK® Guide**, **Process Groups: A Practice Guide**, Agile Alliance principles, and modern project delivery practices.
 - **Interactive Earned Value Management (EVM) Calculator**: Live recalculation of CV, SV, CPI, SPI, and EAC with automated health status interpretations.
 - **Instant Searchable PM Glossary**: Fast client-side keyword search across 35+ industry-standard definitions and formulas.
 - **12-Question Knowledge Check**: Scenario-based interactive quiz featuring detailed feedback and explanations for both correct and incorrect answers.
 - **Progress Persistence**: Uses browser `localStorage` to save completed lessons with a dynamic progress bar.
-- **Zero-Dependency Lightweight Build**: Pure Vanilla HTML5, modern CSS3, and ES6+ JavaScript. Loads in under 1 second with a footprint below 60KB.
+- **Zero-Dependency Lightweight Build**: Pure Vanilla HTML5, modern CSS3, and ES6+ JavaScript. Loads rapidly without complex frameworks or bundling overhead.
 
 ---
 
@@ -31,7 +31,7 @@
 | **Part 3** | **Risk & Change** | 2 | Risk Analysis (EMV/Reserves), Integrated Change Control & Procurement Contract Types |
 | **Part 4** | **Methods & Frameworks** | 3 | Waterfall vs Agile vs Hybrid, Scrum & Kanban Systems (WIP limits, cycle time), PMBOK, PRINCE2, Lean & SAFe |
 | **Part 5** | **PM Tools** | 5 | Tool Ecosystem, Work Management Boards (Trello, Asana, Monday, ClickUp, Wrike), Enterprise Schedulers (Jira, MS Project, Primavera P6, Smartsheet), Everyday Stack, Key Templates |
-| **Part 6** | **Leadership & Career** | 4 | Leadership & Ethics (PMI Code of Conduct), Weekly Cadence & STAR Interviews, Project Closing, PMBOK 7th & PMP Certification Requirements |
+| **Part 6** | **Leadership & Career** | 4 | Leadership & Ethics (PMI Code of Conduct), Weekly Cadence & STAR Interviews, Project Closing, PM Standards Evolution & Certification Pathways |
 
 ---
 
@@ -49,14 +49,11 @@
 
 For a full project description covering Problem/Purpose, Target Audience, Features, Planning & Delivery, and Testing, refer to [PORTFOLIO_DESCRIPTION.md](PORTFOLIO_DESCRIPTION.md).
 
-## ⚖️ Intellectual Property, Copyright & Legal Notice
+## ⚖️ Independence & Third-Party Notice
 
-- **Independent Educational Resource**: PM Academy is an independent educational and portfolio initiative developed for self-study and learning purposes. It is **not** endorsed by, sponsored by, or officially affiliated with the Project Management Institute (PMI®), Scrum.org, AXELOS Limited, or any other professional body.
-- **100% Original Authorship**: All lesson texts, curriculum syntheses, glossary explanations, and scenario-based quiz questions are independently authored with zero verbatim copying from proprietary standards or third-party exam banks.
-- **Nominative Fair Use of Trademarks**:
-  - *PMI®, PMP®, CAPM®, and PMBOK® Guide* are registered marks of the Project Management Institute, Inc.
-  - *PRINCE2®* is a registered trademark of AXELOS Limited / PeopleCert.
-  - *Jira® and Trello®* are registered trademarks of Atlassian Pty Ltd.
-  - All trademark references are purely nominative and descriptive. No official corporate logos, certification seals, or badges are used.
-- **Educational Fair Practice**: Developed for private study, scholarship, and educational commentary in alignment with fair practice principles under Section 11 of the Sri Lanka Intellectual Property Act No. 36 of 2003 and international Berne Convention standards. All trademarks are used strictly nominatively without claiming endorsement or affiliation.
+- **Independent Educational Project**: PM Academy is an independent educational and portfolio initiative created for general self-study and learning purposes. It is **not** affiliated with, endorsed by, sponsored by, or an official training provider of PMI (Project Management Institute), PeopleCert, Scrum.org, Atlassian, or any other organization.
+- **Third-Party Trademarks**: Names of project management frameworks, certifications (such as PMP®, CAPM®, PRINCE2®), and software products (such as Jira®, Trello®) are mentioned solely to identify and discuss them in an educational context. All third-party names and marks remain the property of their respective owners.
+- **Educational Scope**: This website does not issue professional certifications, administer formal examinations, or guarantee certification exam results.
+- **License**: Code is made available under the [MIT License](LICENSE). Educational summaries and curriculum synthesis are independent developer creations.
+
 

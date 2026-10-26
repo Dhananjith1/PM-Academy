@@ -12,14 +12,14 @@
 ### The Problem (ගැටලුව)
 Traditional Project Management education suffers from several key friction points:
 1. **Commercial Gatekeeping & High Costs**: Most structured PM learning materials are locked behind expensive certification bootcamps ($500–$2,500) or subscriptions.
-2. **Abstract & Overwhelming Literature**: The standard literature (such as the 800+ page PMBOK® Guide or academic textbooks) is excessively dense for junior professionals, students, and software engineers who just need practical, real-world clarity.
+2. **Abstract & Overwhelming Literature**: The standard literature (such as 800+ page reference manuals or academic textbooks) can be excessively dense for junior professionals, students, and software engineers who need practical, real-world clarity.
 3. **Disconnection Between Theory & Tools**: Courses often teach theory in isolation without demonstrating how it translates into everyday tools (e.g., Jira, Trello, Asana, Google Sheets) or mathematical mechanics (EVM formulas, Critical Path calculation).
 
 ### The Purpose & Solution (අරමුණ සහ විසඳුම)
 **PM Academy** was developed to bridge this gap:
-- Provide a completely **open, fast, zero-friction learning platform** that teaches project management principles, agile methodologies, and tool ecosystems in plain, structured English.
+- Provide a completely **free-to-access, zero-friction learning platform** that teaches project management principles, agile methodologies, and tool ecosystems in plain, structured English.
 - Deliver an interactive, hands-on learning experience featuring **live EVM calculators, instant glossary searches, and scenario-based knowledge checks**.
-- Establish an authoritative, reference-backed curriculum aligned with modern standards (PMBOK® 7th Edition, PMI Process Groups Guide, and the official PMP® Exam Content Outline).
+- Establish an authoritative, reference-backed curriculum synthesizing global standards (including the PMBOK® Guide, PMI Process Groups Guide, and modern agile practices).
 
 ---
 
@@ -37,8 +37,8 @@ Traditional Project Management education suffers from several key friction point
 | Feature | Description | Technical Implementation |
 | :--- | :--- | :--- |
 | **27 Modular Lessons across 6 Parts** | Structured curriculum covering Foundations, Planning, Risk & Change, Agile/Scrum Frameworks, PM Tools (12+ in-depth analyses), and Leadership & Careers. | Client-side reactive DOM rendering from structured JavaScript data objects. |
-| **Interactive Earned Value Management (EVM) Calculator** | Live recalculation of CV, SV, CPI, SPI, and EAC based on custom user inputs with automated health status interpretations. | Mathematical input binding with real-time DOM mutation and input sanitization. |
-| **Instant Client-Side Glossary Search** | Searchable directory of 35+ PM terms, acronyms, and formulas with real-time text matching. | Case-insensitive array filtering on keyboard input with zero network latency. |
+| **Interactive Earned Value Management (EVM) Calculator** | Live recalculation of CV, SV, CPI, SPI, and EAC based on custom user inputs with automated health status interpretations. | Mathematical input binding with real-time DOM mutation and boundary checking. |
+| **Instant Client-Side Glossary Search** | Searchable directory of 35+ PM terms, acronyms, and formulas with real-time text matching. | Safe DOM text insertion with case-insensitive array filtering and zero network latency. |
 | **Scenario-Based Knowledge Check Quiz** | 12 multiple-choice questions with **immediate pedagogical explanations** for both correct and incorrect selections. | State-driven quiz engine with dynamic score counting and option lock-out. |
 | **Local Progress Persistence** | Checkmark tracking for finished lessons with visual percentage progress bar. | Synchronized with browser `localStorage`, retaining progress across page reloads. |
 | **Editorial Design System** | High-end visual hierarchy with custom typography (`Fraunces` + `Plus Jakarta Sans`), warm cards, and accessible color contrast. | Pure Vanilla CSS using custom properties, responsive grid, and zero framework overhead. |
@@ -50,14 +50,14 @@ Traditional Project Management education suffers from several key friction point
 The project followed an agile, incremental delivery lifecycle:
 
 ### Phase 1: Taxonomy & Curriculum Design (Sprint 1)
-- Researched global standards: PMBOK® Guide 7th Edition performance domains, PMI Process Groups Practice Guide, Scrum Guide 2020, and PRINCE2 7th Edition.
+- Researched global standards and modern project management frameworks across predictive, agile, and hybrid practices.
 - Outlined 27 distinct lessons organized into 6 logical progressive tiers:
   1. *Foundations* (Definition, Lifecycle, Business Case, PMP Baselines, Triple Constraint, Roles, Stakeholders)
   2. *Planning the Work* (Scope/WBS, Schedule/CPM, Cost/EVM, Quality, Team/RACI, Communications)
   3. *Risk & Change* (Risk Analysis/EMV, Integrated Change Control & Contracts)
-  4. *Methods & Frameworks* (Predictive vs Adaptive vs Hybrid, Scrum & Kanban, Standards)
+  4. *Methods & Frameworks* (Predictive vs Adaptive vs Hybrid, Scrum & Kanban, Standards Evolution)
   5. *PM Tools* (Purpose, Work Management Boards, Enterprise Schedulers, Everyday Stack, Templates)
-  6. *Leadership & Career* (Leadership/Ethics, Weekly Work/STAR interviews, Closing, PMP Requirements)
+  6. *Leadership & Career* (Leadership/Ethics, Weekly Work/STAR interviews, Closing, Credentials Evolution)
 
 ### Phase 2: Interactive Feature Development (Sprint 2)
 - Built the reactive lesson viewer with dynamic sticky sidebar navigation.
@@ -74,12 +74,12 @@ The project followed an agile, incremental delivery lifecycle:
 ## 5. Testing, Quality & Continuous Improvements (පරීක්ෂා කිරීම සහ වැඩිදියුණු කිරීම්)
 
 ### Testing & Validation
-- **Cross-Browser & Device Responsiveness**: Thoroughly validated across mobile (iOS Safari, Android Chrome) and desktop viewports (1080p, 1440p) using flexible CSS Grid and media queries.
-- **Formula Accuracy Verification**: Tested mathematical precision for EVM (CV, SV, CPI, SPI, EAC), PERT Beta three-point estimating, and communication channels $[n(n-1)/2]$.
-- **Accessibility & Performance Auditing**:
+- **Cross-Browser & Device Responsiveness**: Tested across mobile and desktop viewports using flexible CSS Grid and media queries.
+- **Formula Accuracy Verification**: Verified mathematical calculations for EVM (CV, SV, CPI, SPI, EAC), PERT Beta three-point estimating, and communication channels $[n(n-1)/2]$.
+- **Accessibility & Design Considerations**:
   - Implemented semantic HTML5 landmarks (`<header>`, `<nav>`, `<aside>`, `<article>`, `<section>`, `<footer>`).
-  - Maintained WCAG AA compliant color contrast ratios for text and UI controls.
-  - Page weight under 60KB (excluding external Google Fonts), yielding instant sub-second loading without bundle bloat.
+  - Styled with high-contrast text tokens, readable typography (`Fraunces` + `Plus Jakarta Sans`), and focus states.
+  - Zero-dependency architecture ensuring fast, lightweight client-side execution.
 
 ### Future Roadmap & Planned Improvements
 1. **Downloadable Artifact Templates**: Pre-formatted Excel/Word templates for Project Charters, Risk Registers, and RACI matrices.
@@ -93,39 +93,30 @@ The project followed an agile, incremental delivery lifecycle:
 ### English One-Liner / Bullet Point:
 > **PM Academy — Interactive Web Learning Platform for Project Management**  
 > • Engineered a zero-dependency, responsive educational platform featuring 27 comprehensive lessons, interactive EVM formula calculators, searchable glossary, and self-assessment quizzes.  
-> • Synthesized modern PM standards (PMBOK 7th Edition, Agile Alliance, Scrum) into clean, modular learning paths with persistent progress tracking via LocalStorage.  
-> • Achieved 100% responsive client-side performance (<60KB footprint) deployed directly to GitHub Pages.
+> • Synthesized modern PM frameworks into clean, modular learning paths with persistent progress tracking via LocalStorage.  
+> • Built with vanilla web standards (HTML5/CSS3/ES6+ JS) and deployed directly to GitHub Pages.
 
 ### සිංහල සාරාංශය (Sinhala Summary):
 > **PM Academy — ව්‍යාපෘති කළමනාකරණය සරලව ඉගෙනගත හැකි අන්තර්ක්‍රියාකාරී වෙබ් අඩවිය**  
-> • Project Management මූලධර්ම, Agile/Scrum ක්‍රමවේද, PMBOK 7th Edition, EVM ගණනය කිරීම් සහ ප්‍රායෝගික මෙවලම් 12+ ඇතුළත් පාඩම් 27 කින් සමන්විත පූර්ණ ඉගෙනුම් වේදිකාවක් නිර්මාණය කිරීම.  
+> • Project Management මූලධර්ම, Agile/Scrum ක්‍රමවේද, EVM ගණනය කිරීම් සහ ප්‍රායෝගික මෙවලම් 12+ ඇතුළත් පාඩම් 27 කින් සමන්විත පූර්ණ ඉගෙනුම් වේදිකාවක් නිර්මාණය කිරීම.  
 > • පරිශීලකයාට ක්ෂණිකව EVM ගණනය කළ හැකි Interactive Calculator එකක්, ක්ෂණික Glossary සෙවුමක් සහ නිවැරදි/වැරදි පිළිතුරු පැහැදිලි කරන Quiz එකක් සහිතව ගොඩනගා ඇත.  
 > • කිසිදු බරැති frameworks වලින් තොරව (Vanilla HTML/CSS/JS) වේගවත්, සියලුම mobile/desktop තිර වලට ගැළපෙන පරිදි නිර්මාණය කර GitHub Pages මගින් සජීවීව පවත්වාගෙන යනු ලබයි.
 
 ---
 
-## 7. Intellectual Property, Copyright & Trademark Governance (බුද්ධිමය දේපළ, ප්‍රකාශන හිමිකම් සහ වෙළෙඳ ලකුණු පිළිපැදීම)
+## 7. Independence & Third-Party Governance (ස්වාධීනත්වය සහ තෙවන පාර්ශ්වීය හිමිකම් පිළිපැදීම)
 
-To minimize legal risk, adhere to international intellectual property standards (WIPO, Berne Convention) and comply with the **Intellectual Property Act No. 36 of 2003 of Sri Lanka (including Section 11 on Fair Practice for Education and Study)**, the PM Academy codebase adheres to the following governance protocols:
+To maintain high ethical standards, avoid consumer confusion, and clearly delineate independent educational analysis:
 
-### 1. 100% Original Expression (ස්වාධීන අන්තර්ගතය)
-- **Zero Verbatim Copying**: None of the 27 lessons, 35 glossary definitions, or 12 quiz questions contain verbatim phrasing from proprietary copyrighted manuals, including the *PMBOK® Guide*, *The Scrum Guide*, or *PRINCE2® manuals*.
-- **Conceptual Synthesis**: All topics (e.g., Triple Constraint, EVM, Tuckman Stages, RACI, Process Groups, Agile Manifesto philosophy) are synthesized and re-authored in independent educational prose.
-- **Custom Visuals & Calculations**: All diagrams, workflows, cards, and calculation engines are authored directly in CSS and JavaScript without copying third-party proprietary figures, tables, or copyrighted exam items.
+### 1. Independent Pedagogical Synthesis
+- All 27 lessons, glossary terms, and scenario quiz questions are drafted in original explanatory prose to synthesize standard project management concepts, workflows, and calculations.
+- Does not publish proprietary question banks, confidential certification exam dumps, or verbatim textbook passages.
 
-### 2. Strict Nominative Fair Use of Trademarks (වෙළෙඳ ලකුණු නීත්‍යානුකූල භාවිතය)
-- **Zero Proprietary Logos or Badges**: No official corporate logos, certification seals, or badges belonging to PMI®, PeopleCert®, Axelos®, Scrum.org®, or software vendors are used anywhere on the website.
-- **Plain-Text Descriptive Reference**: Trademarked terms (e.g., PMP®, CAPM®, PMBOK®, PRINCE2®, Jira®, Trello®) are utilized strictly in plain text under the doctrine of **nominative fair use** to accurately refer to and identify established industry methodologies, certifications, and software.
-- **Trademark Notice**: All registered marks are clearly attributed to their respective owners:
-  - *PMI®, PMP®, CAPM®, and PMBOK® Guide* are registered marks of the Project Management Institute, Inc.
-  - *PRINCE2®* is a registered trademark of AXELOS Limited / PeopleCert.
-  - *Jira® and Trello®* are registered trademarks of Atlassian Pty Ltd.
+### 2. Descriptive Reference to Industry Terminology
+- All external product names, certifications, and frameworks (including PMI®, PMP®, CAPM®, PMBOK® Guide, PRINCE2®, Scrum.org™, Jira®, and Trello®) remain the property of their respective trademark holders.
+- Mentions on this platform are strictly descriptive to identify recognized methodologies and software tools discussed in modern project environments.
+- Zero official logos, corporate trademarks, or certification seals are utilized anywhere on the site.
 
-### 3. Clear Non-Affiliation Disclaimers (අනුබද්ධතාවක් නොමැති බවට ප්‍රකාශය)
-- Both the website header, footer, and `#about` section feature prominent non-affiliation notices stating:
-  > *"PM Academy is an independent educational and portfolio resource created for self-study. It is not affiliated with, endorsed, sponsored, or certified by the Project Management Institute (PMI®), Scrum.org, AXELOS Limited, or any other institution."*
-
-### 4. Legal Alignment in Sri Lanka
-- **Fair Practice for Teaching and Study**: Governed under **Section 11 of the Intellectual Property Act No. 36 of 2003 of Sri Lanka**, which permits fair practice for personal private study, teaching, criticism, and scholarship, backed by independent authorship and proper attribution.
-- **Protection Against Unfair Competition**: Adheres to **Section 160 of the Act** by eliminating any misleading representations, deceptive badges, or false endorsements that could cause consumer confusion with official certifying bodies.
-
+### 3. Clear Non-Affiliation Notice
+- PM Academy is an independent educational and developer portfolio project. It is not affiliated with, endorsed by, sponsored by, or an official training provider of PMI (Project Management Institute), PeopleCert, Scrum.org, Atlassian, or any other institution.
+- The platform does not issue credentials, administer formal exams, or guarantee certification outcomes.
