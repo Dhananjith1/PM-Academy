@@ -881,10 +881,22 @@ footer {
   margin: 18px auto 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 13px;
   color: #64748b;
   flex-wrap: wrap;
   gap: 12px;
+}
+.visitor-counter-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #94a3b8;
+  font-size: 12.5px;
+}
+.visitor-counter-wrap img {
+  vertical-align: middle;
+  border-radius: 4px;
 }
 
 /* Modal for Portfolio Case Study */
@@ -1198,7 +1210,11 @@ footer {
   </div>
   <div class="footer-copy">
     <span>© 2024–2026 Dhananjith. Project Management, Made Simple.</span>
-    <span>Authored independently for educational clarity and accessible learning.</span>
+    <span class="visitor-counter-wrap" title="Total page visits">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="opacity:0.75;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+      <span>Visits:</span>
+      <img src="https://hits.sh/dhananjith1.github.io/PM-Academy.svg?label=views&color=2563eb&labelColor=334155" alt="Page Views" width="60" height="20" loading="lazy">
+    </span>
   </div>
 </footer>
 
