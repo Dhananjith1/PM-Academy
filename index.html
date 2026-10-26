@@ -1,136 +1,2173 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><title>Learn Project Management Free</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PM Academy — Project Management, Made Simple</title>
+<meta name="description" content="Master Project Management principles, agile methodologies, PMBOK 7th Edition concepts, and essential tools with practical, structured lessons. Free to access.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#faf8ff;--card:#fff;--tx:#1f2440;--mu:#5f6684;--pr:#5b4de0;--ac:#14b8a6;--bd:#e9e4f7;--soft:#f3f0ff}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --tx: #0f172a;
+  --mu: #475569;
+  --soft-mu: #64748b;
+  --pr: #1e293b;
+  --brand: #2563eb;
+  --brand-dark: #1d4ed8;
+  --brand-soft: #eff6ff;
+  --ac: #0d9488;
+  --ac-soft: #f0fdfa;
+  --rust: #c2410c;
+  --rust-soft: #fff7ed;
+  --bd: #e2e8f0;
+  --bd-focus: #94a3b8;
+  --soft: #f1f5f9;
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', Menlo, Consolas, monospace;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 12px 28px -6px rgba(15, 23, 42, 0.12), 0 4px 10px -2px rgba(15, 23, 42, 0.06);
+  --radius: 12px;
+}
 
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--tx);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
 
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#fdf4ff 0,#faf8ff 300px,#f0fdfa 100%) fixed;color:var(--tx);font:17px/1.75 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:10}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--card);border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:12px;padding:10px 20px}
-.logo{font-weight:800;font-size:20px;color:var(--pr)}header nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
-a.nb{color:var(--tx);text-decoration:none;padding:6px 12px;border-radius:8px;font-size:15px}a.nb:hover{background:var(--soft)}
-a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--pr);outline-offset:2px}button{font:inherit;cursor:pointer}
-.hero{background:radial-gradient(circle at 88% 12%,#fcd34d 0,transparent 38%),radial-gradient(circle at 10% 100%,#2dd4bf 0,transparent 40%),linear-gradient(135deg,#6d5ef0,#a855f7 55%,#ec4899);color:#fff;padding:54px 20px 64px}
-.wrap{max-width:1120px;margin:auto}.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
-.hero h1{font-size:clamp(30px,5vw,48px);line-height:1.12;margin:0 0 14px}.hero p{font-size:19px;opacity:.95;margin:0 0 22px}
-.btn{display:inline-block;background:#fff;color:#3730a3;padding:14px 28px;border-radius:14px;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.2)}
-.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.stats div{background:rgba(255,255,255,.16);border-radius:14px;padding:8px 16px;text-align:center}.stats b{display:block;font-size:22px}
-section{padding:42px 20px}h2{font-size:30px;margin:0 0 6px}.sub{color:var(--mu);margin:0 0 22px}
-.learn{display:grid;grid-template-columns:300px 1fr;gap:24px}
-.side{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;align-self:start;position:sticky;top:calc(68px + env(safe-area-inset-top,0px));max-height:calc(100vh - 90px);overflow:auto}
-.bar{height:10px;background:var(--soft);border-radius:9px;overflow:hidden;margin:6px 0 10px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pr),var(--ac));transition:width .4s}
-.part{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin:12px 6px 2px}
-.side button.l{display:flex;gap:8px;width:100%;text-align:left;background:none;border:0;color:var(--tx);padding:8px 10px;border-radius:10px;font-size:15px;line-height:1.35;align-items:center}
-.side button.l:hover{background:var(--soft)}.side button.on{background:var(--pr);color:#fff}.ck{margin-left:auto}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:20px;overflow:hidden;box-shadow:0 8px 30px rgba(30,40,90,.08)}
-.ban{padding:28px;color:#fff;display:flex;align-items:center;gap:18px}.ban .em{font-size:44px;background:rgba(255,255,255,.22);width:84px;height:84px;border-radius:24px;display:grid;place-items:center;flex:none}.ban h3{margin:0;font-size:27px;line-height:1.2}.ban small{opacity:.9}
-.body{padding:8px 28px 22px}.body h4{margin:22px 0 4px;font-size:19px;color:var(--pr)}.body ul{padding-left:22px}.body li{margin:5px 0}
-.tip{background:var(--soft);border-left:5px solid var(--pr);padding:12px 16px;border-radius:10px;margin:16px 0}
-.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}.flow span{background:var(--pr);color:#fff;padding:7px 14px;border-radius:99px;font-size:15px;font-weight:600}.flow i{color:var(--mu);font-style:normal}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0}.cards div{background:var(--soft);border:1px solid var(--bd);border-radius:14px;padding:14px;font-size:15px;line-height:1.55}.cards b{display:block;font-size:17px;margin-bottom:2px}.cards div:nth-child(5n+1){background:#eef2ff;border-color:#c7d2fe}.cards div:nth-child(5n+2){background:#ecfeff;border-color:#a5f3fc}.cards div:nth-child(5n+3){background:#fff7ed;border-color:#fed7aa}.cards div:nth-child(5n+4){background:#fdf2f8;border-color:#fbcfe8}.cards div:nth-child(5n+5){background:#f0fdf4;border-color:#bbf7d0}.tip{background:#fffbeb;border-left-color:#f59e0b}.card{border-top:5px solid #a855f7}
-code,.fm{background:var(--soft);border-radius:8px;padding:2px 8px;font-family:ui-monospace,Menlo,monospace;font-size:15px}.fm{display:block;padding:10px 14px;margin:8px 0}
-.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:10px 0}.calc label{font-size:14px;color:var(--mu)}.calc input{width:100%;padding:10px;border-radius:10px;border:2px solid var(--bd);background:var(--card);color:var(--tx);font:inherit}
-.nav2{display:flex;justify-content:space-between;gap:10px;padding:0 28px 28px;flex-wrap:wrap}
-.b2{background:var(--pr);color:#fff;border:0;padding:12px 22px;border-radius:12px;font-weight:600}.b2.g{background:var(--soft);color:var(--tx)}.b2.ok{background:var(--ac)}.b2:disabled{opacity:.4;cursor:not-allowed}
-.glos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}.glos div{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px}.glos b{color:var(--pr)}
-input[type=search]{width:100%;padding:13px 16px;border-radius:12px;border:2px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;margin-bottom:16px}
-.q{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:24px}.q button.o{display:block;width:100%;text-align:left;margin:8px 0;padding:12px 16px;border-radius:12px;border:2px solid var(--bd);background:var(--card);color:var(--tx)}
-.q button.o:hover:not(:disabled){border-color:var(--pr)}.right{border-color:var(--ac)!important;background:rgba(16,185,129,.16)!important}.wrong{border-color:#ef4444!important;background:rgba(239,68,68,.13)!important}
-footer{text-align:center;color:var(--mu);padding:30px 20px 40px;font-size:14px}
-@media(max-width:850px){.hero .wrap,.learn{grid-template-columns:1fr}.side{position:static;max-height:none}.ban{flex-direction:column;text-align:center}}
-:root{--bg:#fbf7f0;--card:#fffdf9;--tx:#23211d;--mu:#6b655b;--pr:#1d2b45;--ac:#3f7d5c;--bd:#e6dccb;--soft:#f4ecdd;--rust:#c8553d}
-body{background:#fbf7f0!important;font-family:"Source Sans 3",system-ui,sans-serif;font-size:18px}
-h1,h2,h3,.logo,.body h4{font-family:Fraunces,Georgia,serif}
-.logo{color:var(--pr)}.logo::before{content:"";display:inline-block;width:14px;height:14px;background:var(--rust);margin-right:9px;border-radius:2px}
-.hero{background:#f1e8d8!important;color:var(--tx);padding:64px 20px 52px;border-bottom:1px solid var(--bd)}
-.hero .wrap{grid-template-columns:1fr}.hero svg{display:none}.hero h1{font-size:clamp(34px,5vw,54px);max-width:16em;letter-spacing:-.02em;color:var(--pr)}.hero p{max-width:34em;color:var(--mu)}
-.btn{background:var(--rust);color:#fff;border-radius:6px;box-shadow:none}
-.stats div{background:none;border-left:3px solid var(--rust);border-radius:0;text-align:left;padding:2px 14px}.stats b{font-family:Fraunces,serif;color:var(--pr)}
-h2{color:var(--pr);font-size:34px}
-.card,.side,.q,.glos div{box-shadow:none;border-radius:8px}.card{border-top:1px solid var(--bd)}
-.ban{background:var(--card)!important;color:var(--tx);border-bottom:1px solid var(--bd);padding:26px 28px}
-.ban .em{font:700 30px Fraunces,Georgia,serif;background:var(--rust);color:#fff;border-radius:6px;width:68px;height:68px}
-.ban h3{font-size:30px;color:var(--pr)}.ban small{color:var(--mu);opacity:1}
-.body h4{color:var(--rust)}
-.cards div:nth-child(n){background:var(--card)!important;border:1px solid var(--bd)!important;border-top:3px solid var(--rust)!important;border-radius:6px}
-.cards div:nth-child(3n+2){border-top-color:var(--ac)!important}.cards div:nth-child(3n){border-top-color:#d9a441!important}
-.tip{background:var(--soft);border-left:4px solid var(--rust);border-radius:4px}
-.flow span{background:var(--pr);border-radius:4px}
-.b2{border-radius:6px}.b2.ok{background:var(--ac)}
-.side button.l{border-radius:6px}.side .n{font:700 13px Fraunces,serif;opacity:.7;width:22px;flex:none}.part{color:var(--rust)}
-#glossary{background:#f1e8d8!important}.fm{border-radius:4px}
-.tool{border:1px solid var(--bd);border-left:5px solid var(--rust);border-radius:6px;padding:4px 18px 10px;margin:16px 0;background:var(--card)}.tool h4{margin:12px 0 0;font-size:21px;color:var(--pr)}.tool .tg{color:var(--mu);font-size:15px;margin:0 0 6px}.tool ul{margin:4px 0 6px}
-</style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap"></head><body>
-<header><span class="logo">Project Management</span><nav><a class="nb" href="#learn">Lessons</a><a class="nb" href="#glossary">Glossary</a><a class="nb" href="#quiz">Quiz</a></nav></header>
-<div class="hero"><div class="wrap"><div><h1>Project Management, A to Z. Completely free.</h1><p>Concepts, methods, tools and formulas. Simple English. No packages. Just learning.</p><a class="btn" href="#learn">Start learning →</a>
-<div class="stats"><div><b>23</b>Lessons</div><div><b>5</b>Parts</div><div><b>12+</b>PM tools</div><div><b>$0</b>Forever</div></div></div>
-<svg viewBox="0 0 400 300" role="img" aria-label="Project board with timeline and team"><rect x="20" y="24" width="360" height="226" rx="20" fill="#fff" opacity=".96"/><rect x="20" y="24" width="360" height="42" rx="20" fill="#e0e7ff"/><circle cx="46" cy="45" r="6" fill="#ef4444"/><circle cx="66" cy="45" r="6" fill="#f59e0b"/><circle cx="86" cy="45" r="6" fill="#10b981"/>
-<g font-size="11" fill="#64748b"><text x="40" y="106">Plan</text><text x="40" y="136">Design</text><text x="40" y="166">Build</text><text x="40" y="196">Test</text></g>
-<rect x="90" y="92" width="110" height="18" rx="9" fill="#4f46e5"/><rect x="140" y="122" width="120" height="18" rx="9" fill="#06b6d4"/><rect x="210" y="152" width="130" height="18" rx="9" fill="#10b981"/><rect x="270" y="182" width="90" height="18" rx="9" fill="#f59e0b"/><path d="M230 76v150" stroke="#ef4444" stroke-width="2" stroke-dasharray="5"/><path d="M40 222h320" stroke="#c7d2fe" stroke-width="3"/><circle cx="340" cy="222" r="9" fill="#10b981"/><text x="340" y="226" font-size="11" fill="#fff" text-anchor="middle">✓</text>
-<circle cx="80" cy="272" r="22" fill="#a5f3fc"/><circle cx="200" cy="274" r="20" fill="#fbcfe8"/><circle cx="320" cy="272" r="22" fill="#fde68a"/><g font-size="22" text-anchor="middle"><text x="80" y="280">👩‍💻</text><text x="200" y="281">🧑‍💼</text><text x="320" y="280">🧑‍🔧</text></g></svg></div></div>
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--bd);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+}
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.brand-logo-icon {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, var(--brand), #4f46e5);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 17px;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+}
+.brand-name {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--tx);
+  letter-spacing: -0.01em;
+}
+.brand-badge {
+  font-size: 11px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--soft);
+  color: var(--mu);
+  padding: 2px 7px;
+  border-radius: 6px;
+  border: 1px solid var(--bd);
+}
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+a.nb {
+  color: var(--mu);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+a.nb:hover {
+  color: var(--tx);
+  background: var(--soft);
+}
+a.nb.cta-nav {
+  background: var(--pr);
+  color: #ffffff;
+  margin-left: 6px;
+}
+a.nb.cta-nav:hover {
+  background: #0f172a;
+}
 
-<section id="learn"><div class="wrap"><h2>Lessons</h2><p class="sub">PM = Project Manager (or Project Management). Learn in order, or jump to any lesson.</p>
-<div class="learn"><aside class="side" aria-label="Lesson list"><b id="pt"></b><div class="bar"><i id="pb"></i></div><div id="list"></div></aside><article class="card" id="lesson" aria-live="polite"></article></div></div></section>
-<section id="glossary" style="background:var(--soft)"><div class="wrap"><h2>PM Glossary</h2><p class="sub">Type a word to find its meaning.</p><input type="search" id="gs" placeholder="Search: scope, risk, sprint, CPI…" aria-label="Search glossary"><div class="glos" id="gl"></div></div></section>
-<section id="quiz"><div class="wrap"><h2>Final Quiz</h2><p class="sub">12 questions. You can try again.</p><div class="q" id="qz"></div></div></section>
-<footer>Free learning for everyone</footer>
+/* Layout */
+.wrap {
+  max-width: 1160px;
+  margin: auto;
+  padding: 0 20px;
+}
+section {
+  padding: 64px 0;
+}
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--pr);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+h2 {
+  font-size: 32px;
+  margin: 0 0 8px;
+}
+p.sub {
+  color: var(--mu);
+  font-size: 17px;
+  margin: 0 0 28px;
+  max-width: 720px;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--bd);
+  padding: 60px 0 54px;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: center;
+}
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+  border: 1px solid #dbeafe;
+}
+.hero-pill span.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+.hero h1 {
+  font-size: clamp(34px, 4.5vw, 50px);
+  margin: 0 0 16px;
+  color: var(--tx);
+  font-weight: 700;
+}
+.hero p.lead {
+  font-size: 18px;
+  color: var(--mu);
+  margin: 0 0 24px;
+  max-width: 580px;
+  line-height: 1.65;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand);
+  color: #fff;
+  padding: 13px 26px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+  border: 0;
+  cursor: pointer;
+}
+.btn:hover {
+  background: var(--brand-dark);
+  transform: translateY(-1px);
+}
+.btn.sec {
+  background: var(--card);
+  color: var(--tx);
+  box-shadow: none;
+  border: 1px solid var(--bd);
+}
+.btn.sec:hover {
+  background: var(--soft);
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 32px;
+}
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+  padding: 12px 14px;
+  box-shadow: var(--shadow-sm);
+}
+.stat-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--pr);
+  line-height: 1.1;
+}
+.stat-lbl {
+  font-size: 13px;
+  color: var(--soft-mu);
+  font-weight: 500;
+}
+
+/* Hero graphic card */
+.hero-card {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: var(--shadow-md);
+}
+.hero-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--bd);
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}
+.hero-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--soft-mu);
+}
+.pill-green {
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.roadmap-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--bd);
+}
+.roadmap-item:last-child {
+  border-bottom: none;
+}
+.roadmap-phase {
+  font-size: 13px;
+  font-weight: 600;
+  width: 90px;
+  flex: none;
+  color: var(--tx);
+}
+.roadmap-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--soft);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.roadmap-fill {
+  height: 100%;
+  border-radius: 99px;
+}
+.roadmap-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--soft-mu);
+  width: 45px;
+  text-align: right;
+}
+
+/* Learn Section (Lessons) */
+.learn {
+  display: grid;
+  grid-template-columns: 310px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+.side {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: 16px;
+  padding: 16px;
+  position: sticky;
+  top: 88px;
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+  box-shadow: var(--shadow-sm);
+}
+.progress-container {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--bd);
+  margin-bottom: 12px;
+}
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mu);
+  margin-bottom: 6px;
+}
+.bar {
+  height: 8px;
+  background: var(--soft);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.bar i {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--brand), var(--ac));
+  border-radius: 99px;
+  transition: width 0.35s ease;
+}
+.part {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin: 16px 8px 6px;
+}
+.side button.l {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  color: var(--tx);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14.5px;
+  line-height: 1.35;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.side button.l:hover {
+  background: var(--soft);
+}
+.side button.l.on {
+  background: var(--pr);
+  color: #ffffff;
+  font-weight: 600;
+}
+.side button.l.on .n {
+  color: #cbd5e1;
+}
+.side .n {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--soft-mu);
+  width: 22px;
+  flex: none;
+}
+.side .ck {
+  margin-left: auto;
+  font-size: 13px;
+}
+
+/* Lesson Article */
+.card {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.ban {
+  padding: 28px 32px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.ban .em {
+  font-size: 38px;
+  background: rgba(255, 255, 255, 0.2);
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+.ban small {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.9;
+  display: block;
+  margin-bottom: 4px;
+}
+.ban h3 {
+  margin: 0;
+  font-size: 28px;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.body {
+  padding: 24px 32px 32px;
+}
+.body h4 {
+  margin: 28px 0 8px;
+  font-size: 20px;
+  color: var(--pr);
+}
+.body p {
+  margin: 0 0 14px;
+  color: #334155;
+}
+.body ul {
+  padding-left: 22px;
+  margin: 8px 0 16px;
+}
+.body li {
+  margin: 6px 0;
+  color: #334155;
+}
+.tip {
+  background: #fefce8;
+  border-left: 4px solid #f59e0b;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-size: 15.5px;
+  color: #78350f;
+}
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 16px 0;
+}
+.flow span {
+  background: var(--pr);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.flow i {
+  color: var(--soft-mu);
+  font-style: normal;
+  font-weight: 700;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+.cards div {
+  background: var(--soft);
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.cards b {
+  display: block;
+  font-size: 16px;
+  color: var(--pr);
+  margin-bottom: 4px;
+}
+.tool {
+  border: 1px solid var(--bd);
+  border-left: 4px solid var(--brand);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 16px 0;
+  background: #f8fafc;
+}
+.tool h4 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  color: var(--pr);
+}
+.tool .tg {
+  color: var(--soft-mu);
+  font-size: 14px;
+  margin: 0 0 8px;
+  font-style: italic;
+}
+.tool ul {
+  margin: 4px 0;
+}
+code, .fm {
+  background: var(--soft);
+  border: 1px solid var(--bd);
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-family: var(--font-mono);
+  font-size: 14.5px;
+  color: #0f172a;
+}
+.fm {
+  display: block;
+  padding: 12px 16px;
+  margin: 12px 0;
+  line-height: 1.6;
+  background: #f8fafc;
+}
+.calc {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+.calc label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mu);
+  margin-bottom: 4px;
+}
+.calc input {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--bd);
+  background: var(--card);
+  color: var(--tx);
+  font-family: var(--font-mono);
+  font-size: 15px;
+}
+.calc input:focus {
+  outline: 2px solid var(--brand);
+  border-color: transparent;
+}
+.nav2 {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 32px 32px;
+  flex-wrap: wrap;
+}
+.b2 {
+  background: var(--pr);
+  color: #fff;
+  border: 0;
+  padding: 11px 22px;
+  border-radius: 9px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.b2:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+.b2.g {
+  background: var(--soft);
+  color: var(--tx);
+  border: 1px solid var(--bd);
+}
+.b2.ok {
+  background: var(--ac);
+}
+.b2:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Glossary Section */
+#glossary {
+  background: #ffffff;
+  border-top: 1px solid var(--bd);
+  border-bottom: 1px solid var(--bd);
+}
+input[type=search] {
+  width: 100%;
+  max-width: 540px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--bd);
+  background: var(--card);
+  color: var(--tx);
+  font-size: 16px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+input[type=search]:focus {
+  outline: 2px solid var(--brand);
+  border-color: transparent;
+}
+.glos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.glos div {
+  background: var(--bg);
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 15px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.glos div:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  background: #ffffff;
+}
+.glos b {
+  color: var(--brand);
+  font-size: 16px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Quiz Section */
+#quiz {
+  background: var(--bg);
+}
+.q-box {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+  max-width: 760px;
+  margin: auto;
+}
+.q-progress {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brand);
+  margin-bottom: 8px;
+}
+.q-box h3 {
+  font-size: 24px;
+  margin: 0 0 20px;
+}
+.q-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.q button.o {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1.5px solid var(--bd);
+  background: var(--card);
+  color: var(--tx);
+  font-size: 15.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.q button.o:hover:not(:disabled) {
+  border-color: var(--brand);
+  background: var(--brand-soft);
+}
+.right {
+  border-color: #10b981 !important;
+  background: #ecfdf5 !important;
+  color: #065f46 !important;
+  font-weight: 600;
+}
+.wrong {
+  border-color: #ef4444 !important;
+  background: #fef2f2 !important;
+  color: #991b1b !important;
+}
+.q-feedback {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.q-feedback.correct {
+  background: #ecfdf5;
+  border-left: 4px solid #10b981;
+  color: #065f46;
+}
+.q-feedback.incorrect {
+  background: #fff7ed;
+  border-left: 4px solid #f97316;
+  color: #7c2d12;
+}
+.q-feedback b {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 15.5px;
+}
+
+/* Sources & References Section */
+#sources {
+  background: #ffffff;
+  border-top: 1px solid var(--bd);
+  border-bottom: 1px solid var(--bd);
+}
+.ref-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+.ref-card {
+  background: var(--bg);
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ref-card h4 {
+  margin: 0 0 6px;
+  font-size: 19px;
+  color: var(--tx);
+}
+.ref-card p {
+  font-size: 14.5px;
+  color: var(--mu);
+  margin: 0 0 14px;
+  line-height: 1.55;
+}
+.ref-tag {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #e2e8f0;
+  color: #334155;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.ref-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.ref-link:hover {
+  text-decoration: underline;
+}
+.metadata-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--brand-soft);
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.metadata-banner span {
+  font-size: 14.5px;
+  color: #1e3a8a;
+  font-weight: 500;
+}
+
+/* About Section */
+#about {
+  background: var(--bg);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+}
+.about-card {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+.about-card h3 {
+  font-size: 22px;
+  margin: 0 0 12px;
+}
+.about-card p {
+  color: var(--mu);
+  font-size: 15.5px;
+  line-height: 1.65;
+  margin: 0 0 14px;
+}
+.disclaimer-box {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-top: 20px;
+}
+.disclaimer-box h4 {
+  margin: 0 0 6px;
+  color: #92400e;
+  font-size: 16px;
+}
+.disclaimer-box p {
+  margin: 0;
+  font-size: 14px;
+  color: #78350f;
+  line-height: 1.55;
+}
+
+/* Footer */
+footer {
+  background: var(--pr);
+  color: #cbd5e1;
+  padding: 48px 20px 40px;
+  font-size: 14.5px;
+}
+.footer-wrap {
+  max-width: 1160px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 28px;
+}
+.footer-brand {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 700;
+}
+.footer-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.15s ease;
+}
+.footer-links a:hover {
+  color: #ffffff;
+}
+.footer-copy {
+  max-width: 1160px;
+  margin: 24px auto 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+  color: #94a3b8;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Modal for Portfolio Case Study */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  place-items: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+.modal-overlay.active {
+  display: grid;
+}
+.modal-content {
+  background: #ffffff;
+  border-radius: 18px;
+  max-width: 780px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 32px;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+}
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: var(--soft);
+  border: none;
+  font-size: 20px;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  color: var(--mu);
+}
+.modal-content h3 {
+  font-size: 26px;
+  margin: 0 0 12px;
+}
+.modal-tag {
+  display: inline-block;
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.case-block {
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--bd);
+  padding-bottom: 18px;
+}
+.case-block:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.case-block h4 {
+  font-size: 18px;
+  color: var(--pr);
+  margin: 0 0 6px;
+}
+.case-block p {
+  color: var(--mu);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 8px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-grid, .learn, .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .side {
+    position: static;
+    max-height: none;
+  }
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ban {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 20px;
+  }
+  .body, .nav2 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 600px) {
+  header nav {
+    gap: 2px;
+  }
+  a.nb {
+    padding: 6px 9px;
+    font-size: 13.5px;
+  }
+  .brand-badge {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <a href="#" class="brand-group">
+    <div class="brand-logo-icon">PM</div>
+    <span class="brand-name">PM Academy</span>
+    <span class="brand-badge">Learning Hub</span>
+  </a>
+  <nav>
+    <a class="nb" href="#learn">Lessons</a>
+    <a class="nb" href="#glossary">Glossary</a>
+    <a class="nb" href="#quiz">Quiz</a>
+    <a class="nb" href="#sources">References</a>
+    <a class="nb" href="#about">About</a>
+    <a class="nb cta-nav" href="#learn">Start Learning</a>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-pill">
+          <span class="dot"></span>
+          <span>Open Knowledge for Aspiring & Practicing PMs</span>
+        </div>
+        <h1>Project Management, Made Simple.</h1>
+        <p class="lead">Practical Project Management Learning Resources. Clear concepts, modern agile methods, and real-world tools without commercial noise.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#learn">Start Learning →</a>
+          <button class="btn sec" onclick="openPortfolioModal()">View Portfolio Case Study</button>
+        </div>
+        <div class="stats">
+          <div class="stat-card">
+            <span class="stat-num" id="st-lessons">27</span>
+            <span class="stat-lbl">Structured Lessons</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" id="st-parts">6</span>
+            <span class="stat-lbl">Curated Parts</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">12+</span>
+            <span class="stat-lbl">Core PM Tools</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" style="color:var(--brand)">Free</span>
+            <span class="stat-lbl">to Access</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Interactive dashboard visual -->
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <span class="hero-card-title">Project Delivery Lifecycle</span>
+          <span class="pill-green">Active Pipeline</span>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-phase">1. Initiating</span>
+          <div class="roadmap-bar"><div class="roadmap-fill" style="width:100%; background:#2563eb;"></div></div>
+          <span class="roadmap-badge">100%</span>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-phase">2. Planning</span>
+          <div class="roadmap-bar"><div class="roadmap-fill" style="width:100%; background:#0d9488;"></div></div>
+          <span class="roadmap-badge">100%</span>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-phase">3. Executing</span>
+          <div class="roadmap-bar"><div class="roadmap-fill" style="width:78%; background:#f59e0b;"></div></div>
+          <span class="roadmap-badge">78%</span>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-phase">4. Monitoring</span>
+          <div class="roadmap-bar"><div class="roadmap-fill" style="width:75%; background:#8b5cf6;"></div></div>
+          <span class="roadmap-badge">75%</span>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-phase">5. Closing</span>
+          <div class="roadmap-bar"><div class="roadmap-fill" style="width:30%; background:#cbd5e1;"></div></div>
+          <span class="roadmap-badge">30%</span>
+        </div>
+        <div style="margin-top:16px; padding:12px; background:var(--bg); border-radius:8px; display:flex; justify-content:space-between; font-size:13px; color:var(--mu);">
+          <span>Methodology: <b>Hybrid (Predictive + Scrum)</b></span>
+          <span>Baseline SPI: <b>1.02 (On Schedule)</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lessons Section -->
+<section id="learn">
+  <div class="wrap">
+    <h2>Lessons</h2>
+    <p class="sub">Learn the principles, methods, and tools of Project Management. Follow the curriculum in sequence, or jump directly to any topic.</p>
+    
+    <div class="learn">
+      <!-- Sticky Sidebar -->
+      <aside class="side" aria-label="Curriculum Sidebar">
+        <div class="progress-container">
+          <div class="progress-info">
+            <span id="pt">0 of 27 completed</span>
+            <span id="pt-pct">0%</span>
+          </div>
+          <div class="bar"><i id="pb"></i></div>
+        </div>
+        <div id="list"></div>
+      </aside>
+      
+      <!-- Lesson Display Article -->
+      <article class="card" id="lesson" aria-live="polite"></article>
+    </div>
+  </div>
+</section>
+
+<!-- PM Glossary Section -->
+<section id="glossary">
+  <div class="wrap">
+    <h2>PM Glossary</h2>
+    <p class="sub">Instant searchable index of standard project management terminology, acronyms, and formulas.</p>
+    <input type="search" id="gs" placeholder="Search concepts: scope, CPI, sprint, critical path, WBS, EVM…" aria-label="Search glossary">
+    <div class="glos" id="gl"></div>
+  </div>
+</section>
+
+<!-- Final Quiz Section -->
+<section id="quiz">
+  <div class="wrap">
+    <div class="q-box">
+      <h2>Knowledge Assessment Quiz</h2>
+      <p class="sub">12 scenario-based questions covering fundamentals, EVM, scheduling, and PMI ECO domains with detailed feedback.</p>
+      <div class="q" id="qz"></div>
+    </div>
+  </div>
+</section>
+
+<!-- References & Sources Section -->
+<section id="sources">
+  <div class="wrap">
+    <h2>Sources & References</h2>
+    <p class="sub">All educational content is synthesized from authoritative, globally recognized project management standards, frameworks, and official bodies.</p>
+    
+    <div class="ref-grid">
+      <div class="ref-card">
+        <div>
+          <span class="ref-tag">Primary Standard</span>
+          <h4>PMI® (Project Management Institute)</h4>
+          <p>Global authority behind the <i>PMBOK® Guide – 7th Edition</i>, <i>Process Groups: A Practice Guide</i>, and the official PMP® / CAPM® Examination Content Outlines (ECO).</p>
+        </div>
+        <a class="ref-link" href="https://www.pmi.org" target="_blank" rel="noopener noreferrer">Visit PMI.org →</a>
+      </div>
+
+      <div class="ref-card">
+        <div>
+          <span class="ref-tag">Agile Governance</span>
+          <h4>Agile Alliance</h4>
+          <p>Foundational nonprofit maintaining the original <i>Agile Manifesto</i> (2001), 12 principles, and the collaborative <i>Agile Practice Guide</i> developed with PMI.</p>
+        </div>
+        <a class="ref-link" href="https://www.agilealliance.org" target="_blank" rel="noopener noreferrer">Visit AgileAlliance.org →</a>
+      </div>
+
+      <div class="ref-card">
+        <div>
+          <span class="ref-tag">Scrum Standard</span>
+          <h4>Scrum Guides</h4>
+          <p>The official definition of the Scrum framework by creators Ken Schwaber and Jeff Sutherland, detailing the 3 roles, 5 events, and 3 artifacts.</p>
+        </div>
+        <a class="ref-link" href="https://scrumguides.org" target="_blank" rel="noopener noreferrer">Read the 2020 Scrum Guide →</a>
+      </div>
+
+      <div class="ref-card">
+        <div>
+          <span class="ref-tag">European Standard</span>
+          <h4>PeopleCert / Axelos (PRINCE2®)</h4>
+          <p>PRINCE2® 7th Edition project management methodology, widely used in the UK, Europe, and government project procurement environments.</p>
+        </div>
+        <a class="ref-link" href="https://www.peoplecert.org" target="_blank" rel="noopener noreferrer">Explore PRINCE2 →</a>
+      </div>
+    </div>
+
+    <div class="metadata-banner">
+      <span><b>Curriculum Metadata:</b> Aligned with PMBOK® Guide 7th Edition, PMI Process Groups Guide, and the 2026 PMP® Exam Content Outline.</span>
+      <span style="font-weight:600; color:var(--brand-dark);">Content Last Reviewed: October 2024</span>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>About PM Academy</h3>
+        <p><b>Purpose & Mission:</b> PM Academy was created to demystify project management. Heavy 800-page textbooks and costly preparatory courses often overwhelm beginners. This platform condenses core PM principles, EVM mathematics, and software delivery workflows into a clean, practical, and highly accessible format.</p>
+        <p><b>Target Audience:</b> Aspiring project managers, junior project coordinators, software engineers, designers, startup founders, and students preparing for formal CAPM® or PMP® journeys.</p>
+        <button class="btn sec" style="margin-top:8px;" onclick="openPortfolioModal()">Read Project Portfolio Overview →</button>
+      </div>
+
+      <div class="about-card">
+        <h3>Independence & Disclaimers</h3>
+        <p>PM Academy is an <b>independent open learning resource and developer portfolio project</b> designed for educational and self-study purposes.</p>
+        <div class="disclaimer-box">
+          <h4>Important Clarification</h4>
+          <p>This website is <b>not</b> an official certification provider, Registered Education Provider (R.E.P.), or affiliated with, sponsored by, or endorsed by the Project Management Institute (PMI®), Scrum.org, or PeopleCert/Axelos. PMI, PMP, CAPM, and PMBOK are registered marks of the Project Management Institute, Inc.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-wrap">
+    <div>
+      <div class="footer-brand">PM Academy</div>
+      <p style="margin:6px 0 0; color:#94a3b8; font-size:14px;">Open learning resources for aspiring and practicing project managers.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#learn">Curriculum</a>
+      <a href="#glossary">Glossary</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#sources">Sources</a>
+      <a href="#about">About</a>
+      <a href="#" onclick="openPortfolioModal(); return false;">Portfolio Case Study</a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    <span>© 2024–2026 Dhananjith. Project Management, Made Simple.</span>
+    <span>Designed for clarity, accessibility, and practical learning.</span>
+  </div>
+</footer>
+
+<!-- Portfolio Case Study Modal -->
+<div class="modal-overlay" id="pfModal" onclick="closePortfolioModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closePortfolioModal()">&times;</button>
+    <span class="modal-tag">Portfolio Case Study</span>
+    <h3>PM Academy — Project Overview & Architecture</h3>
+    
+    <div class="case-block">
+      <h4>1. Problem & Purpose</h4>
+      <p><b>The Problem:</b> Project management standards (such as PMI's PMBOK Guide or PRINCE2) are often perceived as dense, abstract, and separated from day-to-day software tools like Jira, Trello, and Sheets. Learners frequently struggle with EVM calculations and determining how predictive and agile frameworks interrelate.</p>
+      <p><b>The Purpose:</b> Build a responsive, zero-friction single-page educational application that bridges foundational project theory with real-world execution, providing 27 modular lessons, interactive calculators, an instant glossary lookup, and scenario-based quiz testing.</p>
+    </div>
+
+    <div class="case-block">
+      <h4>2. Target Audience</h4>
+      <p>• Junior Project Managers & Project Coordinators needing quick reference guides.</p>
+      <p>• Cross-functional team leads (developers, designers, operations) leading sprints or client deliverables.</p>
+      <p>• Students preparing for formal certification prerequisites (CAPM®, PMP®).</p>
+    </div>
+
+    <div class="case-block">
+      <h4>3. Key Features</h4>
+      <p>• <b>27 Modular Lessons in 6 Parts:</b> Foundations, Planning, Risk & Change, Agile/Scrum Frameworks, PM Tools (12+ breakdown), and Leadership & Careers.</p>
+      <p>• <b>Live EVM Calculator:</b> Real-time evaluation of CV, SV, CPI, SPI, and EAC with automated health status explanations.</p>
+      <p>• <b>Interactive Scenario Quiz:</b> 12 comprehensive questions featuring detailed explanations for both correct and incorrect choices.</p>
+      <p>• <b>Searchable Glossary:</b> Instant client-side search across 30+ fundamental PM concepts and metrics.</p>
+      <p>• <b>Progress Persistence:</b> Browser LocalStorage synchronization preserving completed lesson markers.</p>
+    </div>
+
+    <div class="case-block">
+      <h4>4. Planning, Architecture & Delivery</h4>
+      <p>• <b>Tech Stack:</b> Vanilla HTML5, modern CSS custom properties, and modular ES6 JavaScript.</p>
+      <p>• <b>Design System:</b> Clean typography (Fraunces & Plus Jakarta Sans), accessible color contrast ratios, and responsive CSS grid/flexbox layouts.</p>
+      <p>• <b>Zero-Dependency Philosophy:</b> Engineered without heavy frontend frameworks to guarantee sub-second load times and zero build-step overhead on GitHub Pages.</p>
+    </div>
+
+    <div class="case-block">
+      <h4>5. Testing & Future Roadmap</h4>
+      <p>• <b>Testing:</b> Validated across mobile/desktop viewports, verified EVM calculation precision, tested keyboard navigation accessibility.</p>
+      <p>• <b>Planned Improvements:</b> Downloadable PM starter templates (Project Charter, Risk Register, RACI Matrix), dark mode theme toggle, and expanded PMP mock exam categories.</p>
+    </div>
+  </div>
+</div>
+
 <script>
-const U=a=>"<ul>"+a.map(x=>"<li>"+x+"</li>").join("")+"</ul>",F=a=>'<div class="flow">'+a.map(x=>"<span>"+x+"</span>").join("<i>→</i>")+"</div>",C=a=>'<div class="cards">'+a.map(x=>"<div><b>"+x[0]+"</b>"+x[1]+"</div>").join("")+"</div>",T=t=>'<div class="tip"><b>Note.</b> '+t+"</div>",H=(t,b)=>"<h4>"+t+"</h4>"+b;
-const P=["Part 1 · Foundations","Part 2 · Planning the work","Part 3 · Risk & change","Part 4 · Methods","Part 5 · PM Tools","Part 6 · Career"];
-const L=[
-[0,"🧭","What is Project Management?","#4f46e5","#7c3aed",H("Project","<p>Temporary work with a start, an end and a goal, to create something unique (a product, service or result).</p>")+H("Project management","<p>Using skills, tools and methods to deliver the project on time, within budget and with the right quality.</p>")+H("Project, Program, Portfolio",C([["Project","One goal. Example: build a mobile app."],["Program","Group of related projects. Example: a whole bank digital transformation."],["Portfolio","All projects and programs a company runs, chosen to match its strategy."]]))+H("Project vs operations","<p>Projects end. Operations (daily routine work like payroll) continue forever.</p>")+H("Real example","<p>Building a school website is a <b>project</b>: it starts when the school asks, it has a goal (a working site), and it ends when the site goes live. Updating news on the site every week is <b>operations</b>.</p>")+T("Remember: every project is <b>temporary</b> and <b>unique</b>.")],
-[0,"⏳","The Project Life Cycle","#0891b2","#06b6d4",H("5 process groups",F(["Initiating","Planning","Executing","Monitoring & Controlling","Closing"]))+U(["<b>Initiating</b> – business case, project charter, find stakeholders.","<b>Planning</b> – scope, schedule, cost, quality, risk, communication plans.","<b>Executing</b> – team does the work, manage people and deliver.","<b>Monitoring &amp; Controlling</b> – track progress, compare to plan, approve changes. Runs <i>during</i> all phases.","<b>Closing</b> – hand over, release team, document lessons learned."])+H("Phases vs process groups","<p>Phases are the stages of a specific project (example: design, build, test). Process groups are the 5 management activities above, repeated in each phase.</p>")+T("Effort pattern: low at start, highest during execution, low at closing. Cost of changes grows as time passes.")],
-[0,"🔺","Triple Constraint & Success","#059669","#10b981",C([["📦 Scope","What work is included."],["📅 Time","When it must finish."],["💰 Cost","Budget available."]])+"<p>The three are connected. Change one and at least one other changes. <b>Quality</b> sits in the middle: if you squeeze all three too much, quality suffers.</p>"+U(["More scope with same time → more cost (more people).","Less time with same scope → more cost or lower quality.","Less budget → reduce scope or accept more time."])+H("What is success?","<p>Not only on time and budget. A project is also successful if the customer is happy and it creates the planned business value.</p>")+T("Other constraints: resources, risk, customer satisfaction.")],
-[0,"👥","Roles & Organisation Types","#d97706","#f59e0b",H("Main roles",C([["Project Manager","Leads the plan, team and communication. Is responsible for results."],["Sponsor","Funds and champions the project. Takes top decisions."],["Team members","Do the actual work."],["Customer / user","Receives and uses the result."],["PMO","Office that sets standards and supports all PMs."],["Steering committee","Senior group that guides big decisions."]]))+H("Organisation structures",U(["<b>Functional</b> – people report to department heads. PM has little authority.","<b>Matrix</b> – people report to a department head <i>and</i> the PM. Weak, balanced or strong matrix.","<b>Projectized</b> – PM has full authority and team works only on the project."]))],
-[0,"🤝","Stakeholder Management","#7c3aed","#a78bfa","<p>A stakeholder is anyone who can affect or is affected by the project.</p>"+H("4 steps",F(["Identify","Analyse","Plan engagement","Monitor"]))+H("Power / Interest grid",C([["High power, high interest","Manage closely."],["High power, low interest","Keep satisfied."],["Low power, high interest","Keep informed."],["Low power, low interest","Monitor only."]]))+T("Tool: Stakeholder Register. List name, role, needs, influence and how you will communicate.")],
-[1,"📦","Scope & the WBS","#2563eb","#38bdf8","<p><b>Scope</b> = all the work needed to deliver the product. <b>Requirements</b> = what stakeholders need.</p>"+H("Steps",F(["Collect requirements","Define scope","Create WBS","Validate","Control scope"]))+H("WBS (Work Breakdown Structure)","<p>Break the project into smaller pieces until each piece can be estimated and assigned. The smallest pieces are <b>work packages</b>.</p>")+U(["Follow the <b>100% rule</b>: the WBS must include all the work, and nothing extra.","<b>Scope creep</b> = extra work added without control. Prevent it with change control.","<b>Gold plating</b> = adding extra features nobody asked for."])],
-[1,"📅","Schedule: Tasks, Critical Path, Gantt","#db2777","#f43f5e",H("Build a schedule",F(["List activities","Set order","Estimate duration","Assign resources","Build schedule"]))+H("Dependencies",U(["<b>FS</b> Finish-to-Start (most common): B starts after A finishes.","<b>SS</b> Start-to-Start, <b>FF</b> Finish-to-Finish, <b>SF</b> Start-to-Finish (rare).","<b>Lead</b> = overlap tasks. <b>Lag</b> = add waiting time."]))+H("Critical Path Method (CPM)","<p>The <b>critical path</b> is the longest chain of dependent tasks. It decides the earliest finish date. Tasks on it have <b>zero float</b>. If they slip, the whole project slips.</p>")+H("Estimating","<span class='fm'>Three-point (PERT): (Optimistic + 4 × Most likely + Pessimistic) / 6</span>")+H("Worked example 1: PERT","<p>Optimistic 2 days, most likely 4, pessimistic 12. Estimate = (2 + 16 + 12) / 6 = <b>5 days</b>.</p>")+H("Worked example 2: critical path","<p>A (3 days) → B (4 days) and C (2 days) → D (3 days, needs B and C).</p><span class='fm'>A-B-D = 3+4+3 = <b>10 days</b> (critical path)<br>A-C-D = 3+2+3 = 8 days → C has <b>2 days float</b></span>")+U(["<b>Gantt chart</b> – tasks as bars on a timeline.","<b>Milestone</b> – zero-duration checkpoint.","<b>Crashing</b> = add resources to finish faster (costs more). <b>Fast tracking</b> = do tasks in parallel (adds risk)."])],
-[1,"💰","Cost & Earned Value (EVM)","#0d9488","#2dd4bf","<p>Estimate cost, set a budget, then control it. Types: analogous (from past projects), parametric (unit rates), bottom-up (add every task).</p>"+H("Earned Value terms",C([["PV","Planned Value: work planned by now"],["EV","Earned Value: work really done (in $)"],["AC","Actual Cost: money really spent"],["BAC","Budget at Completion: total budget"]]))+"<span class='fm'>CV = EV − AC &nbsp;|&nbsp; SV = EV − PV<br>CPI = EV ÷ AC &nbsp;|&nbsp; SPI = EV ÷ PV<br>EAC = BAC ÷ CPI</span><p>Above 1 is good, below 1 is bad. CPI &lt; 1 = over budget. SPI &lt; 1 = behind schedule.</p>"+H("Try it yourself",'<div class="calc"><div><label>BAC</label><input id="e1" type="number" value="100000"></div><div><label>PV</label><input id="e2" type="number" value="40000"></div><div><label>EV</label><input id="e3" type="number" value="35000"></div><div><label>AC</label><input id="e4" type="number" value="45000"></div></div><div id="eo" class="tip"></div>')],
-[1,"✅","Quality Management","#ea580c","#fb923c","<p>Quality = the result meets the agreed requirements and the customer is satisfied.</p>"+U(["<b>Quality planning</b> – decide standards.","<b>Quality assurance</b> – make sure the <i>process</i> is followed (prevention).","<b>Quality control</b> – inspect the <i>product</i> (detection).","Tools: checklists, control charts, Pareto (80/20), fishbone (cause and effect), audits.","<b>Cost of quality</b>: preventing defects is cheaper than fixing them later."])+T("Grade is not quality. A basic phone can be high quality; a luxury phone with bugs is low quality.")],
-[1,"🧑‍🤝‍🧑","Team & Resources","#4338ca","#818cf8",H("Tuckman's 5 team stages",F(["Forming","Storming","Norming","Performing","Adjourning"]))+U(["<b>Forming</b> – polite, learning roles.","<b>Storming</b> – conflict and disagreements.","<b>Norming</b> – working together well.","<b>Performing</b> – high productivity.","<b>Adjourning</b> – project ends, team breaks up."])+H("RACI example: task “Build website”",C([["Developer","R – Responsible (does it)"],["Project Manager","A – Accountable (owns result)"],["Client","C – Consulted (gives opinions)"],["Sponsor","I – Informed (gets updates)"]]))+H("Resource tools",U(["<b>RACI</b> – Responsible, Accountable, Consulted, Informed.","<b>Resource histogram</b> – workload per person.","<b>Resource levelling</b> – fix over-booked people (may move dates).","Conflict handling: collaborate/problem-solve is usually best; forcing and avoiding are weaker."]))],
-[1,"💬","Communication","#0284c7","#38bdf8","<p>PMs spend about 90% of their time communicating (a commonly quoted figure).</p>"+U(["Sender → message → receiver → feedback. Remove <b>noise</b> (confusion).","<b>Push</b> (email, report) vs <b>pull</b> (shared folder) vs <b>interactive</b> (meeting, call).","Communication channels = n(n−1)/2. A team of 10 has 45 channels!","Make a <b>communication plan</b>: who, what, when, how."])+T("Active listening: pay attention, repeat in your own words, ask questions.")],
-[2,"⚠️","Risk Management","#dc2626","#fb923c","<p>A <b>risk</b> is an uncertain event that may affect objectives (negative = threat, positive = opportunity). An <b>issue</b> already happened.</p>"+F(["Plan","Identify","Analyse","Plan responses","Implement","Monitor"])+H("Analysis",U(["<b>Qualitative</b>: Risk score = Probability × Impact (use a P-I matrix).","<b>Quantitative</b>: numbers, simulations, expected monetary value (EMV = probability × cost)."]))+H("Responses",C([["Threat","Avoid, Transfer (insurance), Mitigate, Accept"],["Opportunity","Exploit, Share, Enhance, Accept"]]))+H("Worked example","<p>Risk: supplier delay. Probability 30%, cost if it happens $20,000.<br>EMV = 0.30 × (−$20,000) = <b>−$6,000</b>. So you may keep about $6,000 as contingency.</p>")+T("Keep a <b>Risk Register</b>: risk, owner, score, response, status. Reserves: contingency for known risks, management reserve for unknown.")],
-[2,"🔄","Change, Procurement & Contracts","#be123c","#fb7185",H("Integrated change control",F(["Request","Assess impact","Approve / reject (CCB)","Update plan","Communicate"]))+"<p>Never accept a change informally. Always check impact on scope, time, cost and risk.</p>"+H("Procurement (buying from outside)",U(["<b>Fixed price</b> – seller carries cost risk.","<b>Cost reimbursable</b> – buyer carries more risk.","<b>Time &amp; Material</b> – mix of both, good when scope is unclear.","Steps: make-or-buy decision → RFP/RFQ → select → manage contract → close."]))],
-[3,"🛠️","Waterfall, Agile & Hybrid","#7c3aed","#c084fc",C([["Waterfall (Predictive)","Plan everything first, then do phases in order. Best when requirements are clear and stable (construction)."],["Agile (Adaptive)","Build in small increments, get feedback, adapt. Best when requirements change (software)."],["Hybrid","Mix: plan the big picture, work agile inside."]])+H("Agile Manifesto values","<p>Individuals and interactions, working software, customer collaboration, responding to change (over processes, documentation, contracts, plans).</p>")+U(["Common practices: user stories, MVP (minimum viable product), iterative delivery, retrospectives.","<b>Lean</b> = remove waste. <b>XP</b> = engineering practices like pair programming and tests."])],
-[3,"🏉","Scrum & Kanban","#0f766e","#34d399",H("Scrum",C([["Roles","Product Owner (what), Scrum Master (how the process works), Developers (do the work)"],["Events","Sprint (1–4 weeks), Sprint Planning, Daily Scrum (15 min), Sprint Review, Retrospective"],["Artifacts","Product Backlog, Sprint Backlog, Increment"]]))+H("Kanban",F(["Backlog","To Do","Doing","Review","Done"])+"<p>Visualise work, limit <b>WIP</b> (work in progress), and keep flow smooth. Measure <b>lead time</b> and <b>cycle time</b>.</p>")+H("User story format","<span class='fm'>As a [type of user], I want [a goal], so that [a benefit].</span><p>Example: As a student, I want to reset my password, so that I can log in again.</p>")+H("Agile metrics",U(["<b>Velocity</b> – story points done per sprint.","<b>Burndown chart</b> – work left over time.","<b>Definition of Done</b> – shared checklist for finished work."]))],
-[4,"🧰","PM Tools: The Big List","#2563eb","#22d3ee","<p>A tool does not manage the project. The PM does. Tools only help you plan, track and share.</p>"+C([["📊 Microsoft Excel / Google Sheets","Templates, trackers, budgets, Gantt. Cheap and flexible."],["🗓️ Microsoft Project","Classic desktop tool for detailed schedules, critical path and resources."],["🗂️ Trello","Simple Kanban boards. Great for beginners and small teams."],["🧩 Jira","Agile and software teams: backlog, sprints, bugs, reports."],["✅ Asana","Task lists, timelines and workflows for business teams."],["📅 Monday.com","Visual boards with automations and dashboards."],["⚡ ClickUp","All-in-one: tasks, docs, goals, many views."],["📝 Notion","Flexible notes + databases + simple project boards."],["📈 Smartsheet","Spreadsheet-style with Gantt, strong in enterprise."],["🧱 Wrike / Basecamp","Team collaboration and project tracking."],["🎨 Miro / Lucidchart","Whiteboards and diagrams (WBS, flowcharts, brainstorm)."],["💬 Slack / Teams / Zoom","Daily communication and meetings."]])+T("Features and free plans change often. Check each tool's website before you choose.")],
-[4,"🎯","Choosing Tools & Key Templates","#4f46e5","#60a5fa",H("How to choose",U(["Team size and skills (keep it simple for beginners).","Method: Kanban/Agile → Trello or Jira. Detailed schedules → MS Project or Gantt tools.","Budget: start free, upgrade only when needed.","Reporting needs and integrations (email, calendar, Slack).","Ease of use. If nobody uses it, it is useless."]))+H("Free starter stack","<p>Google Sheets (plans) + Trello (tasks) + Google Meet (meetings) + Google Drive (documents).</p>")+H("What is inside a Project Charter?",U(["Purpose and business case","Objectives and success criteria","High-level scope and deliverables","Summary budget and timeline","Key stakeholders and the PM's authority","Main assumptions, constraints and risks","Sponsor approval signature"]))+H("Must-know documents",C([["Project Charter","Starts the project and gives the PM authority."],["Scope Statement & WBS","What is in, what is out."],["Gantt / Timeline","Schedule and dependencies."],["RACI Matrix","Who does what."],["Risk Register","Risks and responses."],["Budget / Cost Tracker","Plan vs actual money."],["Status Report","Weekly update for stakeholders."],["Change Log","All approved changes."],["Lessons Learned","What to repeat or improve."]]))],
-[5,"🌟","Leadership & Soft Skills","#c026d3","#e879f9",U(["<b>Leadership</b> – inspire, give direction, support the team (not only manage tasks).","<b>Negotiation</b> – find win-win agreements.","<b>Problem solving &amp; decision making</b> – define, find causes, choose, act.","<b>Emotional intelligence</b> – understand your feelings and others'.","<b>Time management</b> – prioritise (urgent vs important).","<b>Ethics</b> – honesty, fairness, responsibility, respect."])+T("Servant leadership: a good PM removes obstacles so the team can do great work.")],
-[5,"🏁","Closing & Lessons Learned","#475569","#94a3b8",F(["Finish all work","Customer acceptance","Close contracts","Release team","Archive & lessons learned"])+U(["Get formal <b>sign-off</b> from the customer or sponsor.","Hand over documents, training and support.","Close procurement and pay suppliers.","Hold a <b>lessons learned</b> meeting: what went well, what went wrong, what to improve.","Celebrate and thank the team."])],
-[5,"🏆","Careers & Certificates","#ca8a04","#fbbf24",H("Common certificates",C([["PMP (PMI)","For experienced PMs. Requires work experience and an exam."],["CAPM (PMI)","Entry level for beginners."],["PRINCE2","Process-based method, popular in the UK and Europe."],["PSM / CSM","Scrum Master certificates."],["PMI-ACP","Agile practitioner."]]))+H("PMBOK Guide (PMI)","<p>The 7th edition focuses on principles and performance domains: stakeholders, team, development approach and life cycle, planning, project work, delivery, measurement and uncertainty. Check PMI's website for the newest edition.</p>")+H("How to grow",U(["Lead small real projects (events, clubs, community work).","Practise with Trello, Sheets and templates.","Learn Agile and one big method (PMBOK or PRINCE2).","Build a portfolio and ask for feedback.","Typical path: Coordinator → Project Manager → Senior PM → Program / Portfolio Manager → PMO Head."]))+T("🎉 You finished the course! Now try the quiz.")]
+/* Helper Formatters */
+const U = a => "<ul>" + a.map(x => "<li>" + x + "</li>").join("") + "</ul>";
+const F = a => '<div class="flow">' + a.map(x => "<span>" + x + "</span>").join("<i>→</i>") + "</div>";
+const C = a => '<div class="cards">' + a.map(x => "<div><b>" + x[0] + "</b>" + x[1] + "</div>").join("") + "</div>";
+const T = t => '<div class="tip"><b>Note:</b> ' + t + "</div>";
+const H = (t, b) => "<h4>" + t + "</h4>" + b;
+const TL = (n, tg, a) => '<div class="tool"><h4>' + n + '</h4><p class="tg">' + tg + '</p>' + U(a) + '</div>';
+
+/* Curriculum Part Titles */
+const P = [
+  "Part 1 · Foundations",
+  "Part 2 · Planning the Work",
+  "Part 3 · Risk & Change",
+  "Part 4 · Methods & Frameworks",
+  "Part 5 · PM Tools",
+  "Part 6 · Leadership & Career"
 ];
-const G=[["Agile","Flexible way of working in small steps."],["Baseline","Approved plan used for comparing results."],["BAC","Budget at Completion, total budget."],["Backlog","Ordered list of work to do."],["Burndown","Chart showing work remaining."],["Charter","Document that officially starts a project."],["CCB","Change Control Board, approves changes."],["CPI","Cost Performance Index = EV ÷ AC."],["Critical Path","Longest chain of tasks, sets project end date."],["Deliverable","Output you must give to the customer."],["EAC","Estimate at Completion = BAC ÷ CPI."],["EV","Earned Value, value of work done."],["Float / Slack","How long a task can be late without delaying the project."],["Gantt Chart","Bar chart of tasks over time."],["Gold plating","Adding unrequested extras."],["Issue","A problem happening now."],["KPI","Number that measures success."],["Lessons Learned","Notes on what to repeat or improve."],["Milestone","Important checkpoint with zero duration."],["MVP","Minimum Viable Product, smallest useful version."],["PMO","Project Management Office."],["Program","Group of related projects."],["Portfolio","All projects of an organisation."],["RACI","Responsible, Accountable, Consulted, Informed."],["Risk","Uncertain event that can affect goals."],["Scope","All work included in the project."],["Scope creep","Uncontrolled extra work."],["Sprint","Short work period in Scrum."],["SPI","Schedule Performance Index = EV ÷ PV."],["Stakeholder","Anyone affected by or affecting the project."],["Sponsor","Person who funds and supports the project."],["WBS","Work Breakdown Structure."],["WIP","Work in progress (Kanban limit)."]];
-const Q=[["Which two words describe every project?","Temporary and unique",["Temporary and unique","Repeating and daily","Free and fast"]],["The critical path is…","The longest chain of dependent tasks",["The cheapest path","The longest chain of dependent tasks","The most risky task"]],["CPI = 0.8 means…","Over budget",["Over budget","Under budget","Ahead of schedule"]],["Who funds and champions the project?","Sponsor",["Sponsor","Tester","Vendor"]],["In Scrum, who decides WHAT is built (priority)?","Product Owner",["Scrum Master","Product Owner","Sponsor"]],["Risk score is usually…","Probability × Impact",["Cost ÷ Time","Probability × Impact","Scope + Time"]],["Which tool is best known for simple Kanban boards?","Trello",["Microsoft Project","Trello","Pareto chart"]],["Extra work added without approval is…","Scope creep",["Scope creep","Fast tracking","Crashing"]]];
-let cur=0,done=new Set();try{done=new Set(JSON.parse(localStorage.getItem("pmDone2")||"[]"))}catch(e){}
-let $=i=>document.getElementById(i),N=L.length;
-function render(){let h="",p=-1;L.forEach((l,i)=>{if(l[0]!=p){p=l[0];h+=`<div class="part">${P[p]}</div>`}h+=`<button class="l ${i==cur?'on':''}" onclick="go(${i})"><span class="n">${String(i+1).padStart(2,"0")}</span><span>${l[2]}</span><span class="ck">${done.has(i)?'✅':''}</span></button>`});$("list").innerHTML=h;
-const l=L[cur];$("lesson").innerHTML=`<div class="ban" style="background:linear-gradient(135deg,${l[3]},${l[4]})"><div class="em">${String(cur+1).padStart(2,"0")}</div><div><small>Lesson ${cur+1} of ${N} · ${P[l[0]]}</small><h3>${l[2]}</h3></div></div><div class="body">${l[5]}</div><div class="nav2"><button class="b2 g" onclick="go(cur-1)" ${cur==0?'disabled':''}>← Back</button><button class="b2 ok" onclick="mark()">${done.has(cur)?'✅ Completed (tap to undo)':'Mark as done'}</button><button class="b2" onclick="go(cur+1)" ${cur==N-1?'disabled':''}>Next →</button></div>`;
-$("pt").textContent=done.size+" of "+N+" lessons done";$("pb").style.width=done.size*100/N+"%";if($("e1")){["e1","e2","e3","e4"].forEach(x=>$(x).oninput=calc);calc()}}
-function calc(){const[a,p,e,c]=["e1","e2","e3","e4"].map(x=>+$(x).value),f=n=>isFinite(n)?n.toFixed(2):"–";$("eo").innerHTML=`CV = ${e-c} (${e-c<0?'over budget':'under budget'})<br>SV = ${e-p} (${e-p<0?'behind schedule':'ahead of schedule'})<br>CPI = ${f(e/c)} · SPI = ${f(e/p)}<br>EAC = ${f(a/(e/c))}`}
-function go(i){if(i<0||i>=N)return;cur=i;render();$("lesson").scrollIntoView({block:"start"})}
-function mark(){done.has(cur)?done.delete(cur):done.add(cur);try{localStorage.setItem("pmDone2",JSON.stringify([...done]))}catch(e){}render()}
-function gl(q){q=(q||"").toLowerCase();const r=G.filter(g=>(g[0]+g[1]).toLowerCase().includes(q));$("gl").innerHTML=r.length?r.map(g=>`<div><b>${g[0]}</b><br>${g[1]}</div>`).join(""):"<p>No word found. Try another word.</p>"}
-$("gs").oninput=e=>gl(e.target.value);
-let qi=0,sc=0;
-function quiz(){if(qi>=Q.length){$("qz").innerHTML=`<h3>Your score: ${sc} / ${Q.length} ${sc>=Q.length*.7?'🎉 Great job!':'💪 Good try. Review the lessons and try again.'}</h3><button class="b2" onclick="qi=0;sc=0;quiz()">Try again</button>`;return}
-const q=Q[qi];$("qz").innerHTML=`<small>Question ${qi+1} of ${Q.length}</small><h3>${q[0]}</h3>`+q[2].map((o,k)=>`<button class="o" data-k="${k}">${o}</button>`).join("")+`<p id="fb" aria-live="polite"></p>`;
-document.querySelectorAll(".o").forEach(b=>b.onclick=()=>{const q=Q[qi];document.querySelectorAll(".o").forEach(x=>{x.disabled=true;if(x.textContent==q[1])x.classList.add("right")});if(b.textContent==q[1]){sc++;$("fb").textContent="✅ Correct!"}else{b.classList.add("wrong");$("fb").textContent="❌ Not correct. Right answer: "+q[1]}
-$("fb").insertAdjacentHTML("afterend",`<button class="b2" onclick="qi++;quiz()">${qi==Q.length-1?'See score':'Next question →'}</button>`)})}
-const TL=(n,tg,a)=>'<div class="tool"><h4>'+n+'</h4><p class="tg">'+tg+'</p>'+U(a)+'</div>';
-L[15]=[4,"","PM Tools: What They Do and How to Think About Them","","",'<p>A tool does not manage the project. The PM does. A tool only helps you <b>plan, assign, track, report and talk</b> in one place instead of in many emails and notebooks.</p>'+H("6 kinds of tools",C([["Boards","Cards that move across columns. Trello, Asana, Monday.com, ClickUp."],["Schedulers","Gantt charts, critical path, resources. MS Project, Primavera P6, Smartsheet."],["Software team tools","Backlog, sprints, bugs. Jira."],["Spreadsheets","Budgets, trackers, templates. Excel, Google Sheets."],["Docs and notes","Plans, meeting notes, knowledge. Notion."],["Communication","Chat and meetings. Slack, Microsoft Teams, Zoom, Google Meet."]]))+T("The next three lessons explain 12 widely used tools one by one: what each is, who it suits, its strengths and its weak points. Plans and prices change often, so always check each official website.")];
-L.splice(16,0,[4,"","Tools Part A: Boards and Work Management","","",'<p>These tools organise <b>tasks and teamwork</b>. They are the easiest to start with.</p>'+TL("1. Trello","Kanban boards. By Atlassian.",["<b>Best for:</b> beginners, small teams, personal and school projects.","<b>How it works:</b> boards contain lists (To Do, Doing, Done) and cards you drag across.","<b>Strong:</b> very simple, quick to learn, Power-Ups and automation add features, has a free plan.","<b>Weak:</b> not built for complex schedules, dependencies or budget tracking."])+TL("2. Asana","Work management for business teams.",["<b>Best for:</b> marketing, operations and general business teams.","<b>How it works:</b> tasks, subtasks, projects shown as list, board, timeline or calendar.","<b>Strong:</b> clear ownership and due dates, workflows, goals, has a free plan for small teams.","<b>Weak:</b> can feel heavy for tiny teams, some advanced views need paid plans."])+TL("3. Monday.com","Visual, customisable boards.",["<b>Best for:</b> mid-size teams and agencies that want colourful dashboards.","<b>Strong:</b> automations, dashboards, easy to adapt for sales, HR or projects.","<b>Weak:</b> paid per seat, and designing good boards takes some learning."])+TL("4. ClickUp","All-in-one workspace.",["<b>Best for:</b> teams who want tasks, docs, goals and chat in one place.","<b>Strong:</b> many views (list, board, Gantt, calendar), very flexible, has a free plan.","<b>Weak:</b> so many options that new users can feel lost. Start with only 2 views."])+TL("5. Wrike","Work management for larger teams.",["<b>Best for:</b> marketing, creative and enterprise teams with many requests.","<b>Strong:</b> Gantt charts, workload view, request forms, reports.","<b>Weak:</b> higher cost and a steeper learning curve than Trello or Asana."])]);
-L.splice(17,0,[4,"","Tools Part B: Software, Scheduling and Enterprise","","",'<p>These tools handle <b>software teams and formal schedules</b>. They match many concepts from the earlier lessons.</p>'+TL("6. Jira","Issue and agile tracking. By Atlassian.",["<b>Best for:</b> software and IT teams using Scrum or Kanban.","<b>How it works:</b> work items (stories, tasks, bugs) go into a backlog, then into sprints on a board.","<b>Strong:</b> sprint planning, burndown and velocity reports, roadmaps, deep integrations, has a free plan for small teams.","<b>Weak:</b> setup can be complex, and non-IT teams may find it heavy. A very common skill in software job ads."])+TL("7. Microsoft Project","Classic scheduling software.",["<b>Best for:</b> project managers who build detailed, formal plans (waterfall).","<b>How it works:</b> you enter tasks, durations and dependencies and it draws the Gantt chart and critical path.","<b>Strong:</b> baselines, resource levelling, cost tracking. It matches PMBOK ideas almost one to one.","<b>Weak:</b> paid, harder to learn, and less friendly for agile teams."])+TL("8. Oracle Primavera P6","Enterprise scheduling for very large projects.",["<b>Best for:</b> construction, infrastructure, engineering, oil and gas.","<b>Strong:</b> powerful critical path scheduling, resource and cost loading, handles thousands of activities.","<b>Weak:</b> expensive, specialist skill, steep learning curve. Common in job ads for large construction projects."])+TL("9. Smartsheet","Spreadsheet style with project features.",["<b>Best for:</b> business teams who like Excel but want Gantt, forms and dashboards.","<b>Strong:</b> grid view plus Gantt with dependencies, automation, reports, good for enterprises.","<b>Weak:</b> paid (usually a trial, not a free plan) and less natural for agile sprints."])]);
-L.splice(18,0,[4,"","Tools Part C: Everyday Tools Every PM Uses","","",'<p>You will use these even if your company also buys a big tool.</p>'+TL("10. Microsoft Excel and Google Sheets","Spreadsheets. The most universal PM tool.",["<b>Best for:</b> everyone, especially beginners and small projects.","<b>Use for:</b> budgets, Gantt charts, risk registers, RACI, status reports, earned value formulas.","<b>Strong:</b> flexible, familiar, cheap. Google Sheets is free and works online with sharing.","<b>Weak:</b> mostly manual, easy to break formulas, versions get messy when many people edit."])+TL("11. Notion","Notes, documents and databases in one.",["<b>Best for:</b> students, startups and small teams who also need documentation.","<b>Strong:</b> project pages with board, table, calendar and timeline views, good for meeting notes and plans, has a free plan.","<b>Weak:</b> not designed for strict scheduling, resource loading or cost control."])+TL("12. Basecamp","Simple project hub focused on communication.",["<b>Best for:</b> small teams and agencies working with clients.","<b>Strong:</b> to-dos, message boards, schedules, files and chat in one calm place.","<b>Weak:</b> no advanced Gantt or dependency features. Paid, usually with a trial."])+H("Supporting tools",'<p>Slack or Microsoft Teams for daily chat, Zoom or Google Meet for meetings, Miro for whiteboards, Google Drive or OneDrive for files.</p>')+T("Start here: learn <b>Excel or Google Sheets</b> and <b>Trello</b> first. Then add <b>Jira</b> (if you want software teams) or <b>MS Project</b> (if you want formal planning) and learn the concepts, because the concepts stay the same in every tool.")]);
-L[10][5]=L[10][5].replace('<p>PMs spend about 90% of their time communicating (a commonly quoted figure).</p>','<p>Communication is one of the biggest parts of a PM day: meetings, updates, listening and solving misunderstandings.</p>');
-L[5][5]+=H('Worked example: WBS for a school event',F(['1 Plan','2 Programme','3 Promotion','4 Run the day','5 Close'])+'<span class="fm">1 Plan: 1.1 Set budget, 1.2 Book hall, 1.3 Get permission<br>2 Programme: 2.1 Choose speakers, 2.2 Print schedule<br>3 Promotion: 3.1 Poster, 3.2 Social media post<br>4 Run the day: 4.1 Set up stage, 4.2 Welcome guests<br>5 Close: 5.1 Pay bills, 5.2 Thank you notes</span><p>Each line at the lowest level (like 1.2 Book hall) is a work package that one person can own and estimate.</p>');
-L[7][5]+=H('Reading the default numbers',U(['CPI = 35,000 / 45,000 = <b>0.78</b>. Each $1 spent produced only $0.78 of value. Over budget.','SPI = 35,000 / 40,000 = <b>0.88</b>. Work is about 12% behind plan.','EAC = 100,000 / 0.78 = <b>about $128,600</b>. If this trend continues, the project will cost about $28,600 more than planned.','A good PM acts now: find the cause, fix it and report honestly.']));
-L.splice(22,0,[5,"","The Real PM Job: Weekly Work, Mistakes and Interviews","","",H('A typical PM week',U(['<b>Daily:</b> short team check-in, remove blockers, answer questions.','<b>Weekly:</b> update the schedule, check budget, review risks, send the status report.','<b>Regularly:</b> meet the sponsor, handle change requests, talk to stakeholders.','<b>Always:</b> protect the team from distractions and keep the goal clear.']))+H('10 common PM mistakes',C([['Unclear scope','Start without written scope and agreed success criteria.'],['Ignoring risks','Hoping problems will not happen.'],['Over-promising','Saying yes to every request or an impossible date.'],['Weak communication','Stakeholders hear bad news too late.'],['No change control','Accepting small changes until the project is out of control.'],['Micromanaging','Not trusting the team to do the work.'],['One-person plan','Making the plan alone without asking the team.'],['No owner for tasks','Everybody is responsible, so nobody is.'],['Skipping reviews','Never checking progress against the baseline.'],['No lessons learned','Repeating the same mistakes on the next project.']]))+H('Interview preparation',U(['Use the <b>STAR</b> method: Situation, Task, Action, Result.','Be ready for: Tell me about a project you led. How do you handle scope creep? How do you deal with a late task? How do you handle a difficult stakeholder?','Show numbers: budget, team size, days saved, results.','Know basic terms: critical path, risk register, WBS, CPI and SPI, Scrum events.']))+H('Practice project (build your portfolio)',F(['Choose a real project','Write a charter','Make a WBS','Build a schedule','Make a risk register','Write a status report'])+'<p>Do this for a school event, a trip or a small app. Keep the documents. These become proof of your skills when you apply for jobs.</p>')]);
-L.splice(15,0,[3,"","Other Frameworks: PMBOK, PRINCE2, Lean, Six Sigma, SAFe","","",'<p>Methods (Waterfall, Agile) describe <b>how you work</b>. Frameworks and standards give a bigger set of rules and vocabulary.</p>'+C([['PMBOK Guide (PMI)','A guide of knowledge and principles. It is a standard, not a strict method. Basis of the PMP exam.'],['PRINCE2','A complete method with defined roles, stages and documents. Popular in the UK, Europe and government work.'],['Lean','Remove waste, improve flow, keep improving (Kaizen). Started in Toyota.'],['Six Sigma','Reduce defects and variation using data. Uses DMAIC: Define, Measure, Analyse, Improve, Control.'],['SAFe','Scaled Agile Framework. Helps many Agile teams work together in a large company.']])+H('PRINCE2 7 principles',U(['Continued business justification','Learn from experience','Defined roles and responsibilities','Manage by stages','Manage by exception (only escalate when limits are passed)','Focus on products','Tailor to suit the project']))+T('You do not have to pick one. Real companies mix them. Learn the shared ideas first (scope, time, cost, risk, quality) and then the vocabulary of whichever framework your employer uses.')]);
-L.splice(2,0,[0,"","Business Case and Choosing the Right Project","","",'<p>Before a project starts, someone must ask: <b>is this worth doing?</b> A PM must understand this, even if the sponsor makes the final choice.</p>'+H('Why projects start',U(['A problem to solve (slow system).','An opportunity (new market).','A rule or law (new tax rule).','A customer request.']))+H('Business case',U(['Why do we need it? What options exist?','Costs, benefits and risks of each option.','Recommended option and how success will be measured.']))+H('Feasibility check',C([['Technical','Can we build it?'],['Economic','Is it worth the money?'],['Operational','Will people use it?'],['Legal','Is it allowed?'],['Schedule','Can we finish in time?']]))+H('Money formulas',"<span class=\"fm\">Payback = Cost / yearly benefit<br>ROI = (Total benefit - Cost) / Cost<br>BCR = Total benefit / Cost (above 1 is good)<br>NPV = Present value of benefits - Cost (positive is good)</span>")+H('Worked example','<p>Cost $50,000. Benefit $20,000 per year for 4 years (total $80,000). Discount rate 10%.</p><span class="fm">Payback = 50,000 / 20,000 = <b>2.5 years</b><br>ROI = (80,000 - 50,000) / 50,000 = <b>60%</b><br>BCR = 80,000 / 50,000 = <b>1.6</b><br>NPV = 20,000 x 3.17 - 50,000 = <b>about +$13,400</b></span><p>The 3.17 is the 4-year, 10% discount factor total. Positive NPV means the project adds value.</p>')+T('Sunk cost (money already spent) must not decide the future. Only future costs and benefits count.')]);
-L.splice(3,0,[0,"","The Project Management Plan, Baselines and Integration","","",'<p><b>Integration management</b> means keeping all parts of the project working together. The PM is the person who joins everything.</p>'+F(['Charter','Project plan','Do the work','Monitor and control','Change control','Close'])+H('The Project Management Plan',C([['Sub-plans','Scope, schedule, cost, quality, resource, communication, risk, procurement and stakeholder plans.'],['Baselines','The approved versions of scope, schedule and cost. You compare real results with them.'],['Other items','Assumptions, constraints, change process and how you will review progress.']]))+H('Baseline vs actual','<p>Baseline cost $10,000, actual cost $12,000 gives a variance of $2,000 over. Without a baseline you cannot say whether you are late or over budget.</p>')+H('Kick-off meeting',U(['Goal and scope','Roles and who to ask','Schedule and key dates','How the team will communicate','First risks and next steps']))+H('Good habits',U(['<b>Progressive elaboration</b>: plan in more detail as you learn more.','<b>Rolling wave planning</b>: plan near-term work in detail and far-future work roughly.','Keep an <b>assumption log</b>, <b>issue log</b> and <b>change log</b> up to date.']))+T('A plan is not a promise carved in stone. It is the approved starting point, and you update it through change control.')]);
-Q.push(['Positive NPV means…','The project adds value',['The project adds value','The project is late','The risk is zero']],['A baseline is…','The approved plan used for comparison',['The approved plan used for comparison','A type of risk','The final report']],['PRINCE2 principle: Manage by…','Exception and stages',['Exception and stages','Luck','Meetings only']],['Cost $50,000, yearly benefit $20,000. Payback is…','2.5 years',['4 years','2.5 years','1 year']]);
-L.splice(23,4);N=L.length;
-render();gl();quiz();
-</script></body></html>
+
+/* Complete 27 Lessons Array: [PartIndex, Emoji, Title, GradientStart, GradientEnd, Content] */
+const L = [
+  /* Part 1 · Foundations */
+  [
+    0, "🧭", "What is Project Management?", "#1e293b", "#334155",
+    H("What is a Project?", "<p>A <b>project</b> is a temporary endeavor undertaken to create a unique product, service, or result. It has a definite beginning, an agreed scope, and a defined completion date.</p>") +
+    H("What is Project Management?", "<p>Project management is the application of knowledge, skills, tools, and techniques to project activities to meet project requirements and achieve intended business value.</p>") +
+    H("Project vs Program vs Portfolio", C([
+      ["Project", "A single focused effort with one primary objective. Example: Developing a mobile payment app."],
+      ["Program", "A group of related projects managed in a coordinated way to obtain benefits not available from managing them individually. Example: A bank-wide digital transformation."],
+      ["Portfolio", "A collection of projects, programs, and operational activities grouped together to achieve strategic business objectives."]
+    ])) +
+    H("Projects vs Operations", "<p><b>Projects</b> are temporary, produce unique deliverables, and conclude when objectives are met. <b>Operations</b> are continuous, repetitive daily business functions (such as routine payroll, customer support, and system maintenance) designed to sustain the business.</p>") +
+    H("Real-World Example", "<p>Designing and launching an e-commerce website is a <b>project</b>. Operating the site, fulfilling daily orders, and addressing ongoing customer tickets is <b>operations</b>.</p>") +
+    T("Core Takeaway: Every project must be <b>temporary</b> (finite timeline) and produce something <b>unique</b>.")
+  ],
+
+  [
+    0, "⏳", "The Project Life Cycle & 5 Process Groups", "#0f766e", "#14b8a6",
+    H("The 5 Process Groups", F(["Initiating", "Planning", "Executing", "Monitoring & Controlling", "Closing"])) +
+    U([
+      "<b>Initiating:</b> Define the project at a high level, develop the Project Charter, and identify initial stakeholders.",
+      "<b>Planning:</b> Establish the total scope, refine objectives, and build the subsidiary management plans (schedule, cost, quality, risk, communications).",
+      "<b>Executing:</b> Coordinate people and resources, manage stakeholder engagement, and perform the work defined in the plan.",
+      "<b>Monitoring & Controlling:</b> Track progress, compare actuals against baselines, measure variances, and manage approved changes. This group operates continuously across all phases.",
+      "<b>Closing:</b> Formally finalize all activities, obtain customer acceptance sign-off, release resources, and archive lessons learned."
+    ]) +
+    H("Phases vs Process Groups", "<p><b>Project phases</b> are distinct time intervals in a specific project's life cycle (e.g., Discovery, Design, Build, Test, Rollout). The <b>5 process groups</b> are the management activities applied repeatedly within each phase.</p>") +
+    T("The cost of making changes is lowest at project inception and increases exponentially as execution nears completion.")
+  ],
+
+  [
+    0, "💼", "Business Case & Project Selection", "#1d4ed8", "#3b82f6",
+    H("Why Do Projects Start?", U([
+      "<b>Business Opportunity:</b> Entering a new market or creating a new revenue stream.",
+      "<b>Operational Problem:</b> Replacing an obsolete legacy system causing slow service.",
+      "<b>Regulatory / Legal Requirement:</b> Complying with new financial or privacy laws (such as GDPR).",
+      "<b>Customer / Stakeholder Demand:</b> Meeting a critical client contractual requirement."
+    ])) +
+    H("Components of a Business Case", U([
+      "Clear business need and alignment with organizational strategic objectives.",
+      "Analysis of alternative options (including the 'do nothing' scenario).",
+      "Financial cost-benefit analysis and risk profile of each option.",
+      "Recommended solution and qualitative success criteria."
+    ])) +
+    H("Feasibility Evaluation (TELOS)", C([
+      ["Technical", "Do we possess the technology and engineering capability to build this?"],
+      ["Economic", "Is the financial return or cost savings worth the capital investment?"],
+      ["Legal / Ethical", "Does the deliverable comply with relevant laws, regulations, and ethics?"],
+      ["Operational", "Will users and operational teams adopt and sustain the solution?"],
+      ["Schedule", "Can we complete delivery within the necessary market window?"]
+    ])) +
+    H("Financial Metrics Formulas", "<span class='fm'>Payback Period = Initial Investment ÷ Annual Cash Inflow<br>Return on Investment (ROI) = (Net Financial Benefit ÷ Cost) × 100%<br>Benefit-Cost Ratio (BCR) = Total Benefits ÷ Total Costs (BCR > 1.0 is favorable)<br>Net Present Value (NPV) = Sum of Discounted Future Cash Inflows − Initial Cost</span>") +
+    H("Worked Example", "<p>Project Cost: $50,000. Annual return: $20,000/year for 4 years (Total undiscounted return: $80,000). At a 10% discount rate factor (3.17):</p><span class='fm'>Payback = $50,000 ÷ $20,000 = <b>2.5 years</b><br>ROI = ($80,000 − $50,000) ÷ $50,000 = <b>60%</b><br>NPV = ($20,000 × 3.17) − $50,000 = <b>+$13,400</b></span>") +
+    T("Sunk Cost Rule: Past unrecoverable money spent must not influence current or future project investment decisions. Decisions must rely solely on future costs and expected future benefits.")
+  ],
+
+  [
+    0, "📋", "Project Management Plan & Baselines", "#4338ca", "#6366f1",
+    H("What is Integration Management?", "<p>Project Integration Management entails identifying, defining, combining, and coordinating all management processes and activities across the project.</p>") +
+    H("The Project Management Plan (PMP)", C([
+      ["Subsidiary Plans", "Scope, Schedule, Cost, Quality, Resource, Communications, Risk, Procurement, and Stakeholder engagement plans."],
+      ["Baselines", "Approved versions of Scope Baseline, Schedule Baseline, and Cost Baseline. Actual performance is compared against these."],
+      ["Management Strategies", "Change Management Plan, Configuration Plan, Performance measurement metrics, and Life cycle description."]
+    ])) +
+    H("Baseline vs Actual Performance", "<p>A <b>baseline</b> is the formally approved version of a plan. If your cost baseline is $50,000 and actual spend is $62,000, you have a negative variance of $12,000. Without a baseline, you cannot measure health or performance.</p>") +
+    H("Kick-off Meeting Agenda", U([
+      "Introduce project purpose, business case, and key deliverables.",
+      "Review roles, responsibilities, and decision-making authority.",
+      "Walk through the milestone schedule and critical dependencies.",
+      "Establish communication channels, reporting rhythms, and meeting cadence.",
+      "Highlight initial risk register items and next steps."
+    ])) +
+    H("Planning Principles", U([
+      "<b>Progressive Elaboration:</b> Continuously improving and detailing a plan as more specific information becomes available.",
+      "<b>Rolling Wave Planning:</b> Detailed planning for near-term work, coupled with high-level planning for work farther in the future."
+    ]))
+  ],
+
+  [
+    0, "🔺", "Triple Constraint & Defining Success", "#c2410c", "#ea580c",
+    H("The Iron Triangle", C([
+      ["📦 Scope", "The specific work required to deliver the agreed features and deliverables."],
+      ["📅 Schedule", "The time required to finish all project activities and milestones."],
+      ["💰 Cost", "The financial budget and resource commitments authorized."]
+    ])) +
+    "<p>The three constraints are inextricably linked. Modifying one variable directly affects at least one of the other two. <b>Quality</b> rests at the core: compressing budget and schedule while expanding scope inevitably degrades quality.</p>" +
+    H("Trade-off Dynamics", U([
+      "Increasing scope with a fixed schedule requires increased cost (more labor/resources).",
+      "Compressing the schedule (fast-tracking) often increases cost and project risk.",
+      "Reducing the budget necessitates either shrinking scope or extending the delivery date."
+    ])) +
+    H("Multidimensional Project Success", "<p>Traditional success meant delivering on time, within budget, and to specification. Modern project management defines success through <b>business value realization</b>, customer adoption, and stakeholder satisfaction.</p>")
+  ],
+
+  [
+    0, "👥", "Key Roles & Organizational Structures", "#0f766e", "#0d9488",
+    H("Core Project Roles", C([
+      ["Project Manager", "Accountable for day-to-day planning, team execution, stakeholder alignment, and project results."],
+      ["Project Sponsor", "Executive who champions the project, authorizes the charter, secures funding, and removes organizational roadblocks."],
+      ["Core Team", "Professionals executing technical deliverables (engineers, designers, analysts)."],
+      ["Customer / End User", "The individuals or entities who will use and benefit from the delivered product."],
+      ["PMO", "Project Management Office that establishes governance, standard templates, and portfolio tracking."],
+      ["Steering Committee", "Senior governance group providing oversight and resolving major escalation decisions."]
+    ])) +
+    H("Organizational Structures", U([
+      "<b>Functional:</b> Team members report strictly to functional department heads. The PM has minimal authority and serves primarily as a coordinator.",
+      "<b>Matrix (Weak, Balanced, Strong):</b> Team members report both to a functional manager and a project manager. In a Strong Matrix, the PM holds primary authority.",
+      "<b>Project-Oriented (Projectized):</b> The organization's personnel are grouped directly by projects. The PM has complete authority over resources."
+    ]))
+  ],
+
+  [
+    0, "🤝", "Stakeholder Engagement & Management", "#7c3aed", "#9333ea",
+    H("Who is a Stakeholder?", "<p>An individual, group, or organization that may affect, be affected by, or perceive itself to be affected by a decision, activity, or outcome of a project.</p>") +
+    H("4-Step Engagement Process", F(["Identify Stakeholders", "Analyze Needs & Influence", "Plan Engagement Strategy", "Monitor Relationships"])) +
+    H("Power / Interest Grid", C([
+      ["High Power, High Interest", "Manage Closely: Involve in key decisions and consult frequently."],
+      ["High Power, Low Interest", "Keep Satisfied: Meet expectations without overloading with operational minutiae."],
+      ["Low Power, High Interest", "Keep Informed: Provide regular status reports and maintain open communication."],
+      ["Low Power, Low Interest", "Monitor: Maintain awareness with minimal effort."]
+    ])) +
+    T("Key Artifact: The <b>Stakeholder Register</b> documents names, roles, expectations, influence levels, and tailored engagement tactics.")
+  ],
+
+  /* Part 2 · Planning the Work */
+  [
+    1, "📦", "Scope Management & the WBS", "#1d4ed8", "#2563eb",
+    H("Scope Definition", "<p><b>Project Scope</b> encompasses all the work required to deliver a product, service, or result with specified features and functions.</p>") +
+    H("5 Scope Steps", F(["Collect Requirements", "Define Scope", "Create WBS", "Validate Scope", "Control Scope"])) +
+    H("Work Breakdown Structure (WBS)", "<p>A hierarchical decomposition of the total scope of work to be carried out by the project team. The lowest level decomposition is termed a <b>Work Package</b>.</p>") +
+    U([
+      "<b>100% Rule:</b> The WBS must encompass 100% of the project scope—no more, no less.",
+      "<b>Scope Creep:</b> The unauthorized, unmanaged expansion of product or project scope without adjustments to time, cost, and resources.",
+      "<b>Gold Plating:</b> Providing extra features or functionality not requested by the customer (adds cost and risk without agreed value)."
+    ]) +
+    H("Worked Example: School Event WBS", F(["1.0 Planning", "2.0 Programming", "3.0 Marketing", "4.0 Event Execution", "5.0 Closeout"]) +
+      "<span class='fm'>1.0 Planning: 1.1 Finalize Budget, 1.2 Venue Booking, 1.3 Permits<br>2.0 Programming: 2.1 Speaker Lineup, 2.2 Print Agendas<br>3.0 Marketing: 3.1 Digital Posters, 3.2 Social Media Campaign<br>4.0 Event Execution: 4.1 AV Setup, 4.2 Guest Registration<br>5.0 Closeout: 5.1 Vendor Settlement, 5.2 Feedback Analysis</span><p>Every terminal leaf (e.g., 1.2 Venue Booking) is a work package assigned to a single owner.</p>")
+  ],
+
+  [
+    1, "📅", "Schedule: CPM, Critical Path & Gantt", "#be123c", "#e11d48",
+    H("Schedule Development Process", F(["Define Activities", "Sequence Activities", "Estimate Durations", "Develop Schedule", "Control Schedule"])) +
+    H("Dependency Types", U([
+      "<b>Finish-to-Start (FS):</b> Activity B cannot start until Activity A finishes (most common).",
+      "<b>Start-to-Start (SS):</b> Activity B cannot start until Activity A starts.",
+      "<b>Finish-to-Finish (FF):</b> Activity B cannot finish until Activity A finishes.",
+      "<b>Start-to-Finish (SF):</b> Activity B cannot finish until Activity A starts (rare).",
+      "<b>Lead:</b> Overlap time where successor starts before predecessor finishes.",
+      "<b>Lag:</b> Directed waiting time between tasks (e.g., waiting 2 days for concrete curing)."
+    ])) +
+    H("Critical Path Method (CPM)", "<p>The <b>Critical Path</b> is the sequence of dependent tasks that represents the longest path through a project, which determines the shortest possible project duration. Tasks on the critical path have <b>zero float (slack)</b>. Any delay on this path directly delays project completion.</p>") +
+    H("Estimating Formulas (PERT 3-Point)", "<span class='fm'>Beta / PERT Estimate = (Optimistic + 4 × Most Likely + Pessimistic) ÷ 6</span>") +
+    H("Worked Example 1: PERT", "<p>Task: Optimistic = 2 days, Most Likely = 4 days, Pessimistic = 12 days.<br>Estimate = (2 + 4×4 + 12) ÷ 6 = 30 ÷ 6 = <b>5.0 days</b>.</p>") +
+    H("Worked Example 2: Critical Path Determination", "<span class='fm'>Path 1: A (3d) → B (5d) → D (4d) = 12 days<br>Path 2: A (3d) → C (2d) → D (4d) = 9 days</span><p>Path 1 (12 days) is the <b>Critical Path</b>. Task C has 3 days of total float (12 − 9 = 3 days).</p>") +
+    H("Schedule Compression Techniques", U([
+      "<b>Crashing:</b> Adding resources to compress task durations at the lowest incremental cost (e.g., overtime, additional staff). Increases project cost.",
+      "<b>Fast Tracking:</b> Performing activities in parallel that were originally planned in sequence. Increases project risk."
+    ]))
+  ],
+
+  [
+    1, "💰", "Cost & Earned Value Management (EVM)", "#0f766e", "#047857",
+    H("Cost Estimation Approaches", U([
+      "<b>Analogous Estimating:</b> Using historical data from a similar past project (top-down, fast, lower accuracy).",
+      "<b>Parametric Estimating:</b> Using statistical relationships between historical data and variables (e.g., cost per square foot).",
+      "<b>Bottom-Up Estimating:</b> Estimating each individual work package and aggregating upwards (most accurate, resource-intensive)."
+    ])) +
+    H("Earned Value Management (EVM) Core Metrics", C([
+      ["PV (Planned Value)", "The authorized budget assigned to scheduled work up to a given date."],
+      ["EV (Earned Value)", "The measure of work performed expressed in terms of the authorized budget for that work."],
+      ["AC (Actual Cost)", "The realized cost incurred for the work performed on an activity during a given time period."],
+      ["BAC (Budget at Completion)", "The total authorized baseline budget for the entire project."]
+    ])) +
+    H("Formulas & Performance Interpretation", "<span class='fm'>Cost Variance (CV) = EV − AC &nbsp;|&nbsp; Schedule Variance (SV) = EV − PV<br>Cost Performance Index (CPI) = EV ÷ AC &nbsp;|&nbsp; Schedule Performance Index (SPI) = EV ÷ PV<br>Estimate at Completion (EAC) = BAC ÷ CPI</span><p>A value <b>above 1.0 is favorable</b>; below 1.0 indicates poor performance.<br>• CPI &lt; 1.0: Over budget (cost overrun).<br>• SPI &lt; 1.0: Behind schedule.</p>") +
+    H("Interactive EVM Calculator", '<div class="calc"><div><label>BAC ($)</label><input id="e1" type="number" value="100000"></div><div><label>PV ($)</label><input id="e2" type="number" value="40000"></div><div><label>EV ($)</label><input id="e3" type="number" value="35000"></div><div><label>AC ($)</label><input id="e4" type="number" value="45000"></div></div><div id="eo" class="tip"></div>')
+  ],
+
+  [
+    1, "✅", "Quality Management", "#ea580c", "#d97706",
+    H("Quality vs Grade", "<p><b>Quality</b> is the degree to which a set of inherent characteristics fulfills requirements. <b>Grade</b> is a category assigned to deliverables having the same functional use but different technical specifications.<br><i>A low-grade product (basic phone) can be high quality if defect-free. A high-grade product (luxury phone) is unacceptable if buggy.</i></p>") +
+    H("Quality Management Dimensions", U([
+      "<b>Quality Planning:</b> Identifying which quality standards apply and determining how to satisfy them.",
+      "<b>Quality Assurance (QA):</b> Auditing quality requirements and measurement results to ensure appropriate processes are utilized (prevention).",
+      "<b>Quality Control (QC):</b> Monitoring and recording results of executing quality activities to assess performance and ensure outputs conform to specifications (detection)."
+    ])) +
+    H("Cost of Quality (COQ)", C([
+      ["Cost of Conformance", "Money spent to prevent defects: Training, documented processes, testing, equipment maintenance."],
+      ["Cost of Non-Conformance", "Money spent due to defects: Internal rework, scrap, warranty claims, customer dissatisfaction, legal liabilities."]
+    ])) +
+    T("Core principle: Prevention is significantly cheaper than inspection and remediation.")
+  ],
+
+  [
+    1, "🧑‍🤝‍🧑", "Team Development & Resources", "#4338ca", "#4f46e5",
+    H("Tuckman's 5 Stages of Team Development", F(["Forming", "Storming", "Norming", "Performing", "Adjourning"])) +
+    U([
+      "<b>Forming:</b> Team meets, learns about the project, and acts politely as roles remain ambiguous.",
+      "<b>Storming:</b> Interpersonal conflict emerges as team members voice opinions and contest approaches.",
+      "<b>Norming:</b> Shared working agreements, mutual trust, and collaborative standards are established.",
+      "<b>Performing:</b> The team operates as a cohesive, autonomous unit with high productivity and minimal friction.",
+      "<b>Adjourning:</b> Work concludes, deliverables transition, and the team disbands."
+    ])) +
+    H("RACI Matrix: Responsible, Accountable, Consulted, Informed", C([
+      ["Responsible (R)", "The person(s) who does the work to achieve the deliverable."],
+      ["Accountable (A)", "The single person with ultimate decision authority and veto power (Only 1 'A' per task)."],
+      ["Consulted (C)", "Subject matter experts providing two-way input and feedback."],
+      ["Informed (I)", "Individuals updated on progress via one-way communication."]
+    ])) +
+    H("Conflict Resolution Methods", U([
+      "<b>Collaborate / Problem Solve:</b> Incorporates multiple viewpoints to reach consensus (win-win; generally preferred).",
+      "<b>Compromise / Reconcile:</b> Searching for solutions that bring some degree of satisfaction to all parties.",
+      "<b>Smooth / Accommodate:</b> Emphasizing areas of agreement rather than differences.",
+      "<b>Force / Direct:</b> Pushing one's viewpoint at the expense of others (win-lose; used in emergencies).",
+      "<b>Withdraw / Avoid:</b> Retreating from an actual or potential conflict situation."
+    ]))
+  ],
+
+  [
+    1, "💬", "Communications Management", "#0284c7", "#0369a1",
+    H("The Communications Model", "<p>Sender → Encode → Message → Channel → Decode → Receiver → Feedback Loop.<br><b>Noise:</b> Anything that compromises or distorts the clarity of the transmission (cultural differences, jargon, poor connectivity).</p>") +
+    H("Communications Channels Formula", "<span class='fm'>Total Channels = [n × (n − 1)] ÷ 2 &nbsp;&nbsp;(where n = number of stakeholders)</span><p>If a team grows from 5 to 10 people, channels escalate from 10 to 45! Communication complexity grows exponentially with team size.</p>") +
+    H("Communication Methods", C([
+      ["Interactive", "Two-way multidirectional exchange: Meetings, video calls, phone conversations."],
+      ["Push", "Sent directly to specific recipients who need to know: Email, status updates, memos."],
+      ["Pull", "Information stored in centralized repositories accessed at the user's discretion: SharePoint, Intranet, Notion."]
+    ])) +
+    T("Communications Management Plan establishes: Who needs what information, when they need it, in what format, and via what channel.")
+  ],
+
+  /* Part 3 · Risk & Change */
+  [
+    2, "⚠️", "Risk Management & Analysis", "#c2410c", "#b45309",
+    H("Risk vs Issue", "<p>A <b>risk</b> is an uncertain event or condition that, if it occurs, has a positive or negative effect on one or more project objectives. An <b>issue</b> is an event that has already occurred and is actively impacting the project right now.</p>") +
+    H("Risk Management Process", F(["Plan Risk Management", "Identify Risks", "Perform Qualitative Analysis", "Perform Quantitative Analysis", "Plan Risk Responses", "Monitor Risks"])) +
+    H("Qualitative vs Quantitative Analysis", U([
+      "<b>Qualitative:</b> Evaluating probability and impact using a relative scale (Low, Medium, High) on a Probability-Impact (P-I) matrix to prioritize risks.",
+      "<b>Quantitative:</b> Numerically evaluating the financial effect of risks via decision tree modeling, Monte Carlo simulation, or Expected Monetary Value (EMV)."
+    ])) +
+    H("Expected Monetary Value (EMV) Formula", "<span class='fm'>EMV = Probability × Impact</span><p>Example: 25% chance of a vendor delivery delay incurring a $40,000 penalty.<br>EMV = 0.25 × (−$40,000) = <b>−$10,000</b> (Contingency reserve allocation recommendation).</p>") +
+    H("Risk Response Strategies", C([
+      ["Negative Risks (Threats)", "<b>Avoid:</b> Eliminate root cause.<br><b>Transfer:</b> Shift impact to third party (insurance/warranty).<br><b>Mitigate:</b> Reduce probability or impact.<br><b>Accept:</b> Acknowledge and document."],
+      ["Positive Risks (Opportunities)", "<b>Exploit:</b> Ensure opportunity happens.<br><b>Share:</b> Partner with third party.<br><b>Enhance:</b> Increase probability or impact.<br><b>Accept:</b> Take advantage if it occurs."]
+    ])) +
+    H("Reserves Management", U([
+      "<b>Contingency Reserve:</b> Budget allocated for identified 'known-unknown' risks. Managed directly by the Project Manager.",
+      "<b>Management Reserve:</b> Budget allocated for unforeseen 'unknown-unknown' risks outside project scope baseline. Controlled by the Sponsor/Executive management."
+    ]))
+  ],
+
+  [
+    2, "🔄", "Change Control & Procurement Contracts", "#991b1b", "#b91c1c",
+    H("Perform Integrated Change Control", F(["Change Request Submitted", "Impact Assessment (Scope, Cost, Time)", "CCB Evaluation", "Approved or Rejected", "Plan & Baselines Updated", "Stakeholders Notified"])) +
+    "<p>The <b>Change Control Board (CCB)</b> is a formally chartered group responsible for reviewing, evaluating, approving, delaying, or rejecting changes to the project baselines.</p>" +
+    H("Contract Types in Procurement", C([
+      ["Fixed Price (FP / FFP)", "Seller provides deliverables for a fixed total sum. The seller carries the financial risk of cost overruns."],
+      ["Cost-Reimbursable (CPFF)", "Buyer reimburses seller's allowable costs plus an agreed fee or profit. Buyer carries cost risk."],
+      ["Time & Materials (T&M)", "Hybrid arrangement paying agreed hourly/daily labor rates plus material costs. Suited for agile or emergent scope."]
+    ])) +
+    T("Golden Rule: Never approve a project change informally over chat or hallway conversations. Always evaluate cross-functional impact on time, cost, scope, and risk first.")
+  ],
+
+  /* Part 4 · Methods & Frameworks */
+  [
+    3, "🛠️", "Waterfall, Agile & Hybrid Approaches", "#4f46e5", "#6366f1",
+    H("Methodology Overview", C([
+      ["Waterfall (Predictive)", "Linear, sequential phases. Comprehensive upfront planning, strict change controls, and late customer validation. Ideal when requirements are fully stable and understood (e.g., construction)."],
+      ["Agile (Adaptive)", "Iterative and incremental delivery. Fast feedback loops, emergent requirements, working software prioritization, and frequent releases (e.g., modern software)."],
+      ["Hybrid", "A blended delivery model. High-level planning, budgeting, and architecture follow predictive governance, while feature development proceeds via Agile sprints."]
+    ])) +
+    H("The 4 Values of the Agile Manifesto", U([
+      "<b>Individuals and interactions</b> over processes and tools.",
+      "<b>Working software</b> over comprehensive documentation.",
+      "<b>Customer collaboration</b> over contract negotiation.",
+      "<b>Responding to change</b> over following a plan."
+    ])) +
+    H("Core Agile Concepts", U([
+      "<b>MVP (Minimum Viable Product):</b> The simplest functional version of a product required to validate hypotheses with real users.",
+      "<b>Iterative vs Incremental:</b> Iterative means refining an existing feature; incremental means adding finished functional pieces one by one."
+    ]))
+  ],
+
+  [
+    3, "🏉", "Scrum Framework & Kanban Systems", "#0f766e", "#0d9488",
+    H("The Scrum Framework", C([
+      ["3 Roles", "<b>Product Owner</b> (owns the backlog and business value), <b>Scrum Master</b> (serves team and removes process impediments), <b>Developers</b> (cross-functional creators)."],
+      ["5 Events", "<b>Sprint</b> (1–4 week timebox), <b>Sprint Planning</b>, <b>Daily Scrum</b> (15-min sync), <b>Sprint Review</b> (demo to stakeholders), <b>Sprint Retrospective</b> (continuous team improvement)."],
+      ["3 Artifacts", "<b>Product Backlog</b> (prioritized feature list), <b>Sprint Backlog</b> (selected work for current sprint), <b>Increment</b> (usable, working deliverable meeting the Definition of Done)."]
+    ])) +
+    H("Kanban Principles", F(["Visualize Workflow", "Limit Work in Progress (WIP)", "Manage Flow", "Make Policies Explicit", "Implement Feedback Loops"])) +
+    "<p><b>WIP Limits:</b> Restricting active cards in columns prevents bottlenecks, multitasking friction, and uneven batching. Metrics include <b>Lead Time</b> (from request to completion) and <b>Cycle Time</b> (from active work started to completion).</p>" +
+    H("User Story Format", "<span class='fm'>As a [user persona], I want [an action / feature], so that [business outcome / benefit].</span><p>Example: <i>As a student, I want to filter lessons by completion status, so that I can quickly resume where I left off.</i></p>")
+  ],
+
+  [
+    3, "🏛️", "PM Frameworks: PMBOK, PRINCE2, Lean, Six Sigma, SAFe", "#1e293b", "#334155",
+    H("Standards vs Methods vs Frameworks", "<p>A <b>standard</b> provides rules and guidelines (e.g., PMBOK Guide). A <b>method</b> specifies a rigid procedural process (e.g., PRINCE2). A <b>framework</b> offers flexible, adaptable structures (e.g., Scrum, SAFe).</p>") +
+    H("Overview of Dominant Industry Frameworks", C([
+      ["PMBOK® Guide (PMI)", "Global standard focused on 12 project principles and 8 performance domains. Non-prescriptive reference standard."],
+      ["PRINCE2®", "Process-based method prevalent in the UK, Europe, and public sectors. Focuses on business justification and defined management stages."],
+      ["Lean Delivery", "Originating from Toyota Production System, focuses on relentlessly eliminating waste (Muda) and continuous improvement (Kaizen)."],
+      ["Six Sigma", "Data-driven methodology targeting defect elimination and process stability. Utilizes the DMAIC cycle (Define, Measure, Analyze, Improve, Control)."],
+      ["SAFe®", "Scaled Agile Framework designed to align multi-team agile release trains (ARTs) across enterprise organizations."]
+    ])) +
+    H("PRINCE2 7 Core Principles", U([
+      "Continued business justification throughout the life cycle.",
+      "Learn from experience (lessons recorded and applied).",
+      "Defined roles and responsibilities across business, user, and supplier interests.",
+      "Manage by stages (commitment horizons).",
+      "Manage by exception (defined tolerances for time, cost, quality, scope, risk, benefit).",
+      "Focus on products and deliverable definitions.",
+      "Tailor to suit the project environment."
+    ]))
+  ],
+
+  /* Part 5 · PM Tools */
+  [
+    4, "🧰", "PM Tools: Purpose & Tool Ecosystem", "#2563eb", "#1d4ed8",
+    H("The Golden Rule of Project Tools", "<p><b>A tool does not manage a project; the Project Manager and team do.</b> Software provides visibility, reduces administrative friction, and centralizes communication, but cannot compensate for ambiguous requirements or poor communication.</p>") +
+    H("The 6 Primary Tool Categories", C([
+      ["Kanban / Work Management", "Visual cards moving across workflow columns: Trello, Asana, Monday.com, ClickUp."],
+      ["Scheduling & Critical Path", "Gantt charts, dependency linkages, baseline tracking: MS Project, Primavera P6, Smartsheet."],
+      ["Agile & Issue Tracking", "Backlogs, sprints, velocity, burndown, bug triage: Jira."],
+      ["Spreadsheets & Databases", "Budgets, calculations, custom registers: Microsoft Excel, Google Sheets, Airtable."],
+      ["Documentation & Wikis", "Centralized knowledge bases, charters, meeting notes: Notion, Confluence."],
+      ["Team Communication", "Real-time communication and video coordination: Slack, Microsoft Teams, Zoom, Google Meet."]
+    ]))
+  ],
+
+  [
+    4, "📋", "Tools Part A: Boards & Work Management", "#0284c7", "#0369a1",
+    TL("1. Trello", "Visual Kanban Boards (Atlassian)", [
+      "<b>Best For:</b> Small teams, beginners, personal projects, and simple visual workflows.",
+      "<b>Mechanism:</b> Boards containing lists (To Do, Doing, Done) populated by cards with checklists and due dates.",
+      "<b>Strengths:</b> Extremely intuitive, fast onboarding, generous free tier, Butler automation.",
+      "<b>Limitations:</b> Lacks advanced Gantt scheduling, critical path calculation, and financial tracking."
+    ]) +
+    TL("2. Asana", "Collaborative Work Management Platform", [
+      "<b>Best For:</b> Cross-functional business, operations, and marketing teams.",
+      "<b>Mechanism:</b> Flexible project views (List, Board, Timeline, Calendar) with subtasks and dependencies.",
+      "<b>Strengths:</b> Clean UI, robust workflow rules, portfolio workload tracking.",
+      "<b>Limitations:</b> Can be complex for tiny teams; enterprise features require higher tiers."
+    ]) +
+    TL("3. Monday.com", "Customizable Work OS", [
+      "<b>Best For:</b> Mid-to-large business teams wanting visual dashboards and automations.",
+      "<b>Strengths:</b> Highly customizable columns, pre-built automations, colorful dashboards.",
+      "<b>Limitations:</b> Per-seat pricing model; requires deliberate governance to prevent board clutter."
+    ]) +
+    TL("4. ClickUp", "All-in-One Productivity Workspace", [
+      "<b>Best For:</b> Teams desiring tasks, docs, goals, and chat within a single platform.",
+      "<b>Strengths:</b> High versatility, multiple views, native document editing, strong free tier.",
+      "<b>Limitations:</b> Feature density can create a steep learning curve for non-technical users."
+    ]) +
+    TL("5. Wrike", "Enterprise Work Management", [
+      "<b>Best For:</b> Creative agencies and enterprise departments processing high-volume intake requests.",
+      "<b>Strengths:</b> Dynamic request forms, interactive Gantt charts, resource management reports.",
+      "<b>Limitations:</b> Steeper pricing and complex initial administration setup."
+    ])
+  ],
+
+  [
+    4, "⚙️", "Tools Part B: Software, Scheduling & Enterprise", "#0f766e", "#047857",
+    TL("6. Jira", "Agile & Software Development Tracking (Atlassian)", [
+      "<b>Best For:</b> Engineering, DevOps, and product teams using Scrum or Kanban.",
+      "<b>Mechanism:</b> Epics, user stories, tasks, and bugs managed through backlogs, sprints, and release roadmaps.",
+      "<b>Strengths:</b> Deep Git/CI/CD integrations, burndown and velocity reports, industry gold standard for tech PM roles.",
+      "<b>Limitations:</b> Can feel rigid and bureaucratic for non-software teams."
+    ]) +
+    TL("7. Microsoft Project", "Classic Waterfall Scheduling Engine", [
+      "<b>Best For:</b> Professional project planners managing complex, formal predictive schedules.",
+      "<b>Mechanism:</b> Precise work breakdown, dependency linkages (FS, SS, FF, SF), resource leveling, baselining.",
+      "<b>Strengths:</b> Directly mirrors PMBOK scheduling mechanics, EVM calculations, and critical path analysis.",
+      "<b>Limitations:</b> Steep learning curve, expensive licensing, poor fit for adaptive agile delivery."
+    ]) +
+    TL("8. Oracle Primavera P6", "Heavy Enterprise & Infrastructure Schedulers", [
+      "<b>Best For:</b> Mega-projects in civil construction, energy, defense, and oil & gas.",
+      "<b>Strengths:</b> Easily manages projects with tens of thousands of activities, advanced cost/resource loading.",
+      "<b>Limitations:</b> Highly specialized enterprise skill set, high licensing overhead."
+    ]) +
+    TL("9. Smartsheet", "Enterprise Spreadsheet-Gantt Hybrid", [
+      "<b>Best For:</b> Business organizations comfortable with spreadsheets who require automated workflows.",
+      "<b>Strengths:</b> Combines familiar spreadsheet grid with Gantt, forms, and portfolio rollup reporting.",
+      "<b>Limitations:</b> Primarily paid plans; less natural for sprint-based software delivery."
+    ])
+  ],
+
+  [
+    4, "📊", "Tools Part C: Everyday Essentials & Collaboration", "#c2410c", "#9a3412",
+    TL("10. Microsoft Excel & Google Sheets", "The Universal PM Workhorse", [
+      "<b>Best For:</b> Every project manager across all industries.",
+      "<b>Applications:</b> Budgets, EVM tracking, risk registers, RACI matrices, status dashboards.",
+      "<b>Strengths:</b> Total mathematical flexibility, universal adoption, Google Sheets allows real-time multi-user editing.",
+      "<b>Limitations:</b> Manual maintenance, vulnerability to broken formulas, lack of native task dependency engines."
+    ]) +
+    TL("11. Notion", "Knowledge Management & Modular Databases", [
+      "<b>Best For:</b> Startups, creative agencies, and teams needing docs and simple project trackers in one place.",
+      "<b>Strengths:</b> Beautiful document formatting, relational databases, linked views.",
+      "<b>Limitations:</b> Lacks native critical path calculations or automated schedule leveling."
+    ]) +
+    TL("12. Basecamp", "Calm, Asynchronous Project Hub", [
+      "<b>Best For:</b> Remote teams, creative studios, and client-facing communication.",
+      "<b>Strengths:</b> Consolidated message boards, to-dos, schedules, and document storage in a simple layout.",
+      "<b>Limitations:</b> Intentionally avoids Gantt charts, burndown charts, and dependency engines."
+    ]) +
+    H("Supporting Communication Stack", "<p><b>Slack & Microsoft Teams</b> for real-time team collaboration; <b>Zoom & Google Meet</b> for synchronous meetings; <b>Miro & Mural</b> for visual whiteboarding and retrospective workshops.</p>")
+  ],
+
+  [
+    4, "🎯", "Tool Selection Strategy & Essential PM Templates", "#4338ca", "#3730a3",
+    H("How to Select the Right Tool Stack", U([
+      "<b>Assess Methodology:</b> Use Jira/Trello for Agile; MS Project/Smartsheet for detailed Waterfall schedules.",
+      "<b>Team Adoption:</b> An intuitive tool adopted by 100% of the team beats a complex tool used by nobody.",
+      "<b>Budget & Scalability:</b> Start with free or lightweight stacks; scale to enterprise suites only when governance demands it.",
+      "<b>Reporting Needs:</b> Select tools that generate the specific executive dashboards your stakeholders expect."
+    ])) +
+    H("Recommended Zero-Cost Starter Stack", "<p>Google Sheets (Budget & EVM) + Trello (Task Kanban) + Google Meet (Sync Meetings) + Google Drive / Notion (Documentation).</p>") +
+    H("The 8 Must-Know Project Management Artifacts", C([
+      ["1. Project Charter", "High-level authority document establishing business case, objectives, budget limits, and PM mandate."],
+      ["2. Scope Statement & WBS", "Decomposition detailing what is strictly in-scope and explicitly out-of-scope."],
+      ["3. Schedule / Gantt", "Activities, dependencies, milestones, and critical path timeline."],
+      ["4. RACI Matrix", "Cross-functional ownership matrix clarifying who is Accountable vs Responsible."],
+      ["5. Risk Register", "Log of identified risks, probability-impact ratings, response plans, and owners."],
+      ["6. Budget Tracker", "Planned Value vs Actual Cost tracking with variance calculations."],
+      ["7. Stakeholder Register", "Contact log, expectations, influence rating, and communication frequency."],
+      ["8. Lessons Learned Register", "Living document capturing challenges, successes, and procedural recommendations."]
+    ]))
+  ],
+
+  /* Part 6 · Leadership & Career */
+  [
+    5, "🌟", "Leadership, Soft Skills & PMI Ethics", "#7c3aed", "#6d28d9",
+    H("Management vs Leadership", "<p><b>Management</b> focuses on order, planning, budgeting, staffing, and controlling activities against a plan. <b>Leadership</b> focuses on setting direction, aligning stakeholders, inspiring teams, and navigating change.</p>") +
+    H("Servant Leadership in Modern PM", "<p>A leadership philosophy wherein the PM's primary role is serving the team: removing impediments, shielding the team from external distractions, mentoring growth, and providing resources to empower autonomous delivery.</p>") +
+    H("Core Soft Skills for Successful PMs", U([
+      "<b>Emotional Intelligence (EQ):</b> Self-awareness, empathy, and social skill in managing interpersonal relationships.",
+      "<b>Principled Negotiation:</b> Separating people from the problem, focusing on interests rather than positions, and inventing options for mutual gain.",
+      "<b>Active Listening:</b> Giving full attention, synthesizing understanding before replying, and verifying consensus.",
+      "<b>Conflict Management:</b> Addressing team disagreements promptly and constructively."
+    ])) +
+    H("The PMI Code of Ethics & Professional Conduct", C([
+      ["Responsibility", "Taking ownership of decisions made or failed to make, and accepting consequences."],
+      ["Respect", "Demonstrating high regard for self, others, and the resources entrusted to us."],
+      ["Fairness", "Making decisions objectively and impartially without self-interest, favoritism, or prejudice."],
+      ["Honesty", "Understanding truth and acting in an authentic manner both in communications and conduct."]
+    ]))
+  ],
+
+  [
+    5, "💼", "The Real PM Job: Weekly Rhythms & Interviews", "#0f766e", "#047857",
+    H("A Typical PM Weekly Cadence", U([
+      "<b>Daily:</b> Conduct brief morning team sync (standup), remove immediate technical/procedural blockers, address ad-hoc queries.",
+      "<b>Weekly:</b> Review schedule baseline, update EVM cost numbers, log emerging risks, and publish the executive status report.",
+      "<b>Regularly:</b> Meet with the Project Sponsor, present change requests to the CCB, and consult key stakeholders.",
+      "<b>Always:</b> Maintain focus on business value and protect the team from scope creep."
+    ])) +
+    H("10 Common PM Pitfalls to Avoid", C([
+      ["1. Ambiguous Scope", "Commencing delivery without signed requirements and clear acceptance criteria."],
+      ["2. Hidden Bad News", "Delaying disclosure of variances until recovery is mathematically impossible."],
+      ["3. Over-Promising", "Committing to impossible dates or unbudgeted features without team estimation."],
+      ["4. No Change Control", "Allowing informal 'quick favors' that snowball into massive scope creep."],
+      ["5. Micromanagement", "Dictating implementation details to technical specialists instead of steering outcomes."]
+    ])) +
+    H("Interview Preparation: The STAR Technique", "<p>When answering behavioral interview questions, structure every response using:</p><span class='fm'><b>S</b>ituation: Context and background of the project.<br><b>T</b>ask: The challenge or objective you needed to address.<br><b>A</b>ction: The specific steps you took as the project manager.<br><b>R</b>esult: Quantified outcome (e.g., delivered 2 weeks early, saved $15,000, reduced defect rate by 25%).</span>")
+  ],
+
+  [
+    5, "🏁", "Project Closing & Lessons Learned", "#334155", "#1e293b",
+    H("The 5 Steps of Formal Project Closing", F(["Deliverable Acceptance", "Procurement Closure", "Administrative Closeout", "Lessons Learned Session", "Resource Release & Celebration"])) +
+    H("Key Closure Activities", U([
+      "<b>Formal Sign-Off:</b> Secure formal written acceptance from the customer or project sponsor certifying deliverables meet criteria.",
+      "<b>Operational Handover:</b> Transfer deliverables to operational teams, complete documentation, and provide training.",
+      "<b>Contract Closure:</b> Audit vendor deliverables, settle outstanding invoices, and formally close procurement contracts.",
+      "<b>Lessons Learned Meeting (Retrospective):</b> Facilitate an open, blameless workshop analyzing what succeeded, what failed, and what organizational processes should improve.",
+      "<b>Archive Records:</b> Securely store final budgets, schedules, contracts, and registers in the corporate knowledge base.",
+      "<b>Release & Celebrate:</b> Formally release team members and celebrate accomplishments."
+    ]))
+  ],
+
+  [
+    5, "🏆", "Careers, PMBOK Guide & PMP Certification", "#b45309", "#d97706",
+    H("The Evolution of the PMBOK® Guide (PMI)", "<p>Understanding PMI's body of knowledge is essential for professional certification:</p>" +
+      U([
+        "<b>PMBOK® Guide – 7th Edition (Current Standard):</b> Shifted from process-oriented mechanics to a <b>Principle-Based Standard</b> centered on 12 Principles and 8 Project Performance Domains (Stakeholders, Team, Development Approach & Life Cycle, Planning, Project Work, Delivery, Measurement, and Uncertainty).",
+        "<b>Process Groups: A Practice Guide (PMI Companion):</b> Maintains the classic, globally recognized 5 Process Groups (Initiating, Planning, Executing, Monitoring & Controlling, Closing) and 49 processes as an active reference guide for predictive and hybrid delivery.",
+        "<b>Agile Practice Guide:</b> Developed jointly by PMI and Agile Alliance, serving as the core reference for adaptive practices on the PMP exam."
+      ])) +
+    H("PMP® Certification: Current Official Requirements", C([
+      ["Educational & Experience Prerequisites", "<b>Option A (4-Year Degree):</b> 36 months of non-overlapping project leadership experience within the last 8 years + 35 contact hours of PM education (or active CAPM®).<br><b>Option B (Secondary Diploma):</b> 60 months of project leadership experience + 35 contact hours."],
+      ["Examination Structure", "<b>180 total questions</b> (175 scored, 5 unscored pretest). Time limit: <b>230 minutes</b> with two scheduled 10-minute breaks."],
+      ["Domain Weightings (Current ECO)", "<b>1. People: 42%</b> (Conflict, leadership, team empowerment)<br><b>2. Process: 50%</b> (Scope, schedule, cost, risk, procurement)<br><b>3. Business Environment: 8%</b> (Compliance, value delivery, organizational change)"],
+      ["Methodology Split", "Approximately <b>50% predictive</b> approaches and <b>50% agile or hybrid</b> approaches across all three domains."]
+    ])) +
+    H("Other Recognized Credentials", U([
+      "<b>CAPM® (PMI):</b> Entry-level credential for beginners with no experience prerequisites.",
+      "<b>PMI-ACP® (PMI):</b> Demonstrates specialized expertise in agile principles and practices.",
+      "<b>PSM / CSM:</b> Industry-standard credentials for Scrum Masters.",
+      "<b>PRINCE2® Foundation & Practitioner:</b> Process certification valued throughout Europe and the Commonwealth."
+    ])) +
+    H("Typical PM Career Ladder", F(["Project Coordinator / Associate PM", "Project Manager", "Senior Project Manager", "Program Manager", "Portfolio Manager / PMO Director"])) +
+    T("Congratulations on completing the curriculum! Test your mastery with the Knowledge Assessment Quiz below.")
+  ]
+];
+
+/* Glossary Items */
+const G = [
+  ["Agile", "An iterative approach to project management and software development that helps teams deliver value faster and with fewer headaches."],
+  ["BAC (Budget at Completion)", "The total authorized budget for the entire project baseline."],
+  ["Baseline", "The approved version of a work product, scope, schedule, or budget that can be changed only through formal change control."],
+  ["Backlog", "A prioritized list of deliverables, features, and technical tasks maintained in Agile frameworks."],
+  ["Burndown Chart", "A graphical representation of work left to do versus time remaining in a sprint or release."],
+  ["Business Case", "Documented justification for a project, demonstrating alignment with business goals and cost-benefit feasibility."],
+  ["CAPM", "Certified Associate in Project Management, an entry-level credential administered by PMI."],
+  ["CCB (Change Control Board)", "A formally constituted group responsible for reviewing, evaluating, and approving changes to project baselines."],
+  ["Charter", "A formal document that authorizes the existence of a project and gives the project manager authority to apply resources."],
+  ["Cost Performance Index (CPI)", "A measure of cost efficiency: CPI = EV ÷ AC. Values over 1.0 indicate favorable spending under budget."],
+  ["Critical Path", "The sequence of dependent activities representing the longest path through a project, determining the earliest completion date."],
+  ["Deliverable", "Any unique and verifiable product, result, or capability to perform a service that must be produced to complete a phase or project."],
+  ["Estimate at Completion (EAC)", "The expected total cost of completing all work: EAC = BAC ÷ CPI."],
+  ["Earned Value (EV)", "The measure of work performed expressed in terms of the budget authorized for that work."],
+  ["Float (Slack)", "The amount of time an activity can be delayed without delaying the project completion date or a successor activity."],
+  ["Gantt Chart", "A horizontal bar chart illustrating project schedule activities, durations, and dependency linkages."],
+  ["Gold Plating", "Intentionally adding extra features or quality beyond agreed scope without customer authorization."],
+  ["Issue", "A current problem or barrier that has already occurred and is actively impacting project performance."],
+  ["Kanban", "A visual framework for managing work as it moves through a process, focusing on limiting Work in Progress (WIP)."],
+  ["Milestone", "A significant point or event in a project schedule with zero duration."],
+  ["MVP (Minimum Viable Product)", "A version of a product with just enough features to be usable by early customers who can provide feedback."],
+  ["NPV (Net Present Value)", "Financial metric calculating the present value of expected cash inflows minus initial capital costs."],
+  ["PMBOK Guide", "A Guide to the Project Management Body of Knowledge, published by the Project Management Institute (PMI)."],
+  ["PMO (Project Management Office)", "A management structure that standardizes project-related governance processes and facilitates sharing of resources."],
+  ["PMP", "Project Management Professional certification, the premier globally recognized credential awarded by PMI."],
+  ["RACI Matrix", "A matrix mapping project tasks to personnel who are Responsible, Accountable, Consulted, or Informed."],
+  ["Risk", "An uncertain event or condition that, if it occurs, has a positive (opportunity) or negative (threat) effect on objectives."],
+  ["Scope", "The sum of the products, services, and results to be provided as a project."],
+  ["Scope Creep", "The uncontrolled expansion to product or project scope without adjustments to time, cost, and resources."],
+  ["Schedule Performance Index (SPI)", "A measure of schedule efficiency: SPI = EV ÷ PV. Values over 1.0 indicate work ahead of schedule."],
+  ["Sprint", "A timeboxed iteration (typically 1 to 4 weeks) during which a Scrum team produces a usable Increment."],
+  ["Stakeholder", "An individual, group, or organization that may affect or be affected by a project decision or outcome."],
+  ["Triple Constraint", "The foundational model balancing Scope, Time, and Cost around central Project Quality."],
+  ["WBS (Work Breakdown Structure)", "A hierarchical decomposition of the total scope of work to be carried out by the project team."],
+  ["WIP (Work in Progress)", "The number of task items currently being worked on by a team at any given time."]
+];
+
+/* 12 Interactive Quiz Questions with Detailed Explanations */
+const Q = [
+  {
+    q: "Which two foundational characteristics define every project?",
+    a: "Temporary and unique",
+    opts: ["Temporary and unique", "Repetitive and routine", "Permanent and risk-free"],
+    exp: "By definition, a project is a temporary endeavor (having a defined start and finish) undertaken to create a unique deliverable. Routine, repetitive tasks belong to ongoing operations."
+  },
+  {
+    q: "In project scheduling, what is the Critical Path?",
+    a: "The longest sequence of dependent tasks with zero float",
+    opts: [
+      "The sequence of the most expensive project tasks",
+      "The longest sequence of dependent tasks with zero float",
+      "The shortest path connecting all milestones"
+    ],
+    exp: "The critical path is the longest duration chain of dependent activities through the project network. Tasks on this path have zero total float; delaying any task directly delays project completion."
+  },
+  {
+    q: "In Earned Value Management, a Cost Performance Index (CPI) of 0.82 indicates that…",
+    a: "The project is over budget",
+    opts: [
+      "The project is performing under budget",
+      "The project is over budget",
+      "The project is 18% ahead of schedule"
+    ],
+    exp: "CPI = EV / AC. A CPI of 0.82 means the project is realizing only $0.82 of planned value for every $1.00 spent. Any CPI below 1.0 indicates cost overrun (over budget)."
+  },
+  {
+    q: "Who is primarily responsible for authorizing the Project Charter and securing financial resources?",
+    a: "Project Sponsor",
+    opts: ["Project Manager", "Project Sponsor", "Scrum Master"],
+    exp: "The Project Sponsor serves as the executive champion who authorizes the charter, secures organizational funding, and removes high-level obstacles. The PM directs day-to-day execution."
+  },
+  {
+    q: "In the Scrum framework, which role owns the Product Backlog and decides WHAT is built?",
+    a: "Product Owner",
+    opts: ["Scrum Master", "Product Owner", "Lead Developer"],
+    exp: "The Product Owner is solely responsible for maximizing product value and prioritizing backlog items based on stakeholder needs. The Scrum Master coaches the team on process, and Developers build."
+  },
+  {
+    q: "In qualitative risk management, how is a risk score typically calculated?",
+    a: "Probability × Impact",
+    opts: ["Probability × Impact", "Cost ÷ Estimated Duration", "Schedule Float + Budget Variance"],
+    exp: "Qualitative risk analysis assesses the likelihood (Probability) and severity of consequence (Impact) on project objectives to determine prioritization on a Probability-Impact matrix."
+  },
+  {
+    q: "What is the primary benefit of establishing Work in Progress (WIP) limits in Kanban?",
+    a: "Prevents bottlenecks and maintains smooth workflow",
+    opts: [
+      "Forces team members to work overtime",
+      "Prevents bottlenecks and maintains smooth workflow",
+      "Eliminates the need for any project planning"
+    ],
+    exp: "WIP limits cap the number of active tasks permitted in each workflow stage. This exposes bottlenecks immediately, curbs unproductive multitasking, and lowers cycle time."
+  },
+  {
+    q: "Adding features or scope without formal approval, budget, or timeline adjustments is known as…",
+    a: "Scope creep",
+    opts: ["Scope creep", "Fast tracking", "Progressive elaboration"],
+    exp: "Scope creep refers to unapproved, uncontrolled growth in project scope without corresponding increases in budget, schedule, or resources. Progressive elaboration is planned detailing."
+  },
+  {
+    q: "A business case analysis indicates a positive Net Present Value (NPV > 0). What does this mean?",
+    a: "The financial return exceeds the required discount rate (adds value)",
+    opts: [
+      "The financial return exceeds the required discount rate (adds value)",
+      "The project has zero operational risk",
+      "The project will take more than 10 years to pay back"
+    ],
+    exp: "NPV discounts all anticipated future cash inflows back to present value. A positive NPV signifies that the investment yields returns greater than the cost of capital, generating net business value."
+  },
+  {
+    q: "What is the primary purpose of an approved Project Baseline?",
+    a: "A benchmark against which actual project performance is measured",
+    opts: [
+      "A benchmark against which actual project performance is measured",
+      "An informal draft that changes daily without approval",
+      "The final retrospective report submitted at project close"
+    ],
+    exp: "Baselines (scope, schedule, cost) represent formally approved plans. They provide a stable benchmark to measure variances and determine whether changes require formal CCB approval."
+  },
+  {
+    q: "Which pair represents fundamental PRINCE2 principles?",
+    a: "Manage by stages and manage by exception",
+    opts: [
+      "Manage by stages and manage by exception",
+      "Eliminate all formal meetings",
+      "Strictly prohibit any project changes"
+    ],
+    exp: "PRINCE2 defines 7 core principles, including 'Manage by stages' (dividing work into discrete planning horizons) and 'Manage by exception' (escalating to governance boards only if tolerances are breached)."
+  },
+  {
+    q: "According to the current PMP® Exam Content Outline (ECO), which domain carries 50% of the exam weight?",
+    a: "Process",
+    opts: ["Process", "People", "Business Environment"],
+    exp: "The PMP® ECO distributes questions into three domains: Process (50%), People (42%), and Business Environment (8%), with approximately 50% covering predictive and 50% covering agile/hybrid approaches."
+  }
+];
+
+/* State Management */
+let cur = 0;
+let done = new Set();
+try {
+  done = new Set(JSON.parse(localStorage.getItem("pmDone_v2") || "[]"));
+} catch (e) {}
+
+const $ = id => document.getElementById(id);
+const N = L.length;
+
+/* Initialize Stats Elements */
+if ($("st-lessons")) $("st-lessons").textContent = N;
+if ($("st-parts")) $("st-parts").textContent = P.length;
+
+/* Render Navigation & Current Lesson */
+function render() {
+  let listHtml = "", currentPart = -1;
+  L.forEach((l, i) => {
+    if (l[0] !== currentPart) {
+      currentPart = l[0];
+      listHtml += `<div class="part">${P[currentPart]}</div>`;
+    }
+    const isSelected = i === cur ? "on" : "";
+    const isDone = done.has(i) ? "✅" : "";
+    listHtml += `
+      <button class="l ${isSelected}" onclick="go(${i})">
+        <span class="n">${String(i + 1).padStart(2, "0")}</span>
+        <span>${l[2]}</span>
+        <span class="ck">${isDone}</span>
+      </button>`;
+  });
+  $("list").innerHTML = listHtml;
+
+  const l = L[cur];
+  const bgGrad = `linear-gradient(135deg, ${l[3]}, ${l[4]})`;
+  $("lesson").innerHTML = `
+    <div class="ban" style="background:${bgGrad}">
+      <div class="em">${l[1]}</div>
+      <div>
+        <small>Lesson ${cur + 1} of ${N} · ${P[l[0]]}</small>
+        <h3>${l[2]}</h3>
+      </div>
+    </div>
+    <div class="body">${l[5]}</div>
+    <div class="nav2">
+      <button class="b2 g" onclick="go(cur - 1)" ${cur === 0 ? "disabled" : ""}>← Previous</button>
+      <button class="b2 ok" onclick="mark()">${done.has(cur) ? "✅ Completed (Tap to Undo)" : "Mark as Completed"}</button>
+      <button class="b2" onclick="go(cur + 1)" ${cur === N - 1 ? "disabled" : ""}>Next Lesson →</button>
+    </div>
+  `;
+
+  // Update Progress
+  $("pt").textContent = `${done.size} of ${N} completed`;
+  const pct = Math.round((done.size * 100) / N);
+  $("pt-pct").textContent = `${pct}%`;
+  $("pb").style.width = `${pct}%`;
+
+  // Attach EVM Calculator Listeners if on EVM lesson
+  if ($("e1")) {
+    ["e1", "e2", "e3", "e4"].forEach(x => $(x).oninput = calc);
+    calc();
+  }
+}
+
+/* EVM Real-Time Calculation */
+function calc() {
+  const [a, p, e, c] = ["e1", "e2", "e3", "e4"].map(x => +$(x).value);
+  const f = n => (isFinite(n) && !isNaN(n) ? n.toFixed(2) : "–");
+  const cv = e - c;
+  const sv = e - p;
+  const cpi = c > 0 ? e / c : 0;
+  const spi = p > 0 ? e / p : 0;
+  const eac = cpi > 0 ? a / cpi : 0;
+
+  $("eo").innerHTML = `
+    <b>EVM Analysis Summary:</b><br>
+    • Cost Variance (CV) = $${cv.toLocaleString()} (${cv < 0 ? "<span style='color:#b91c1c;'>Over Budget</span>" : "<span style='color:#047857;'>Under Budget</span>"})<br>
+    • Schedule Variance (SV) = $${sv.toLocaleString()} (${sv < 0 ? "<span style='color:#b91c1c;'>Behind Schedule</span>" : "<span style='color:#047857;'>Ahead of Schedule</span>"})<br>
+    • Cost Performance Index (CPI) = <b>${f(cpi)}</b> (${cpi < 1.0 ? "Over budget" : "Under budget"})<br>
+    • Schedule Performance Index (SPI) = <b>${f(spi)}</b> (${spi < 1.0 ? "Behind schedule" : "On/ahead of schedule"})<br>
+    • Estimate at Completion (EAC) = <b>$${Math.round(eac).toLocaleString()}</b> (Baseline BAC was $${a.toLocaleString()})
+  `;
+}
+
+function go(i) {
+  if (i < 0 || i >= N) return;
+  cur = i;
+  render();
+  $("lesson").scrollIntoView({ block: "start", behavior: "smooth" });
+}
+
+function mark() {
+  if (done.has(cur)) {
+    done.delete(cur);
+  } else {
+    done.add(cur);
+  }
+  try {
+    localStorage.setItem("pmDone_v2", JSON.stringify([...done]));
+  } catch (e) {}
+  render();
+}
+
+/* Glossary Search */
+function gl(q) {
+  q = (q || "").toLowerCase().trim();
+  const res = G.filter(item => (item[0] + " " + item[1]).toLowerCase().includes(q));
+  if (res.length) {
+    $("gl").innerHTML = res.map(g => `<div><b>${g[0]}</b>${g[1]}</div>`).join("");
+  } else {
+    $("gl").innerHTML = `<p style="grid-column: 1/-1; color: var(--mu);">No matching glossary terms found for "${q}". Try searching for 'scope', 'risk', or 'EVM'.</p>`;
+  }
+}
+$("gs").oninput = e => gl(e.target.value);
+
+/* Quiz Engine */
+let qi = 0, sc = 0;
+function quiz() {
+  if (qi >= Q.length) {
+    const passed = sc >= Math.ceil(Q.length * 0.75);
+    $("qz").innerHTML = `
+      <div style="text-align:center; padding: 20px 0;">
+        <span style="font-size: 52px;">${passed ? "🎉" : "📚"}</span>
+        <h3 style="font-size:28px; margin: 12px 0 6px;">Your Final Score: ${sc} / ${Q.length}</h3>
+        <p style="color:var(--mu); font-size:16px; margin:0 0 24px;">
+          ${passed ? "Outstanding! You demonstrated an excellent understanding of core PM principles and frameworks." : "Good effort! Review the lessons, especially EVM formulas and scheduling, and try again."}
+        </p>
+        <button class="b2" onclick="qi = 0; sc = 0; quiz();">Retake Quiz</button>
+      </div>
+    `;
+    return;
+  }
+
+  const q = Q[qi];
+  $("qz").innerHTML = `
+    <div class="q-progress">Question ${qi + 1} of ${Q.length} · Score: ${sc}</div>
+    <h3>${q.q}</h3>
+    <div class="q-options">
+      ${q.opts.map((o, k) => `<button class="o" data-val="${o}">${o}</button>`).join("")}
+    </div>
+    <div id="q-feedback-slot"></div>
+  `;
+
+  document.querySelectorAll(".q button.o").forEach(btn => {
+    btn.onclick = () => {
+      const selected = btn.getAttribute("data-val");
+      const isCorrect = selected === q.a;
+      
+      // Disable options and apply classes
+      document.querySelectorAll(".q button.o").forEach(b => {
+        b.disabled = true;
+        if (b.getAttribute("data-val") === q.a) {
+          b.classList.add("right");
+        }
+      });
+
+      if (isCorrect) {
+        sc++;
+      } else {
+        btn.classList.add("wrong");
+      }
+
+      const feedbackSlot = $("q-feedback-slot");
+      feedbackSlot.innerHTML = `
+        <div class="q-feedback ${isCorrect ? "correct" : "incorrect"}">
+          <b>${isCorrect ? "✅ Correct!" : "❌ Incorrect (Correct: " + q.a + ")"}</b>
+          ${q.exp}
+        </div>
+        <div style="margin-top: 18px; text-align: right;">
+          <button class="b2" onclick="qi++; quiz();">${qi === Q.length - 1 ? "View Final Score →" : "Next Question →"}</button>
+        </div>
+      `;
+    };
+  });
+}
+
+/* Portfolio Modal Handling */
+function openPortfolioModal() {
+  $("pfModal").classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+function closePortfolioModal(e) {
+  $("pfModal").classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+/* Global Init */
+render();
+gl();
+quiz();
+</script>
+</body>
+</html>
