@@ -58,5 +58,5 @@ For a full project description covering Problem/Purpose, Target Audience, Featur
   - *PRINCE2®* is a registered trademark of AXELOS Limited / PeopleCert.
   - *Jira® and Trello®* are registered trademarks of Atlassian Pty Ltd.
   - All trademark references are purely nominative and descriptive. No official corporate logos, certification seals, or badges are used.
-- **Legal Compliance**: Aligned with Section 160 of the Intellectual Property Act No. 36 of 2003 of Sri Lanka and international fair use standards (Berne Convention/WIPO) for educational commentary, research, and non-commercial scholarship.
+- **Educational Fair Practice**: Developed for private study, scholarship, and educational commentary in alignment with fair practice principles under Section 11 of the Sri Lanka Intellectual Property Act No. 36 of 2003 and international Berne Convention standards. All trademarks are used strictly nominatively without claiming endorsement or affiliation.
 

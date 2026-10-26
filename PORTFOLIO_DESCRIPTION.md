@@ -106,7 +106,7 @@ The project followed an agile, incremental delivery lifecycle:
 
 ## 7. Intellectual Property, Copyright & Trademark Governance (බුද්ධිමය දේපළ, ප්‍රකාශන හිමිකම් සහ වෙළෙඳ ලකුණු පිළිපැදීම)
 
-To ensure zero legal liability, compliance with international intellectual property treaties (WIPO, Berne Convention) and the **Intellectual Property Act No. 36 of 2003 of Sri Lanka (Section 160 on Fair Practice in Education)**, the PM Academy codebase adheres to the following strict governance protocols:
+To minimize legal risk, adhere to international intellectual property standards (WIPO, Berne Convention) and comply with the **Intellectual Property Act No. 36 of 2003 of Sri Lanka (including Section 11 on Fair Practice for Education and Study)**, the PM Academy codebase adheres to the following governance protocols:
 
 ### 1. 100% Original Expression (ස්වාධීන අන්තර්ගතය)
 - **Zero Verbatim Copying**: None of the 27 lessons, 35 glossary definitions, or 12 quiz questions contain verbatim phrasing from proprietary copyrighted manuals, including the *PMBOK® Guide*, *The Scrum Guide*, or *PRINCE2® manuals*.
@@ -126,5 +126,6 @@ To ensure zero legal liability, compliance with international intellectual prope
   > *"PM Academy is an independent educational and portfolio resource created for self-study. It is not affiliated with, endorsed, sponsored, or certified by the Project Management Institute (PMI®), Scrum.org, AXELOS Limited, or any other institution."*
 
 ### 4. Legal Alignment in Sri Lanka
-- Governed under **Section 160 of the Intellectual Property Act No. 36 of 2003 of Sri Lanka**, which permits fair practice for private study, scholarship, and educational commentary, reinforced by independent authorship and proper source attribution.
+- **Fair Practice for Teaching and Study**: Governed under **Section 11 of the Intellectual Property Act No. 36 of 2003 of Sri Lanka**, which permits fair practice for personal private study, teaching, criticism, and scholarship, backed by independent authorship and proper attribution.
+- **Protection Against Unfair Competition**: Adheres to **Section 160 of the Act** by eliminating any misleading representations, deceptive badges, or false endorsements that could cause consumer confusion with official certifying bodies.
 
