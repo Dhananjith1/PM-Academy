@@ -1033,7 +1033,7 @@ footer {
       <p class="lead">Practical Project Management Learning Resources. Clear concepts, modern agile methods, and real-world tools without commercial noise.</p>
       <div class="hero-actions">
         <a class="btn" href="#learn">Start Learning →</a>
-        <button class="btn sec" onclick="openPortfolioModal()">View Portfolio Case Study</button>
+        <a class="btn sec" href="#glossary">Explore PM Glossary</a>
       </div>
       <div class="stats">
         <div class="stat-card">
@@ -1162,7 +1162,7 @@ footer {
         <h3>About PM Academy</h3>
         <p><b>Mission & Purpose:</b> PM Academy was created as a free-to-access educational resource and developer portfolio project to make project management concepts intuitive, accessible, and practical. Formal reference standards and certification preparation courses can often be lengthy or costly, and learners benefit from an approachable primer that breaks down scheduling, EVM formulas, and delivery workflows into clear, modular lessons.</p>
         <p><b>Target Audience:</b> Aspiring project coordinators, software engineers, startup founders, cross-functional team leaders, and students seeking a foundational conceptual primer before pursuing formal industry training.</p>
-        <button class="btn sec" style="margin-top:8px;" onclick="openPortfolioModal()">Read Project Portfolio Overview →</button>
+        <button class="btn sec" style="margin-top:8px;" onclick="openPortfolioModal()">Project Background &amp; Overview →</button>
       </div>
 
       <div class="about-card">
@@ -1193,7 +1193,7 @@ footer {
       <a href="#quiz">Quiz</a>
       <a href="#sources">Sources</a>
       <a href="#about">About</a>
-      <a href="#" onclick="openPortfolioModal(); return false;">Portfolio Case Study</a>
+      <a href="#" onclick="openPortfolioModal(); return false;">Project Overview</a>
     </div>
   </div>
 
@@ -1210,8 +1210,8 @@ footer {
 <div class="modal-overlay" id="pfModal" onclick="closePortfolioModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closePortfolioModal()">&times;</button>
-    <span class="modal-tag">Portfolio Case Study</span>
-    <h3>PM Academy — Project Overview & Architecture</h3>
+    <span class="modal-tag">Project Overview</span>
+    <h3>PM Academy — Background &amp; Educational Purpose</h3>
     
     <div class="case-block">
       <h4>1. Problem & Purpose</h4>
@@ -1238,15 +1238,16 @@ footer {
     <div class="case-block">
       <h4>4. Independence & Third-Party Notice</h4>
       <p>• <b>Independent Synthesis:</b> Curriculum summaries, analogies, worked calculations, and assessment items are educational syntheses created to discuss standard project management topics.</p>
-      <p>• <b>Plain-Text Reference:</b> No official logos or certification seals are displayed; product and framework names (such as PMBOK®, PRINCE2®, Scrum, Jira, Trello) are used strictly in plain text for identification and comparative discussion. All third-party marks remain the property of their respective rights holders.</p>
+      <p>• <b>Plain-Text Reference:</b> No official logos or certification seals are displayed; product and framework names are used strictly in plain text for identification and comparative discussion. All third-party marks remain the property of their respective rights holders.</p>
       <p>• <b>Non-Affiliation:</b> Independent project with no commercial affiliation, partnership, or accreditation from PMI, PeopleCert, or other credentialing bodies.</p>
     </div>
 
-    <div class="case-block">
-      <h4>5. Architecture & Technical Design</h4>
-      <p>• <b>Tech Stack:</b> Pure Vanilla HTML5, modern CSS3 (Custom Properties & Grid/Flexbox), and modular ES6 JavaScript.</p>
-      <p>• <b>Performance:</b> Zero build dependencies, lightweight single-bundle architecture, fast client-side rendering.</p>
-      <p>• <b>Accessibility & Responsive Design:</b> Designed with responsive layouts and accessibility considerations across mobile and desktop devices.</p>
+    <div class="case-block" style="border-bottom:none; margin-bottom:0; padding-bottom:0; text-align:center; padding-top:10px;">
+      <p style="font-size:13.5px; color:var(--mu); margin-bottom:12px;">Full technical specifications, architectural choices, and delivery documentation are available in the repository.</p>
+      <a href="https://github.com/Dhananjith1/PM-Academy/blob/main/PORTFOLIO_DESCRIPTION.md" target="_blank" rel="noopener noreferrer" class="btn sec" style="display:inline-flex; align-items:center; gap:6px; font-size:14px; padding:10px 18px;">
+        <span>View Full Technical Architecture on GitHub</span>
+        <span>→</span>
+      </a>
     </div>
   </div>
 </div>
