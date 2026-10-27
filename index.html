@@ -878,7 +878,7 @@ footer {
 }
 .footer-copy {
   max-width: 1180px;
-  margin: 18px auto 0;
+  margin: 20px auto 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -886,17 +886,76 @@ footer {
   color: #64748b;
   flex-wrap: wrap;
   gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 18px;
 }
-.visitor-counter-wrap {
-  display: inline-flex;
+
+/* Footer Live Visitor Counter Bar */
+.footer-counter-bar {
+  max-width: 1180px;
+  margin: 24px auto 0;
+}
+.counter-card {
+  background: rgba(30, 41, 59, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px 22px;
+  display: flex;
   align-items: center;
-  gap: 6px;
-  color: #94a3b8;
-  font-size: 12.5px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
-.visitor-counter-wrap img {
-  vertical-align: middle;
-  border-radius: 4px;
+.counter-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.counter-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.live-dot {
+  width: 10px;
+  height: 10px;
+  background: #10b981;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse-green 2s infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse-green {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+.counter-title {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 14.5px;
+  letter-spacing: -0.01em;
+}
+.counter-desc {
+  color: #94a3b8;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.counter-display {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 /* Modal for Portfolio Case Study */
@@ -1007,6 +1066,10 @@ footer {
   }
   .brand-badge {
     display: none;
+  }
+  .counter-card {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 </style>
@@ -1205,16 +1268,36 @@ footer {
       <a href="#" onclick="openPortfolioModal(); return false;">Portfolio Case Study</a>
     </div>
   </div>
+  <!-- Live Platform Engagement & Visitor Counter -->
+  <div class="footer-counter-bar">
+    <div class="counter-card">
+      <div class="counter-info">
+        <span class="live-dot" aria-hidden="true" title="Real-time tracker active"></span>
+        <div class="counter-text-group">
+          <span class="counter-title">Platform Engagement &amp; Readers</span>
+          <span class="counter-desc">Total learners and professionals who have accessed PM Academy resources:</span>
+        </div>
+      </div>
+      <div class="counter-display">
+        <img 
+          src="https://hits.sh/dhananjith1.github.io/PM-Academy.svg?style=for-the-badge&label=Learners+Visited&color=2563eb&labelColor=1e293b" 
+          alt="Total Learners and Visitors Count" 
+          height="28" 
+          style="height:28px; width:auto; border-radius:6px; display:inline-block;"
+          loading="eager"
+          onerror="this.style.display='none'; document.getElementById('visitorFallback').style.display='inline-flex';"
+        >
+        <span id="visitorFallback" style="display:none; background:#1e293b; color:#93c5fd; padding:5px 12px; border-radius:6px; font-weight:600; font-size:12px; border:1px solid #334155;">Active Community Platform</span>
+      </div>
+    </div>
+  </div>
+
   <div class="legal-footer-notice">
     PM Academy is an independent educational and portfolio project. PMI®, PMBOK®, PMP®, CAPM®, and PMI-ACP® are registered trademarks of the Project Management Institute, Inc. All other product names, certifications, and third-party marks remain the property of their respective rights holders. Reference to these marks is strictly for identification and does not imply endorsement or official partnership.
   </div>
   <div class="footer-copy">
     <span>© 2024–2026 Dhananjith. Project Management, Made Simple.</span>
-    <span class="visitor-counter-wrap" title="Total page visits">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="opacity:0.75;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-      <span>Visits:</span>
-      <img src="https://hits.sh/dhananjith1.github.io/PM-Academy.svg?label=views&color=2563eb&labelColor=334155" alt="Page Views" width="60" height="20" loading="lazy">
-    </span>
+    <span style="color:#64748b;">Free-to-access learning initiative for the global PM community.</span>
   </div>
 </footer>
 
