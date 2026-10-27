@@ -890,102 +890,6 @@ footer {
   padding-top: 18px;
 }
 
-/* Footer Live Visitor Counter Bar */
-.footer-counter-bar {
-  max-width: 1180px;
-  margin: 24px auto 0;
-}
-.counter-card {
-  background: rgba(30, 41, 59, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 16px 22px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-}
-.counter-info {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.counter-text-group {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.live-dot {
-  width: 10px;
-  height: 10px;
-  background: #10b981;
-  border-radius: 50%;
-  display: inline-block;
-  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-  animation: pulse-green 2s infinite;
-  flex-shrink: 0;
-}
-@keyframes pulse-green {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
-  }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
-  }
-}
-.counter-title {
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 14.5px;
-  letter-spacing: -0.01em;
-}
-.counter-desc {
-  color: #94a3b8;
-  font-size: 13px;
-  line-height: 1.4;
-}
-.counter-live-info {
-  display: block;
-  font-size: 11.5px;
-  color: #64748b;
-  margin-top: 4px;
-}
-.counter-display {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  flex-wrap: wrap;
-}
-.btn-refresh-counter {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: #cbd5e1;
-  padding: 5px 12px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 500;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-}
-.btn-refresh-counter:hover {
-  background: var(--brand);
-  color: #ffffff;
-  border-color: var(--brand);
-  transform: translateY(-1px);
-}
-
 /* Modal for Portfolio Case Study */
 .modal-overlay {
   display: none;
@@ -1094,10 +998,6 @@ footer {
   }
   .brand-badge {
     display: none;
-  }
-  .counter-card {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }
 </style>
@@ -1294,38 +1194,6 @@ footer {
       <a href="#sources">Sources</a>
       <a href="#about">About</a>
       <a href="#" onclick="openPortfolioModal(); return false;">Portfolio Case Study</a>
-    </div>
-  </div>
-  <!-- Live Platform Engagement & Visitor Counter -->
-  <div class="footer-counter-bar">
-    <div class="counter-card">
-      <div class="counter-info">
-        <span class="live-dot" aria-hidden="true" title="Real-time tracker active"></span>
-        <div class="counter-text-group">
-          <div style="display:flex; align-items:center; gap:8px;">
-            <span class="counter-title">Platform Engagement &amp; Readers</span>
-            <span style="display:inline-flex; align-items:center; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.4); color:#34d399; font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; padding:2px 7px; border-radius:12px;">● LIVE TRACKER</span>
-          </div>
-          <span class="counter-desc">Real-time global count of learners and professionals accessing PM Academy resources.</span>
-          <span class="counter-live-info">Live backend tracking via hits.sh API. Increments dynamically on every visit across all devices.</span>
-        </div>
-      </div>
-      <div class="counter-display">
-        <img 
-          id="visitorCounterImg"
-          src="https://hits.sh/dhananjith1.github.io/PM-Academy.svg?style=for-the-badge&label=Learners+Visited&color=2563eb&labelColor=1e293b" 
-          alt="Total Learners and Visitors Count" 
-          height="28" 
-          style="height:28px; width:auto; border-radius:6px; display:inline-block;"
-          loading="eager"
-          onerror="this.style.display='none'; document.getElementById('visitorFallback').style.display='inline-flex';"
-        >
-        <button type="button" class="btn-refresh-counter" onclick="refreshLiveCounter()" title="Refresh live counter directly from server">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-          <span>Refresh Count</span>
-        </button>
-        <span id="visitorFallback" style="display:none; background:#1e293b; color:#93c5fd; padding:5px 12px; border-radius:6px; font-weight:600; font-size:12px; border:1px solid #334155;">Active Community Platform</span>
-      </div>
     </div>
   </div>
 
@@ -2233,20 +2101,10 @@ function closePortfolioModal(e) {
   document.body.style.overflow = "";
 }
 
-/* Live Server-Side Visitor Counter */
-function refreshLiveCounter() {
-  const img = $("visitorCounterImg");
-  if (img) {
-    const ts = new Date().getTime();
-    img.src = "https://hits.sh/dhananjith1.github.io/PM-Academy.svg?style=for-the-badge&label=Learners+Visited&color=2563eb&labelColor=1e293b&v=" + ts;
-  }
-}
-
 /* Global Init */
 render();
 gl();
 quiz();
-refreshLiveCounter();
 </script>
 </body>
 </html>
