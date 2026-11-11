@@ -1,14 +1,22 @@
 # Changelog
 
+## 11 November 2026 — Third-party rights and linking compliance revision
+- Removed direct outbound links to PMI webpages because the project's current homepage and lesson placements have not been separately approved under PMI's Digital Properties Linking Agreement.
+- Retained PMI word marks only for truthful identification of the publisher, publications, and credentials; maintained the italicised *PMBOK® Guide* form and owner attribution.
+- Removed third-party certification/framework marks and branded learning material whose published website/content rules require licensed service placement or permission; replaced that curriculum section with independently written project-governance concepts.
+- Rebuilt Sources & Further Reading around the sources actually used in the current curriculum: the Agile Manifesto, Scrum Guide, and Open Guide to Kanban, plus a non-linked PMI publisher reference.
+- Updated the README, portfolio case study, rights notice, preliminary trademark screen, and legal-review brief to match the current public source.
+- Kept the limited CC BY-SA 4.0 attribution for the identified Scrum and Kanban summary portions; original site content remains subject to the Rights and Reuse Notice.
+
 ## 11 November 2026 — Portfolio-readiness update
 - Updated PMP education/experience pathways, 2026 exam weighting and format, and the announced live-training eligibility change effective 1 December 2026.
 - Reworked Scrum content to use the Scrum Guide's accountabilities, Daily Scrum, artefacts, and commitments.
-- Added all seven PRINCE2 Version 7 principles.
+- Added a third-party branded project-governance overview in an earlier revision; it has since been removed from the current curriculum following the rights and usage review.
 - Clarified predictive Process Groups versus context-specific project phases.
 - Added EVM input validation and explained the EAC assumption and schedule variance.
 - Expanded the knowledge check to 13 questions, including a numerical EVM item, and shuffled answer options.
 - Improved mobile navigation, keyboard focus visibility, reduced-motion behaviour, and modal keyboard handling.
-- Added official reference links, Open Graph metadata, a favicon, and a social preview image.
+- Added selected source links, Open Graph metadata, and a favicon; third-party source-link conditions were reviewed again in the later compliance update.
 - Rewrote project documentation to describe the project accurately as AI-assisted front-end work rather than full-stack/client work.
 
 ## 11 November 2026 — Simplified About and legal notice
