@@ -17,7 +17,7 @@ GitHub Actions runs:
 - axe-core scans tagged for WCAG 2.0 A/AA, WCAG 2.1 A/AA, and WCAG 2.2 AA; representative initial-page, modal, and quiz-feedback scans run across all five configured desktop/mobile browser projects, while the complete 27-lesson and 13-question feedback-state scans run once in desktop Chromium to avoid repeating expensive scans in every engine;
 - page, modal, representative quiz feedback, exhaustive lesson and quiz states, focus, progress-persistence, EVM-calculation, and horizontal-overflow checks across ten representative viewport widths (320px–1440px).
 
-The 11 November 2026 run is recorded in the repository's [GitHub Actions workflow history](https://github.com/Dhananjith1/PM-Academy/actions). The validation report records the latest exact counts and scope.
+The latest completed 11 November 2026 run, [42984701843](https://github.com/Dhananjith1/PM-Academy/actions/runs/42984701843), passed **52 checks, skipped 8 intentionally, and failed 0** across 60 test executions. HTML validation also passed. The eight skips avoid repeating the exhaustive lesson/quiz axe scans in four additional browser profiles; the complete 27-lesson and 13-quiz-feedback scans run once in desktop Chromium, while representative axe checks and interaction tests run across all five profiles. Responsive overflow is checked at 12 widths from 320px to 1440px.
 
 ## Known limitations
 
