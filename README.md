@@ -15,7 +15,7 @@ This is an independent, free-to-access introductory learning resource for people
 - **Searchable glossary:** concise definitions for common project-management terminology.
 - **13-question knowledge check:** explanatory feedback, shuffled answer choices, and a numerical EVM question.
 - **Lesson progress:** completed lesson IDs are stored in the current browser's localStorage; they are not synchronized across browsers or devices.
-- **Approximate unique browsers:** a small external Abacus counter is available on the public pages. It uses localStorage to count a persistent browser profile once and reads the aggregate on later page loads; it does not poll every 20 seconds. It is not a verified count of individual people. Clearing browser storage, using a different browser/device, or using a temporary/private profile can cause repeat counts; shared profiles can cause several people to be counted once. If storage is unavailable, the page does not increment the counter.
+- **Optional approximate browser count:** every public page offers an opt-in counter. No request goes to the external Abacus service unless a visitor selects Allow. No thanks, no choice, or unavailable browser storage keeps it off; a visitor can later turn it off. After opt-in, a persistent browser profile is counted once and later page loads read the aggregate without periodic polling. It is not a count of distinct people; clearing site data or changing browsers/devices can cause repeat counts.
 - **Accessibility foundations:** skip navigation, visible keyboard focus, dynamic-content focus management, dialog focus trapping, reduced-motion support, and semantic progress state.
 
 ## Search discovery

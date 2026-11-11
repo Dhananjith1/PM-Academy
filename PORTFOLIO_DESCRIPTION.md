@@ -25,7 +25,7 @@ The resource is intended for students, people exploring a project-management car
 | Searchable glossary | Locate common terminology | Client-side keyword filtering |
 | 13-question quiz | Knowledge check with explanations | Shuffled answer options, scoring, and feedback |
 | Lesson progress | Mark lessons complete | localStorage in current browser; no cross-device sync |
-| Approximate browser count | Display an approximate site-wide browser-profile total | External Abacus counter; localStorage deduplication across public pages; not a count of distinct people |
+| Optional approximate browser count | Display an approximate site-wide browser-profile total | External Abacus counter only after explicit opt-in; localStorage consent and deduplication across public pages; not a count of distinct people |
 | Responsive interface | Supports common desktop and mobile viewports | CSS Grid/Flexbox and responsive media queries |
 
 ## 4. Learning areas
@@ -59,7 +59,7 @@ See [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md), [TRADEMARK_SCREENING
 
 - Kept the application static, with no application backend, account system, or database.
 - Used browser-side JavaScript for lessons, calculator, glossary, quiz, and navigation.
-- Stored lesson-completion IDs and visitor-counter deduplication/cache flags in localStorage in the current browser. A small custom counter script calls the external Abacus endpoint; provider-side data handling is not independently verified.
+- Stored lesson-completion IDs and optional visitor-counter consent/deduplication/cache flags in localStorage in the current browser. A small custom counter script calls the external Abacus endpoint only after the visitor opts in; provider-side data handling is not independently verified.
 - Added responsive layout, visible keyboard focus, skip navigation, reduced-motion support, and modal keyboard dismissal.
 - Kept references to source publications separate from the independently written lesson content.
 - Removed direct PMI links and third-party framework/certification marks that would require approved or licensed placement.

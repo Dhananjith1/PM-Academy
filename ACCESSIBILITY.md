@@ -18,7 +18,7 @@ GitHub Actions runs:
 - exhaustive axe scans of all 27 lesson states and all 13 quiz-feedback states in desktop Chromium;
 - page, modal, focus, progress-persistence, EVM-calculation, quiz, and horizontal-overflow checks across 12 viewport widths: 320, 360, 375, 390, 414, 600, 768, 820, 900, 1024, 1280, and 1440 CSS pixels.
 
-The current regression suite also checks the public Privacy Notice and Rights & Educational Disclaimer pages, legal links in every public-page footer, and the site-wide visitor counter's browser-profile wording and non-polling behaviour. The latest completed run for this revision is recorded in the [GitHub Actions history](https://github.com/Dhananjith1/PM-Academy/actions); results are not stated here until the run completes.
+The current regression suite also checks the public Privacy Notice and Rights & Educational Disclaimer pages, legal links in every public-page footer, and the site-wide visitor counter's explicit opt-in, decline/withdraw controls, browser-profile wording and non-polling behaviour. The latest completed run for this revision is recorded in the [GitHub Actions history](https://github.com/Dhananjith1/PM-Academy/actions); results are not stated here until the run completes.
 
 ## Known limitations
 

@@ -270,9 +270,9 @@ test('page has no horizontal overflow across representative responsive widths', 
   }
 });
 
-test('visitor counter uses approximate browser-profile deduplication without periodic polling', async ({ page }) => {
+test('visitor counter is optional, explicit opt-in, and does not poll', async ({ page }) => {
   const counter = page.locator('#unique-visitor-count');
-  await expect(counter).toHaveText('0');
+  await expect(counter).toHaveText('Not enabled');
   await expect(page.locator('footer')).toContainText('Approx. unique browsers:');
   const source = await page.locator('script').allTextContents();
   const tracker = source.join('\n');
@@ -285,9 +285,56 @@ test('visitor counter uses approximate browser-profile deduplication without per
   expect(tracker).not.toContain('20000');
   expect(tracker).not.toContain('Loading...');
   expect(tracker).not.toContain('counterapi.com');
-  expect(tracker).toContain('shouldCountThisBrowser = false');
+  expect(tracker).toContain('pm-academy-counter-consent-v1');
+  expect(tracker).toContain('counter-consent-allow');
+  expect(tracker).toContain('counter-consent-decline');
+  expect(tracker).toContain('counter-consent-stop');
   await expect(page.locator('a[href="privacy.html"]')).toHaveCount(1);
 });
+
+test('visitor counter sends no external request before consent or after decline', async ({ page }) => {
+  const requests = [];
+  page.on('request', request => {
+    if (request.url().startsWith('https://abacus.jasoncameron.dev/')) requests.push(request.url());
+  });
+  await page.reload();
+  await expect(page.locator('#unique-visitor-count')).toHaveText('Not enabled');
+  expect(requests).toEqual([]);
+  await page.getByRole('button', { name: 'No thanks' }).click();
+  expect(requests).toEqual([]);
+});
+
+test('visitor counter increments only after opt-in, reads later, and stops after withdrawal', async ({ page }) => {
+  await page.unroute('https://abacus.jasoncameron.dev/**');
+  const requests = [];
+  await page.route('https://abacus.jasoncameron.dev/**', async route => {
+    const url = route.request().url();
+    requests.push(url);
+    await route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: JSON.stringify({ value: 31 })
+    });
+  });
+
+  await page.getByRole('button', { name: 'Allow approximate counting' }).click();
+  await expect(page.locator('#unique-visitor-count')).toHaveText('31');
+  expect(requests).toHaveLength(1);
+  expect(new URL(requests[0]).pathname).toContain('/hit/');
+  await expect(page.getByRole('button', { name: 'Turn off counting on this browser' })).toBeVisible();
+
+  await page.reload();
+  await expect(page.locator('#unique-visitor-count')).toHaveText('31');
+  expect(requests.filter(url => new URL(url).pathname.includes('/hit/'))).toHaveLength(1);
+  expect(requests.filter(url => new URL(url).pathname.includes('/get/'))).toHaveLength(1);
+
+  await page.getByRole('button', { name: 'Turn off counting on this browser' }).click();
+  await page.reload();
+  await expect(page.locator('#unique-visitor-count')).toHaveText('Not enabled');
+  expect(requests).toHaveLength(2);
+});
+
+
 
 test('Abacus counter API supports browser CORS hit and read requests', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'chromium', 'Run the live counter-provider smoke test once in desktop Chromium.');

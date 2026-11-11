@@ -83,3 +83,11 @@
 - Extended the counter to all public pages, removed periodic polling, and prevented increments when browser storage is unavailable.
 - Updated the legal review brief with the Data Protection Authority's published PDPA commencement schedule for 1 January 2027.
 - Added regression checks for the public notices, site-wide counter and privacy disclosures.
+
+
+## 11 November 2026 — Opt-in visitor counter
+
+- Made the external visitor counter inactive by default; it sends no request until a visitor selects Allow.
+- Added No thanks and a control to turn off future counting in the current browser.
+- Updated the privacy notice and technical/legal documentation to describe the opt-in data flow, provider uncertainty, and browser-profile counting limitations.
+- Added browser tests for no request before consent, declined consent, opt-in hit/read behaviour, and withdrawal.
