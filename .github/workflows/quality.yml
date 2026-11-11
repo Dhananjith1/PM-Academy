@@ -17,11 +17,12 @@ jobs:
     timeout-minutes: 25
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 24
+          package-manager-cache: false
       - name: Install quality-check dependencies
         run: npm install --no-audit --no-fund
       - name: Install Playwright browsers
