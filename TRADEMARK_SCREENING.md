@@ -15,7 +15,7 @@ The public title and header have therefore been changed to the descriptive phras
 - [PM Academy UK](https://pmacademy.co.uk/) publicly uses “PM Academy” for project-management, Agile, change-management, and related professional training. Its website identifies PM Academy as a trading name of Ennerdale Bridge Limited.
 - [PM Academy Africa](https://pmacademy.africa/about) publicly uses “PM Academy” for project-management training, consulting, and recruitment services, and describes an operation established in 2005.
 
-These are primary business websites and establish actual public use of the wording in a closely related field. They do not establish the legal status or priority of marks in Sri Lanka or every other country. No conclusion is made about infringement.
+These are primary business websites and establish actual public use of the wording in a closely related field. PM Academy UK identifies the wording as a trading name of Ennerdale Bridge Limited; PM Academy Africa describes project-management training/advisory services and states that it was established in 2005. These facts increase the practical name-confusion risk but do not establish the legal status or priority of marks in Sri Lanka or every other country. No conclusion is made about infringement.
 
 ## What this review did and did not do
 
