@@ -1,0 +1,128 @@
+import { test, expect } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+
+const wcagTags = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
+
+test.beforeEach(async ({ page }) => {
+  await page.goto('/');
+});
+
+test('page has one main landmark, a single h1, and no duplicate IDs', async ({ page }) => {
+  await expect(page).toHaveTitle(/PM Academy/);
+  await expect(page.locator('main')).toHaveCount(1);
+  await expect(page.locator('h1')).toHaveCount(1);
+  const duplicateIds = await page.locator('[id]').evaluateAll(nodes => {
+    const ids = nodes.map(node => node.id).filter(Boolean);
+    return [...new Set(ids.filter((id, index) => ids.indexOf(id) !== index))];
+  });
+  expect(duplicateIds).toEqual([]);
+});
+
+test('skip link is the first keyboard stop and moves focus to main', async ({ page }) => {
+  await page.keyboard.press('Tab');
+  const skip = page.locator('.skip-link');
+  await expect(skip).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(page.locator('#main-content')).toBeFocused();
+});
+
+test('glossary search returns matching concepts', async ({ page }) => {
+  await page.getByRole('searchbox', { name: /search glossary/i }).fill('WBS');
+  await expect(page.locator('#gl')).toContainText('Work Breakdown Structure');
+  await page.getByRole('searchbox', { name: /search glossary/i }).fill('not-a-real-term');
+  await expect(page.locator('#gl')).toContainText('No matching glossary terms');
+});
+
+test('lesson navigation, progress semantics and persistence work', async ({ page }) => {
+  await page.locator('.side button.l').nth(1).click();
+  await expect(page.locator('#lesson-title')).toBeFocused();
+  await expect(page.locator('#lesson-title')).toContainText('Predictive Process Groups');
+  await page.getByRole('button', { name: /Mark as Completed/ }).click();
+  await expect(page.locator('#pt')).toHaveText('1 of 27 completed');
+  await expect(page.locator('.bar')).toHaveAttribute('aria-valuenow', '1');
+  await page.reload();
+  await expect(page.locator('#pt')).toHaveText('1 of 27 completed');
+});
+
+test('EVM calculations explain schedule variance in value units', async ({ page }) => {
+  await page.getByRole('button', { name: /Budgeting & Earned Value/ }).click();
+  await page.locator('#e1').fill('100000');
+  await page.locator('#e2').fill('40000');
+  await page.locator('#e3').fill('35000');
+  await page.locator('#e4').fill('50000');
+  const output = page.locator('#eo');
+  await expect(output).toContainText('Cost Variance (CV) = −$15,000');
+  await expect(output).toContainText('Schedule Variance (SV) = −$5,000');
+  await expect(output).toContainText('Less budgeted work value earned than planned');
+  await expect(output).toContainText('SV is expressed in budget units, not calendar days');
+  await expect(output).toContainText('Cost Performance Index (CPI) = 0.70');
+  await expect(output).toContainText('Schedule Performance Index (SPI) = 0.88');
+  await expect(output).toContainText('Estimate at Completion (EAC) = $142,857.14');
+  await page.locator('#e4').fill('0');
+  await expect(output).toContainText('Not available (denominator is zero)');
+});
+
+test('quiz answers and question transitions retain keyboard focus', async ({ page }) => {
+  for (let i = 0; i < 13; i += 1) {
+    await page.locator('#qz .q-options button').first().click();
+    await expect(page.locator('.q-feedback')).toBeVisible();
+    await page.getByRole('button', { name: /Next Question|View Final Score/ }).click();
+    if (i < 12) await expect(page.locator('#quiz-question-title')).toBeFocused();
+  }
+  await expect(page.locator('#quiz-result-title')).toBeFocused();
+  await expect(page.locator('#qz')).toContainText('Your Final Score:');
+  await page.getByRole('button', { name: 'Retake Quiz' }).click();
+  await expect(page.locator('#quiz-question-title')).toBeFocused();
+});
+
+test('project overview modal traps focus, closes on Escape and restores focus', async ({ page }) => {
+  const trigger = page.getByRole('button', { name: /Explore Project Background/ });
+  await trigger.click();
+  const modal = page.locator('#pfModal');
+  const close = modal.getByRole('button', { name: /Close project overview/ });
+  const lastLink = modal.getByRole('link', { name: /View Project Documentation/ });
+  await expect(close).toBeFocused();
+  await page.keyboard.press('Shift+Tab');
+  await expect(lastLink).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(close).toBeFocused();
+  await page.keyboard.press('Escape');
+  await expect(modal).toHaveAttribute('aria-hidden', 'true');
+  await expect(trigger).toBeFocused();
+});
+
+test('mobile viewport has no horizontal page overflow', async ({ page, isMobile }) => {
+  test.skip(!isMobile, 'This check is specific to the mobile-emulation projects.');
+  const dimensions = await page.evaluate(() => ({
+    viewport: document.documentElement.clientWidth,
+    content: document.documentElement.scrollWidth
+  }));
+  expect(dimensions.content).toBeLessThanOrEqual(dimensions.viewport);
+});
+
+test('initial page and modal have no axe WCAG A/AA violations', async ({ page }) => {
+  const initial = await new AxeBuilder({ page }).withTags(wcagTags).analyze();
+  expect(initial.violations.map(v => ({ id: v.id, impact: v.impact, nodes: v.nodes.map(n => n.target) }))).toEqual([]);
+  await page.getByRole('button', { name: /Explore Project Background/ }).click();
+  const modal = await new AxeBuilder({ page }).withTags(wcagTags).analyze();
+  expect(modal.violations.map(v => ({ id: v.id, impact: v.impact, nodes: v.nodes.map(n => n.target) }))).toEqual([]);
+  await page.keyboard.press('Escape');
+});
+
+test('all 27 lesson states pass axe WCAG A/AA scans', async ({ page, browserName }) => {
+  test.skip(browserName !== 'chromium', 'Full lesson-by-lesson axe scan runs in Chromium; initial/modal scans run in all browser projects.');
+  for (let i = 0; i < 27; i += 1) {
+    await page.locator('.side button.l').nth(i).click();
+    const results = await new AxeBuilder({ page }).withTags(wcagTags).analyze();
+    expect(
+      results.violations.map(v => ({ id: v.id, impact: v.impact, nodes: v.nodes.map(n => n.target) })),
+      `Accessibility violations in lesson ${i + 1}`
+    ).toEqual([]);
+  }
+});
+
+test('quiz feedback state has no axe WCAG A/AA violations', async ({ page }) => {
+  await page.locator('#qz .q-options button').first().click();
+  const results = await new AxeBuilder({ page }).withTags(wcagTags).analyze();
+  expect(results.violations.map(v => ({ id: v.id, impact: v.impact, nodes: v.nodes.map(n => n.target) }))).toEqual([]);
+});

@@ -18,30 +18,27 @@
 <meta name="twitter:image" content="https://dhananjith1.github.io/PM-Academy/og-preview.png">
 <link rel="canonical" href="https://dhananjith1.github.io/PM-Academy/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #f8fafc;
   --card: #ffffff;
   --tx: #0f172a;
   --mu: #475569;
-  --soft-mu: #64748b;
+  --soft-mu: #475569;
   --pr: #1e293b;
   --brand: #2563eb;
   --brand-dark: #1d4ed8;
   --brand-soft: #eff6ff;
-  --ac: #0d9488;
+  --ac: #0f766e;
   --ac-soft: #f0fdfa;
   --rust: #c2410c;
   --rust-soft: #fff7ed;
   --bd: #e2e8f0;
   --bd-focus: #94a3b8;
   --soft: #f1f5f9;
-  --font-heading: 'Fraunces', Georgia, serif;
-  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', Menlo, Consolas, monospace;
+  --font-heading: Georgia, 'Times New Roman', serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
   --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
   --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
   --shadow-lg: 0 12px 28px -6px rgba(15, 23, 42, 0.12), 0 4px 10px -2px rgba(15, 23, 42, 0.06);
@@ -413,7 +410,7 @@ p.sub {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  opacity: 0.9;
+  opacity: 1;
   display: block;
   margin-bottom: 4px;
 }
@@ -1017,6 +1014,7 @@ button:disabled { cursor:not-allowed; }
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- Header -->
 <header>
   <a href="#" class="brand-group">
@@ -1033,8 +1031,7 @@ button:disabled { cursor:not-allowed; }
     <a class="nb cta-nav" href="#learn">Start Learning</a>
   </nav>
 </header>
-<a class="skip-link" href="#main-content">Skip to main content</a>
-<main id="main-content">
+<main id="main-content" tabindex="-1">
 
 <!-- Hero Section -->
 <div class="hero">
@@ -1086,7 +1083,7 @@ button:disabled { cursor:not-allowed; }
             <span id="pt">0 of 27 completed</span>
             <span id="pt-pct">0%</span>
           </div>
-          <div class="bar"><i id="pb"></i></div>
+          <div class="bar" role="progressbar" aria-label="Lessons completed" aria-valuemin="0" aria-valuemax="27" aria-valuenow="0" aria-valuetext="0 of 27 lessons completed"><i id="pb"></i></div>
         </div>
         <div id="list"></div>
       </aside>
@@ -1200,7 +1197,7 @@ button:disabled { cursor:not-allowed; }
   <div class="footer-wrap">
     <div>
       <div class="footer-brand">PM Academy</div>
-      <p style="margin:6px 0 0; color:#94a3b8; font-size:14px;">Independent open learning resources for aspiring and practicing project managers.</p>
+      <p style="margin:6px 0 0; color:#94a3b8; font-size:14px;">Free-to-access educational resource for people exploring project management.</p>
     </div>
     <div class="footer-links">
       <a href="#learn">Curriculum</a>
@@ -1224,7 +1221,7 @@ button:disabled { cursor:not-allowed; }
 </footer>
 
 <!-- Portfolio Case Study Modal -->
-<div class="modal-overlay" id="pfModal" role="dialog" aria-modal="true" aria-labelledby="pfModalTitle" onclick="closePortfolioModal(event)">
+<div class="modal-overlay" id="pfModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="pfModalTitle" onclick="closePortfolioModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" type="button" aria-label="Close project overview" onclick="closePortfolioModal()">&times;</button>
     <span class="modal-tag">Project Overview</span>
@@ -1299,7 +1296,7 @@ const L = [
   ],
 
   [
-    0, "⏳", "Predictive Process Groups & Project Phases", "#0f766e", "#14b8a6",
+    0, "⏳", "Predictive Process Groups & Project Phases", "#0f766e", "#115e59",
     H("The Five Process Groups (Predictive Model)", F(["Initiating", "Planning", "Executing", "Monitoring & Controlling", "Closing"])) +
     U([
       "<b>Initiating:</b> Clarifying the fundamental business problem or opportunity, gaining executive authorization (Charter), and identifying key participants.",
@@ -1313,7 +1310,7 @@ const L = [
   ],
 
   [
-    0, "💼", "Business Case & Project Selection", "#1d4ed8", "#3b82f6",
+    0, "💼", "Business Case & Project Selection", "#1d4ed8", "#1e40af",
     H("Why Do Initiatives Get Approved?", U([
       "<b>Market Opportunity:</b> Capturing new revenue or entering an emerging customer segment.",
       "<b>Operational Necessity:</b> Modernizing an outdated system that is slowing company operations.",
@@ -1339,7 +1336,7 @@ const L = [
   ],
 
   [
-    0, "📋", "Project Management Plan & Baselines", "#4338ca", "#6366f1",
+    0, "📋", "Project Management Plan & Baselines", "#4338ca", "#3730a3",
     H("The Role of Integration", "<p><b>Project Integration</b> is the discipline of keeping every moving part—scope, schedules, budgets, and communication—synchronized so the project functions as a unified effort rather than disconnected silos.</p>") +
     H("Building Blocks of the Project Plan", C([
       ["Subsidiary Plans", "Specific roadmaps for managing scope, schedule, budget, quality, resources, communication, and risk."],
@@ -1361,7 +1358,7 @@ const L = [
   ],
 
   [
-    0, "🔺", "The Triple Constraint & Defining Success", "#c2410c", "#ea580c",
+    0, "🔺", "The Triple Constraint & Defining Success", "#9a3412", "#c2410c",
     H("The Classic Iron Triangle", C([
       ["📦 Scope", "The specific features and deliverable boundary defined for the project."],
       ["📅 Schedule", "The agreed calendar timeline and milestone deadlines."],
@@ -1377,7 +1374,7 @@ const L = [
   ],
 
   [
-    0, "👥", "Key Roles & Organizational Structures", "#0f766e", "#0d9488",
+    0, "👥", "Key Roles & Organizational Structures", "#0f766e", "#115e59",
     H("Primary Project Roles", C([
       ["Project Manager", "Guides team execution, manages stakeholder alignment, and is accountable for overall delivery results."],
       ["Project Sponsor", "Senior executive champion who authorizes the charter, secures capital, and resolves high-level escalations."],
@@ -1459,7 +1456,7 @@ const L = [
   ],
 
   [
-    1, "✅", "Quality Management", "#ea580c", "#d97706",
+    1, "✅", "Quality Management", "#9a3412", "#92400e",
     H("Distinguishing Quality from Grade", "<p><b>Quality</b> measures how reliably a product fulfills its stated requirements. <b>Grade</b> refers to its category of luxury or technical specifications.<br><i>A low-grade item (a basic, inexpensive phone) has high quality if it operates without bugs. A high-grade luxury smartphone has low quality if calls constantly drop.</i></p>") +
     H("The Three Pillars of Quality", U([
       "<b>Quality Planning:</b> Identifying applicable standards and establishing how to verify them.",
@@ -1499,7 +1496,7 @@ const L = [
   ],
 
   [
-    1, "💬", "Communications Management", "#0284c7", "#0369a1",
+    1, "💬", "Communications Management", "#0369a1", "#075985",
     H("The Basic Communication Cycle", "<p>Sender → Encodes thought → Transmits via Channel → Receiver Decodes → Provides Feedback.<br><b>Noise:</b> Any interference (technical distortion, jargon, cultural misunderstandings) that weakens message clarity.</p>") +
     H("The Growth of Communication Channels", "<span class='fm'>Total Channels = [n × (n − 1)] ÷ 2 &nbsp;&nbsp;(where n = number of team members)</span><p>A team of 5 people has 10 potential communication pathways; a team of 10 people has 45! The formula counts possible two-way pairwise links in a fully connected group. The number of potential links grows quadratically with team size; it is not a measure of actual messages or the complexity of every communication.</p>") +
     H("Transmission Methods", C([
@@ -1544,7 +1541,7 @@ const L = [
 
   /* Part 4 · Methods & Frameworks */
   [
-    3, "🛠️", "Waterfall, Agile & Hybrid Approaches", "#4f46e5", "#6366f1",
+    3, "🛠️", "Waterfall, Agile & Hybrid Approaches", "#4338ca", "#3730a3",
     H("Methodological Paradigms", C([
       ["Predictive", "Plans scope, sequence, estimates, and controls in more detail up front, then manages delivery against an agreed baseline. It can suit work with relatively stable requirements or strong assurance needs; review and validation should still occur throughout."],
       ["Adaptive (Agile)", "Uses iterative and incremental delivery, frequent feedback, and reprioritization as learning develops. Specific practices depend on the framework and team."],
@@ -1564,7 +1561,7 @@ const L = [
   ],
 
   [
-    3, "🏉", "Scrum Framework & Kanban Systems", "#0f766e", "#0d9488",
+    3, "🏉", "Scrum Framework & Kanban Systems", "#0f766e", "#115e59",
     H("The Scrum Delivery Model", C([
       ["Accountabilities", "The Scrum Team consists of a <b>Product Owner</b> (accountable for maximizing product value and effective Product Backlog management), a <b>Scrum Master</b> (accountable for establishing Scrum and improving team effectiveness), and <b>Developers</b> (accountable for creating a usable Increment each Sprint)."],
       ["Sprint and Events", "A <b>Sprint</b> is a fixed-length event of one month or less. It contains Sprint Planning, Daily Scrum, Sprint Review, and Sprint Retrospective. The <b>Daily Scrum</b> is a 15-minute event for Developers to inspect progress toward the Sprint Goal and adapt the plan."],
@@ -1611,7 +1608,7 @@ const L = [
   ],
 
   [
-    4, "📋", "Tools Part A: Boards & Work Management", "#0284c7", "#0369a1",
+    4, "📋", "Tools Part A: Boards & Work Management", "#0369a1", "#075985",
     TL("1. Trello", "Visual Kanban Boards (Atlassian)", [
       "<b>Best For:</b> Small teams, beginners, personal projects, and simple visual workflows.",
       "<b>Mechanism:</b> Drag-and-drop cards moving across vertical lists (To Do, Doing, Done).",
@@ -1760,7 +1757,7 @@ const L = [
   ],
 
   [
-    5, "🏆", "Careers, Standards & Certification Pathways", "#b45309", "#d97706",
+    5, "🏆", "Careers, Standards & Certification Pathways", "#92400e", "#78350f",
     H("Understanding PM Standards & Credential Pathways", "<p>Professional standards and credentials provide structured frameworks and shared terminology across global industries:</p>" +
       U([
         "<b><i>PMBOK® Guide</i> (PMI):</b> Globally recognized body of knowledge. The Seventh Edition presented 12 project-management principles and 8 performance domains. The Eighth Edition (published November 2025) has 6 core principles and 7 performance domains, with expanded coverage of AI, PMOs, and procurement and evolved, non-prescriptive process guidance.",
@@ -1973,7 +1970,7 @@ function render() {
       <div class="em">${l[1]}</div>
       <div>
         <small>Lesson ${cur + 1} of ${N} · ${P[l[0]]}</small>
-        <h3>${l[2]}</h3>
+        <h3 id="lesson-title" tabindex="-1">${l[2]}</h3>
       </div>
     </div>
     <div class="body">${l[5]}</div>
@@ -1989,6 +1986,9 @@ function render() {
   const pct = Math.round((done.size * 100) / N);
   $("pt-pct").textContent = `${pct}%`;
   $("pb").style.width = `${pct}%`;
+  const progressBar = $("pb").parentElement;
+  progressBar.setAttribute("aria-valuenow", String(done.size));
+  progressBar.setAttribute("aria-valuetext", `${done.size} of ${N} lessons completed`);
 
   // Attach EVM Calculator Listeners if on EVM lesson
   if ($("e1")) {
@@ -2010,11 +2010,12 @@ function calc() {
   const eac = cpi !== null && cpi > 0 ? bac / cpi : null;
   const money = value => value < 0 ? "−$" + Math.abs(value).toLocaleString("en-US", { maximumFractionDigits: 2 }) : "$" + value.toLocaleString("en-US", { maximumFractionDigits: 2 });
   const costStatus = value => value < 0 ? "Over budget" : value > 0 ? "Under budget" : "On budget";
-  const scheduleStatus = value => value < 0 ? "Behind schedule" : value > 0 ? "Ahead of schedule" : "On schedule";
+  const scheduleStatus = value => value < 0 ? "Less budgeted work value earned than planned" : value > 0 ? "More budgeted work value earned than planned" : "Equal budgeted work value earned and planned";
   const indexStatus = value => value === null ? "Not available (denominator is zero)" : value < 1 ? "Below 1.0" : value > 1 ? "Above 1.0" : "Exactly 1.0";
   output.innerHTML = "<b>EVM Analysis Summary</b><br>" +
     "Cost Variance (CV) = <b>" + money(cv) + "</b> (" + costStatus(cv) + ")<br>" +
     "Schedule Variance (SV) = <b>" + money(sv) + "</b> (" + scheduleStatus(sv) + ")<br>" +
+    '<span class="calc-note">SV is expressed in budget units, not calendar days. Use schedule dates and forecasts to assess calendar delay.</span><br>' +
     "Cost Performance Index (CPI) = <b>" + (cpi !== null ? cpi.toFixed(2) : "N/A") + "</b> (" + indexStatus(cpi) + ")<br>" +
     "Schedule Performance Index (SPI) = <b>" + (spi !== null ? spi.toFixed(2) : "N/A") + "</b> (" + indexStatus(spi) + ")<br>" +
     "Estimate at Completion (EAC) = <b>" + (eac !== null ? money(eac) : "N/A") + "</b><br>" +
@@ -2026,6 +2027,8 @@ function go(i) {
   cur = i;
   render();
   $("lesson").scrollIntoView({ block: "start", behavior: "smooth" });
+  const lessonHeading = $("lesson-title");
+  if (lessonHeading) lessonHeading.focus({ preventScroll: true });
 }
 
 function mark() {
@@ -2060,31 +2063,34 @@ $("gs").oninput = e => gl(e.target.value);
 
 /* Quiz Engine */
 let qi = 0, sc = 0;
-function quiz() {
+function quiz(moveFocus = false) {
   if (qi >= Q.length) {
     const passed = sc >= Math.ceil(Q.length * 0.75);
     $("qz").innerHTML = `
       <div style="text-align:center; padding: 20px 0;">
         <span style="font-size: 52px;">${passed ? "🎉" : "📚"}</span>
-        <h3 style="font-size:28px; margin: 12px 0 6px;">Your Final Score: ${sc} / ${Q.length}</h3>
+        <h3 id="quiz-result-title" tabindex="-1" style="font-size:28px; margin: 12px 0 6px;">Your Final Score: ${sc} / ${Q.length}</h3>
         <p style="color:var(--mu); font-size:16px; margin:0 0 24px;">
           ${passed ? "Outstanding! You demonstrated an excellent understanding of core PM principles and frameworks." : "Good effort! Review the lessons, especially EVM formulas and scheduling, and try again."}
         </p>
-        <button class="b2" onclick="qi = 0; sc = 0; quiz();">Retake Quiz</button>
+        <button class="b2" onclick="qi = 0; sc = 0; quiz(true);">Retake Quiz</button>
       </div>
     `;
+    if (moveFocus) $("quiz-result-title").focus();
     return;
   }
 
   const q = Q[qi];
   $("qz").innerHTML = `
     <div class="q-progress">Question ${qi + 1} of ${Q.length} · Score: ${sc}</div>
-    <h3>${q.q}</h3>
+    <h3 id="quiz-question-title" tabindex="-1">${q.q}</h3>
     <div class="q-options">
       ${shuffleOptions(q.opts).map(o => `<button class="o" type="button" data-val="${o}">${o}</button>`).join("")}
     </div>
     <div id="q-feedback-slot"></div>
   `;
+
+  if (moveFocus) $("quiz-question-title").focus();
 
   document.querySelectorAll(".q button.o").forEach(btn => {
     btn.onclick = () => {
@@ -2112,7 +2118,7 @@ function quiz() {
           ${q.exp}
         </div>
         <div style="margin-top: 18px; text-align: right;">
-          <button class="b2" onclick="qi++; quiz();">${qi === Q.length - 1 ? "View Final Score →" : "Next Question →"}</button>
+          <button class="b2" onclick="qi++; quiz(true);">${qi === Q.length - 1 ? "View Final Score →" : "Next Question →"}</button>
         </div>
       `;
     };
@@ -2121,21 +2127,56 @@ function quiz() {
 
 /* Portfolio Modal Handling */
 let lastFocusedElement = null;
+function modalFocusableElements() {
+  return [...$("pfModal").querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')]
+    .filter(element => element.getClientRects().length > 0);
+}
+function setBackgroundInert(value) {
+  document.querySelectorAll("header, main, footer, .skip-link").forEach(element => { element.inert = value; });
+}
 function openPortfolioModal() {
+  if ($("pfModal").classList.contains("active")) return;
   lastFocusedElement = document.activeElement;
   $("pfModal").classList.add("active");
+  $("pfModal").setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
+  setBackgroundInert(true);
   const closeButton = $("pfModal").querySelector(".modal-close");
   if (closeButton) closeButton.focus();
 }
 function closePortfolioModal(e) {
   if (e && e.target !== e.currentTarget) return;
+  if (!$("pfModal").classList.contains("active")) return;
   $("pfModal").classList.remove("active");
+  $("pfModal").setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
+  setBackgroundInert(false);
   if (lastFocusedElement && typeof lastFocusedElement.focus === "function") lastFocusedElement.focus();
 }
 document.addEventListener("keydown", event => {
-  if (event.key === "Escape" && $("pfModal").classList.contains("active")) closePortfolioModal();
+  const modal = $("pfModal");
+  if (!modal.classList.contains("active")) return;
+  if (event.key === "Escape") {
+    event.preventDefault();
+    closePortfolioModal();
+    return;
+  }
+  if (event.key === "Tab") {
+    const focusable = modalFocusableElements();
+    if (!focusable.length) {
+      event.preventDefault();
+      modal.focus();
+      return;
+    }
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    if (event.shiftKey && (document.activeElement === first || !modal.contains(document.activeElement))) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && (document.activeElement === last || !modal.contains(document.activeElement))) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
 });
 
 /* Global Init */

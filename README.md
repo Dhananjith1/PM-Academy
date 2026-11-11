@@ -15,6 +15,7 @@ PM Academy is an independent, free-to-access learning resource for people explor
 - **Searchable glossary:** concise definitions for common project-management terms.
 - **13-question knowledge check:** explanatory feedback, shuffled answer choices, and a numerical EVM question.
 - **Lesson progress:** completed lesson IDs are stored in the current browser's localStorage; they are not synchronized across browsers or devices.
+- **Accessibility foundations:** skip navigation, visible keyboard focus, dynamic-content focus management, dialog focus trapping, reduced-motion support, and semantic progress state.
 
 ## EVM calculation reference
 
@@ -45,7 +46,7 @@ When AC or PV is zero, the corresponding index is unavailable. A negative CV ind
 - Responsive CSS Grid/Flexbox and browser-side interaction
 - localStorage for local lesson-progress markers only
 - Static GitHub Pages hosting; no application backend or user-account system
-- Google Fonts is requested from an external font service
+- System font stacks; no automatic third-party font request
 
 ## Official references
 
@@ -69,11 +70,11 @@ The Scrum Guide is published under Creative Commons Attribution-ShareAlike 4.0. 
 
 ## Privacy
 
-Lesson completion IDs are stored in the current browser. The site requests Google Fonts and is hosted through GitHub Pages. See [PRIVACY.md](PRIVACY.md).
+Lesson completion IDs are stored in the current browser. The site uses local browser storage and is hosted through GitHub Pages; it no longer requests remote fonts. See [PRIVACY.md](PRIVACY.md).
 
 ## Validation and limitations
 
-A previous local Chromium smoke test checked page initialization, glossary search, EVM calculations and invalid-input handling, the 13-question quiz flow, modal Escape-key handling, and a 390px mobile viewport. This is not a comprehensive cross-browser, real-device, assistive-technology, or formal WCAG audit. This source/content review is not a legal opinion or trademark clearance. See [VALIDATION_REPORT.md](VALIDATION_REPORT.md).
+A previous local Chromium smoke test checked page initialization, glossary search, EVM calculations and invalid-input handling, the 13-question quiz flow, modal Escape-key handling, and a 390px mobile viewport. GitHub Actions now runs HTML validation, Playwright checks across Chromium, Firefox, WebKit and a mobile viewport, and axe-core scans for selected WCAG 2.2 AA rules. Automated checks do not establish full WCAG conformance, and this is not a manual screen-reader/real-device audit. This source/content review is not a legal opinion or trademark clearance. See [VALIDATION_REPORT.md](VALIDATION_REPORT.md).
 
 ## Rights and reuse
 

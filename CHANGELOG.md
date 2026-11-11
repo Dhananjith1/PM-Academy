@@ -23,3 +23,12 @@
 - Replaced dynamic product-plan and pricing claims with plan-aware summaries.
 - Added Rights & Attribution and Privacy notices.
 - Replaced the current root MIT licence text with a Rights and Reuse Notice and documented the historical MIT caveat.
+
+
+## 11 November 2026 — Accessibility, privacy and automated QA hardening
+- Moved skip navigation to the first keyboard stop and made the main landmark focusable.
+- Added accessible progress values and focus management for dynamically replaced lesson and quiz content.
+- Added modal focus trapping, background inertness, Escape dismissal, and focus restoration.
+- Improved banner/accent contrast and removed automatic third-party font requests.
+- Clarified EVM Schedule Variance as budget-value variance rather than calendar-day status.
+- Added CI automation for HTML validation, Chromium/Firefox/WebKit/mobile Playwright tests, and axe-core accessibility scans.
