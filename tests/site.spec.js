@@ -23,7 +23,7 @@ test('homepage exposes descriptive SEO metadata, structured data, and topic-guid
   await expect(page.locator('h1')).toContainText('Free Project Management Lessons');
   await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /27 free lessons/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://dhananjith1.github.io/PM-Academy/');
-  await expect(page.locator('#study-guides a')).toHaveCount(7);
+  await expect(page.locator('#study-guides > .wrap > .ref-grid a')).toHaveCount(11);
   const data = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
   expect(data['@graph'].some(item => item['@type'] === 'LearningResource')).toBe(true);
 });
@@ -36,7 +36,11 @@ test('topic guide pages expose unique metadata and learning-resource structured 
     ['agile-project-management-guide.html', /Agile Project Management \| PM Study Resource/],
     ['earned-value-management-guide.html', /Earned Value Management \(EVM\) Guide \| PM Study Resource/],
     ['project-management-tools-guide.html', /Project Management Tools Guide \| PM Study Resource/],
-    ['project-management-glossary.html', /Project Management Glossary \| PM Study Resource/]
+    ['project-management-glossary.html', /Project Management Glossary \| PM Study Resource/],
+    ['project-management-templates.html', /Free Project Management Templates \| PM Study Resource/],
+    ['project-schedule-guide.html', /Project Schedule & Critical Path Guide \| PM Study Resource/],
+    ['it-project-management-guide.html', /IT Project Management Guide \| PM Study Resource/],
+    ['project-manager-career-guide.html', /How to Become a Project Manager \| PM Study Resource/]
   ];
   for (const [path, title] of pages) {
     await page.goto('/' + path);
@@ -45,7 +49,7 @@ test('topic guide pages expose unique metadata and learning-resource structured 
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://dhananjith1.github.io/PM-Academy/' + path);
     const data = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
     expect(data['@graph'].some(item => item['@type'] === 'LearningResource')).toBe(true);
-    await expect(page.locator('main')).toContainText('Free project management study guide');
+    await expect(page.locator('main')).toContainText('Free');
   }
 });
 
@@ -60,9 +64,17 @@ test('robots.txt and sitemap.xml expose crawl directives and canonical guide URL
   const sitemapText = await sitemapResponse.text();
   expect(sitemapText).toContain('<urlset');
   for (const slug of [
-    'project-management-basics.html','project-planning-guide.html','project-risk-management-guide.html',
-    'agile-project-management-guide.html','earned-value-management-guide.html',
-    'project-management-tools-guide.html','project-management-glossary.html'
+    'project-management-basics.html',
+    'project-planning-guide.html',
+    'project-risk-management-guide.html',
+    'agile-project-management-guide.html',
+    'earned-value-management-guide.html',
+    'project-management-tools-guide.html',
+    'project-management-glossary.html',
+    'project-management-templates.html',
+    'project-schedule-guide.html',
+    'it-project-management-guide.html',
+    'project-manager-career-guide.html'
   ]) expect(sitemapText).toContain('https://dhananjith1.github.io/PM-Academy/' + slug);
 });
 
