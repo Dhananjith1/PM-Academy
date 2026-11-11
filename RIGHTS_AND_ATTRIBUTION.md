@@ -1,0 +1,59 @@
+# Rights, Attribution and Third-Party Notices
+
+**Project:** PM Academy  
+**Last reviewed:** 11 November 2026
+
+## Independent project
+
+PM Academy is an independently created educational and portfolio project. It is not affiliated with, endorsed by, sponsored by, accredited by, or an official training or certification provider of the organizations mentioned on the site. It does not issue professional credentials, administer official examinations, or guarantee certification outcomes.
+
+## Original project material
+
+The site contains original or AI-assisted educational explanations, examples, question wording, interface text, and layout prepared for this project. Public visibility on GitHub does not by itself mean that all material is free to reproduce or adapt.
+
+To the extent protected by applicable law and owned by the project creator, no general licence is granted by this notice to reproduce or adapt original lesson text, quiz questions, visual design, or other original creative material. This notice does not claim ownership of third-party marks, standards, publications, or material. It also does not claim that every AI-assisted output qualifies for copyright protection.
+
+The underlying concepts, methods, procedures, systems, and principles discussed are not claimed as original inventions of PM Academy. The intention is to explain them in independent wording and link to authoritative sources. Exact wording, diagrams, charts, screenshots, tables, exam questions, and substantial extracts from another publication may have separate copyright protection. Do not copy them into this site without checking applicable permission or licence.
+
+## Third-party trademarks
+
+- **Project Management Institute (PMI):** PMI®, PMP®, CAPM®, PMI-ACP®, and the *PMBOK® Guide* are marks of Project Management Institute, Inc. They appear only to identify PMI publications and credentials discussed in the lessons.
+- **PeopleCert:** PRINCE2® is a registered trademark of PeopleCert group. PM Academy is not a PeopleCert training provider, accredited organization, or certification partner.
+- **Atlassian:** Jira and Trello are trademarks of Atlassian. They are mentioned only as examples of software products.
+- Other product, service, and organization names remain the property of their respective rights holders.
+
+No PMI, PeopleCert, Scrum.org, or Atlassian logo or certification seal is intentionally used in the reviewed HTML source. This is not a trademark-register clearance or a legal determination that every reference is permitted. Refer to each owner's current rules and seek written confirmation where a proposed use is uncertain.
+
+## Official references
+
+- [PMI Trademark Usage Guidelines](https://www.pmi.org/-/media/pmi/documents/public/pdf/governance/intellectual-property-proper-use-guidelines.pdf)
+- [PMI PMP certification requirements](https://www.pmi.org/certifications/project-management-pmp)
+- [PMI PMBOK® Guide](https://www.pmi.org/standards/pmbok)
+- [PeopleCert acknowledgements](https://www.peoplecert.org/acknowledgements)
+- [PeopleCert Marks Usage Policy](https://www.peoplecert.org/-/media/folders-reorganized/legal-documents/qmepo13-marks-usage-policy.pdf)
+- [Atlassian Trademark Guidelines](https://www.atlassian.com/legal/trademark)
+- [Official Scrum Guide](https://scrumguides.org/download.html)
+- [Scrum Guide Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- [Open Guide to Kanban](https://kanbanguides.org/open-guide-to-kanban/2025.7/)
+
+The November 2020 Scrum Guide by Ken Schwaber and Jeff Sutherland is offered under Creative Commons Attribution-ShareAlike 4.0. This site links to the Guide and provides independent summaries. Any reproduction or adaptation must comply with the licence, including attribution, indication of changes, and ShareAlike obligations.
+
+## Sri Lankan copyright context
+
+The Intellectual Property Act, No. 36 of 2003 protects original works, including writings and computer programs. Section 8 excludes ideas, procedures, systems, methods of operation, concepts, principles, discoveries, and mere data from copyright protection. Section 9 gives rights holders specified economic rights, including reproduction and communication to the public. Sections 11 and 12 provide fair-use and certain teaching/quotation circumstances subject to statutory conditions and factors such as purpose, nature, amount used, and effect on the potential market or value.
+
+An educational purpose is not blanket permission to reproduce an entire guide, course, diagram, or substantial extract on a public website. Short quotations and teaching illustrations still need to satisfy the Act's conditions, source/author attribution rules, and any applicable source licence. This section is general information, not legal advice.
+
+Official source: [National Intellectual Property Office of Sri Lanka — Intellectual Property Act No. 36 of 2003](https://www.nipo.gov.lk/web/images/pdf_downloads/Intellectual_Property_Act_No_36_of_2003.pdf).
+
+## AI-assisted development
+
+AI tools assisted development of this project. AI assistance does not establish that every output is original, exclusive, or free of third-party rights. Before adding external code, text, images, diagrams, or generated material to a public repository, review its provenance, provider terms, and source licence. Keep records of substantive prompts, edits, and sources where practical.
+
+## Historical licence note
+
+Earlier versions of this repository included an MIT License file. The current default-branch notice replaces that file and clarifies the reuse position for the current version. It does not purport to retroactively revoke permissions that may already have been validly granted to copies obtained while the earlier MIT License was included. Anyone relying on an earlier copy should inspect the licence included with that version and obtain appropriate advice if needed.
+
+## Name clearance
+
+The name "PM Academy" has not been cleared through the Sri Lankan trademark register or the WIPO Global Brand Database as part of this review. A web search or a database search that returns no obvious match does not prove that a name is available. Before commercialising, registering a business name, or using this as a business brand, obtain an appropriate trademark search and legal advice in the countries where you intend to operate.
