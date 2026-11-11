@@ -1219,6 +1219,9 @@ button:disabled { cursor:not-allowed; }
     <span>Project initiated by Dhananjith Swarnahansa.</span>
     <span style="color:#cbd5e1;">Free-to-access learning initiative for the global PM community.</span>
   </div>
+  <p class="analytics-privacy-note" style="margin:10px 0 0; color:#94a3b8; font-size:12px;">
+    Anonymous visitor statistics are provided by CounterAPI. Its published privacy note says IP addresses and browser details are anonymized using hashes.
+  </p>
 </footer>
 
 <!-- Portfolio Case Study Modal -->
@@ -2181,6 +2184,35 @@ document.addEventListener("keydown", event => {
 render();
 gl();
 quiz();
+</script>
+
+<!-- Anonymous unique-visitor measurement; only runs on the published GitHub Pages site. -->
+<script>
+(() => {
+  const isPublishedSite =
+    window.location.hostname === "dhananjith1.github.io" &&
+    window.location.pathname.startsWith("/PM-Academy/");
+  if (!isPublishedSite || window.__pmAcademyVisitorCounterLoaded) return;
+
+  window.__pmAcademyVisitorCounterLoaded = true;
+
+  const counter = document.createElement("div");
+  counter.className = "counterapi";
+  counter.setAttribute("key", "pm-academy-unique-visitors");
+  counter.setAttribute("action", "view");
+  counter.setAttribute("unique", "true");
+  counter.setAttribute("invisible", "true");
+  counter.setAttribute("noLink", "true");
+  counter.setAttribute("aria-hidden", "true");
+  counter.style.display = "none";
+  document.body.appendChild(counter);
+
+  const script = document.createElement("script");
+  script.src = "https://counterapi.com/c.js?ns=dhananjith1.github.io";
+  script.async = true;
+  script.onerror = () => console.warn("Visitor statistics could not be loaded.");
+  document.head.appendChild(script);
+})();
 </script>
 </body>
 </html>
