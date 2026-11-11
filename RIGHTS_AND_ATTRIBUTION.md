@@ -1,11 +1,12 @@
 # Rights, Attribution and Third-Party Notices
 
-**Project:** PM Academy  
+**Public title:** Project Management Study Resource
+**Legacy repository/Pages slug:** PM-Academy (retained for link continuity; not a claim of trademark ownership or availability)  
 **Last reviewed:** 11 November 2026
 
 ## Independent project
 
-PM Academy is an independently created educational and portfolio project. It is not affiliated with, endorsed by, sponsored by, accredited by, or an official training or certification provider of the organizations mentioned on the site. It does not issue professional credentials, administer official examinations, or guarantee certification outcomes.
+This is an independently created educational and portfolio project. It is not affiliated with, endorsed by, sponsored by, accredited by, or an official training or certification provider of the organizations mentioned on the site. It does not issue professional credentials, administer official examinations, or guarantee certification outcomes.
 
 ## Original project material
 
@@ -57,3 +58,14 @@ Earlier versions of this repository included an MIT License file. The current de
 ## Name clearance
 
 The name "PM Academy" has not been cleared through the Sri Lankan trademark register or the WIPO Global Brand Database as part of this review. A web search or a database search that returns no obvious match does not prove that a name is available. Before commercialising, registering a business name, or using this as a business brand, obtain an appropriate trademark search and legal advice in the countries where you intend to operate.
+
+
+## Preliminary name-risk action — 11 November 2026
+
+A preliminary public-web search identified existing businesses using the exact wording **PM Academy** for project-management training and professional capability services, including [PM Academy UK](https://pmacademy.co.uk/) and [PM Academy Africa](https://pmacademy.africa/about). These search results demonstrate real same-sector name crowding; they do not establish the registration status, territorial priority, or legal rights of any particular business.
+
+As a precaution, the public-facing site title and header have been changed to the descriptive wording **Project Management Study Resource**. No ™ or ® symbol is claimed for that descriptive title. The historical GitHub repository and Pages URL still contain the old slug for link continuity. A URL slug, disclaimer, or rebrand does not itself resolve any potential prior-rights issue.
+
+No authenticated, human-performed search of the NIPO Sri Lankan trademark register, WIPO Global Brand Database, or relevant national trademark registers has been completed for this project. WIPO states that its Global Brand Database terms prohibit automatic/robotic searches and that absence of a result does not establish availability; it recommends searching national IP-office databases as well. See [WIPO's official Global Brand Database FAQs](https://www.wipo.int/en/web/global-brand-database/faqs_branddb) and [WIPO's availability guidance](https://www.wipo.int/en/web/madrid-system/check-availability). The Sri Lankan [NIPO IP database](https://nipo.lk.wipo.net/) is the official search portal to be used by a person conducting the formal search.
+
+Before commercial use, registration, advertising, paid courses, or expansion to another country, a qualified Sri Lankan IP/trademark lawyer or registered IP agent should search exact, similar, phonetic, and conceptual variants in relevant goods/services classes; examine registered and unregistered prior use; advise on the historical repository slug; and provide a written opinion. Do not treat this preliminary web scan as trademark clearance.
