@@ -40,7 +40,7 @@ The resource is intended for students, people exploring a project-management car
 
 This revision qualifies or corrects project/change-cost claims, financial evaluation formulas, an EVM cost-variance example, WBS work packages versus assignment of owners, critical-path and PERT statements, QA/QC definitions, RACI and Tuckman descriptions, communication-channel mathematics, risk responses/reserves, change-control governance, procurement risk allocation, Agile values, Scrum and Kanban summaries, tool-plan claims, project-closing routines, and PMP 2026 details.
 
-The PMP section was aligned to PMI's July 2026 Examination Content Outline, including qualification-level mappings, non-overlapping experience periods, the 23-hour credit for active CAPM holders (12 additional training hours), training rules, exam weights, question counts and delivery-mode qualifications for breaks. These are time-sensitive rules; verify current requirements with PMI before using them for an application.
+The PMP section was aligned to PMI's July 2026 Examination Content Outline, including qualification-level mappings, non-overlapping experience periods, the 35-hour training credit/waiver for active CAPM holders, training rules, exam weights, question counts and delivery-mode qualifications for breaks. These are time-sensitive rules; verify current requirements with PMI before using them for an application.
 
 ## 6. Legal and attribution approach
 
@@ -48,7 +48,7 @@ The site is presented as an independent educational resource, not an official co
 
 The site explains concepts in its own words and links to official references. It should not reproduce substantial extracts, official diagrams, screenshots, proprietary exam questions, or paid course material without checking rights and obtaining permission where required. The Scrum Guide is under CC BY-SA 4.0; this site links to it and provides independent summaries.
 
-PMI®, PMP®, CAPM®, PMI-ACP®, and the *PMBOK® Guide* are marks of Project Management Institute, Inc. PRINCE2® is a registered trademark of PeopleCert group. SAFe® and Scaled Agile Framework® are registered trademarks of Scaled Agile, Inc. Jira and Trello are trademarks of Atlassian. The resource is not affiliated with or endorsed by those organizations.
+PMI®, PMP®, CAPM®, PMI-ACP®, and the *PMBOK® Guide* are marks of Project Management Institute, Inc. PRINCE2® is a registered trademark of PeopleCert group. SAFe® and Scaled Agile Framework® are registered trademarks of Scaled Agile, Inc. Jira and Trello are trademarks of Atlassian. The resource is not affiliated with or endorsed by those organizations, including Scaled Agile, Inc.
 
 See [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md) and [TRADEMARK_SCREENING.md](TRADEMARK_SCREENING.md) for the detailed rights, name-risk, and reuse notes; [ACCESSIBILITY.md](ACCESSIBILITY.md) records the automated coverage and remaining manual work. See [PRIVACY.md](PRIVACY.md) for local progress storage, GitHub Pages hosting, and removal of automatic external font requests.
 
