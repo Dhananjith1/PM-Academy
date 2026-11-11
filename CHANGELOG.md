@@ -32,3 +32,11 @@
 - Improved banner/accent contrast and removed automatic third-party font requests.
 - Clarified EVM Schedule Variance as budget-value variance rather than calendar-day status.
 - Added CI automation for HTML validation, Chromium/Firefox/WebKit/mobile Playwright tests, and axe-core accessibility scans.
+
+
+## 11 November 2026 — Final content and contrast refinement
+- Fixed low-contrast footer text found by the first axe-core CI scan.
+- Rephrased budget, baseline, sunk-cost, crashing, risk-avoidance, and reporting guidance to avoid false absolutes.
+- Distinguished project scope from product scope and refined PV/AC definitions.
+- Reframed CCB as an authorized change authority, made closeout sequence context-dependent, and changed product-tool “Best For” labels to “Typical Use”.
+- Paraphrased Agile Manifesto values instead of reproducing their exact wording.

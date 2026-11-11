@@ -883,10 +883,10 @@ footer {
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
-  color: #64748b;
+  color: #cbd5e1;
   flex-wrap: wrap;
   gap: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding-top: 18px;
 }
 
@@ -1226,7 +1226,7 @@ button:disabled { cursor:not-allowed; }
   </div>
   <div class="footer-copy">
     <span>© 2024–2026 Dhananjith. Project Management, Made Simple.</span>
-    <span style="color:#64748b;">Free-to-access learning initiative for the global PM community.</span>
+    <span style="color:#cbd5e1;">Free-to-access learning initiative for the global PM community.</span>
   </div>
 </footer>
 
@@ -1342,7 +1342,7 @@ const L = [
     ])) +
     H("Investment Evaluation Formulas", "<span class='fm'>Payback Period = Initial Capital Cost ÷ Yearly Net Inflow<br>Return on Investment (ROI) = (Net Financial Benefit ÷ Cost) × 100%<br>Benefit-Cost Ratio (BCR) = Total Benefits ÷ Total Costs (Values > 1.0 indicate positive return)<br>Net Present Value (NPV) = Discounted Value of Future Cash Inflows − Initial Cost</span>") +
     H("Worked Calculation", "<p>Initiative Cost: $50,000. Expected cash return: $20,000/year for 4 years (Total return: $80,000). Using a 10% discount rate factor (3.17):</p><span class='fm'>Payback = $50,000 ÷ $20,000 = <b>2.5 years</b><br>ROI = ($80,000 − $50,000) ÷ $50,000 = <b>60%</b><br>NPV = ($20,000 × 3.17) − $50,000 = <b>+$13,400</b></span>") +
-    T("The Sunk Cost Rule: Past money already spent is unrecoverable and must never justify pouring additional resources into a failing project. Sound decisions evaluate only future expenditures against future returns.")
+    T("The sunk-cost principle: Past expenditure cannot be recovered and, by itself, should not justify continued investment. Decisions should compare future costs with expected future benefits, risks, and available alternatives.")
   ],
 
   [
@@ -1353,7 +1353,7 @@ const L = [
       ["Approved Baselines", "The benchmark versions of scope, schedule, and cost. Real-world progress is compared against these references."],
       ["Governance Strategies", "Guidelines on how scope adjustments will be evaluated and how progress reviews will be conducted."]
     ])) +
-    H("Comparing Baseline to Reality", "<p>A <b>baseline</b> represents your formal reference plan. For an EVM example, if Earned Value (EV) is $50,000 and Actual Cost (AC) is $62,000, Cost Variance (CV) = EV − AC = −$12,000. Comparing Budget at Completion (BAC) with current spend alone is not the EVM cost-variance formula. Without a documented baseline, assessing true performance is impossible.</p>") +
+    H("Comparing Baseline to Reality", "<p>A <b>baseline</b> represents your formal reference plan. For an EVM example, if Earned Value (EV) is $50,000 and Actual Cost (AC) is $62,000, Cost Variance (CV) = EV − AC = −$12,000. Comparing Budget at Completion (BAC) with current spend alone is not the EVM cost-variance formula. Without approved scope, schedule, and cost baselines, formal Earned Value performance against those baselines cannot be calculated consistently; other progress, quality, and outcome measures may still be available.</p>") +
     H("Setting Up the Kick-Off Meeting", U([
       "Clarify the project's strategic objective and core deliverables.",
       "Establish individual responsibilities, expectations, and reporting pathways.",
@@ -1378,7 +1378,7 @@ const L = [
     H("Trade-off Scenarios", U([
       "Expanding scope on a fixed deadline requires increasing costs (more personnel or overtime).",
       "Compressing the timeline with fixed scope increases cost and elevates risk.",
-      "Cutting the budget means you must either scale back scope or extend delivery dates."
+      "Reducing the approved budget requires assessed trade-offs. Options may include reducing scope, extending the schedule, changing the delivery approach, improving efficiency, or reallocating resources; implications for quality, risk, and benefits should be evaluated and approved."
     ])) +
     H("Broadening the Definition of Success", "<p>Historically, success was measured simply by finishing on time and within budget. Today, modern projects define real success by <b>business value delivery</b>, user adoption, and long-term stakeholder satisfaction.</p>")
   ],
@@ -1416,7 +1416,7 @@ const L = [
   /* Part 2 · Planning the Work */
   [
     1, "📦", "Scope Definition &amp; the WBS", "#1d4ed8", "#2563eb",
-    H("What is Scope?", "<p><b>Project Scope</b> encompasses all the work required to produce the agreed deliverable—and explicitly identifies what work is out of bounds.</p>") +
+    H("What is Scope?", "<p><b>Project scope</b> describes the work to deliver the agreed product, service, or result, including its boundaries and exclusions. Product scope describes the features and functions of the product, service, or result itself.</p>") +
     H("5 Steps in Managing Scope", F(["Capture Requirements", "Define Scope Boundaries", "Construct WBS", "Validate Deliverables", "Control Adjustments"])) +
     H("The Work Breakdown Structure (WBS)", "<p>A hierarchical decomposition breaking down a complex initiative into smaller, more manageable elements. The terminal, lowest-level elements are termed <b>Work Packages</b>.</p>") +
     U([
@@ -1443,7 +1443,7 @@ const L = [
     H("PERT Weighted 3-Point Estimate", "<span class='fm'>PERT Expected Duration = (Optimistic + 4 × Most Likely + Pessimistic) ÷ 6</span><p>This is the classic PERT weighted-average estimate, commonly associated with a beta-shaped activity-duration distribution. Other three-point methods may use different assumptions or weighting.</p>") +
     H("Calculation Example", "<p>Task duration: Optimistic = 2 days, Most Likely = 4 days, Pessimistic = 12 days.<br>Estimate = (2 + 4×4 + 12) ÷ 6 = 30 ÷ 6 = <b>5.0 days</b>.</p>") +
     H("Schedule Compression Techniques", U([
-      "<b>Crashing:</b> Injecting additional resources (such as overtime or added contractors) into critical path activities to shorten duration at the lowest cost.",
+      "<b>Crashing:</b> Adding resources or spending more to shorten critical-path activities. Compare the incremental cost with the time saved, feasibility, resource constraints, and possible diminishing returns.",
       "<b>Fast Tracking:</b> Performing activities in parallel that were originally planned in sequence, which accelerates delivery but increases coordination risk."
     ]))
   ],
@@ -1456,9 +1456,9 @@ const L = [
       "<b>Bottom-Up:</b> Estimating the cost of every individual work package and summing them upward (more detailed but time-intensive; it is not automatically the most accurate approach)."
     ])) +
     H("Earned Value Analysis Fundamentals", C([
-      ["PV (Planned Value)", "The authorized expenditure scheduled to be accomplished by a specific date."],
+      ["PV (Planned Value)", "The budgeted value of the work scheduled to be completed by the status date."],
       ["EV (Earned Value)", "The budgeted value of the work that has actually been completed."],
-      ["AC (Actual Cost)", "The total realized expenses incurred in doing the completed work."],
+      ["AC (Actual Cost)", "The total cost actually incurred for the work performed by the status date."],
       ["BAC (Budget at Completion)", "The approved total baseline budget for the whole initiative."]
     ])) +
     H("Formulas &amp; Status Diagnosis", "<span class='fm'>Cost Variance (CV) = EV − AC &nbsp;|&nbsp; Schedule Variance (SV) = EV − PV<br>Cost Performance Index (CPI) = EV ÷ AC &nbsp;|&nbsp; Schedule Performance Index (SPI) = EV ÷ PV<br>Estimate at Completion (EAC) = BAC ÷ CPI</span><p>An index <b>greater than 1.0 is favorable</b>; below 1.0 indicates an unfavorable variance. CV and SV are expressed in the project's budget currency; <b>SV is not a number of calendar days</b>. The EAC formula shown assumes current cost efficiency (CPI) continues for the remaining work. Other EAC formulas may be appropriate when future performance is expected to differ.</p>") +
@@ -1528,7 +1528,7 @@ const L = [
     ])) +
     H("Expected Monetary Value (EMV) Formula", "<span class='fm'>EMV = Probability of Event × Financial Impact</span><p>Scenario: 30% likelihood of a vendor component delay resulting in a $30,000 penalty.<br>EMV = 0.30 × (−$30,000) = <b>−$9,000</b> (Expected monetary exposure for this simplified risk scenario).</p>") +
     H("Strategic Risk Responses", C([
-      ["Negative Threats", "<b>Avoid:</b> Eliminate the root cause.<br><b>Transfer:</b> Allocate or share some financial exposure or response responsibility with a third party (for example, through insurance or suitable contract terms); the project may retain residual risk.<br><b>Mitigate:</b> Reduce likelihood or impact.<br><b>Accept:</b> Acknowledge and absorb."],
+      ["Negative Threats", "<b>Avoid:</b> Change the project scope, approach, or plan so the threat no longer applies to the objective; this may remove the project's exposure even when an external underlying cause cannot be removed.<br><b>Transfer:</b> Allocate or share some financial exposure or response responsibility with a third party (for example, through insurance or suitable contract terms); the project may retain residual risk.<br><b>Mitigate:</b> Reduce likelihood or impact.<br><b>Accept:</b> Acknowledge and absorb."],
       ["Positive Opportunities", "<b>Exploit:</b> Ensure the benefit happens.<br><b>Share:</b> Partner with experts to capture gains.<br><b>Enhance:</b> Increase likelihood or impact.<br><b>Accept:</b> Take no proactive action to secure the opportunity, while recognizing and monitoring the possibility of benefit."]
     ])) +
     H("Managing Budget Reserves", U([
@@ -1539,7 +1539,7 @@ const L = [
 
   [
     2, "🔄", "Change Control &amp; Contract Types", "#991b1b", "#b91c1c",
-    H("The Integrated Change Control Workflow", F(["Change Proposed", "Evaluate Impact (Scope, Cost, Time)", "Review by CCB", "Decision Recorded", "Baselines Updated", "Team Briefed"])) +
+    H("The Integrated Change Control Workflow", F(["Change Proposed", "Evaluate Impact (Scope, Cost, Time)", "Review by Authorized Change Authority", "Decision Recorded", "Baselines Updated", "Team Briefed"])) +
     "<p>Where the governance approach establishes one, the <b>Change Control Board (CCB)</b> reviews proposed changes and may approve, reject, defer, or request further analysis. In other projects, the designated sponsor, product owner, change authority, or another authorized decision-maker may perform this role.</p>" +
     H("Standard Procurement Contract Structures", C([
       ["Fixed Price (FP)", "The price is set for the agreed scope and contract terms. The supplier generally bears more cost-overrun risk when scope and assumptions remain stable; approved changes and contract clauses can shift risk."],
@@ -1558,10 +1558,10 @@ const L = [
       ["Hybrid Delivery", "Combines selected predictive and adaptive practices to fit the project. For example, governance milestones may coexist with iterative product delivery; the mix should be deliberately tailored."]
     ])) +
     H("The Four Agile Manifesto Values", U([
-      "Individuals and interactions over processes and tools.",
-      "Working software over comprehensive documentation.",
-      "Customer collaboration over contract negotiation.",
-      "Responding to change over following a plan."
+      "Prioritize direct collaboration and people over rigid reliance on tools or procedures.",
+      "Prefer usable working software to documentation that is more extensive than the situation requires.",
+      "Work with customers throughout delivery rather than relying only on contract discussions.",
+      "Adapt thoughtfully when circumstances change rather than following a plan without reconsideration."
     ])) +
     "<p>The Manifesto values the items on the left more, while still recognizing value in the items on the right. This is a preference, not a claim that processes, documentation, contracts, or plans have no value.</p>" +
     H("Practical Delivery Concepts", U([
@@ -1584,7 +1584,7 @@ const L = [
 
   [
     3, "🏛️", "PM Frameworks: PMBOK®, PRINCE2®, Lean, Six Sigma, SAFe®", "#1e293b", "#334155",
-    H("Standards vs Methods vs Frameworks", "<p>A <b>standard</b> outlines agreed best-practice principles. A <b>methodology</b> prescribes a formal step-by-step procedure. A <b>framework</b> offers an adaptable structure that teams tailor to their context.</p>") +
+    H("Standards vs Methods vs Frameworks", "<p>A <b>standard</b> outlines agreed best-practice principles. A <b>methodology</b> is an organized set of practices and processes; how prescriptive it is depends on the approach and context. A <b>framework</b> offers an adaptable structure that teams tailor to their context.</p>") +
     H("Overview of Prominent Frameworks", C([
       ["<i>PMBOK® Guide</i> (PMI)", "The Seventh Edition presented 12 project-management principles and 8 performance domains. The Eighth Edition (published November 2025) has 6 core principles and 7 performance domains; it expands coverage of AI, PMOs, and procurement and presents process guidance in an evolved, non-prescriptive way."],
       ["PRINCE2®", "A structured method originating in the UK, organized around business justification, defined management stages, and exception management."],
@@ -1620,7 +1620,7 @@ const L = [
   [
     4, "📋", "Tools Part A: Boards &amp; Work Management", "#0369a1", "#075985",
     TL("1. Trello", "Visual Kanban Boards (Atlassian)", [
-      "<b>Best For:</b> Small teams, beginners, personal projects, and simple visual workflows.",
+      "<b>Typical Use:</b> Small teams, beginners, personal projects, and simple visual workflows.",
       "<b>Mechanism:</b> Drag-and-drop cards moving across vertical lists (To Do, Doing, Done).",
       "<b>Strengths:</b> Simple visual boards can make work status easy to understand; automation capabilities and plan limits vary by current product plan.",
       "<b>Limitations:</b> A visual board is not a substitute for a dependency-based scheduling tool or formal cost-control system."
@@ -1745,8 +1745,8 @@ const L = [
     ])) +
     H("10 Common Real-World Mistakes to Avoid", C([
       ["1. Ambiguous Scope", "Commencing delivery without signed requirements and clear acceptance criteria."],
-      ["2. Hidden Bad News", "Delaying disclosure of variances until recovery is mathematically impossible."],
-      ["3. Over-Promising", "Committing to impossible dates or unbudgeted features without team estimation."],
+      ["2. Hidden Bad News", "Delaying disclosure of variances until response options have become more difficult, costly, or constrained."],
+      ["3. Over-Promising", "Committing to unrealistic dates or unbudgeted features without discussing estimates, assumptions, and trade-offs with the team."],
       ["4. No Change Control", "Allowing informal 'quick favors' that snowball into massive scope creep."],
       ["5. Micromanagement", "Dictating implementation details to technical specialists instead of steering outcomes."]
     ])) +
@@ -1755,7 +1755,7 @@ const L = [
 
   [
     5, "🏁", "Project Closing &amp; Lessons Learned", "#334155", "#1e293b",
-    H("The 5 Steps of Formal Project Closing", F(["Deliverable Acceptance", "Procurement Closure", "Administrative Closeout", "Lessons Learned Session", "Resource Release &amp; Celebration"])) +
+    H("A Practical Project Closeout Sequence", F(["Deliverable Acceptance", "Procurement Closure", "Administrative Closeout", "Lessons Learned Session", "Resource Release &amp; Celebration"])) +
     H("Key Closure Activities", U([
       "<b>Formal Sign-Off:</b> Secure formal written acceptance from the customer or project sponsor certifying deliverables meet criteria.",
       "<b>Operational Handover:</b> Transfer deliverables to operational teams, complete documentation, and provide training.",
