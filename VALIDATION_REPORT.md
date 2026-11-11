@@ -1,71 +1,68 @@
 # Independent Project Management Study Resource — Review and Validation Report
 
 **Review date:** 11 November 2026  
-**Source reviewed:** Current main-branch site source and project documentation.
+**Reviewed:** Current main-branch source, public-facing content, and project documentation.
 
-## Inventory
+## Inventory and implementation
 
 - 27 curriculum lessons across 6 learning areas.
-- 13 knowledge-check questions.
+- 35 glossary entries, 13 knowledge-check questions, and 12 named PM tool overviews.
 - Browser-side EVM calculator, glossary search, quiz, and local lesson-progress storage.
-- Static GitHub Pages hosting.
-- No third-party logo or certification seal was found in the reviewed HTML source.
-- External Google Fonts requests have been removed; the site now uses system font stacks.
+- Static GitHub Pages application; no application backend, account system, data-entry form, analytics script, advertising pixel, external embed, remotely hosted font, external script, or external stylesheet was found in the reviewed HTML source.
+- Lesson-completion identifiers are stored in the visitor's browser localStorage; the site does not synchronise them across devices.
+- The current page has no logo/image asset. External links use safe new-tab attributes where applicable.
 
 ## Content review and corrections
 
-This revision addresses project/change-cost claims, financial evaluation formulas, EVM variance interpretation, WBS work packages versus assignment of owners, critical-path and PERT statements, QA/QC, RACI, communication-channel mathematics, risk responses and reserves, change-control governance, procurement risk allocation, predictive/Agile descriptions, Agile values, Scrum, Kanban, tool-plan claims, project-closeout practices, glossary accuracy, and PMP 2026 details.
+This revision addresses project/change-cost claims, financial evaluation formulas, EVM variance interpretation, WBS work packages versus assignment of owners, critical-path and PERT statements, QA/QC, RACI, communication-channel mathematics, risk responses and reserves, change-control governance, procurement risk allocation, predictive/Agile descriptions, Agile values, Scrum, Kanban, tool-plan claims, project-closeout practices, glossary accuracy, and selected PMP 2026 information.
 
-Schedule Variance (SV) is now described as a value-based measure, not a number of calendar days. The EVM calculator explains this distinction alongside its output.
+Schedule Variance (SV) is described as a value-based measure, not a number of calendar days. The EVM calculator explains this distinction alongside its output. PMP-related eligibility and exam details are identified as time-sensitive; visitors are directed to check the current publisher requirements before relying on them.
 
-## Technical and accessibility changes
+## Third-party rights and naming-risk measures
 
-- Moved the skip link before the navigation and made the main landmark programmatically focusable.
-- Added semantic progress-bar values for assistive technologies.
-- Added focus movement when lesson and quiz content is replaced dynamically.
-- Added modal background inertness, keyboard focus trapping, Escape dismissal, and focus restoration.
-- Deepened lesson banner and accent colors to improve text contrast.
-- Removed automatic requests to Google Fonts and changed to system font stacks.
-- Added automated HTML validation, Playwright browser tests for Chromium, Firefox, WebKit and a mobile viewport, and axe-core WCAG rule scans to GitHub Actions.
+- The public-facing title is the descriptive **Project Management Study Resource**; no affiliation, sponsorship, accreditation, or certification is claimed.
+- Direct outbound PMI hyperlinks were removed from the learning page because the current PMI linking agreement restricts link placement to approved webpages and excludes home/about sections; no separate approval was obtained.
+- A source-level and automated regression check confirms that the learning page has no direct PMI hyperlinks. PMI word marks remain only for factual identification of the publisher, publications, and credentials; no PMI logo is intentionally used.
+- Third-party certification/framework marks, logos, and branded lesson sections that could imply licensed or approved status were removed from the current learning page and replaced with independently written, generic project-governance material.
+- Jira and Trello are mentioned as product names only; no Atlassian logos or product screenshots are used.
+- The identified Scrum and Kanban summary portions have specific CC BY-SA 4.0 attribution, source links, change statements, and limited licensing language. That licence does not extend to the rest of the website.
+- The current root Rights and Reuse Notice records that earlier versions contained an MIT licence and does not purport to retroactively revoke permissions that may already have been granted to earlier copies.
 
-The automated suite is intended to catch regressions. An intermediate run (60 executions) reported 47 passed, 8 skipped, and 5 failed. All five failures were the same horizontal-overflow condition at 768px, reproduced in the five configured browser profiles; no axe violations were reported in that run. The header/navigation was then updated to wrap at tablet widths and scroll within its own navigation region. A follow-up run on commit `037fd49e746e474183d22bfdb651478990de503e` passed: **52 passed, 8 intentionally skipped, 0 failed** (60 executions, 1.8 minutes). The HTML validator also passed with the WCAG link-text and form-submit rules enabled. The eight skips are the four non-desktop-Chromium profiles skipping each of the two exhaustive state-by-state axe suites; representative accessibility checks still run in all five profiles. Passing automated scans is not equivalent to full WCAG 2.2 AA conformance.
+These measures reduce avoidable risk but do not constitute permission, legal clearance, or a determination that all uses are lawful.
 
-## Legal and attribution measures
+## Technical and automated accessibility validation
 
-- Added a Rights & Attribution notice with third-party mark owners and official references.
-- Added a Privacy Notice describing localStorage and GitHub Pages request processing.
-- Replaced the current root MIT licence text with a Rights and Reuse Notice, while preserving a historical MIT caveat.
-- Added official publisher and mark-owner source links.
-- Added independence and non-certification language in the site footer.
+- The skip link is the first keyboard stop; the main landmark is programmatically focusable.
+- Lesson/quiz content changes manage focus; the project overview dialog supports focus trapping, background inertness, Escape dismissal, and focus restoration.
+- Progress uses semantic values; reduced-motion preferences and visible keyboard focus are supported.
+- External font requests were removed in favour of system font stacks.
+- GitHub Actions uses Node.js 24 and current first-party checkout/setup actions.
+- A regression test checks that direct PMI links are not reintroduced and that links opening new tabs include `noopener` and `noreferrer`.
+- Playwright covers five profiles: desktop Chromium, Firefox, WebKit, Chromium mobile emulation, and WebKit mobile emulation.
+- Representative axe-core accessibility scans and interaction tests run across all five profiles. Exhaustive axe scans cover all 27 lesson states and all 13 quiz-feedback states in desktop Chromium.
+- Responsive horizontal overflow is checked at 12 viewport widths from 320px to 1440px.
 
-## Prior technical smoke test
+The latest completed Quality checks run for this test-file revision, [43003623208](https://github.com/Dhananjith1/PM-Academy/actions/runs/43003623208), reported **57 passed, 8 intentionally skipped, and 0 failed** across 65 executions. HTML validation passed. The current main branch contains the identical test file; a subsequent workflow for the current main-branch commit is listed in [GitHub Actions](https://github.com/Dhananjith1/PM-Academy/actions).
 
-A previous local Chromium smoke test checked page initialization, glossary search, EVM calculations and invalid-input handling, all 13 quiz questions, modal Escape-key handling, and a 390px mobile viewport. The current revision adds HTML validation, five Playwright browser profiles (desktop Chromium, Firefox, WebKit, and Chromium/WebKit mobile emulation), ten responsive viewport widths (320px–1440px), representative axe-core scans in all profiles, and exhaustive 27-lesson/13-quiz-feedback axe scans in desktop Chromium. The current passing result is recorded in [GitHub Actions run 42984701843](https://github.com/Dhananjith1/PM-Academy/actions/runs/42984701843). The same commit's [GitHub Pages build and deployment run 42984701969](https://github.com/Dhananjith1/PM-Academy/actions/runs/42984701969) completed successfully.
+The latest main-branch Pages build and deployment, [43004548582](https://github.com/Dhananjith1/PM-Academy/actions/runs/43004548582), completed successfully.
 
-## Limitations
+## Limitations and work still required
 
-This is a source/content review and automated software-testing effort, not:
-- A legal opinion, lawyer's review, or legal clearance.
-- A completed trademark clearance search in the Sri Lankan register or all relevant international markets.
-- A guarantee that the name "PM Academy" is available or that no third party will object.
-- A plagiarism/similarity scan against every publication, course, website, or AI training source.
-- An official review or endorsement by PMI, PeopleCert, Scrum.org, Scaled Agile, Atlassian, or any other rights holder.
-- A formal WCAG conformance audit, manual screen-reader evaluation, or exhaustive testing on every browser/device/assistive technology combination.
-- A certification-exam validation by a project-management certification body.
+This review is not:
+- a legal opinion, lawyer's review, or legal clearance;
+- a human-performed trademark clearance search in the Sri Lankan NIPO register or all relevant international markets;
+- a guarantee that the current title, historical repository slug, or Pages URL is available or that no third party will object;
+- a plagiarism/similarity scan against every publication, course, website, or AI training source;
+- an official review or endorsement by PMI, Atlassian, Scrum.org, Agile Alliance, or any other rights holder;
+- a formal WCAG 2.2 AA conformance audit, manual screen-reader evaluation, or user testing with people with disabilities;
+- a security audit or penetration test;
+- a certification-exam validation by a project-management certification body.
 
-Before using the name commercially, registering a business mark, or offering paid/accredited training, obtain an appropriate trademark search and written advice from a qualified Sri Lankan IP/trademark lawyer or registered IP agent. Review any third-party material's provenance and licence before publication.
+The legacy repository name and Pages URL still contain **PM-Academy**. Sri Lanka's Intellectual Property Act No. 36 of 2003, Section 144, addresses protection of trade names even before or without registration and potentially misleading subsequent use of the same or a similar name. Whether it applies to this project's facts requires a qualified Sri Lankan IP/trademark lawyer's written advice. A public-web search or a disclaimer does not clear the old name. WIPO also recommends searching national IP-office databases; a negative database result is not proof of availability.
 
+Do not commercialise the name, register it as a business mark, or offer paid/accredited training on the basis of this source review. Have a qualified Sri Lankan IP/trademark lawyer or registered IP agent perform the relevant human search and advise in writing. For a minor project owner, a parent/guardian or responsible adult should coordinate any formal legal engagement and filings.
 
-## Current public-page verification limitation
+## Live-site verification limitation
 
-GitHub Pages deployment workflow success confirms that GitHub built and deployed the repository artifact. This review environment returned a cache-miss response when requesting the public Pages URL directly, so it could not independently inspect the rendered live HTML over HTTP. The current main-branch source was inspected through GitHub, and the Pages workflow for the same commit is checked separately. A human should still open the live URL in a private browser window and verify the deployed version, cache behaviour, all links, and key interactions.
+The repository source and the GitHub Pages build/deployment workflow were inspected. This review environment could not independently retrieve and inspect the fully rendered public Pages response at the time of review. Deployment success confirms that GitHub built and deployed the repository artifact; it is not a substitute for opening the public URL in a private browser and checking the visible version, all links, and user interactions.
 
-
-## Fresh audit — 11 November 2026
-
-- Re-counted the current main-branch inventory: 27 lessons, 6 learning areas, 35 glossary entries, 13 quiz questions, and 12 named PM tool overviews.
-- Corrected the active-CAPM training credit, project uniqueness wording, WIP scope, risk escalation responses, stakeholder/governance qualifications, NPV explanation, MVP and user-story examples, and STAR evidence guidance.
-- Corrected the tablet breakpoint after a 768px overflow was detected. Follow-up responsive checks now cover 12 widths from 320px to 1440px.
-- Re-enabled HTML validator WCAG rules for meaningful link text and form submit controls; the latest validator run passed.
-- Added explicit and limited CC BY-SA 4.0 attribution for the identified Scrum/Kanban summary portions only.
-- The public title is the descriptive “Independent Project Management Study Resource”; the historical `PM-Academy` repository/Pages slug remains a legal-review item under Section 144 of Sri Lanka's Intellectual Property Act.

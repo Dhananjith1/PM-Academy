@@ -1,5 +1,12 @@
 # Changelog
 
+## 11 November 2026 — Compliance and cross-browser verification hardening
+- Added a regression test that prevents direct PMI hyperlinks from being reintroduced to the learning page and checks safe `noopener`/`noreferrer` attributes on links that open new tabs.
+- Updated GitHub Actions checkout/setup actions to Node.js 24-compatible releases.
+- Verified HTML validation, representative accessibility scans and interaction tests across five desktop/mobile browser profiles, exhaustive 27-lesson and 13-quiz-feedback axe scans in desktop Chromium, and responsive overflow across 12 widths from 320px to 1440px.
+- The completed Quality checks run for this test-file revision reported 57 passed, 8 intentionally skipped, and 0 failed; the eight skips avoid duplicating the exhaustive axe suites in four additional profiles.
+- Updated the validation, accessibility, README, and portfolio notes to describe the current coverage and legal/accessibility limits accurately.
+
 ## 11 November 2026 — Third-party rights and linking compliance revision
 - Removed direct outbound links to PMI webpages because the project's current homepage and lesson placements have not been separately approved under PMI's Digital Properties Linking Agreement.
 - Retained PMI word marks only for truthful identification of the publisher, publications, and credentials; maintained the italicised *PMBOK® Guide* form and owner attribution.

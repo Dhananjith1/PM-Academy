@@ -12,12 +12,13 @@ The project aims to make its learning content and interactive features usable by
 
 GitHub Actions runs:
 - HTML validation using html-validate;
-- Playwright interaction tests in desktop Chromium, Firefox, and WebKit;
-- mobile-emulation checks using Chromium and WebKit;
-- axe-core scans tagged for WCAG 2.0 A/AA, WCAG 2.1 A/AA, and WCAG 2.2 AA; representative initial-page, modal, and quiz-feedback scans run across all five configured desktop/mobile browser projects, while the complete 27-lesson and 13-question feedback-state scans run once in desktop Chromium to avoid repeating expensive scans in every engine;
-- page, modal, representative quiz feedback, exhaustive lesson and quiz states, focus, progress-persistence, EVM-calculation, and horizontal-overflow checks across ten representative viewport widths (320px–1440px).
+- Playwright interaction tests in desktop Chromium, Firefox, WebKit, and Chromium/WebKit mobile emulation (five configured browser profiles);
+- axe-core scans tagged for WCAG 2.0 A/AA, WCAG 2.1 A/AA, and WCAG 2.2 AA;
+- representative initial-page, modal, quiz-feedback, and interaction checks across all five browser profiles;
+- exhaustive axe scans of all 27 lesson states and all 13 quiz-feedback states in desktop Chromium;
+- page, modal, focus, progress-persistence, EVM-calculation, quiz, and horizontal-overflow checks across 12 viewport widths: 320, 360, 375, 390, 414, 600, 768, 820, 900, 1024, 1280, and 1440 CSS pixels.
 
-The latest completed 11 November 2026 run, [42984701843](https://github.com/Dhananjith1/PM-Academy/actions/runs/42984701843), passed **52 checks, skipped 8 intentionally, and failed 0** across 60 test executions. HTML validation also passed. The eight skips avoid repeating the exhaustive lesson/quiz axe scans in four additional browser profiles; the complete 27-lesson and 13-quiz-feedback scans run once in desktop Chromium, while representative axe checks and interaction tests run across all five profiles. Responsive overflow is checked at 12 widths from 320px to 1440px.
+The latest completed run for this test-file revision, [43003623208](https://github.com/Dhananjith1/PM-Academy/actions/runs/43003623208), passed **57 checks, skipped 8 intentionally, and failed 0** across 65 executions. HTML validation also passed. The eight skips are the two exhaustive lesson/quiz axe suites not repeated in the four non-desktop-Chromium profiles; representative accessibility checks and interaction tests still run across all five profiles. The exact same test file is on the current main branch; a new main-branch workflow run is listed in the [Actions history](https://github.com/Dhananjith1/PM-Academy/actions).
 
 ## Known limitations
 
@@ -29,7 +30,7 @@ Automated tools cannot assess every accessibility requirement or substitute for 
 - testing on every browser version, device, operating system, or assistive-technology combination;
 - an independent WCAG-EM conformance audit.
 
-Therefore the site does not claim full WCAG 2.2 AA conformance or accessibility certification. Automated checks are an ongoing regression aid, not proof that every person can use every feature.
+Therefore the site does not claim full WCAG 2.2 AA conformance or accessibility certification. WCAG 2.2 AA conformance applies to the complete page and all required success criteria, not just the automated checks run here. Automated checks are regression aids, not proof that every person can use every feature.
 
 ## Feedback
 

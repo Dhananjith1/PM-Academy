@@ -69,7 +69,7 @@ Tool summaries are introductory and are not a current product-feature, plan, or 
 
 GitHub Actions runs HTML validation and Playwright checks across desktop Chromium, Firefox, WebKit, and Chromium/WebKit mobile emulation. It checks responsive widths, interaction flows, representative axe-core scans across configured browser profiles, and exhaustive lesson/quiz-feedback scans in desktop Chromium. Automated checks are regression aids, not a formal WCAG audit or manual screen-reader evaluation.
 
-The current content-and-branding revision is awaiting a fresh CI result. Do not treat it as validated until the workflow for the current main-branch commit completes successfully. The [README](README.md) links to the current workflow history.
+The latest completed Quality checks run for this test-file revision, [43003623208](https://github.com/Dhananjith1/PM-Academy/actions/runs/43003623208), passed 57 tests, intentionally skipped 8 repeated exhaustive scans in non-Chromium profiles, and failed 0. HTML validation passed. Representative accessibility and interaction checks run across all five browser profiles; exhaustive 27-lesson and 13-quiz-feedback axe scans run in desktop Chromium. The same test file is present on the current main branch, and its latest run is recorded in the [GitHub Actions history](https://github.com/Dhananjith1/PM-Academy/actions).
 
 A previous local Chromium smoke test checked page initialization, glossary search, EVM calculations and invalid-input handling, the 13-question quiz, modal Escape-key handling, and a 390px mobile viewport. It is not exhaustive QA, a formal WCAG audit, or a legal opinion. No standards body or certification organization has reviewed or endorsed this project.
 
