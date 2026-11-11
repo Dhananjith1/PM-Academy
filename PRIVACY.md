@@ -14,11 +14,11 @@ When a visitor marks a lesson complete, the browser stores that lesson's numeric
 The optional counter uses these browser-local keys:
 
 - `pm-academy-counter-consent-v1` — whether the visitor allowed or declined the counter;
-- `pm-academy-visitor-counted-v1` — whether this persistent browser profile has already incremented the aggregate;
-- `pm-academy-visitor-pending-v1` — coordination between simultaneous tabs;
-- `pm-academy-visitor-value-v1` — cached display value.
+- `pm-academy-visitor-counted-v2` — whether this persistent browser profile has already incremented the aggregate;
+- `pm-academy-visitor-pending-v2` — coordination between simultaneous tabs;
+- `pm-academy-visitor-value-v2` — cached display value.
 
-No counter request is sent before the visitor chooses **Allow approximate counting**. Choosing **No thanks**, taking no action, or being unable to store the choice leaves the counter off. A visitor can later choose **Turn off counting on this browser** to withdraw the stored choice and stop future counter requests.
+No counter request is sent before the visitor chooses **Enable**. Choosing no action, taking no action, or being unable to store the choice leaves the counter off. A visitor can later choose **Turn off** to withdraw the stored choice and stop future counter requests.
 
 After opt-in, the first counted page load from a persistent browser profile sends a request to increment the shared aggregate. Later page loads read the aggregate without incrementing it again. Clearing site data, using another browser/device, or using a temporary/private profile may cause the same person to be counted again. Several people sharing one browser profile may be counted only once. The displayed figure is an approximate count of browser profiles, not a verified count of individual people. An earlier contribution cannot be individually removed from the shared aggregate by using the stop control.
 
@@ -26,7 +26,7 @@ The EVM calculator, lesson navigation, quiz, and glossary search operate in the 
 
 ## Optional external counter provider
 
-If a visitor opts in, the browser may contact `https://abacus.jasoncameron.dev`. A browser profile that has not yet been counted sends a request to the provider's `/hit/` endpoint to increment the shared aggregate. Later page loads from that profile request the aggregate through `/get/`. The site no longer polls the provider every 20 seconds and sends no counter request before opt-in.
+If a visitor opts in, the browser may contact `https://countapi.mileshilliard.com`. A browser profile that has not yet been counted sends a request to the provider's `/api/v1/hit/` endpoint to increment the shared aggregate. Later page loads from that profile request the aggregate through `/api/v1/get/`. The site no longer polls the provider and sends no counter request before opt-in.
 
 When a visitor chooses to use the counter, the provider's server can receive an IP address and standard technical request metadata (such as request headers and request time). The site's counter request does not append the visitor's name, email address, or account details. The provider's operator, processing location, server-side logging, retention period, deletion method, and privacy terms have not been independently verified for this project. The project therefore cannot promise what the provider records or retains. The counter is an optional convenience feature, not a verified people-analytics system.
 

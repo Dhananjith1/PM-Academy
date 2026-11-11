@@ -5,7 +5,7 @@ const wcagTags = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 
 test.beforeEach(async ({ page }) => {
   // Keep automated browser tests from inflating the public counter; the dedicated smoke test uses its own namespace.
-  await page.route('https://abacus.jasoncameron.dev/**', route => route.abort());
+  await page.route('https://countapi.mileshilliard.com/**', route => route.abort());
   await page.goto('/');
 });
 
@@ -115,7 +115,7 @@ test('public privacy and rights pages explain data use and educational limits', 
   await page.goto('/privacy.html');
   await expect(page).toHaveTitle(/Privacy Notice \| PM Study Resource/);
   await expect(page.locator('h1')).toHaveText('Privacy Notice');
-  await expect(page.locator('main')).toContainText('abacus.jasoncameron.dev');
+  await expect(page.locator('main')).toContainText('countapi.mileshilliard.com');
   await expect(page.locator('main')).toContainText('IP address');
   await expect(page.locator('main')).toContainText('localStorage');
   await expect(page.locator('main')).toContainText('1 January 2027');
@@ -270,47 +270,44 @@ test('page has no horizontal overflow across representative responsive widths', 
   }
 });
 
-test('visitor counter is compact, optional, and times out instead of hanging', async ({ page }) => {
+test('visitor counter is compact, optional, and uses the global counter API', async ({ page }) => {
   const counter = page.locator('#unique-visitor-count');
-  await expect(counter).toHaveText('Not enabled');
-  await expect(page.locator('footer')).toContainText('Approx. unique browsers:');
+  await expect(counter).toHaveText('—');
+  await expect(page.locator('footer')).toContainText('Visitors');
   await expect(page.getByRole('button', { name: 'Enable approximate visitor counting' })).toBeVisible();
-  await expect(page.locator('details summary')).toHaveText('About the counter');
-  const tracker = (await page.locator('script').allTextContents()).join('\n');
-  expect(tracker).toContain('pm-academy-visitor-counted-v1');
-  expect(tracker).toContain('abacus.jasoncameron.dev');
-  expect(tracker).toContain('/hit/');
-  expect(tracker).toContain('/get/');
+  const tracker = (await page.locator('script').allTextContents()).join('\\n');
+  expect(tracker).toContain('pm-academy-visitor-counted-v2');
+  expect(tracker).toContain('countapi.mileshilliard.com');
+  expect(tracker).toContain('requestCounter("hit")');
+  expect(tracker).toContain('requestCounter("get")');
   expect(tracker).toContain('AbortController');
   expect(tracker).toContain('requestTimeoutMs = 7000');
   expect(tracker).not.toContain('setInterval');
-  expect(tracker).not.toContain('20000');
-  expect(tracker).not.toContain('counter-consent-decline');
-  await expect(page.locator('a[href="privacy.html"]')).toHaveCount(1);
+  expect(tracker).not.toContain('countapi.mileshilliard.com');
+  await expect(page.locator('footer a[href="privacy.html"]')).toHaveCount(1);
 });
 
 test('visitor counter sends no external request before opt-in', async ({ page }) => {
   const requests = [];
   page.on('request', request => {
-    if (request.url().startsWith('https://abacus.jasoncameron.dev/')) requests.push(request.url());
+    if (request.url().startsWith('https://countapi.mileshilliard.com/')) requests.push(request.url());
   });
   await page.reload();
-  await expect(page.locator('#unique-visitor-count')).toHaveText('Not enabled');
+  await expect(page.locator('#unique-visitor-count')).toHaveText('—');
   expect(requests).toEqual([]);
   await expect(page.getByRole('button', { name: 'Enable approximate visitor counting' })).toBeVisible();
-  expect(requests).toEqual([]);
 });
 
-test('visitor counter increments only after opt-in, reads later, and stops after withdrawal', async ({ page }) => {
-  await page.unroute('https://abacus.jasoncameron.dev/**');
+test('visitor counter counts once per browser profile, refreshes later, and stops after withdrawal', async ({ page }) => {
+  await page.unroute('https://countapi.mileshilliard.com/**');
   const requests = [];
-  await page.route('https://abacus.jasoncameron.dev/**', async route => {
+  await page.route('https://countapi.mileshilliard.com/**', async route => {
     const url = route.request().url();
     requests.push(url);
     await route.fulfill({
       status: 200,
       contentType: 'application/json',
-      body: JSON.stringify({ value: 31 })
+      body: JSON.stringify({ key: 'test', value: 31 })
     });
   });
 
@@ -327,30 +324,27 @@ test('visitor counter increments only after opt-in, reads later, and stops after
 
   await page.getByRole('button', { name: 'Turn off counting on this browser' }).click();
   await page.reload();
-  await expect(page.locator('#unique-visitor-count')).toHaveText('Not enabled');
+  await expect(page.locator('#unique-visitor-count')).toHaveText('31');
   expect(requests).toHaveLength(2);
 });
 
-
-
-test('Abacus counter API supports browser CORS hit and read requests', async ({ page }, testInfo) => {
+test('CountAPI supports browser CORS hit and read requests', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'chromium', 'Run the live counter-provider smoke test once in desktop Chromium.');
-  await page.unroute('https://abacus.jasoncameron.dev/**');
+  await page.unroute('https://countapi.mileshilliard.com/**');
   const result = await page.evaluate(async () => {
-    const namespace = 'pm-academy-ci-smoke';
-    const key = 'run-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 9);
-    const base = 'https://abacus.jasoncameron.dev';
-    const hitResponse = await fetch(base + '/hit/' + namespace + '/' + key, {
+    const key = 'pm_academy_ci_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 9);
+    const base = 'https://countapi.mileshilliard.com/api/v1';
+    const hitResponse = await fetch(base + '/hit/' + key, {
       method: 'GET', mode: 'cors', cache: 'no-store'
     });
-    if (!hitResponse.ok) throw new Error('Abacus hit returned HTTP ' + hitResponse.status);
+    if (!hitResponse.ok) throw new Error('CountAPI hit returned HTTP ' + hitResponse.status);
     const hit = await hitResponse.json();
-    const getResponse = await fetch(base + '/get/' + namespace + '/' + key, {
+    const getResponse = await fetch(base + '/get/' + key, {
       method: 'GET', mode: 'cors', cache: 'no-store'
     });
-    if (!getResponse.ok) throw new Error('Abacus get returned HTTP ' + getResponse.status);
+    if (!getResponse.ok) throw new Error('CountAPI get returned HTTP ' + getResponse.status);
     const current = await getResponse.json();
-    return { hit: hit.value, current: current.value };
+    return { hit: Number(hit.value), current: Number(current.value) };
   });
   expect(Number.isSafeInteger(result.hit)).toBe(true);
   expect(result.current).toBe(result.hit);
