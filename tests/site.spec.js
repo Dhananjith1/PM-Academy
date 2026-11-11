@@ -92,8 +92,7 @@ test('project overview modal traps focus, closes on Escape and restores focus', 
   await expect(trigger).toBeFocused();
 });
 
-test('mobile viewport has no horizontal page overflow', async ({ page, isMobile }) => {
-  test.skip(!isMobile, 'This check is specific to the mobile-emulation projects.');
+test('page has no horizontal overflow at every desktop and mobile viewport', async ({ page }) => {
   const dimensions = await page.evaluate(() => ({
     viewport: document.documentElement.clientWidth,
     content: document.documentElement.scrollWidth
@@ -110,8 +109,7 @@ test('initial page and modal have no axe WCAG A/AA violations', async ({ page })
   await page.keyboard.press('Escape');
 });
 
-test('all 27 lesson states pass axe WCAG A/AA scans', async ({ page, browserName }) => {
-  test.skip(browserName !== 'chromium', 'Full lesson-by-lesson axe scan runs in Chromium; initial/modal scans run in all browser projects.');
+test('all 27 lesson states pass axe WCAG A/AA scans in every browser project', async ({ page }) => {
   for (let i = 0; i < 27; i += 1) {
     await page.locator('.side button.l').nth(i).click();
     const results = await new AxeBuilder({ page }).withTags(wcagTags).analyze();
@@ -126,4 +124,18 @@ test('quiz feedback state has no axe WCAG A/AA violations', async ({ page }) => 
   await page.locator('#qz .q-options button').first().click();
   const results = await new AxeBuilder({ page }).withTags(wcagTags).analyze();
   expect(results.violations.map(v => ({ id: v.id, impact: v.impact, nodes: v.nodes.map(n => n.target) }))).toEqual([]);
+});
+
+
+test('all 13 quiz feedback states pass axe WCAG A/AA scans in every browser project', async ({ page }) => {
+  for (let i = 0; i < 13; i += 1) {
+    await page.locator('#qz .q-options button').first().click();
+    await expect(page.locator('.q-feedback')).toBeVisible();
+    const results = await new AxeBuilder({ page }).withTags(wcagTags).analyze();
+    expect(
+      results.violations.map(v => ({ id: v.id, impact: v.impact, nodes: v.nodes.map(n => n.target) })),
+      `Accessibility violations in quiz feedback for question ${i + 1}`
+    ).toEqual([]);
+    await page.getByRole('button', { name: /Next Question|View Final Score/ }).click();
+  }
 });
