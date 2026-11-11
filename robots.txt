@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dhananjith1.github.io/PM-Academy/sitemap.xml
