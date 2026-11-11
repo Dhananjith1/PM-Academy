@@ -52,3 +52,9 @@
 - Made payback-period, present-value benefit-cost ratio, and NPV assumptions explicit in the business-case example.
 
 - Corrected the project/operations quiz explanation to avoid implying that every project deliverable must be unprecedented globally; clarified WIP as started-but-not-finished work and added escalation as a risk-response option.
+
+## 11 November 2026 — Fresh full-source audit
+- Removed the legacy branded social-preview image file and its unused image metadata; the page now uses a text-only social card.
+- Aligned the MVP lesson definition with the glossary's validated-learning explanation.
+- Corrected deployment documentation so it no longer lists the removed preview image as a root asset.
+- Expanded responsive-overflow checks to ten viewport widths from 320px to 1440px; exhaustive axe scans run once in desktop Chromium, with representative axe and interaction coverage across all five configured desktop/mobile browser profiles.
