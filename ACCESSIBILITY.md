@@ -14,11 +14,11 @@ GitHub Actions runs:
 - HTML validation using html-validate;
 - Playwright interaction tests in desktop Chromium, Firefox, WebKit, and Chromium/WebKit mobile emulation (five configured browser profiles);
 - axe-core scans tagged for WCAG 2.0 A/AA, WCAG 2.1 A/AA, and WCAG 2.2 AA;
-- representative initial-page, modal, quiz-feedback, and interaction checks across all five browser profiles;
+- representative initial-page, modal, quiz-feedback, privacy-page, rights-page, and interaction checks across all five browser profiles;
 - exhaustive axe scans of all 27 lesson states and all 13 quiz-feedback states in desktop Chromium;
 - page, modal, focus, progress-persistence, EVM-calculation, quiz, and horizontal-overflow checks across 12 viewport widths: 320, 360, 375, 390, 414, 600, 768, 820, 900, 1024, 1280, and 1440 CSS pixels.
 
-The latest completed run for this test-file revision, [43003623208](https://github.com/Dhananjith1/PM-Academy/actions/runs/43003623208), passed **57 checks, skipped 8 intentionally, and failed 0** across 65 executions. HTML validation also passed. The eight skips are the two exhaustive lesson/quiz axe suites not repeated in the four non-desktop-Chromium profiles; representative accessibility checks and interaction tests still run across all five profiles. The exact same test file is on the current main branch; a new main-branch workflow run is listed in the [Actions history](https://github.com/Dhananjith1/PM-Academy/actions).
+The current regression suite also checks the public Privacy Notice and Rights & Educational Disclaimer pages, legal links in every public-page footer, and the site-wide visitor counter's browser-profile wording and non-polling behaviour. The latest completed run for this revision is recorded in the [GitHub Actions history](https://github.com/Dhananjith1/PM-Academy/actions); results are not stated here until the run completes.
 
 ## Known limitations
 

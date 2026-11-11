@@ -24,7 +24,7 @@ The resource is intended for students, people exploring a project-management car
 | EVM calculator | Experiment with CV, SV, CPI, SPI, and EAC | Client-side calculations with input validation and stated assumptions |
 | Searchable glossary | Locate common terminology | Client-side keyword filtering |
 | 13-question quiz | Knowledge check with explanations | Shuffled answer options, scoring, and feedback |
-| Lesson progress | Mark lessons complete | localStorage in current browser; no cross-device sync |
+| Lesson progress | Mark lessons complete | localStorage in current browser; no cross-device sync |\n| Approximate browser count | Display an approximate site-wide browser-profile total | External Abacus counter; localStorage deduplication across public pages; not a count of distinct people |
 | Responsive interface | Supports common desktop and mobile viewports | CSS Grid/Flexbox and responsive media queries |
 
 ## 4. Learning areas
@@ -52,13 +52,13 @@ Third-party certification or framework marks whose policies restrict website use
 
 The Scrum Guide and Open Guide to Kanban summaries are identified, attributed, and offered under CC BY-SA 4.0 within the specific lesson portions identified in the source note. Changes and the applicable licence are stated. No substantial proprietary courseware, official diagrams, screenshots, or examination items are intentionally reproduced.
 
-See [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md), [TRADEMARK_SCREENING.md](TRADEMARK_SCREENING.md), and [LEGAL_REVIEW_BRIEF.md](LEGAL_REVIEW_BRIEF.md) for rights and naming-risk notes; [ACCESSIBILITY.md](ACCESSIBILITY.md) records automated coverage and remaining manual work. See [PRIVACY.md](PRIVACY.md) for local progress storage and GitHub Pages hosting.
+See [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md), [TRADEMARK_SCREENING.md](TRADEMARK_SCREENING.md), and [LEGAL_REVIEW_BRIEF.md](LEGAL_REVIEW_BRIEF.md) for rights and naming-risk notes; [ACCESSIBILITY.md](ACCESSIBILITY.md) records automated coverage and remaining manual work. See the [public Privacy Notice](privacy.html) and [PRIVACY.md](PRIVACY.md) for local progress storage, GitHub Pages hosting, and the external Abacus counter data flow.
 
 ## 7. Product and implementation decisions
 
 - Kept the application static, with no application backend, account system, or database.
 - Used browser-side JavaScript for lessons, calculator, glossary, quiz, and navigation.
-- Stored only lesson-completion IDs in localStorage in the current browser.
+- Stored lesson-completion IDs and visitor-counter deduplication/cache flags in localStorage in the current browser. A small custom counter script calls the external Abacus endpoint; provider-side data handling is not independently verified.
 - Added responsive layout, visible keyboard focus, skip navigation, reduced-motion support, and modal keyboard dismissal.
 - Kept references to source publications separate from the independently written lesson content.
 - Removed direct PMI links and third-party framework/certification marks that would require approved or licensed placement.

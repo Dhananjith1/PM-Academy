@@ -107,6 +107,51 @@ test('robots.txt and sitemap.xml expose crawl directives and canonical guide URL
   ]) expect(sitemapText).toContain('https://dhananjith1.github.io/PM-Academy/' + slug);
 });
 
+test('public privacy and rights pages explain data use and educational limits', async ({ page }) => {
+  await page.goto('/privacy.html');
+  await expect(page).toHaveTitle(/Privacy Notice \| PM Study Resource/);
+  await expect(page.locator('h1')).toHaveText('Privacy Notice');
+  await expect(page.locator('main')).toContainText('abacus.jasoncameron.dev');
+  await expect(page.locator('main')).toContainText('IP address');
+  await expect(page.locator('main')).toContainText('localStorage');
+  await expect(page.locator('main')).toContainText('1 January 2027');
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://dhananjith1.github.io/PM-Academy/privacy.html');
+
+  await page.goto('/rights.html');
+  await expect(page).toHaveTitle(/Rights & Educational Disclaimer \| PM Study Resource/);
+  await expect(page.locator('h1')).toHaveText('Rights & Educational Disclaimer');
+  await expect(page.locator('main')).toContainText('not an official training provider');
+  await expect(page.locator('main')).toContainText('limited licence does not apply to the whole website');
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://dhananjith1.github.io/PM-Academy/rights.html');
+});
+
+test('all public pages expose privacy and rights links and a shared approximate counter', async ({ page }) => {
+  const paths = [
+    '/', '/study-guides.html', '/project-management-glossary.html',
+    '/project-management-basics.html', '/project-planning-guide.html',
+    '/project-risk-management-guide.html', '/agile-project-management-guide.html',
+    '/earned-value-management-guide.html', '/project-management-tools-guide.html',
+    '/project-management-templates.html', '/project-schedule-guide.html',
+    '/it-project-management-guide.html', '/project-manager-career-guide.html',
+    '/privacy.html', '/rights.html'
+  ];
+  for (const path of paths) {
+    await page.goto(path);
+    await expect(page.locator('footer a[href="privacy.html"]')).toHaveCount(1);
+    await expect(page.locator('footer a[href="rights.html"]')).toHaveCount(1);
+    await expect(page.locator('#unique-visitor-count')).toHaveCount(1);
+    await expect(page.locator('footer')).toContainText('Approx. unique browsers:');
+  }
+});
+
+test('privacy and rights pages pass automated WCAG A/AA checks', async ({ page }) => {
+  for (const path of ['/privacy.html', '/rights.html']) {
+    await page.goto(path);
+    const results = await new AxeBuilder({ page }).withTags(wcagTags).analyze();
+    expect(results.violations.map(v => ({ id: v.id, impact: v.impact, nodes: v.nodes.map(n => n.target) }))).toEqual([]);
+  }
+});
+
 test('skip link is the first keyboard stop and moves focus to main', async ({ page }) => {
   await page.keyboard.press('Tab');
   const skip = page.locator('.skip-link');
@@ -221,20 +266,23 @@ test('page has no horizontal overflow across representative responsive widths', 
   }
 });
 
-test('unique visitor counter is numeric by default and uses persistent browser deduplication', async ({ page }) => {
+test('visitor counter uses approximate browser-profile deduplication without periodic polling', async ({ page }) => {
   const counter = page.locator('#unique-visitor-count');
   await expect(counter).toHaveText('0');
-  await expect(page.locator('footer')).toContainText('Unique visitors:');
+  await expect(page.locator('footer')).toContainText('Approx. unique browsers:');
   const source = await page.locator('script').allTextContents();
   const tracker = source.join('\n');
   expect(tracker).toContain('pm-academy-visitor-counted-v1');
   expect(tracker).toContain('abacus.jasoncameron.dev');
   expect(tracker).toContain('/hit/');
   expect(tracker).toContain('/get/');
-  expect(tracker).toContain('20000');
+  expect(tracker).not.toContain('setInterval');
+  expect(tracker).not.toContain('visibilitychange');
+  expect(tracker).not.toContain('20000');
   expect(tracker).not.toContain('Loading...');
   expect(tracker).not.toContain('counterapi.com');
-  await expect(page.locator('.analytics-privacy-note')).toHaveCount(0);
+  expect(tracker).toContain('shouldCountThisBrowser = false');
+  await expect(page.locator('a[href="privacy.html"]')).toHaveCount(1);
 });
 
 test('Abacus counter API supports browser CORS hit and read requests', async ({ page }, testInfo) => {

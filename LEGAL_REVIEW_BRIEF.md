@@ -10,7 +10,7 @@
 - Current Pages URL: https://dhananjith1.github.io/PM-Academy/
 - Content: 27 introductory PM lessons, an Earned Value Management calculator, a glossary, and a 13-question learning quiz.
 - Hosting: Static GitHub Pages.
-- Data handling: Browser localStorage for lesson-completion IDs; no site accounts, contact forms, payment flow, or analytics are included in the reviewed source.
+- Data handling: lesson-completion IDs and visitor-counter deduplication/cache flags in browser localStorage; a custom counter script on every public page contacts the external Abacus endpoint at abacus.jasoncameron.dev. The endpoint may receive the visitor's IP address and ordinary request metadata. No accounts, personal-information submission forms, newsletter, or payment flow are present. Provider-side logging, retention, processing location, and privacy terms have not been independently verified.
 - Development: AI-assisted front-end implementation and educational wording; human authorship, editing, ownership, and licensing of individual parts should be reviewed rather than assumed.
 
 ## 2. Matters for written advice
@@ -56,7 +56,7 @@ Official reference: Sri Lanka Intellectual Property Act No. 36 of 2003 — https
 
 ### D. Privacy, accessibility, consumer-facing disclaimers
 
-Please check the Privacy Notice, external links, GitHub Pages hosting, localStorage explanation, educational/non-certification disclaimer, and any future monetisation or commercial offers. Confirm whether additional privacy or consumer-law disclosures are needed for intended users and jurisdictions.
+Please review the public Privacy Notice and Rights & Educational Disclaimer; the GitHub Pages and Abacus counter data flows; browser localStorage keys; provider terms, location, security, retention and deletion; the absence of a private privacy-request contact channel; and the educational/non-certification statements. Assess whether a data-processing agreement, impact assessment, transfer assessment, privacy contact, further disclosure, or counter-provider replacement/removal is required before the relevant commencement of Sri Lanka's PDPA. As at 11 November 2026, the DPA's published notice says Gazette 2498/16 sets 1 January 2027 for commencement of section 2, section 3, Part I and Part III; Part II and Part VII are stated as not yet in force. Confirm the current position and territorial scope directly before relying on it. Also assess any consumer-protection obligations if the site later offers paid products or services.
 
 ## 3. Documents in the repository
 
@@ -80,3 +80,12 @@ A written opinion identifying:
 6. limitations and territories covered by the opinion.
 
 For a minor project owner, a parent/guardian or responsible adult should arrange the formal legal engagement, costs, and filings. This brief does not ask a lawyer to guarantee that no future dispute can ever arise.
+
+
+## E. Current data-protection commencement status to verify
+
+The Personal Data Protection Act, No. 9 of 2022 was amended by the Personal Data Protection (Amendment) Act, No. 22 of 2025. The Data Protection Authority's current published notice records that Extraordinary Gazette No. 2498/16 dated 22 July 2026 sets 1 January 2027 as the commencement date for section 2, section 3, Part I and Part III. The Authority's notice says Part II and Part VII are not yet in force as at its publication. This project has not obtained a legal opinion on the territorial scope, controller/processor roles, lawful basis, transfer rules, or obligations applicable to the counter provider. Check the latest official notices and obtain written advice before the relevant date.
+
+Official references:
+- [Data Protection Authority — current data-protection statement](https://dpa.gov.lk/notice.php)
+- [Data Protection Authority — Acts and Gazette notices](https://dpa.gov.lk/guidelines.php)

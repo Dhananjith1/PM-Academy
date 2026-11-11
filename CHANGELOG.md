@@ -73,3 +73,13 @@
 - Aligned the MVP lesson definition with the glossary's validated-learning explanation.
 - Corrected deployment documentation so it no longer lists the removed preview image as a root asset.
 - Expanded responsive-overflow checks to ten viewport widths from 320px to 1440px; exhaustive axe scans run once in desktop Chromium, with representative axe and interaction coverage across all five configured desktop/mobile browser profiles.
+
+
+## 11 November 2026 — Privacy, rights notice, and visitor-counter audit
+
+- Added public Privacy Notice and Rights & Educational Disclaimer pages and linked them from each public page footer.
+- Disclosed the external Abacus visitor-counter request and the browser-local storage keys.
+- Changed the displayed metric to approximate unique browser profiles, not individual people.
+- Extended the counter to all public pages, removed periodic polling, and prevented increments when browser storage is unavailable.
+- Updated the legal review brief with the Data Protection Authority's published PDPA commencement schedule for 1 January 2027.
+- Added regression checks for the public notices, site-wide counter and privacy disclosures.

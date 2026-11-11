@@ -8,8 +8,8 @@
 - 27 curriculum lessons across 6 learning areas.
 - 35 glossary entries, 13 knowledge-check questions, and 12 named PM tool overviews.
 - Browser-side EVM calculator, glossary search, quiz, and local lesson-progress storage.
-- Static GitHub Pages application; no application backend, account system, data-entry form, analytics script, advertising pixel, external embed, remotely hosted font, external script, or external stylesheet was found in the reviewed HTML source.
-- Lesson-completion identifiers are stored in the visitor's browser localStorage; the site does not synchronise them across devices.
+- Static GitHub Pages application with no application backend, account system, personal-data submission form, newsletter, payment flow, advertising pixel, external embed, remotely hosted font, or third-party analytics SDK. A small custom inline counter script does call the external Abacus service from each public page; this is a third-party data flow and may expose IP address and standard request metadata to that provider.
+- Lesson-completion identifiers plus visitor-counter deduplication and cached-count flags are stored in browser localStorage; lesson progress is not synchronised across devices. The external counter increments a persistent browser profile once when storage is available, reads the aggregate on later page loads, and no longer polls every 20 seconds. If storage is blocked, it reads but does not increment.
 - The current page has no logo/image asset. External links use safe new-tab attributes where applicable.
 
 ## Content review and corrections
@@ -64,5 +64,10 @@ Do not commercialise the name, register it as a business mark, or offer paid/acc
 
 ## Live-site verification limitation
 
-The repository source and the GitHub Pages build/deployment workflow were inspected. This review environment could not independently retrieve and inspect the fully rendered public Pages response at the time of review. Deployment success confirms that GitHub built and deployed the repository artifact; it is not a substitute for opening the public URL in a private browser and checking the visible version, all links, and user interactions.
+The repository source, static HTML checks, cross-page link/metadata scan, and GitHub Pages build/deployment workflow were inspected. The public Pages response could not be independently opened and inspected in a full interactive browser from this review environment. Deployment success confirms that GitHub built and deployed the repository artifact; it is not a substitute for a human visual review on real devices. The external counter provider's operator, server-side logs, retention, hosting location and deletion practices remain unverified.
 
+
+
+## Privacy and data-protection review note
+
+The public Privacy Notice now discloses the external Abacus counter, the browser-local storage keys, the possible IP/technical request metadata received by the provider, and the fact that provider-side retention and processing details are unverified. A private privacy-request contact channel is not yet configured and is an outstanding action. The Sri Lankan Data Protection Authority's notice records a 1 January 2027 commencement date for section 2, section 3, Part I and Part III under Gazette 2498/16; obtain current advice on applicability and required measures. This review does not certify compliance with the PDPA or any other privacy law.

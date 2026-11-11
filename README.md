@@ -15,7 +15,7 @@ This is an independent, free-to-access introductory learning resource for people
 - **Searchable glossary:** concise definitions for common project-management terminology.
 - **13-question knowledge check:** explanatory feedback, shuffled answer choices, and a numerical EVM question.
 - **Lesson progress:** completed lesson IDs are stored in the current browser's localStorage; they are not synchronized across browsers or devices.
-- **Approximate unique visitors:** a public Abacus counter increments once per persistent browser storage profile and displays the returned total in the footer. Existing visitors refresh the displayed total every 20 seconds. Clearing browser storage or using another browser/device may count the same person again; it is not a verified count of distinct humans.
+- **Approximate unique browsers:** a small external Abacus counter is available on the public pages. It uses localStorage to count a persistent browser profile once and reads the aggregate on later page loads; it does not poll every 20 seconds. It is not a verified count of individual people. Clearing browser storage, using a different browser/device, or using a temporary/private profile can cause repeat counts; shared profiles can cause several people to be counted once. If storage is unavailable, the page does not increment the counter.
 - **Accessibility foundations:** skip navigation, visible keyboard focus, dynamic-content focus management, dialog focus trapping, reduced-motion support, and semantic progress state.
 
 ## Search discovery
@@ -74,7 +74,7 @@ The identified Scrum summary and Kanban summary portions are offered under Creat
 
 ## Privacy
 
-Lesson completion IDs are stored in the current browser. The site uses local browser storage and is hosted through GitHub Pages; it does not request remote fonts. See [PRIVACY.md](PRIVACY.md).
+Lesson completion IDs are stored in the current browser. The site uses local browser storage and is hosted through GitHub Pages; it does not request remote fonts. See the [public Privacy Notice](privacy.html) and [PRIVACY.md](PRIVACY.md).
 
 ## Validation and limitations
 
@@ -86,6 +86,6 @@ These automated checks do not establish full WCAG conformance, replace manual as
 
 This source review is not a legal opinion, lawyer review, trademark clearance, or guarantee that no dispute can arise. A preliminary public-web scan previously found other project-management training businesses using the historical name "PM Academy"; the site title was changed, but the repository/Pages slug remains a point for qualified legal review under Sri Lankan law. See [TRADEMARK_SCREENING.md](TRADEMARK_SCREENING.md) and [LEGAL_REVIEW_BRIEF.md](LEGAL_REVIEW_BRIEF.md).
 
-## Rights and reuse
+## Public site notices\n\n- [Privacy Notice](privacy.html) — browser storage, hosting and the external counter service.\n- [Rights & Educational Disclaimer](rights.html) — independence, educational limits, trademarks, copyright and reuse.\n\n## Rights and reuse
 
 The current repository root contains a Rights and Reuse Notice rather than a general open-source licence. Earlier commits contained an MIT License; this update does not purport to retroactively revoke permissions validly granted to copies obtained while that licence was present. See [LICENSE](LICENSE) and [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md).
