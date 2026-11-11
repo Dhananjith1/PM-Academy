@@ -2,32 +2,30 @@
 
 **Live website:** https://dhananjith1.github.io/PM-Academy/  
 **Repository:** https://github.com/Dhananjith1/PM-Academy  
-**Content review:** 11 November 2026
+**Content and rights review:** 11 November 2026
 
-**Public title:** Project Management Study Resource. The legacy GitHub repository slug and Pages path are retained for link continuity; they are technical identifiers, not a claim that the former name is available or cleared.
+**Public title:** Project Management Study Resource. The legacy GitHub repository slug and Pages path are retained for continuity only; they are not a statement that the historical name is cleared or available.
 
-This is an independent, free-to-access learning resource for people exploring project management. It provides concise educational explanations, practical examples, and lightweight interactive learning activities. The project was developed with AI-assisted front-end work and is hosted as a static GitHub Pages site.
-
-> This website is an introductory educational resource. It is not affiliated with, endorsed by, sponsored by, or an official training, accreditation, or certification provider of PMI, PeopleCert, Scrum.org, Scaled Agile, Atlassian, or any other organization. It does not issue credentials.
+This is an independent, free-to-access introductory learning resource for people exploring project management. It provides original explanations, illustrative examples, and lightweight interactive learning activities. AI tools assisted front-end implementation. It is not an official training product, accreditation provider, or certification exam simulator, and it does not issue credentials.
 
 ## Features
 
-- **27 lessons across 6 learning areas:** foundations, planning, risk and change, Agile and frameworks, PM tools, and career essentials.
+- **27 lessons across 6 learning areas:** foundations, planning, risk and change, adaptive delivery, PM tools, and career essentials.
 - **EVM calculator:** calculates CV, SV, CPI, SPI, and an EAC estimate using BAC ÷ CPI. The displayed EAC method assumes current cost efficiency continues.
-- **Searchable glossary:** concise definitions for common project-management terms.
+- **Searchable glossary:** concise definitions for common project-management terminology.
 - **13-question knowledge check:** explanatory feedback, shuffled answer choices, and a numerical EVM question.
 - **Lesson progress:** completed lesson IDs are stored in the current browser's localStorage; they are not synchronized across browsers or devices.
 - **Accessibility foundations:** skip navigation, visible keyboard focus, dynamic-content focus management, dialog focus trapping, reduced-motion support, and semantic progress state.
 
 ## EVM calculation reference
 
-The calculator and learning examples use these standard Earned Value Management relationships:
+The calculator and learning examples use these Earned Value Management relationships:
 
 - Cost Variance (CV) = Earned Value (EV) − Actual Cost (AC)
 - Schedule Variance (SV) = Earned Value (EV) − Planned Value (PV)
 - Cost Performance Index (CPI) = EV ÷ AC
 - Schedule Performance Index (SPI) = EV ÷ PV
-- Estimate at Completion (EAC) = Budget at Completion (BAC) ÷ CPI, only under the assumption that current cost efficiency continues
+- Estimate at Completion (EAC) = Budget at Completion (BAC) ÷ CPI, when the assumption that current cost efficiency continues is appropriate
 
 When AC or PV is zero, the corresponding index is unavailable. A negative CV indicates an unfavourable cost position; a negative SV indicates less budgeted work value earned than planned at the status date. EVM schedule variance is expressed in budget units, not calendar days.
 
@@ -38,47 +36,39 @@ When AC or PV is zero, the corresponding index is unavailable. A negative CV ind
 | Foundations | Project definitions, predictive process groups, business cases, baselines, constraints, roles, and stakeholders |
 | Planning the Work | Scope and WBS, schedule networks, budgeting, EVM, quality, resources, and communication |
 | Risk & Change | Risk assessment, responses, reserves, change governance, and procurement |
-| Methods & Frameworks | Predictive, adaptive and hybrid approaches; Scrum, Kanban, PMBOK and PRINCE2 summaries |
+| Methods & Frameworks | Predictive, adaptive and hybrid approaches; Agile values, Scrum, Kanban, and introductory PM standards |
 | PM Tools | Work-management boards, issue tracking, scheduling, spreadsheets, documentation, and collaboration |
 | Leadership & Career | Team practices, ethics, adaptable reporting routines, interviews, and project closure |
 
-## Technology
+## Selected sources
 
-- HTML5, CSS3, and vanilla JavaScript
-- Responsive CSS Grid/Flexbox and browser-side interaction
-- localStorage for local lesson-progress markers only
-- Static GitHub Pages hosting; no application backend or user-account system
-- System font stacks; no automatic third-party font request
-
-## Official references
-
-- [PMI — PMP certification requirements](https://www.pmi.org/certifications/project-management-pmp)
-- [PMI — 2026 PMP exam update](https://www.pmi.org/certifications/project-management-pmp/new-exam)
-- [PMI — *PMBOK® Guide*](https://www.pmi.org/standards/pmbok)
+- **Project Management Institute (PMI):** The site uses PMI word marks only to identify the publisher of the *PMBOK® Guide* and credentials discussed in the curriculum. Direct outbound links to PMI pages are omitted in accordance with the placement and approval conditions in PMI's Digital Properties Linking Agreement. Consult PMI's own website directly for current publications and certification rules.
+- [Agile Alliance — The Agile Manifesto](https://agilealliance.org/agile101/the-agile-manifesto/)
 - [Scrum Guides — Official Scrum Guide](https://scrumguides.org/download.html)
-- [PeopleCert — PRINCE2](https://www.peoplecert.org/ways-to-certify/prince2)
-- [Scaled Agile — SAFe Framework](https://scaledagile.com/)
-- [Open Guide to Kanban](https://kanbanguides.org/open-guide-to-kanban/2025.7/)
-- [Agile Alliance](https://www.agilealliance.org/)
+- [Open Guide to Kanban v2025.7](https://kanbanguides.org/open-guide-to-kanban/2025.7/)
 
-The PMP section reflects PMI's July 2026 Examination Content Outline and its published training update effective 1 December 2026. The outline says active CAPM holders who meet the other eligibility requirements receive a 35-training-hour credit and do not need to document the 35 training hours. These requirements are time-sensitive; verify them directly with PMI before applying or purchasing training. Tool descriptions are introductory summaries, not a current feature, plan, or price comparison; product capabilities and subscription terms may change.
+The PMP learning note summarises selected time-sensitive information from PMI's July 2026 Examination Content Outline, including the published training credit for active CAPM holders. Eligibility, course acceptance, exam format, and fees may change; consult the publisher's current official materials directly before acting. This site is not an official source of application advice.
 
 ## Copyright, trademarks and independence
 
-The curriculum is an independent educational summary, not a reproduction of proprietary guides, exam questions, diagrams, or course materials. Ideas and methods may be explained in independent wording, but exact expression, diagrams, substantial extracts, and software code can have separate rights. See [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md).
+The curriculum is written as an independent educational summary. It is not intended to reproduce proprietary guides, exam questions, diagrams, screenshots, or course materials. Ideas and methods may be explained in independent wording, but exact expression, diagrams, substantial extracts, and software code can have separate rights.
 
-PMI®, PMP®, CAPM®, PMI-ACP®, and the *PMBOK® Guide* are marks of Project Management Institute, Inc. PRINCE2® is a registered trademark of PeopleCert group. SAFe® and Scaled Agile Framework® are registered trademarks of Scaled Agile, Inc. Jira and Trello are trademarks of Atlassian. These names identify relevant products and methods only.
+PMI®, PMP®, CAPM®, PMI-ACP®, and the *PMBOK® Guide* are marks of Project Management Institute, Inc. Jira and Trello are trademarks of Atlassian. These names are used only to identify the relevant publications, credentials, or products. No PMI or Atlassian logo is used. The current learning page does not use third-party certification or framework marks for which website use is limited to licensed or approved services; relevant branded sections were removed pending professional review.
 
-The Scrum Guide and Open Guide to Kanban v2025.7 are published under Creative Commons Attribution-ShareAlike 4.0. The website links to both official sources. The text under “The Scrum Delivery Model”, “Six General Kanban Practices”, and the following WIP/Lead Time/Cycle Time explanation in lesson 17 is expressly offered under CC BY-SA 4.0; all other website content remains under the Rights and Reuse Notice unless a separate licence applies. See [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md) for attribution, change-notice, and ShareAlike details.
+The identified Scrum summary and Kanban summary portions are offered under Creative Commons Attribution-ShareAlike 4.0, with attribution, source links, and change notices shown in the lesson and [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md). This limited licence does not apply to other original site material.
 
 ## Privacy
 
-Lesson completion IDs are stored in the current browser. The site uses local browser storage and is hosted through GitHub Pages; it no longer requests remote fonts. See [PRIVACY.md](PRIVACY.md).
+Lesson completion IDs are stored in the current browser. The site uses local browser storage and is hosted through GitHub Pages; it does not request remote fonts. See [PRIVACY.md](PRIVACY.md).
 
 ## Validation and limitations
 
-A previous local Chromium smoke test checked page initialization, glossary search, EVM calculations and invalid-input handling, the 13-question quiz flow, modal Escape-key handling, and a 390px mobile viewport. GitHub Actions runs HTML validation and Playwright checks across desktop Chromium, Firefox, WebKit, and Chromium/WebKit mobile emulation. It checks ten viewport widths (320px–1440px), performs representative axe-core scans across all five browser profiles, and scans all 27 lessons and 13 quiz-feedback states once in desktop Chromium. The latest completed quality run passed 52 checks, skipped 8 intentionally, and failed 0; HTML validation also passed ([run details](https://github.com/Dhananjith1/PM-Academy/actions/runs/42984701843)). The same commit deployed successfully to GitHub Pages ([deployment details](https://github.com/Dhananjith1/PM-Academy/actions/runs/42984701969)). Automated checks do not establish full WCAG conformance, and this is not a manual screen-reader/real-device audit. This source/content review is not a legal opinion or trademark clearance. A live Pages URL fetch was not independently available to this review environment; deployment status is verified from GitHub Pages Actions, while the source was independently inspected on the main branch. See [VALIDATION_REPORT.md](VALIDATION_REPORT.md), [ACCESSIBILITY.md](ACCESSIBILITY.md), and [TRADEMARK_SCREENING.md](TRADEMARK_SCREENING.md).
+GitHub Actions runs HTML validation and Playwright checks across desktop Chromium, Firefox, WebKit, and Chromium/WebKit mobile emulation. It checks responsive widths, interaction flows, representative axe-core scans across the configured browser profiles, and exhaustive lesson/quiz-feedback accessibility scans in desktop Chromium. Automated checks are regression aids, not a complete WCAG audit or manual screen-reader assessment.
+
+The current content-and-branding revision is subject to a fresh CI run. Do not treat the workflow as passed until the run for the latest main-branch commit completes successfully. See [VALIDATION_REPORT.md](VALIDATION_REPORT.md), [ACCESSIBILITY.md](ACCESSIBILITY.md), and the [GitHub Actions history](https://github.com/Dhananjith1/PM-Academy/actions).
+
+This source review is not a legal opinion, lawyer review, trademark clearance, or guarantee that no dispute can arise. A preliminary public-web scan previously found other project-management training businesses using the historical name "PM Academy"; the site title was changed, but the repository/Pages slug remains a point for qualified legal review under Sri Lankan law. See [TRADEMARK_SCREENING.md](TRADEMARK_SCREENING.md) and [LEGAL_REVIEW_BRIEF.md](LEGAL_REVIEW_BRIEF.md).
 
 ## Rights and reuse
 
-The current repository root contains a Rights and Reuse Notice rather than a general open-source licence. Earlier commits contained an MIT License; this update does not purport to retroactively revoke permissions validly granted to copies obtained while that licence was present. See [LICENSE](LICENSE), [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md), and [LEGAL_REVIEW_BRIEF.md](LEGAL_REVIEW_BRIEF.md).
+The current repository root contains a Rights and Reuse Notice rather than a general open-source licence. Earlier commits contained an MIT License; this update does not purport to retroactively revoke permissions validly granted to copies obtained while that licence was present. See [LICENSE](LICENSE) and [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md).
