@@ -1783,16 +1783,16 @@ const G = [
   ["CAPM®", "Certified Associate in Project Management, an entry-level credential administered by PMI."],
   ["CCB (Change Control Board)", "A designated governance group responsible for evaluating, approving, or declining proposed changes to project baselines."],
   ["Charter", "A foundational document that formally authorizes a project and grants the PM authority to apply organizational resources."],
-  ["Cost Performance Index (CPI)", "Cost efficiency ratio: CPI = EV ÷ AC. Values above 1.0 indicate favorable spending under budget."],
-  ["Critical Path", "The longest unbroken chain of dependent tasks through a project, which establishes the earliest possible completion date."],
+  ["Cost Performance Index (CPI)", "CPI = EV ÷ AC. A value above 1.0 indicates favourable cost efficiency at the status date; by itself it does not prove the project is below its total Budget at Completion or guarantee its final cost."],
+  ["Critical Path", "The longest-duration path through a project activity network; it determines the earliest calculated project finish under the current logic and assumptions. The path can change as the schedule changes."],
   ["Deliverable", "Any unique, verifiable outcome, product, or capability that must be produced to satisfy project requirements."],
-  ["Estimate at Completion (EAC)", "The projected total financial cost to finish all project work based on performance trends: EAC = BAC ÷ CPI."],
-  ["Earned Value (EV)", "The monetary value of work actually completed expressed in terms of the approved budget allocated for that work."],
-  ["Float (Slack)", "The duration of time an activity can slip without delaying successor tasks or the overall project deadline."],
+  ["Estimate at Completion (EAC)", "A forecast of total project cost at completion. One method is EAC = BAC ÷ CPI when current cost efficiency is expected to continue; other formulas suit different assumptions."],
+  ["Earned Value (EV)", "The budgeted value assigned to the work actually performed by the status date. It is measured using the approved performance measurement baseline, not the amount of cash received."],
+  ["Float (Slack)", "Total float is how long an activity can be delayed without delaying the project's calculated finish. Free float is how long it can be delayed without delaying the early start of any immediate successor."],
   ["Gantt Chart", "A horizontal bar chart illustrating project tasks, start and end dates, durations, and dependency linkages."],
   ["Gold Plating", "The practice of adding unrequested features or enhancements beyond agreed scope without client authorization."],
   ["Issue", "An active problem or impediment that has already happened and requires immediate intervention."],
-  ["Kanban", "A visual pull-based system that optimizes work flow across vertical columns by strictly limiting Work-in-Progress (WIP)."],
+  ["Kanban", "A method for defining, managing, and improving services and the flow of work. Common practices include visualizing work, limiting WIP, managing flow, making policies explicit, using feedback loops, and improving collaboratively; the specific workflow is context-dependent."],
   ["Milestone", "A prominent checkpoint or milestone event in a schedule with zero duration."],
   ["MVP (Minimum Viable Product)", "The most stripped-down usable version of a product required to test core value propositions with real users."],
   ["NPV (Net Present Value)", "A capital budgeting calculation comparing the discounted present value of future cash inflows against initial investment costs."],
@@ -1803,11 +1803,11 @@ const G = [
   ["Risk", "An uncertain future event or condition that, if it occurs, could produce an adverse (threat) or beneficial (opportunity) impact. A common qualitative scoring approach is Probability × Impact."],
   ["Scope", "The defined sum of all deliverables, features, and activities required to complete a project."],
   ["Scope Creep", "The uncontrolled, unapproved expansion of project requirements without adjustments to budget or deadlines."],
-  ["Schedule Performance Index (SPI)", "Schedule efficiency ratio: SPI = EV ÷ PV. Values above 1.0 indicate delivery ahead of plan."],
+  ["Schedule Performance Index (SPI)", "SPI = EV ÷ PV. A value above 1.0 indicates that more budgeted work value has been earned than was planned by the status date; it is not a direct measure of calendar days ahead."],
   ["Sprint", "A fixed-length Scrum event of one month or less, during which the Scrum Team works toward the Sprint Goal and creates at least one usable Increment."],
   ["Stakeholder", "Any person, team, or organization that can affect, or be affected by, the activities or outcome of a project."],
-  ["Triple Constraint", "The foundational balancing model linking Scope, Schedule, and Budget around core Project Quality."],
-  ["WBS (Work Breakdown Structure)", "A hierarchical breakdown decomposing the total project scope into manageable, assignable work packages."],
+  ["Triple Constraint", "A simplified model showing trade-offs among scope, schedule, and cost. Quality, risk, resources, benefits, and stakeholder value also influence project decisions; the triangle is not a complete success model."],
+  ["WBS (Work Breakdown Structure)", "A hierarchical decomposition of the total project scope into manageable components and work packages. Assignment of owners is handled separately, for example through a responsibility assignment matrix."],
   ["WIP (Work in Progress)", "The quantity of tasks currently being actively worked on in a delivery pipeline at any single point in time."]
 ];
 
@@ -1827,17 +1827,17 @@ const Q = [
       "The longest sequence of dependent activities with zero float",
       "The quickest path connecting major executive milestones"
     ],
-    exp: "The critical path is the longest duration sequence of dependent tasks. Tasks on it have zero total float, meaning any slip along this chain directly pushes back the final project completion date."
+    exp: "The critical path is the longest-duration path through the activity network. Activities on it normally have zero total float under the current schedule calculation. A delay will affect the forecast finish unless it is offset by recovery action or an approved schedule change; the critical path can shift as the plan changes."
   },
   {
-    q: "In Earned Value analysis, a Cost Performance Index (CPI) of 0.82 indicates that…",
-    a: "The project is currently over budget",
+    q: "In Earned Value analysis, what does a Cost Performance Index (CPI) of 0.82 indicate?",
+    a: "Unfavourable cost efficiency at the status date",
     opts: [
-      "The project is currently under budget",
-      "The project is currently over budget",
+      "Favourable cost efficiency at the status date",
+      "Unfavourable cost efficiency at the status date",
       "The project is 18% ahead of schedule"
     ],
-    exp: "CPI = EV ÷ AC. A value below 1.0 demonstrates that the project is generating only $0.82 of planned work value for every $1.00 of actual capital spent, confirming a cost overrun."
+    exp: "CPI = EV ÷ AC. A CPI of 0.82 means the project has earned $0.82 of budgeted work value for each $1.00 of actual cost incurred at the status date. This indicates unfavourable cost efficiency; it is not by itself a statement that the total project budget has already been exceeded."
   },
   {
     q: "Which executive role formally authorizes the Project Charter and secures organizational funding?",
@@ -1846,10 +1846,10 @@ const Q = [
     exp: "The Project Sponsor acts as the senior executive champion who authorizes the charter, secures capital investment, and removes high-level obstacles. The Project Manager oversees day-to-day delivery."
   },
   {
-    q: "In the Scrum framework, who possesses ultimate authority over the Product Backlog and decides WHAT gets built?",
+    q: "In Scrum, which accountability is responsible for maximizing product value and effective management of the Product Backlog?",
     a: "Product Owner",
     opts: ["Scrum Master", "Product Owner", "Lead Engineer"],
-    exp: "The Product Owner is responsible for maximizing product value by prioritizing backlog items based on user needs and business return. The Scrum Master coaches team workflow, and Developers engineer the product."
+    exp: "The Product Owner is accountable for maximizing product value and effective Product Backlog management. The Product Owner does not work in isolation: stakeholders and Developers contribute information, while the Scrum Team collaborates to create an Increment."
   },
   {
     q: "In qualitative risk assessment, what is a widely used scoring calculation?",
@@ -1859,13 +1859,13 @@ const Q = [
   },
   {
     q: "What is the primary operational benefit of establishing Work in Progress (WIP) limits in Kanban?",
-    a: "Prevents bottlenecks and maintains smooth workflow",
+    a: "Helps expose bottlenecks and improve flow",
     opts: [
       "Forces developers to work overtime",
-      "Prevents bottlenecks and maintains smooth workflow",
+      "Helps expose bottlenecks and improve flow",
       "Eliminates the necessity for quality testing"
     ],
-    exp: "WIP limits cap the number of active items allowed in each column at once. This highlights delivery bottlenecks immediately, discourages context-switching, and reduces overall cycle time."
+    exp: "WIP limits cap the number of active items allowed in each column at once. This can make queues and bottlenecks more visible and reduce excessive multitasking. Lower WIP may improve flow and cycle time, but results depend on the workflow and the way the limits are managed."
   },
   {
     q: "Adding features to a deliverable without formal client approval, timeline adjustments, or budget increases is termed…",
@@ -1891,7 +1891,7 @@ const Q = [
       "An informal draft that developers modify daily without notice",
       "The retrospective summary drafted after a project concludes"
     ],
-    exp: "Baselines (scope, schedule, cost) represent the formally approved reference plans. They provide a stable benchmark to measure variances and determine whether changes require formal CCB approval."
+    exp: "Baselines (scope, schedule, cost) are approved reference points used to measure performance. Proposed changes should follow the project's documented change-control and decision-authority arrangements; not every project uses a formal CCB."
   },
   {
     q: "Which pair represents foundational principles of the PRINCE2® methodology?",
