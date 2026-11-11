@@ -122,10 +122,15 @@ test('page has no horizontal overflow across representative responsive widths', 
   }
 });
 
-test('footer shows the visitor-count label while tracking stays disabled on local previews', async ({ page }) => {
-  await expect(page.locator('#unique-visitor-count')).toHaveText('—');
+test('footer includes unique visitor counter but does not load it on local previews', async ({ page }) => {
+  const counter = page.locator('#unique-visitor-count');
+  await expect(counter).toHaveAttribute('class', /counterapi/);
+  await expect(counter).toHaveAttribute('ns', 'dhananjith1.github.io');
+  await expect(counter).toHaveAttribute('key', 'pm-academy-unique-visitors');
+  await expect(counter).toHaveAttribute('action', 'view');
+  await expect(counter).toHaveAttribute('unique', 'true');
   await expect(page.locator('footer')).toContainText('Unique visitors:');
-  await expect(page.locator('.counterapi')).toHaveCount(0);
+  await expect(page.locator('.analytics-privacy-note')).toHaveCount(0);
   const analyticsScripts = await page.locator('script[src]').evaluateAll(scripts =>
     scripts.map(script => script.src).filter(src => src.includes('counterapi.com'))
   );
