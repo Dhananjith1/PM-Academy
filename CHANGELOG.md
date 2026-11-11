@@ -48,5 +48,7 @@
 - Added a preliminary name-risk note, a lawyer review brief, and an accessibility statement with explicit test limitations.
 - Expanded Playwright/axe checks to all configured desktop and mobile browser projects, all 27 lesson states, and all quiz-feedback states.
 
-- Corrected the July 2026 PMP training note: an active CAPM holder receives 23 hours of credit and needs 12 additional hours; qualified exam-break wording by delivery format.
+- Corrected the July 2026 PMP training note: an active CAPM holder who meets the other eligibility requirements receives a 35-hour training credit and does not need to document the 35 training hours; qualified exam-break wording by delivery format.
 - Made payback-period, present-value benefit-cost ratio, and NPV assumptions explicit in the business-case example.
+
+- Corrected the project/operations quiz explanation to avoid implying that every project deliverable must be unprecedented globally; clarified WIP as started-but-not-finished work and added escalation as a risk-response option.
