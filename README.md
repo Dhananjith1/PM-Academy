@@ -15,7 +15,7 @@ This is an independent, free-to-access introductory learning resource for people
 - **Searchable glossary:** concise definitions for common project-management terminology.
 - **13-question knowledge check:** explanatory feedback, shuffled answer choices, and a numerical EVM question.
 - **Lesson progress:** completed lesson IDs are stored in the current browser's localStorage; they are not synchronized across browsers or devices.
-- **Approximate unique visitors:** the footer uses CounterAPI's documented embed with its `unique` option to display the cumulative unique-visitor count. The embed loads only on the published GitHub Pages site; the count is approximate and does not guarantee a one-to-one count of distinct people.
+- **Approximate unique visitors:** a public Abacus counter increments once per persistent browser storage profile and displays the returned total in the footer. Existing visitors refresh the displayed total every 20 seconds. Clearing browser storage or using another browser/device may count the same person again; it is not a verified count of distinct humans.
 - **Accessibility foundations:** skip navigation, visible keyboard focus, dynamic-content focus management, dialog focus trapping, reduced-motion support, and semantic progress state.
 
 ## EVM calculation reference
