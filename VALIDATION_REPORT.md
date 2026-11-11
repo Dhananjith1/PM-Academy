@@ -28,7 +28,7 @@ Schedule Variance (SV) is now described as a value-based measure, not a number o
 - Removed automatic requests to Google Fonts and changed to system font stacks.
 - Added automated HTML validation, Playwright browser tests for Chromium, Firefox, WebKit and a mobile viewport, and axe-core WCAG rule scans to GitHub Actions.
 
-The automated suite is intended to catch regressions. The last previously completed run before the current scan-design correction reported 57 passed and 3 failed; all three failures were test timeouts caused by repeating the exhaustive 27-lesson axe scan in Firefox/WebKit desktop/mobile profiles, not reported accessibility violations. The scan design has since been changed so exhaustive scans run once in desktop Chromium and representative scans remain across the other profiles. The latest run for the current source must be checked before treating the suite as green. Passing automated scans is not equivalent to full WCAG 2.2 AA conformance.
+The automated suite is intended to catch regressions. An intermediate run (60 executions) reported 47 passed, 8 skipped, and 5 failed. All five failures were the same horizontal-overflow condition at 768px, reproduced in the five configured browser profiles; no axe violations were reported in that run. The header/navigation was then updated to wrap at tablet widths and scroll within its own navigation region. A follow-up run on commit `037fd49e746e474183d22bfdb651478990de503e` passed: **52 passed, 8 intentionally skipped, 0 failed** (60 executions, 1.8 minutes). The HTML validator also passed with the WCAG link-text and form-submit rules enabled. The eight skips are the four non-desktop-Chromium profiles skipping each of the two exhaustive state-by-state axe suites; representative accessibility checks still run in all five profiles. Passing automated scans is not equivalent to full WCAG 2.2 AA conformance.
 
 ## Legal and attribution measures
 
@@ -40,7 +40,7 @@ The automated suite is intended to catch regressions. The last previously comple
 
 ## Prior technical smoke test
 
-A previous local Chromium smoke test checked page initialization, glossary search, EVM calculations and invalid-input handling, all 13 quiz questions, modal Escape-key handling, and a 390px mobile viewport. The current revision adds HTML validation, five Playwright browser profiles (desktop Chromium, Firefox, WebKit, and Chromium/WebKit mobile emulation), ten responsive viewport widths (320px–1440px), representative axe-core scans in all profiles, and exhaustive 27-lesson/13-quiz-feedback axe scans in desktop Chromium. The exact result is recorded in the latest GitHub Actions workflow run; this report should be refreshed after each material test change.
+A previous local Chromium smoke test checked page initialization, glossary search, EVM calculations and invalid-input handling, all 13 quiz questions, modal Escape-key handling, and a 390px mobile viewport. The current revision adds HTML validation, five Playwright browser profiles (desktop Chromium, Firefox, WebKit, and Chromium/WebKit mobile emulation), ten responsive viewport widths (320px–1440px), representative axe-core scans in all profiles, and exhaustive 27-lesson/13-quiz-feedback axe scans in desktop Chromium. The current passing result is recorded in [GitHub Actions run 42984701843](https://github.com/Dhananjith1/PM-Academy/actions/runs/42984701843). The same commit's [GitHub Pages build and deployment run 42984701969](https://github.com/Dhananjith1/PM-Academy/actions/runs/42984701969) completed successfully.
 
 ## Limitations
 
@@ -59,3 +59,13 @@ Before using the name commercially, registering a business mark, or offering pai
 ## Current public-page verification limitation
 
 GitHub Pages deployment workflow success confirms that GitHub built and deployed the repository artifact. This review environment returned a cache-miss response when requesting the public Pages URL directly, so it could not independently inspect the rendered live HTML over HTTP. The current main-branch source was inspected through GitHub, and the Pages workflow for the same commit is checked separately. A human should still open the live URL in a private browser window and verify the deployed version, cache behaviour, all links, and key interactions.
+
+
+## Fresh audit — 11 November 2026
+
+- Re-counted the current main-branch inventory: 27 lessons, 6 learning areas, 35 glossary entries, 13 quiz questions, and 12 named PM tool overviews.
+- Corrected the active-CAPM training credit, project uniqueness wording, WIP scope, risk escalation responses, stakeholder/governance qualifications, NPV explanation, MVP and user-story examples, and STAR evidence guidance.
+- Corrected the tablet breakpoint after a 768px overflow was detected. Follow-up responsive checks now cover 12 widths from 320px to 1440px.
+- Re-enabled HTML validator WCAG rules for meaningful link text and form submit controls; the latest validator run passed.
+- Added explicit and limited CC BY-SA 4.0 attribution for the identified Scrum/Kanban summary portions only.
+- The public title is the descriptive “Independent Project Management Study Resource”; the historical `PM-Academy` repository/Pages slug remains a legal-review item under Section 144 of Sri Lanka's Intellectual Property Act.
