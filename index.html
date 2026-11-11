@@ -1280,8 +1280,8 @@ const L = [
   /* Part 1 · Foundations */
   [
     0, "🧭", "What is Project Management?", "#1e293b", "#334155",
-    H("Defining a Project", "<p>A <b>project</b> is a focused, time-limited initiative designed to create a specific new outcome—whether building a mobile app, constructing a solar array, or organizing an event. Unlike routine operational work, every project has an intentional kickoff date, distinct targets, and a definite completion point.</p>") +
-    H("Defining Project Management", "<p><b>Project management</b> is the practical discipline of coordinating people, resources, timelines, and uncertainties to achieve defined goals. It ensures teams deliver high-value outcomes without exhausting budgets or missing deadlines.</p>") +
+    H("Defining a Project", "<p>A <b>project</b> is a focused, time-limited initiative designed to create a specific new outcome—whether building a mobile app, constructing a solar array, or organizing an event. Unlike routine operational work, projects are temporary: they have a defined start and an intended end, although they may be closed early, cancelled, or extended through approved changes.</p>") +
+    H("Defining Project Management", "<p><b>Project management</b> is the practical discipline of coordinating people, resources, timelines, and uncertainties to achieve defined goals. It helps teams organize work, manage uncertainty, and make informed trade-offs among scope, schedule, cost, quality, risk, and intended value; it cannot guarantee every target.</p>") +
     H("Projects vs Programs vs Portfolios", C([
       ["Project", "A single, targeted endeavor with one primary objective. Example: Launching a payment gateway feature."],
       ["Program", "A coordinated family of interconnected projects working toward a broader strategic capability. Example: A bank-wide modernization program."],
@@ -1293,8 +1293,8 @@ const L = [
   ],
 
   [
-    0, "⏳", "The Project Life Cycle & Core Phases", "#0f766e", "#14b8a6",
-    H("The 5 Process Groups in Predictive Project Management", F(["Initiating", "Planning", "Executing", "Monitoring & Controlling", "Closing"])) +
+    0, "⏳", "Predictive Process Groups & Project Phases", "#0f766e", "#14b8a6",
+    H("The Five Process Groups (Predictive Model)", F(["Initiating", "Planning", "Executing", "Monitoring & Controlling", "Closing"])) +
     U([
       "<b>Initiating:</b> Clarifying the fundamental business problem or opportunity, gaining executive authorization (Charter), and identifying key participants.",
       "<b>Planning:</b> Crafting the strategic roadmap—defining deliverables, scheduling milestones, estimating budgets, and preparing risk mitigation plans.",
@@ -1320,7 +1320,7 @@ const L = [
       "Financial projections comparing initial capital outlay against anticipated ongoing benefits.",
       "Realistic evaluation of operational risks and measurable indicators of success."
     ])) +
-    H("Feasibility Assessment (TELOS Checklist)", C([
+    H("A Common Feasibility Checklist (TELOS)", C([
       ["Technical", "Do we possess the engineering tools and expertise to build this solution?"],
       ["Economic", "Does the projected financial return or cost savings justify the upfront expenditure?"],
       ["Legal & Ethical", "Does the deliverable conform to all applicable regulations, privacy laws, and ethical standards?"],
@@ -1340,7 +1340,7 @@ const L = [
       ["Approved Baselines", "The benchmark versions of scope, schedule, and cost. Real-world progress is compared against these references."],
       ["Governance Strategies", "Guidelines on how scope adjustments will be evaluated and how progress reviews will be conducted."]
     ])) +
-    H("Comparing Baseline to Reality", "<p>A <b>baseline</b> represents your formal reference plan. If your budget baseline is $50,000 and your actual spend is $62,000, you have an unfavorable cost variance of $12,000. Without a documented baseline, assessing true performance is impossible.</p>") +
+    H("Comparing Baseline to Reality", "<p>A <b>baseline</b> represents your formal reference plan. For an EVM example, if Earned Value (EV) is $50,000 and Actual Cost (AC) is $62,000, Cost Variance (CV) = EV − AC = −$12,000. Comparing Budget at Completion (BAC) with current spend alone is not the EVM cost-variance formula. Without a documented baseline, assessing true performance is impossible.</p>") +
     H("Setting Up the Kick-Off Meeting", U([
       "Clarify the project's strategic objective and core deliverables.",
       "Establish individual responsibilities, expectations, and reporting pathways.",
