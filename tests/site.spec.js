@@ -92,12 +92,19 @@ test('project overview modal traps focus, closes on Escape and restores focus', 
   await expect(trigger).toBeFocused();
 });
 
-test('page has no horizontal overflow at every desktop and mobile viewport', async ({ page }) => {
-  const dimensions = await page.evaluate(() => ({
-    viewport: document.documentElement.clientWidth,
-    content: document.documentElement.scrollWidth
-  }));
-  expect(dimensions.content).toBeLessThanOrEqual(dimensions.viewport);
+test('page has no horizontal overflow across representative responsive widths', async ({ page }) => {
+  const widths = [320, 360, 375, 390, 414, 600, 768, 1024, 1280, 1440];
+  for (const width of widths) {
+    await page.setViewportSize({ width, height: 900 });
+    const dimensions = await page.evaluate(() => ({
+      viewport: document.documentElement.clientWidth,
+      content: document.documentElement.scrollWidth
+    }));
+    expect(
+      dimensions.content,
+      `Horizontal overflow at viewport width ${width}px`
+    ).toBeLessThanOrEqual(dimensions.viewport);
+  }
 });
 
 test('initial page and modal have no axe WCAG A/AA violations', async ({ page }) => {
@@ -109,8 +116,9 @@ test('initial page and modal have no axe WCAG A/AA violations', async ({ page })
   await page.keyboard.press('Escape');
 });
 
-test('all 27 lesson states pass axe WCAG A/AA scans in Chromium', async ({ page, browserName }) => {
-  test.skip(browserName !== 'chromium', 'The full lesson-by-lesson axe scan runs once in desktop Chromium; initial, modal, and representative interaction scans run across all browser projects.');
+test('all 27 lesson states pass axe WCAG A/AA scans in desktop Chromium', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'chromium', 'The full lesson-by-lesson axe scan runs once in desktop Chromium; initial, modal, and representative interaction scans run across all browser projects.');
+  test.setTimeout(90_000);
   for (let i = 0; i < 27; i += 1) {
     await page.locator('.side button.l').nth(i).click();
     const results = await new AxeBuilder({ page }).withTags(wcagTags).analyze();
@@ -128,8 +136,9 @@ test('quiz feedback state has no axe WCAG A/AA violations', async ({ page }) => 
 });
 
 
-test('all 13 quiz feedback states pass axe WCAG A/AA scans in Chromium', async ({ page, browserName }) => {
-  test.skip(browserName !== 'chromium', 'The full question-by-question axe scan runs once in desktop Chromium; quiz flow and representative feedback scans run across all browser projects.');
+test('all 13 quiz feedback states pass axe WCAG A/AA scans in desktop Chromium', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'chromium', 'The full question-by-question axe scan runs once in desktop Chromium; quiz flow and representative feedback scans run across all browser projects.');
+  test.setTimeout(90_000);
   for (let i = 0; i < 13; i += 1) {
     await page.locator('#qz .q-options button').first().click();
     await expect(page.locator('.q-feedback')).toBeVisible();
