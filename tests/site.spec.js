@@ -29,10 +29,14 @@ test('homepage exposes descriptive SEO metadata, structured data, and topic-guid
   expect(data['@graph'].some(item => item['@type'] === 'LearningResource')).toBe(true);
 });
 
-test('homepage guide section stays compact and points to the separate guide directory', async ({ page }) => {
+test('homepage guide and glossary sections stay compact and link to separate pages', async ({ page }) => {
   await expect(page.locator('#study-guides .ref-card')).toHaveCount(4);
   await expect(page.locator('#study-guides')).not.toContainText('Common Project Management Questions');
   await expect(page.getByRole('link', { name: /Study Guides/ }).first()).toHaveAttribute('href', 'study-guides.html');
+  await expect(page.locator('#glossary .term-card')).toHaveCount(0);
+  await expect(page.locator('#glossary input[type="search"]')).toHaveCount(0);
+  await expect(page.locator('#glossary a')).toHaveAttribute('href', 'project-management-glossary.html');
+  await expect(page.locator('nav[aria-label="Main navigation"] a').filter({ hasText: 'Glossary' })).toHaveAttribute('href', 'project-management-glossary.html');
 });
 
 test('study guide directory lists all guides and common questions', async ({ page }) => {
@@ -111,11 +115,21 @@ test('skip link is the first keyboard stop and moves focus to main', async ({ pa
   await expect(page.locator('#main-content')).toBeFocused();
 });
 
-test('glossary search returns matching concepts', async ({ page }) => {
-  await page.getByRole('searchbox', { name: /search glossary/i }).fill('WBS');
-  await expect(page.locator('#gl')).toContainText('Work Breakdown Structure');
-  await page.getByRole('searchbox', { name: /search glossary/i }).fill('not-a-real-term');
-  await expect(page.locator('#gl')).toContainText('No matching glossary terms');
+test('dedicated glossary page lists and searches all 35 terms', async ({ page }) => {
+  await page.goto('/project-management-glossary.html');
+  await expect(page).toHaveTitle(/Project Management Glossary \\| PM Study Resource/);
+  await expect(page.locator('h1')).toHaveText('Project Management Glossary');
+  await expect(page.locator('.term-card')).toHaveCount(35);
+  const data = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
+  const termSet = data['@graph'].find(item => item['@type'] === 'DefinedTermSet');
+  expect(termSet.hasDefinedTerm).toHaveLength(35);
+  const search = page.getByRole('searchbox', { name: /search project management terms/i });
+  await search.fill('WBS');
+  await expect(page.locator('.term-card:visible')).toHaveCount(1);
+  await expect(page.locator('.term-card:visible')).toContainText('Work Breakdown Structure');
+  await search.fill('not-a-real-term');
+  await expect(page.locator('.term-card:visible')).toHaveCount(0);
+  await expect(page.locator('#glossary-result-count')).toContainText('No matching terms');
 });
 
 test('lesson navigation, progress semantics and persistence work', async ({ page }) => {
