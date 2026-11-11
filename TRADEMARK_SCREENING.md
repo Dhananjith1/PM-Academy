@@ -36,6 +36,12 @@ Sri Lanka's [Intellectual Property Act, No. 36 of 2003](https://www.parliament.l
 
 Scaled Agile states that SAFe® and Scaled Agile Framework® are its registered marks and restricts copying or modifying its courseware and copyrighted content; this site uses the name only as a reference and links to the official source. See [Scaled Agile's usage restrictions](https://scaledagile.com/digital-badging-usage-restrictions/) and [content-use FAQ](https://support.scaledagile.com/en/articles/9791354-general-content-usage-faqs-and-the-permission-request-form). PMI publishes [Trademark Usage Guidelines](https://www.pmi.org/-/media/pmi/documents/public/pdf/governance/intellectual-property-proper-use-guidelines.pdf), PeopleCert publishes a [Marks Usage Policy](https://www.peoplecert.org/-/media/folders-reorganized/legal-documents/qmepo13-marks-usage-policy.pdf), and Atlassian publishes [Trademark Guidelines](https://www.atlassian.com/legal/trademark). These are owners' policies and may change; this site links to them as references, not as a substitute for legal review.
 
+## Sri Lankan trade-name issue
+
+Section 144 of Sri Lanka's Intellectual Property Act, No. 36 of 2003 says that a trade name may receive protection against unlawful acts even before or without registration, and that later use of the same or similar name likely to mislead the public may be unlawful. Accordingly, the old public repository/Pages slug is not automatically risk-free merely because the visible page title was changed. This screening does not decide whether a particular overseas business has prior rights enforceable in Sri Lanka, whether it has relevant goodwill or use here, or whether this project's historic and current use is likely to mislead anyone. Those questions require factual and legal assessment.
+
+Official source: [NIPO — Intellectual Property Act No. 36 of 2003, Section 144](https://www.nipo.gov.lk/web/images/pdf_downloads/Intellectual_Property_Act_No_36_of_2003.pdf).
+
 ## Required professional clearance steps
 
 A qualified Sri Lankan IP/trademark lawyer or registered IP agent should:
