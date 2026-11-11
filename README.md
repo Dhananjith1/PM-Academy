@@ -16,6 +16,18 @@ PM Academy is an independent, free-to-access learning resource for people explor
 - **13-question knowledge check:** explanatory feedback, shuffled answer choices, and a numerical EVM question.
 - **Lesson progress:** completed lesson IDs are stored in the current browser's localStorage; they are not synchronized across browsers or devices.
 
+## EVM calculation reference
+
+The calculator and learning examples use these standard Earned Value Management relationships:
+
+- Cost Variance (CV) = Earned Value (EV) − Actual Cost (AC)
+- Schedule Variance (SV) = Earned Value (EV) − Planned Value (PV)
+- Cost Performance Index (CPI) = EV ÷ AC
+- Schedule Performance Index (SPI) = EV ÷ PV
+- Estimate at Completion (EAC) = Budget at Completion (BAC) ÷ CPI, only under the assumption that current cost efficiency continues
+
+When AC or PV is zero, the corresponding index is unavailable. A negative CV indicates an unfavourable cost position; a negative SV indicates less budgeted work value earned than planned at the status date. EVM schedule variance is expressed in budget units, not calendar days.
+
 ## Learning areas
 
 | Area | Topics |
