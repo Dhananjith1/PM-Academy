@@ -44,13 +44,13 @@ The PMP section was aligned to PMI's July 2026 Examination Content Outline, incl
 
 ## 6. Legal and attribution approach
 
-The site is presented as an independent educational resource, not an official course or credential provider. Third-party names identify products, methods, and certifications. The reviewed HTML contains no inserted PMI, PeopleCert, Scrum.org, or Atlassian logo or certification seal.
+The site is presented as an independent educational resource, not an official course or credential provider. Third-party names identify products, methods, and certifications. The reviewed HTML contains no inserted PMI, PeopleCert, Scrum.org, Scaled Agile, or Atlassian logo or certification seal.
 
 The site explains concepts in its own words and links to official references. It should not reproduce substantial extracts, official diagrams, screenshots, proprietary exam questions, or paid course material without checking rights and obtaining permission where required. The Scrum Guide is under CC BY-SA 4.0; this site links to it and provides independent summaries.
 
-PMI®, PMP®, CAPM®, PMI-ACP®, and the *PMBOK® Guide* are marks of Project Management Institute, Inc. PRINCE2® is a registered trademark of PeopleCert group. Jira and Trello are trademarks of Atlassian. The resource is not affiliated with or endorsed by those organizations.
+PMI®, PMP®, CAPM®, PMI-ACP®, and the *PMBOK® Guide* are marks of Project Management Institute, Inc. PRINCE2® is a registered trademark of PeopleCert group. SAFe® and Scaled Agile Framework® are registered trademarks of Scaled Agile, Inc. Jira and Trello are trademarks of Atlassian. The resource is not affiliated with or endorsed by those organizations.
 
-See [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md) and [TRADEMARK_SCREENING.md](TRADEMARK_SCREENING.md) for the detailed rights, name-risk, and reuse notes; [ACCESSIBILITY.md](ACCESSIBILITY.md) records the automated coverage and remaining manual work. See [PRIVACY.md](PRIVACY.md) for local progress storage, GitHub Pages hosting, and Google Fonts.
+See [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md) and [TRADEMARK_SCREENING.md](TRADEMARK_SCREENING.md) for the detailed rights, name-risk, and reuse notes; [ACCESSIBILITY.md](ACCESSIBILITY.md) records the automated coverage and remaining manual work. See [PRIVACY.md](PRIVACY.md) for local progress storage, GitHub Pages hosting, and removal of automatic external font requests.
 
 ## 7. Product and implementation decisions
 
