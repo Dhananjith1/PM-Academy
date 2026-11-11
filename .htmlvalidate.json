@@ -1,8 +1,6 @@
 {
   "extends": ["html-validate:recommended"],
   "rules": {
-    "no-inline-style": "off",
-    "wcag/h32": "off",
-    "wcag/h30": "off"
+    "no-inline-style": "off"
   }
 }
