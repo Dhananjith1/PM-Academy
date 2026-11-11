@@ -1,19 +1,40 @@
-# PM Academy — Local Validation Report
+# PM Academy — Review and Validation Report
 
-**Run date:** 11 November 2026  
-**Environment:** Chromium, automated local browser smoke test.
+**Review date:** 11 November 2026  
+**Source reviewed:** Current main-branch site source and project documentation.
 
-| Check | Result | Observation |
-|---|---|---|
-| Page initialization | Passed | 27 lessons and 6 learning areas rendered |
-| Glossary search | Passed | Searching for Critical Path returned matching terms |
-| EVM calculation | Passed | BAC 200,000; PV 80,000; EV 72,000; AC 90,000 produced CV −18,000; SV −8,000; CPI 0.80; SPI 0.90; EAC 250,000 |
-| Calculator validation | Passed | Blank and negative values produced validation messages |
-| Quiz navigation | Passed | All 13 questions were traversed; numerical EVM question accepted the correct answer |
-| Modal keyboard handling | Passed | Project overview opened and Escape closed it |
-| Mobile viewport | Passed | At 390px viewport width, document scroll width equalled client width |
-| JavaScript runtime | Passed | No page errors observed during the smoke test |
-| JavaScript syntax | Passed | Inline script passed syntax validation |
+## Inventory
+
+- 27 curriculum lessons across 6 learning areas.
+- 13 knowledge-check questions.
+- Browser-side EVM calculator, glossary search, quiz, and local lesson-progress storage.
+- Static GitHub Pages hosting.
+- No third-party image, official product logo, or certification seal was found in the reviewed HTML source. The page requests web fonts from Google Fonts.
+
+## Content review and corrections
+
+This revision addresses project/change-cost claims, financial evaluation formulas, an EVM cost-variance example, WBS work packages versus assignment of owners, critical-path and PERT statements, QA/QC, RACI, communication-channel mathematics, risk responses and reserves, change-control governance, procurement risk allocation, predictive/Agile descriptions, Agile values, Scrum, Kanban, tool-plan claims, project-closeout practices, glossary accuracy, and PMP 2026 details.
+
+## Legal and attribution measures
+
+- Added a Rights & Attribution notice with third-party mark owners and official references.
+- Added a Privacy Notice describing localStorage, Google Fonts, and GitHub Pages hosting.
+- Replaced the current root MIT licence text with a Rights and Reuse Notice, while preserving a historical MIT licence caveat.
+- Added links to official publisher and mark-owner sources.
+- Added an independence and non-certification statement in the site footer.
+
+## Prior technical smoke test
+
+A previous local Chromium smoke test checked page initialization, glossary search, EVM calculations and invalid-input handling, all 13 quiz questions, modal Escape-key handling, and a 390px mobile viewport. The later deep content and rights revisions were source-reviewed; they have not yet received a new exhaustive browser test.
 
 ## Limitations
-This is a local smoke test, not a comprehensive QA cycle. It does not establish compatibility across all browsers, operating systems, or physical devices. It does not replace keyboard-only usability review, screen-reader testing, or a formal WCAG accessibility audit. External links should be rechecked from the published site. PMI, PeopleCert, and other standards bodies have not reviewed or endorsed this project.
+
+This is a source and content review, not:
+- A legal opinion or lawyer's clearance.
+- A trademark-register or international name-clearance search for "PM Academy".
+- A plagiarism/similarity scan against every publication, course, website, or AI training source.
+- An official review or endorsement by PMI, PeopleCert, Scrum.org, Atlassian, or any other rights holder.
+- A formal WCAG audit or exhaustive testing on all browsers, devices, and assistive technologies.
+- A certification-exam validation by a project-management certification body.
+
+Before commercialising, registering a business name, or offering paid/accredited training, obtain qualified Sri Lankan IP/trademark advice and independent subject-matter review.
