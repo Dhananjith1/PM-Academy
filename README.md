@@ -69,7 +69,7 @@ The curriculum is an independent educational summary, not a reproduction of prop
 
 PMI®, PMP®, CAPM®, PMI-ACP®, and the *PMBOK® Guide* are marks of Project Management Institute, Inc. PRINCE2® is a registered trademark of PeopleCert group. SAFe® and Scaled Agile Framework® are registered trademarks of Scaled Agile, Inc. Jira and Trello are trademarks of Atlassian. These names identify relevant products and methods only.
 
-The Scrum Guide and Open Guide to Kanban v2025.7 are published under Creative Commons Attribution-ShareAlike 4.0. The website links to both official sources. The text under “The Scrum Delivery Model” and “Six General Kanban Practices” in lesson 17 is expressly offered under CC BY-SA 4.0; all other website content remains under the Rights and Reuse Notice unless a separate licence applies. See [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md) for attribution, change-notice, and ShareAlike details.
+The Scrum Guide and Open Guide to Kanban v2025.7 are published under Creative Commons Attribution-ShareAlike 4.0. The website links to both official sources. The text under “The Scrum Delivery Model”, “Six General Kanban Practices”, and the following WIP/Lead Time/Cycle Time explanation in lesson 17 is expressly offered under CC BY-SA 4.0; all other website content remains under the Rights and Reuse Notice unless a separate licence applies. See [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md) for attribution, change-notice, and ShareAlike details.
 
 ## Privacy
 
