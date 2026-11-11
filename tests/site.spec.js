@@ -23,9 +23,33 @@ test('homepage exposes descriptive SEO metadata, structured data, and topic-guid
   await expect(page.locator('h1')).toContainText('Free Project Management Lessons');
   await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /27 free lessons/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://dhananjith1.github.io/PM-Academy/');
-  await expect(page.locator('#study-guides > .wrap > .ref-grid a')).toHaveCount(11);
+  await expect(page.locator('#study-guides > .wrap > .ref-grid a')).toHaveCount(4);
+  await expect(page.getByRole('link', { name: /Browse all 11 study guides/ })).toHaveAttribute('href', 'study-guides.html');
   const data = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
   expect(data['@graph'].some(item => item['@type'] === 'LearningResource')).toBe(true);
+});
+
+test('homepage guide section stays compact and points to the separate guide directory', async ({ page }) => {
+  await expect(page.locator('#study-guides .ref-card')).toHaveCount(4);
+  await expect(page.locator('#study-guides')).not.toContainText('Common Project Management Questions');
+  await expect(page.getByRole('link', { name: /Study Guides/ }).first()).toHaveAttribute('href', 'study-guides.html');
+});
+
+test('study guide directory lists all guides and common questions', async ({ page }) => {
+  await page.goto('/study-guides.html');
+  await expect(page).toHaveTitle(/Project Management Study Guides \| PM Study Resource/);
+  await expect(page.locator('h1')).toHaveText('Project Management Study Guides');
+  await expect(page.locator('.guide-card')).toHaveCount(11);
+  await expect(page.locator('.faq details')).toHaveCount(6);
+  for (const slug of [
+    'project-management-basics.html','project-planning-guide.html','project-risk-management-guide.html',
+    'agile-project-management-guide.html','earned-value-management-guide.html','project-management-tools-guide.html',
+    'project-management-glossary.html','project-management-templates.html','project-schedule-guide.html',
+    'it-project-management-guide.html','project-manager-career-guide.html'
+  ]) await expect(page.locator('.guide-card a[href="' + slug + '"]')).toHaveCount(1);
+  const data = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
+  expect(data['@graph'].some(item => item['@type'] === 'CollectionPage')).toBe(true);
+  expect(data['@graph'].some(item => item['@type'] === 'ItemList')).toBe(true);
 });
 
 test('topic guide pages expose unique metadata and learning-resource structured data', async ({ page }) => {
@@ -74,7 +98,8 @@ test('robots.txt and sitemap.xml expose crawl directives and canonical guide URL
     'project-management-templates.html',
     'project-schedule-guide.html',
     'it-project-management-guide.html',
-    'project-manager-career-guide.html'
+    'project-manager-career-guide.html',
+    'study-guides.html'
   ]) expect(sitemapText).toContain('https://dhananjith1.github.io/PM-Academy/' + slug);
 });
 
