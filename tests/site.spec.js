@@ -122,6 +122,14 @@ test('page has no horizontal overflow across representative responsive widths', 
   }
 });
 
+test('visitor analytics stays disabled on local test previews', async ({ page }) => {
+  await expect(page.locator('.counterapi')).toHaveCount(0);
+  const analyticsScripts = await page.locator('script[src]').evaluateAll(scripts =>
+    scripts.map(script => script.src).filter(src => src.includes('counterapi.com'))
+  );
+  expect(analyticsScripts).toEqual([]);
+});
+
 test('external links avoid direct PMI links and use safe new-tab attributes', async ({ page }) => {
   const externalLinks = await page.locator('a[href^="http://"], a[href^="https://"]').evaluateAll(anchors =>
     anchors.map(anchor => ({
