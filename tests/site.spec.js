@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('page has one main landmark, a single h1, and no duplicate IDs', async ({ page }) => {
-  await expect(page).toHaveTitle(/Independent Project Management Study Resource/);
+  await expect(page).toHaveTitle(/Free Project Management Lessons & Tools \| PM Study Resource/);
   await expect(page.locator('main')).toHaveCount(1);
   await expect(page.locator('h1')).toHaveCount(1);
   const duplicateIds = await page.locator('[id]').evaluateAll(nodes => {
@@ -16,6 +16,54 @@ test('page has one main landmark, a single h1, and no duplicate IDs', async ({ p
     return [...new Set(ids.filter((id, index) => ids.indexOf(id) !== index))];
   });
   expect(duplicateIds).toEqual([]);
+});
+
+test('homepage exposes descriptive SEO metadata, structured data, and topic-guide links', async ({ page }) => {
+  await expect(page).toHaveTitle(/Free Project Management Lessons & Tools \| PM Study Resource/);
+  await expect(page.locator('h1')).toContainText('Free Project Management Lessons');
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /27 free lessons/);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://dhananjith1.github.io/PM-Academy/');
+  await expect(page.locator('#study-guides a')).toHaveCount(7);
+  const data = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
+  expect(data['@graph'].some(item => item['@type'] === 'LearningResource')).toBe(true);
+});
+
+test('topic guide pages expose unique metadata and learning-resource structured data', async ({ page }) => {
+  const pages = [
+    ['project-management-basics.html', /Project Management Basics: A Beginner-Friendly Guide/],
+    ['project-planning-guide.html', /Project Planning Guide: Scope, Schedule, Budget & Quality/],
+    ['project-risk-management-guide.html', /Project Risk Management: Identify, Analyse & Respond/],
+    ['agile-project-management-guide.html', /Agile Project Management: Scrum, Kanban & Hybrid Delivery/],
+    ['earned-value-management-guide.html', /Earned Value Management \(EVM\): Formulas & Worked Example/],
+    ['project-management-tools-guide.html', /Project Management Tools: Boards, Scheduling & Reporting/],
+    ['project-management-glossary.html', /Project Management Glossary: 25 Essential PM Terms/]
+  ];
+  for (const [path, title] of pages) {
+    await page.goto('/' + path);
+    await expect(page).toHaveTitle(title);
+    await expect(page.locator('h1')).toHaveCount(1);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://dhananjith1.github.io/PM-Academy/' + path);
+    const data = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
+    expect(data['@graph'].some(item => item['@type'] === 'LearningResource')).toBe(true);
+    await expect(page.locator('main')).toContainText('Free project management study guide');
+  }
+});
+
+test('robots.txt and sitemap.xml expose crawl directives and canonical guide URLs', async ({ request }) => {
+  const robotsResponse = await request.get('/robots.txt');
+  expect(robotsResponse.ok()).toBe(true);
+  const robotsText = await robotsResponse.text();
+  expect(robotsText).toContain('User-agent: *');
+  expect(robotsText).toContain('Sitemap: https://dhananjith1.github.io/PM-Academy/sitemap.xml');
+  const sitemapResponse = await request.get('/sitemap.xml');
+  expect(sitemapResponse.ok()).toBe(true);
+  const sitemapText = await sitemapResponse.text();
+  expect(sitemapText).toContain('<urlset');
+  for (const slug of [
+    'project-management-basics.html','project-planning-guide.html','project-risk-management-guide.html',
+    'agile-project-management-guide.html','earned-value-management-guide.html',
+    'project-management-tools-guide.html','project-management-glossary.html'
+  ]) expect(sitemapText).toContain('https://dhananjith1.github.io/PM-Academy/' + slug);
 });
 
 test('skip link is the first keyboard stop and moves focus to main', async ({ page }) => {
