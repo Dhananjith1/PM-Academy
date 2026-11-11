@@ -38,9 +38,10 @@ No PMI, PeopleCert, Scrum.org, Scaled Agile, or Atlassian logo or certification 
 - [Scaled Agile — Content Usage FAQs](https://support.scaledagile.com/en/articles/9791354-general-content-usage-faqs-and-the-permission-request-form)
 - [Official Scrum Guide](https://scrumguides.org/download.html)
 - [Scrum Guide Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-- [Open Guide to Kanban](https://kanbanguides.org/open-guide-to-kanban/2025.7/)
+- [Open Guide to Kanban v2025.7](https://kanbanguides.org/open-guide-to-kanban/2025.7/)
+- [Open Guide to Kanban — CC BY-SA 4.0 source and adaptation notice](https://kanbanguides.org/open-guide-to-kanban/)
 
-The November 2020 Scrum Guide by Ken Schwaber and Jeff Sutherland is offered under Creative Commons Attribution-ShareAlike 4.0. This site links to the Guide and provides independent summaries. Any reproduction or adaptation must comply with the licence, including attribution, indication of changes, and ShareAlike obligations.
+The November 2020 Scrum Guide by Ken Schwaber and Jeff Sutherland is offered under Creative Commons Attribution-ShareAlike 4.0. The Open Guide to Kanban v2025.7 is also offered under CC BY-SA 4.0 and credits its contributors. This site links to both sources and provides condensed, reworded summaries. To provide clear attribution and avoid ambiguity, the text under the headings “The Scrum Delivery Model” and “Six General Kanban Practices” in lesson 17 is expressly offered under CC BY-SA 4.0; changes were made. This limited licence applies only to those identified summary portions and their adaptations, not to the rest of the website. Reusers must give credit, link the licence, indicate changes, and share adaptations of those licensed portions under CC BY-SA 4.0.
 
 ## Sri Lankan copyright context
 
