@@ -967,6 +967,26 @@ footer {
 
 /* Responsive */
 @media (max-width: 900px) {
+  header {
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    padding: 12px 16px;
+  }
+  header nav {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+  }
+  a.nb {
+    flex: 0 0 auto;
+    padding-bottom: 3px;
+    white-space: nowrap;
+  }
+  .brand-group {
+    flex: 0 0 auto;
+  }
   .learn, .about-grid {
     grid-template-columns: 1fr;
   }
