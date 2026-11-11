@@ -1443,7 +1443,7 @@ const L = [
       "<b>Finish-to-Finish (FF):</b> Task B cannot finish until Task A finishes.",
       "<b>Start-to-Finish (SF):</b> Task B cannot finish until Task A starts (relatively rare).",
       "<b>Lead Time:</b> Overlapping dependent activities so the successor starts earlier.",
-      "<b>Lag Time:</b> A required pause between tasks (such as waiting 48 hours for concrete to cure)."
+      "<b>Lag Time:</b> A delay inserted between a predecessor and successor activity (for example, a curing interval before the next task can start)."
     ])) +
     H("The Critical Path Method (CPM)", "<p>The <b>Critical Path</b> is the sequence of dependent tasks that constitutes the longest path through the project network. It dictates the earliest possible date the project can finish. Tasks on the critical path have <b>zero float (slack)</b>; a delay to a critical activity will normally delay the forecast project finish unless recovery action or an approved schedule change offsets it. The critical path can change as durations, logic, constraints, or progress change.</p>") +
     H("PERT Weighted 3-Point Estimate", "<span class='fm'>PERT Expected Duration = (Optimistic + 4 × Most Likely + Pessimistic) ÷ 6</span><p>This is the classic PERT weighted-average estimate, commonly associated with a beta-shaped activity-duration distribution. Other three-point methods may use different assumptions or weighting.</p>") +
@@ -1749,7 +1749,7 @@ const L = [
       "<b>At governance or iteration points:</b> Review with sponsors and authorized decision-makers; hold Sprint Reviews at the end of each Sprint when using Scrum.",
       "<b>Always:</b> Protect team focus, guard against scope creep, and keep the strategic outcome front and center."
     ])) +
-    H("10 Common Real-World Mistakes to Avoid", C([
+    H("Five Common Real-World Mistakes to Avoid", C([
       ["1. Ambiguous Scope", "Commencing delivery without signed requirements and clear acceptance criteria."],
       ["2. Hidden Bad News", "Delaying disclosure of variances until response options have become more difficult, costly, or constrained."],
       ["3. Over-Promising", "Committing to unrealistic dates or unbudgeted features without discussing estimates, assumptions, and trade-offs with the team."],
@@ -1813,10 +1813,10 @@ const G = [
   ["Issue", "An active problem or impediment that has already happened and requires immediate intervention."],
   ["Kanban", "A method for defining, managing, and improving services and the flow of work. Common practices include visualizing work, limiting WIP, managing flow, making policies explicit, using feedback loops, and improving collaboratively; the specific workflow is context-dependent."],
   ["Milestone", "A prominent checkpoint or milestone event in a schedule with zero duration."],
-  ["MVP (Minimum Viable Product)", "The most stripped-down usable version of a product required to test core value propositions with real users."],
+  ["MVP (Minimum Viable Product)", "A version of a product that enables validated learning about key assumptions with the least effort; it is not necessarily just the smallest possible feature set."],
   ["NPV (Net Present Value)", "A capital budgeting calculation comparing the discounted present value of future cash inflows against initial investment costs."],
   ["<i>PMBOK® Guide</i>", "A Guide to the Project Management Body of Knowledge, an internationally respected standard published by PMI."],
-  ["PMO (Project Management Office)", "A corporate department that standardizes project management practices and provides cross-initiative visibility."],
+  ["PMO (Project Management Office)", "An organizational structure or function that supports, governs, or directly manages project work according to its mandate. A PMO may provide methods, standards, reporting, resources, or centralized control; its authority and scope vary."],
   ["PMP®", "Project Management Professional, a globally recognized credential awarded by the Project Management Institute."],
   ["RACI Matrix", "A matrix clarifying role accountability: Responsible, Accountable, Consulted, and Informed."],
   ["Risk", "An uncertain future event or condition that, if it occurs, could produce an adverse (threat) or beneficial (opportunity) impact. A common qualitative scoring approach is Probability × Impact."],
@@ -2040,7 +2040,8 @@ function go(i) {
   if (i < 0 || i >= N) return;
   cur = i;
   render();
-  $("lesson").scrollIntoView({ block: "start", behavior: "smooth" });
+  const scrollBehavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+  $("lesson").scrollIntoView({ block: "start", behavior: scrollBehavior });
   const lessonHeading = $("lesson-title");
   if (lessonHeading) lessonHeading.focus({ preventScroll: true });
 }
