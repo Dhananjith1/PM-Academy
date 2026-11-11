@@ -319,19 +319,29 @@ p.sub {
   color: var(--mu);
   margin-bottom: 6px;
 }
-.bar {
+progress.bar {
+  appearance: none;
+  -webkit-appearance: none;
+  display: block;
+  width: 100%;
   height: 8px;
   background: var(--soft);
+  border: 0;
   border-radius: 99px;
   overflow: hidden;
 }
-.bar i {
-  display: block;
-  height: 100%;
-  width: 0%;
+progress.bar::-webkit-progress-bar {
+  background: var(--soft);
+  border-radius: 99px;
+}
+progress.bar::-webkit-progress-value {
   background: linear-gradient(90deg, var(--brand), var(--ac));
   border-radius: 99px;
   transition: width 0.35s ease;
+}
+progress.bar::-moz-progress-bar {
+  background: linear-gradient(90deg, var(--brand), var(--ac));
+  border-radius: 99px;
 }
 .part {
   font-size: 11px;
@@ -720,7 +730,7 @@ input[type=search]:focus {
   font-size: 15.5px;
 }
 
-/* Sources & References Section */
+/* Sources &amp; References Section */
 #sources {
   background: #ffffff;
   border-top: 1px solid var(--bd);
@@ -793,7 +803,7 @@ input[type=search]:focus {
   font-weight: 500;
 }
 
-/* About Section & Comprehensive Legal Disclaimers */
+/* About Section &amp; Comprehensive Legal Disclaimers */
 #about {
   background: var(--bg);
 }
@@ -1074,7 +1084,7 @@ button:disabled { cursor:not-allowed; }
   <div class="wrap">
     <h2>Lessons</h2>
     <p class="sub">Learn the principles, methods, and tools of Project Management. Follow the curriculum in sequence, or jump directly to any topic.</p>
-    
+
     <div class="learn">
       <!-- Sticky Sidebar -->
       <aside class="side" aria-label="Curriculum Sidebar">
@@ -1083,11 +1093,11 @@ button:disabled { cursor:not-allowed; }
             <span id="pt">0 of 27 completed</span>
             <span id="pt-pct">0%</span>
           </div>
-          <div class="bar" role="progressbar" aria-label="Lessons completed" aria-valuemin="0" aria-valuemax="27" aria-valuenow="0" aria-valuetext="0 of 27 lessons completed"><i id="pb"></i></div>
+          <progress id="pb" class="bar" max="27" value="0" aria-label="Lessons completed" aria-valuetext="0 of 27 lessons completed">0 of 27 lessons completed</progress>
         </div>
         <div id="list"></div>
       </aside>
-      
+
       <!-- Lesson Display Article -->
       <article class="card" id="lesson" aria-live="polite"></article>
     </div>
@@ -1115,12 +1125,12 @@ button:disabled { cursor:not-allowed; }
   </div>
 </section>
 
-<!-- References & Sources Section -->
+<!-- References &amp; Sources Section -->
 <section id="sources">
   <div class="wrap">
-    <h2>Sources & References</h2>
+    <h2>Sources &amp; References</h2>
     <p class="sub">Curated educational summaries and conceptual overviews prepared for self-study and learning, referencing standard industry methodologies and professional bodies.</p>
-    
+
     <div class="ref-grid">
       <div class="ref-card">
         <div>
@@ -1206,7 +1216,7 @@ button:disabled { cursor:not-allowed; }
       <a href="#sources">Sources</a>
       <a href="#about">About</a>
       <a href="#" onclick="openPortfolioModal(); return false;">Project Overview</a>
-      <a href="https://github.com/Dhananjith1/PM-Academy/blob/main/RIGHTS_AND_ATTRIBUTION.md" target="_blank" rel="noopener noreferrer">Rights & Attribution</a>
+      <a href="https://github.com/Dhananjith1/PM-Academy/blob/main/RIGHTS_AND_ATTRIBUTION.md" target="_blank" rel="noopener noreferrer">Rights &amp; Attribution</a>
       <a href="https://github.com/Dhananjith1/PM-Academy/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">Privacy</a>
     </div>
   </div>
@@ -1221,14 +1231,14 @@ button:disabled { cursor:not-allowed; }
 </footer>
 
 <!-- Portfolio Case Study Modal -->
-<div class="modal-overlay" id="pfModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="pfModalTitle" onclick="closePortfolioModal(event)">
+<div class="modal-overlay" id="pfModal" role="dialog" aria-modal="true" aria-labelledby="pfModalTitle" onclick="closePortfolioModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" type="button" aria-label="Close project overview" onclick="closePortfolioModal()">&times;</button>
     <span class="modal-tag">Project Overview</span>
     <h3 id="pfModalTitle">PM Academy — Background &amp; Educational Purpose</h3>
-    
+
     <div class="case-block">
-      <h4>1. Problem & Purpose</h4>
+      <h4>1. Problem &amp; Purpose</h4>
       <p><b>The Problem:</b> Formal reference standards and comprehensive certification preparation courses can often be lengthy or costly, and learners benefit from a practical, interactive primer connecting delivery governance with everyday tools.</p>
       <p><b>The Purpose:</b> Create an accessible, static educational application with no application backend or JavaScript framework that teaches core project management mechanics, agile practices, EVM mathematics, and tool selection in clear, conversational English.</p>
     </div>
@@ -1242,7 +1252,7 @@ button:disabled { cursor:not-allowed; }
 
     <div class="case-block">
       <h4>3. Key Features</h4>
-      <p>• <b>27 Modular Lessons in 6 Progressive Parts:</b> Covering Foundations, Planning, Risk & Change, Agile Frameworks, PM tool ecosystem (12 tool overviews), and Leadership & Career paths.</p>
+      <p>• <b>27 Modular Lessons in 6 Progressive Parts:</b> Covering Foundations, Planning, Risk &amp; Change, Agile Frameworks, PM tool ecosystem (12 tool overviews), and Leadership &amp; Career paths.</p>
       <p>• <b>Live EVM Mathematical Calculator:</b> Instant recalculation of CV, SV, CPI, SPI, and EAC with automated health interpretations.</p>
       <p>• <b>Interactive Scenario Quiz:</b> 13 scenario-based questions, including a numerical EVM calculation, with explanatory feedback.</p>
       <p>• <b>Instant Glossary Filter:</b> Client-side instant keyword lookup across 35 fundamental PM concepts.</p>
@@ -1272,10 +1282,10 @@ const TL = (n, tg, a) => '<div class="tool"><h4>' + n + '</h4><p class="tg">' + 
 const P = [
   "Part 1 · Foundations",
   "Part 2 · Planning the Work",
-  "Part 3 · Risk & Change",
-  "Part 4 · Methods & Frameworks",
+  "Part 3 · Risk &amp; Change",
+  "Part 4 · Methods &amp; Frameworks",
   "Part 5 · PM Tools",
-  "Part 6 · Leadership & Career"
+  "Part 6 · Leadership &amp; Career"
 ];
 
 /* Complete 27-lesson curriculum with independent educational explanations */
@@ -1296,13 +1306,13 @@ const L = [
   ],
 
   [
-    0, "⏳", "Predictive Process Groups & Project Phases", "#0f766e", "#115e59",
-    H("The Five Process Groups (Predictive Model)", F(["Initiating", "Planning", "Executing", "Monitoring & Controlling", "Closing"])) +
+    0, "⏳", "Predictive Process Groups &amp; Project Phases", "#0f766e", "#115e59",
+    H("The Five Process Groups (Predictive Model)", F(["Initiating", "Planning", "Executing", "Monitoring &amp; Controlling", "Closing"])) +
     U([
       "<b>Initiating:</b> Clarifying the fundamental business problem or opportunity, gaining executive authorization (Charter), and identifying key participants.",
       "<b>Planning:</b> Crafting the strategic roadmap—defining deliverables, scheduling milestones, estimating budgets, and preparing risk mitigation plans.",
       "<b>Executing:</b> Mobilizing the team, coordinating resources, and actively building the agreed deliverables.",
-      "<b>Monitoring & Controlling:</b> Continually comparing actual delivery against baseline plans, identifying variances, and steering course corrections when issues arise.",
+      "<b>Monitoring &amp; Controlling:</b> Continually comparing actual delivery against baseline plans, identifying variances, and steering course corrections when issues arise.",
       "<b>Closing:</b> Securing client sign-off, smoothly transitioning deliverables to operational teams, closing vendor accounts, and cataloging lessons learned."
     ]) +
     H("Delivery Phases vs Management Process Groups", "<p><b>Project phases</b> are context-specific stages of work (such as Discovery, Design, Build, Test, and Deploy). The five <b>process groups</b> are a process-management model commonly used for predictive project management; they are not mandatory chronological phases and should be tailored to the project context.</p>") +
@@ -1310,7 +1320,7 @@ const L = [
   ],
 
   [
-    0, "💼", "Business Case & Project Selection", "#1d4ed8", "#1e40af",
+    0, "💼", "Business Case &amp; Project Selection", "#1d4ed8", "#1e40af",
     H("Why Do Initiatives Get Approved?", U([
       "<b>Market Opportunity:</b> Capturing new revenue or entering an emerging customer segment.",
       "<b>Operational Necessity:</b> Modernizing an outdated system that is slowing company operations.",
@@ -1326,7 +1336,7 @@ const L = [
     H("A Common Feasibility Checklist (TELOS)", C([
       ["Technical", "Do we possess the engineering tools and expertise to build this solution?"],
       ["Economic", "Does the projected financial return or cost savings justify the upfront expenditure?"],
-      ["Legal & Ethical", "Does the deliverable conform to all applicable regulations, privacy laws, and ethical standards?"],
+      ["Legal &amp; Ethical", "Does the deliverable conform to all applicable regulations, privacy laws, and ethical standards?"],
       ["Operational", "Will internal teams and target end-users adopt and maintain the finished product?"],
       ["Schedule", "Can we complete the initiative within the necessary market or operational window?"]
     ])) +
@@ -1336,7 +1346,7 @@ const L = [
   ],
 
   [
-    0, "📋", "Project Management Plan & Baselines", "#4338ca", "#3730a3",
+    0, "📋", "Project Management Plan &amp; Baselines", "#4338ca", "#3730a3",
     H("The Role of Integration", "<p><b>Project Integration</b> is the discipline of keeping every moving part—scope, schedules, budgets, and communication—synchronized so the project functions as a unified effort rather than disconnected silos.</p>") +
     H("Building Blocks of the Project Plan", C([
       ["Subsidiary Plans", "Specific roadmaps for managing scope, schedule, budget, quality, resources, communication, and risk."],
@@ -1358,7 +1368,7 @@ const L = [
   ],
 
   [
-    0, "🔺", "The Triple Constraint & Defining Success", "#9a3412", "#c2410c",
+    0, "🔺", "The Triple Constraint &amp; Defining Success", "#9a3412", "#c2410c",
     H("The Classic Iron Triangle", C([
       ["📦 Scope", "The specific features and deliverable boundary defined for the project."],
       ["📅 Schedule", "The agreed calendar timeline and milestone deadlines."],
@@ -1374,7 +1384,7 @@ const L = [
   ],
 
   [
-    0, "👥", "Key Roles & Organizational Structures", "#0f766e", "#115e59",
+    0, "👥", "Key Roles &amp; Organizational Structures", "#0f766e", "#115e59",
     H("Primary Project Roles", C([
       ["Project Manager", "Guides team execution, manages stakeholder alignment, and is accountable for overall delivery results."],
       ["Project Sponsor", "Senior executive champion who authorizes the charter, secures capital, and resolves high-level escalations."],
@@ -1391,9 +1401,9 @@ const L = [
   ],
 
   [
-    0, "🤝", "Stakeholder Engagement & Management", "#7c3aed", "#9333ea",
+    0, "🤝", "Stakeholder Engagement &amp; Management", "#7c3aed", "#9333ea",
     H("Who Qualifies as a Stakeholder?", "<p>A <b>stakeholder</b> is any individual, group, or organization that can positively or negatively affect, or be affected by, the project's activities or deliverables.</p>") +
-    H("4-Phase Engagement Lifecycle", F(["Identify Stakeholders", "Analyze Power & Interest", "Formulate Engagement Strategy", "Continuously Monitor"])) +
+    H("4-Phase Engagement Lifecycle", F(["Identify Stakeholders", "Analyze Power &amp; Interest", "Formulate Engagement Strategy", "Continuously Monitor"])) +
     H("Power / Interest Matrix", C([
       ["High Power, High Interest", "Manage Closely: Consult actively and involve in critical project decisions."],
       ["High Power, Low Interest", "Keep Satisfied: Fulfill expectations without overwhelming with daily trivia."],
@@ -1405,7 +1415,7 @@ const L = [
 
   /* Part 2 · Planning the Work */
   [
-    1, "📦", "Scope Definition & the WBS", "#1d4ed8", "#2563eb",
+    1, "📦", "Scope Definition &amp; the WBS", "#1d4ed8", "#2563eb",
     H("What is Scope?", "<p><b>Project Scope</b> encompasses all the work required to produce the agreed deliverable—and explicitly identifies what work is out of bounds.</p>") +
     H("5 Steps in Managing Scope", F(["Capture Requirements", "Define Scope Boundaries", "Construct WBS", "Validate Deliverables", "Control Adjustments"])) +
     H("The Work Breakdown Structure (WBS)", "<p>A hierarchical decomposition breaking down a complex initiative into smaller, more manageable elements. The terminal, lowest-level elements are termed <b>Work Packages</b>.</p>") +
@@ -1419,7 +1429,7 @@ const L = [
   ],
 
   [
-    1, "📅", "Scheduling: CPM, Critical Path & Gantt", "#be123c", "#e11d48",
+    1, "📅", "Scheduling: CPM, Critical Path &amp; Gantt", "#be123c", "#e11d48",
     H("Building a Dependable Schedule", F(["Identify Activities", "Sequence Dependencies", "Estimate Time", "Build Schedule", "Monitor Progress"])) +
     H("Common Task Dependency Relationships", U([
       "<b>Finish-to-Start (FS):</b> Task B cannot begin until Task A has completed (the most common sequence).",
@@ -1439,7 +1449,7 @@ const L = [
   ],
 
   [
-    1, "💰", "Budgeting & Earned Value (EVM)", "#0f766e", "#047857",
+    1, "💰", "Budgeting &amp; Earned Value (EVM)", "#0f766e", "#047857",
     H("Estimation Approaches", U([
       "<b>Analogous (Top-Down):</b> Using costs from a similar past project as a quick benchmark.",
       "<b>Parametric:</b> Multiplying unit metrics by historical rates (e.g., cost per square foot or cost per line of code).",
@@ -1451,7 +1461,7 @@ const L = [
       ["AC (Actual Cost)", "The total realized expenses incurred in doing the completed work."],
       ["BAC (Budget at Completion)", "The approved total baseline budget for the whole initiative."]
     ])) +
-    H("Formulas & Status Diagnosis", "<span class='fm'>Cost Variance (CV) = EV − AC &nbsp;|&nbsp; Schedule Variance (SV) = EV − PV<br>Cost Performance Index (CPI) = EV ÷ AC &nbsp;|&nbsp; Schedule Performance Index (SPI) = EV ÷ PV<br>Estimate at Completion (EAC) = BAC ÷ CPI</span><p>An index <b>greater than 1.0 is favorable</b>; below 1.0 indicates an unfavorable variance. CV and SV are expressed in the project's budget currency; <b>SV is not a number of calendar days</b>. The EAC formula shown assumes current cost efficiency (CPI) continues for the remaining work. Other EAC formulas may be appropriate when future performance is expected to differ.</p>") +
+    H("Formulas &amp; Status Diagnosis", "<span class='fm'>Cost Variance (CV) = EV − AC &nbsp;|&nbsp; Schedule Variance (SV) = EV − PV<br>Cost Performance Index (CPI) = EV ÷ AC &nbsp;|&nbsp; Schedule Performance Index (SPI) = EV ÷ PV<br>Estimate at Completion (EAC) = BAC ÷ CPI</span><p>An index <b>greater than 1.0 is favorable</b>; below 1.0 indicates an unfavorable variance. CV and SV are expressed in the project's budget currency; <b>SV is not a number of calendar days</b>. The EAC formula shown assumes current cost efficiency (CPI) continues for the remaining work. Other EAC formulas may be appropriate when future performance is expected to differ.</p>") +
     H("Interactive EVM Calculator", '<div class="calc"><div><label for="e1">BAC ($)</label><input id="e1" type="number" min="0" step="any" inputmode="decimal" value="100000" aria-label="Budget at Completion"></div><div><label for="e2">PV ($)</label><input id="e2" type="number" min="0" step="any" inputmode="decimal" value="40000" aria-label="Planned Value"></div><div><label for="e3">EV ($)</label><input id="e3" type="number" min="0" step="any" inputmode="decimal" value="35000" aria-label="Earned Value"></div><div><label for="e4">AC ($)</label><input id="e4" type="number" min="0" step="any" inputmode="decimal" value="45000" aria-label="Actual Cost"></div></div><div id="eo" class="tip" aria-live="polite" aria-atomic="true"></div>')
   ],
 
@@ -1471,7 +1481,7 @@ const L = [
   ],
 
   [
-    1, "🧑‍🤝‍🧑", "Team Dynamics & Resource Management", "#4338ca", "#4f46e5",
+    1, "🧑‍🤝‍🧑", "Team Dynamics &amp; Resource Management", "#4338ca", "#4f46e5",
     H("Tuckman's Team Development Model (One Useful Lens)", F(["Forming", "Storming", "Norming", "Performing", "Adjourning"])) +
     U([
       "<b>Forming:</b> Team members meet, maintain polite interactions, and explore initial roles.",
@@ -1507,11 +1517,11 @@ const L = [
     T("A comprehensive Communications Plan documents: Who needs what information, when they need it, in what format, and through which specific channel.")
   ],
 
-  /* Part 3 · Risk & Change */
+  /* Part 3 · Risk &amp; Change */
   [
-    2, "⚠️", "Risk Management & Analysis", "#c2410c", "#b45309",
+    2, "⚠️", "Risk Management &amp; Analysis", "#c2410c", "#b45309",
     H("Differentiating Risks from Issues", "<p>A <b>risk</b> is an uncertain future event that, if it occurs, could positively or negatively impact project goals. An <b>issue</b> has already occurred and is actively affecting progress today.</p>") +
-    H("The Risk Management Flow", F(["Plan Approach", "Identify Uncertainties", "Assess Probability & Impact", "Formulate Responses", "Monitor & Review"])) +
+    H("The Risk Management Flow", F(["Plan Approach", "Identify Uncertainties", "Assess Probability &amp; Impact", "Formulate Responses", "Monitor &amp; Review"])) +
     H("Qualitative vs Quantitative Assessment", U([
       "<b>Qualitative Assessment:</b> Evaluating probability and severity on a subjective scale (Low, Medium, High) to categorize risks on a Probability-Impact matrix.",
       "<b>Quantitative Assessment:</b> Calculating numerical financial impacts using statistical modeling or Expected Monetary Value (EMV)."
@@ -1528,20 +1538,20 @@ const L = [
   ],
 
   [
-    2, "🔄", "Change Control & Contract Types", "#991b1b", "#b91c1c",
+    2, "🔄", "Change Control &amp; Contract Types", "#991b1b", "#b91c1c",
     H("The Integrated Change Control Workflow", F(["Change Proposed", "Evaluate Impact (Scope, Cost, Time)", "Review by CCB", "Decision Recorded", "Baselines Updated", "Team Briefed"])) +
     "<p>Where the governance approach establishes one, the <b>Change Control Board (CCB)</b> reviews proposed changes and may approve, reject, defer, or request further analysis. In other projects, the designated sponsor, product owner, change authority, or another authorized decision-maker may perform this role.</p>" +
     H("Standard Procurement Contract Structures", C([
       ["Fixed Price (FP)", "The price is set for the agreed scope and contract terms. The supplier generally bears more cost-overrun risk when scope and assumptions remain stable; approved changes and contract clauses can shift risk."],
       ["Cost-Reimbursable (CR)", "The buyer reimburses allowable costs under the contract and pays the agreed fee. The buyer generally has more exposure to cost growth, so controls, audits, and an appropriate fee structure matter."],
-      ["Time & Materials (T&M)", "Payment uses agreed labour rates and material charges. It can suit work whose detailed scope is still emerging, but the buyer should monitor consumption and consider ceilings or controls."]
+      ["Time &amp; Materials (T&M)", "Payment uses agreed labour rates and material charges. It can suit work whose detailed scope is still emerging, but the buyer should monitor consumption and consider ceilings or controls."]
     ])) +
     T("Do not commit to a baseline change until it has been assessed and approved through the project's agreed change-control process. A chat message may record or request a change, but it is not automatically an approval unless the governance rules say so.")
   ],
 
-  /* Part 4 · Methods & Frameworks */
+  /* Part 4 · Methods &amp; Frameworks */
   [
-    3, "🛠️", "Waterfall, Agile & Hybrid Approaches", "#4338ca", "#3730a3",
+    3, "🛠️", "Waterfall, Agile &amp; Hybrid Approaches", "#4338ca", "#3730a3",
     H("Methodological Paradigms", C([
       ["Predictive", "Plans scope, sequence, estimates, and controls in more detail up front, then manages delivery against an agreed baseline. It can suit work with relatively stable requirements or strong assurance needs; review and validation should still occur throughout."],
       ["Adaptive (Agile)", "Uses iterative and incremental delivery, frequent feedback, and reprioritization as learning develops. Specific practices depend on the framework and team."],
@@ -1561,7 +1571,7 @@ const L = [
   ],
 
   [
-    3, "🏉", "Scrum Framework & Kanban Systems", "#0f766e", "#115e59",
+    3, "🏉", "Scrum Framework &amp; Kanban Systems", "#0f766e", "#115e59",
     H("The Scrum Delivery Model", C([
       ["Accountabilities", "The Scrum Team consists of a <b>Product Owner</b> (accountable for maximizing product value and effective Product Backlog management), a <b>Scrum Master</b> (accountable for establishing Scrum and improving team effectiveness), and <b>Developers</b> (accountable for creating a usable Increment each Sprint)."],
       ["Sprint and Events", "A <b>Sprint</b> is a fixed-length event of one month or less. It contains Sprint Planning, Daily Scrum, Sprint Review, and Sprint Retrospective. The <b>Daily Scrum</b> is a 15-minute event for Developers to inspect progress toward the Sprint Goal and adapt the plan."],
@@ -1595,20 +1605,20 @@ const L = [
 
   /* Part 5 · PM Tools */
   [
-    4, "🧰", "PM Tools: Ecosystem & Selection", "#2563eb", "#1d4ed8",
+    4, "🧰", "PM Tools: Ecosystem &amp; Selection", "#2563eb", "#1d4ed8",
     H("The Purpose of Software Tools", "<p><b>Software does not manage projects; people do.</b> Project tools provide centralized visibility, automate reminders, and streamline coordination, but they cannot replace clear communication or resolve conflicting requirements.</p>") +
     H("Six Common Project-Management Tool Categories", C([
-      ["Work Management & Boards", "Visual cards progressing across status lists: Trello, Asana, Monday.com, ClickUp."],
-      ["Gantt & Critical Path", "Timeline networks with dependency links: Microsoft Project, Primavera P6, Smartsheet."],
-      ["Issue & Sprint Tracking", "Backlogs, story points, and bug triage: Jira."],
-      ["Spreadsheets & Workbooks", "Calculations, trackers, formulas, and custom matrices: Excel, Google Sheets."],
-      ["Knowledge & Documentation", "Central repositories for charters, meeting notes, and SOPs: Notion, Confluence."],
+      ["Work Management &amp; Boards", "Visual cards progressing across status lists: Trello, Asana, Monday.com, ClickUp."],
+      ["Gantt &amp; Critical Path", "Timeline networks with dependency links: Microsoft Project, Primavera P6, Smartsheet."],
+      ["Issue &amp; Sprint Tracking", "Backlogs, story points, and bug triage: Jira."],
+      ["Spreadsheets &amp; Workbooks", "Calculations, trackers, formulas, and custom matrices: Excel, Google Sheets."],
+      ["Knowledge &amp; Documentation", "Central repositories for charters, meeting notes, and SOPs: Notion, Confluence."],
       ["Communication Hubs", "Synchronous messaging and video meetings: Slack, Microsoft Teams, Zoom."]
     ]))
   ],
 
   [
-    4, "📋", "Tools Part A: Boards & Work Management", "#0369a1", "#075985",
+    4, "📋", "Tools Part A: Boards &amp; Work Management", "#0369a1", "#075985",
     TL("1. Trello", "Visual Kanban Boards (Atlassian)", [
       "<b>Best For:</b> Small teams, beginners, personal projects, and simple visual workflows.",
       "<b>Mechanism:</b> Drag-and-drop cards moving across vertical lists (To Do, Doing, Done).",
@@ -1639,25 +1649,25 @@ const L = [
   ],
 
   [
-    4, "⚙️", "Tools Part B: Software, Scheduling & Enterprise", "#0f766e", "#047857",
-    TL("6. Jira", "Software & Agile Tracking (Atlassian)", [
+    4, "⚙️", "Tools Part B: Software, Scheduling &amp; Enterprise", "#0f766e", "#047857",
+    TL("6. Jira", "Software &amp; Agile Tracking (Atlassian)", [
       "<b>Best For:</b> Engineering, DevOps, and digital product teams utilizing Scrum or Kanban.",
       "<b>Mechanism:</b> Epics, stories, and bugs prioritized in backlogs and managed through sprints.",
       "<b>Strengths:</b> Backlogs, configurable workflows, Scrum/Kanban boards, reports, and integrations can support software delivery; exact capabilities depend on configuration and plan. Jira is widely used in software teams.",
       "<b>Limitations:</b> Often feels rigid, complex, and overly technical for non-software departments."
     ]) +
-    TL("7. Microsoft Project", "Project Planning & Scheduling Tool", [
+    TL("7. Microsoft Project", "Project Planning &amp; Scheduling Tool", [
       "<b>Best For:</b> Professional schedulers managing large, sequential engineering and construction initiatives.",
       "<b>Mechanism:</b> Rigorous activity sequencing, dependency types (FS, SS, FF, SF), and resource leveling.",
       "<b>Strengths:</b> Scheduling features can include task dependencies, baselines, resource planning, and critical-path analysis, depending on the current Project product and configuration.",
       "<b>Limitations:</b> Detailed scheduling tools can require training and may be more than lightweight team workflows need."
     ]) +
     TL("8. Oracle Primavera P6", "Enterprise Project Portfolio Scheduling Tool", [
-      "<b>Best For:</b> Heavy civil engineering, energy, oil & gas, and defense programs.",
+      "<b>Best For:</b> Heavy civil engineering, energy, oil &amp; gas, and defense programs.",
       "<b>Strengths:</b> Designed for planning, scheduling, tracking, and managing complex projects and portfolios across teams and resources.",
       "<b>Limitations:</b> Specialist configuration, training, and administration may be required; check current licensing and deployment options with the vendor."
     ]) +
-    TL("9. Smartsheet", "Cloud Spreadsheet & Gantt Platform", [
+    TL("9. Smartsheet", "Cloud Spreadsheet &amp; Gantt Platform", [
       "<b>Best For:</b> Corporate teams comfortable with spreadsheets who require automated workflow rules.",
       "<b>Strengths:</b> Combines a grid-based workspace with timeline, Gantt, forms, and reporting functions where supported by the selected plan.",
       "<b>Limitations:</b> Check the current plan for required dependencies, automation, and collaboration features; suitability for Agile work depends on how the team configures it."
@@ -1665,14 +1675,14 @@ const L = [
   ],
 
   [
-    4, "📊", "Tools Part C: Everyday Essentials & Collaboration", "#c2410c", "#9a3412",
-    TL("10. Microsoft Excel & Google Sheets", "Flexible Spreadsheet Tools", [
+    4, "📊", "Tools Part C: Everyday Essentials &amp; Collaboration", "#c2410c", "#9a3412",
+    TL("10. Microsoft Excel &amp; Google Sheets", "Flexible Spreadsheet Tools", [
       "<b>Best For:</b> Many teams that need flexible trackers, calculations, simple schedules, or status reporting.",
       "<b>Applications:</b> Budgets, EVM tracking, risk registers, RACI matrices, milestone schedules.",
       "<b>Strengths:</b> Flexible formulas and widely familiar spreadsheet concepts can support trackers and analysis; Google Sheets also supports collaboration when configured appropriately.",
       "<b>Limitations:</b> Manual maintenance, vulnerability to broken formulas, lack of native task dependency logic."
     ]) +
-    TL("11. Notion", "Connected Workspace & Modular Databases", [
+    TL("11. Notion", "Connected Workspace &amp; Modular Databases", [
       "<b>Best For:</b> Startups, digital agencies, and teams needing documents and simple roadmaps in one hub.",
       "<b>Strengths:</b> Flexible pages, databases, and connected documentation can support knowledge management and lightweight tracking.",
       "<b>Limitations:</b> A knowledge workspace may need a specialist scheduling tool when rigorous critical-path or resource-leveling analysis is required."
@@ -1682,11 +1692,11 @@ const L = [
       "<b>Strengths:</b> Message boards, task lists, schedules, and shared documents can support asynchronous team coordination.",
       "<b>Limitations:</b> Teams needing detailed dependency-based schedules, earned-value controls, or advanced resource analysis may need a specialist tool alongside it."
     ]) +
-    H("Supporting Communication Tools", "<p><b>Slack & Microsoft Teams</b> for real-time collaboration; <b>Zoom & Google Meet</b> for synchronous discussions; <b>Miro & Mural</b> for virtual whiteboarding and sprint retrospectives.</p>")
+    H("Supporting Communication Tools", "<p><b>Slack &amp; Microsoft Teams</b> for real-time collaboration; <b>Zoom &amp; Google Meet</b> for synchronous discussions; <b>Miro &amp; Mural</b> for virtual whiteboarding and sprint retrospectives.</p>")
   ],
 
   [
-    4, "🎯", "Tool Strategy & Essential Templates", "#4338ca", "#3730a3",
+    4, "🎯", "Tool Strategy &amp; Essential Templates", "#4338ca", "#3730a3",
     H("Guidelines for Tool Selection", U([
       "<b>Match Methodology:</b> Choose Jira or Trello for agile flow; choose MS Project or Smartsheet for formal schedules.",
       "<b>Prioritize Team Adoption:</b> A simple tool adopted by 100% of the team beats a sophisticated tool used by nobody.",
@@ -1696,7 +1706,7 @@ const L = [
     H("Example of a Lightweight Starter Toolset", "<p>A spreadsheet for budget and EVM tracking, a visual board for work status, a meeting or messaging tool, and a shared document repository. Product capabilities and free-plan limits change, so check current vendor terms before selecting a stack.</p>") +
     H("Eight Common Project Artifacts", C([
       ["1. Project Charter", "High-level authority document establishing business purpose, scope boundaries, and PM mandate."],
-      ["2. Scope Statement & WBS", "Detailed decomposition outlining what is included and what is explicitly excluded."],
+      ["2. Scope Statement &amp; WBS", "Detailed decomposition outlining what is included and what is explicitly excluded."],
       ["3. Schedule / Gantt", "Sequenced activities, milestones, and critical path timeline."],
       ["4. RACI Matrix", "A responsibility-assignment matrix clarifying who is Responsible, Accountable, Consulted, and Informed for defined activities."],
       ["5. Risk Register", "Inventory of identified uncertainties, probability-impact ratings, response plans, and owners."],
@@ -1706,9 +1716,9 @@ const L = [
     ]))
   ],
 
-  /* Part 6 · Leadership & Career */
+  /* Part 6 · Leadership &amp; Career */
   [
-    5, "🌟", "Leadership, Soft Skills & Professional Ethics", "#7c3aed", "#6d28d9",
+    5, "🌟", "Leadership, Soft Skills &amp; Professional Ethics", "#7c3aed", "#6d28d9",
     H("Management vs Leadership", "<p><b>Management</b> focuses on order, planning, budgeting, staffing, and controlling activities against a plan. <b>Leadership</b> focuses on setting direction, aligning stakeholders, inspiring teams, and navigating change.</p>") +
     H("Servant Leadership in Modern PM", "<p>A leadership philosophy wherein the PM's primary role is serving the team: removing impediments, shielding the team from external distractions, mentoring growth, and providing resources to empower autonomous delivery.</p>") +
     H("Core Soft Skills for Successful PMs", U([
@@ -1726,7 +1736,7 @@ const L = [
   ],
 
   [
-    5, "💼", "The Real PM Job: Weekly Cadence & Interviews", "#0f766e", "#047857",
+    5, "💼", "The Real PM Job: Weekly Cadence &amp; Interviews", "#0f766e", "#047857",
     H("A Realistic PM Weekly Routine", U([
       "<b>Frequently, as appropriate:</b> Review progress and blockers using the team's agreed check-in or asynchronous update. In Scrum, Developers are responsible for the Daily Scrum; it is not a generic PM-led stand-up.",
       "<b>At agreed reporting intervals:</b> Update the schedule or delivery forecast, review cost and EVM data when applicable, update risk and issue logs, and communicate status.",
@@ -1744,27 +1754,27 @@ const L = [
   ],
 
   [
-    5, "🏁", "Project Closing & Lessons Learned", "#334155", "#1e293b",
-    H("The 5 Steps of Formal Project Closing", F(["Deliverable Acceptance", "Procurement Closure", "Administrative Closeout", "Lessons Learned Session", "Resource Release & Celebration"])) +
+    5, "🏁", "Project Closing &amp; Lessons Learned", "#334155", "#1e293b",
+    H("The 5 Steps of Formal Project Closing", F(["Deliverable Acceptance", "Procurement Closure", "Administrative Closeout", "Lessons Learned Session", "Resource Release &amp; Celebration"])) +
     H("Key Closure Activities", U([
       "<b>Formal Sign-Off:</b> Secure formal written acceptance from the customer or project sponsor certifying deliverables meet criteria.",
       "<b>Operational Handover:</b> Transfer deliverables to operational teams, complete documentation, and provide training.",
       "<b>Contract Closure:</b> Audit vendor deliverables, settle outstanding invoices, and formally close procurement contracts.",
       "<b>Lessons Learned Review:</b> Capture and share what worked, what did not, why, and what should change in future work. A Scrum Sprint Retrospective is a distinct recurring Scrum event; it is not a universal synonym for project closure.",
       "<b>Archive Records:</b> Securely store final budgets, schedules, contracts, and registers in the corporate knowledge base.",
-      "<b>Release & Celebrate:</b> Formally release team members and celebrate accomplishments."
+      "<b>Release &amp; Celebrate:</b> Formally release team members and celebrate accomplishments."
     ]))
   ],
 
   [
-    5, "🏆", "Careers, Standards & Certification Pathways", "#92400e", "#78350f",
-    H("Understanding PM Standards & Credential Pathways", "<p>Professional standards and credentials provide structured frameworks and shared terminology across global industries:</p>" +
+    5, "🏆", "Careers, Standards &amp; Certification Pathways", "#92400e", "#78350f",
+    H("Understanding PM Standards &amp; Credential Pathways", "<p>Professional standards and credentials provide structured frameworks and shared terminology across global industries:</p>" +
       U([
         "<b><i>PMBOK® Guide</i> (PMI):</b> Globally recognized body of knowledge. The Seventh Edition presented 12 project-management principles and 8 performance domains. The Eighth Edition (published November 2025) has 6 core principles and 7 performance domains, with expanded coverage of AI, PMOs, and procurement and evolved, non-prescriptive process guidance.",
-        "<b>Process Groups: A Practice Guide:</b> Retains the operational models across Initiating, Planning, Executing, Monitoring & Controlling, and Closing for teams managing predictive and hybrid lifecycles.",
+        "<b>Process Groups: A Practice Guide:</b> Retains the operational models across Initiating, Planning, Executing, Monitoring &amp; Controlling, and Closing for teams managing predictive and hybrid lifecycles.",
         "<b>Agile and Hybrid Approaches:</b> Summarizes iterative Scrum events, Kanban's general practices, and selected ways organizations combine adaptive delivery with predictive governance. These are frameworks and practices, not a single universal standard."
       ])) +
-    H("PMP® Certification: 2026 Requirements & Exam", C([
+    H("PMP® Certification: 2026 Requirements &amp; Exam", C([
       ["Education and Experience Pathways", "<b>Upper-secondary / secondary completion (EQF 4 / ISCED 3–4 or national equivalent):</b> 60 months (5 years).<br><b>Recognized associate-level, higher-certificate, or advanced technical/vocational qualification (EQF 5 / ISCED 5 or national equivalent):</b> 48 months (4 years).<br><b>Recognized bachelor's degree or higher (or formally bachelor-equivalent EQF 6 / ISCED 6 qualification):</b> 36 months (3 years).<br><b>Bachelor's or postgraduate degree from a PMI GAC-accredited program:</b> 24 months (2 years).<br>Experience must involve leading projects in a professional setting, be within the <b>10 years</b> before application, and be counted as non-overlapping months. PMI may require evidence of qualification-level mapping during an audit."],
       ["Project Management Training", "The July 2026 PMI Exam Content Outline requires at least <b>35 hours of commercial project-management training</b> aligned with the outline. An active CAPM® certification provides a 35-hour credit. Training must meet PMI's current eligibility and quality rules. From <b>1 December 2026</b>, live instructor-led training hours will count only when delivered by a PMI Authorized Training Partner, China Registered Education Provider, or eligible accredited academic program (including PMI GAC programs). PMI says self-paced on-demand courses can be from any organization when they include an end-of-course assessment. Verify current requirements with PMI before applying."],
       ["July 2026 Exam Blueprint", "The published domain weights are <b>People (33%)</b>, <b>Process (41%)</b>, and <b>Business Environment (26%)</b>. The exam contains <b>180 questions: 170 scored and 10 unscored pretest questions</b>, with <b>240 minutes</b> allotted and two scheduled 10-minute breaks. PMI describes an approximate mix of <b>40% predictive</b> and <b>60% adaptive/agile and hybrid</b> items across the domains. Question types include scenario/case questions, single- and multiple-response, matching, and graphic-based items; some interactive types depend on delivery mode."],
@@ -1935,7 +1945,7 @@ const N = L.length;
 if ($("st-lessons")) $("st-lessons").textContent = N;
 if ($("st-parts")) $("st-parts").textContent = P.length;
 
-/* Render Navigation & Current Lesson */
+/* Render Navigation &amp; Current Lesson */
 function shuffleOptions(options) {
   const shuffled = [...options];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -1985,10 +1995,8 @@ function render() {
   $("pt").textContent = `${done.size} of ${N} completed`;
   const pct = Math.round((done.size * 100) / N);
   $("pt-pct").textContent = `${pct}%`;
-  $("pb").style.width = `${pct}%`;
-  const progressBar = $("pb").parentElement;
-  progressBar.setAttribute("aria-valuenow", String(done.size));
-  progressBar.setAttribute("aria-valuetext", `${done.size} of ${N} lessons completed`);
+  $("pb").value = done.size;
+  $("pb").setAttribute("aria-valuetext", `${done.size} of ${N} lessons completed`);
 
   // Attach EVM Calculator Listeners if on EVM lesson
   if ($("e1")) {
@@ -2096,7 +2104,7 @@ function quiz(moveFocus = false) {
     btn.onclick = () => {
       const selected = btn.getAttribute("data-val");
       const isCorrect = selected === q.a;
-      
+
       // Disable options and apply classes
       document.querySelectorAll(".q button.o").forEach(b => {
         b.disabled = true;
@@ -2138,7 +2146,6 @@ function openPortfolioModal() {
   if ($("pfModal").classList.contains("active")) return;
   lastFocusedElement = document.activeElement;
   $("pfModal").classList.add("active");
-  $("pfModal").setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
   setBackgroundInert(true);
   const closeButton = $("pfModal").querySelector(".modal-close");
@@ -2148,7 +2155,6 @@ function closePortfolioModal(e) {
   if (e && e.target !== e.currentTarget) return;
   if (!$("pfModal").classList.contains("active")) return;
   $("pfModal").classList.remove("active");
-  $("pfModal").setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
   setBackgroundInert(false);
   if (lastFocusedElement && typeof lastFocusedElement.focus === "function") lastFocusedElement.focus();

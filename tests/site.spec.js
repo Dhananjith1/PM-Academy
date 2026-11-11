@@ -39,7 +39,8 @@ test('lesson navigation, progress semantics and persistence work', async ({ page
   await expect(page.locator('#lesson-title')).toContainText('Predictive Process Groups');
   await page.getByRole('button', { name: /Mark as Completed/ }).click();
   await expect(page.locator('#pt')).toHaveText('1 of 27 completed');
-  await expect(page.locator('.bar')).toHaveAttribute('aria-valuenow', '1');
+  await expect(page.locator('#pb')).toHaveJSProperty('value', 1);
+  await expect(page.locator('#pb')).toHaveAttribute('aria-valuetext', '1 of 27 lessons completed');
   await page.reload();
   await expect(page.locator('#pt')).toHaveText('1 of 27 completed');
 });
@@ -87,7 +88,7 @@ test('project overview modal traps focus, closes on Escape and restores focus', 
   await page.keyboard.press('Tab');
   await expect(close).toBeFocused();
   await page.keyboard.press('Escape');
-  await expect(modal).toHaveAttribute('aria-hidden', 'true');
+  await expect(modal).not.toHaveClass(/active/);
   await expect(trigger).toBeFocused();
 });
 
