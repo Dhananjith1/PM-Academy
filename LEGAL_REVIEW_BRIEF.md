@@ -37,6 +37,9 @@ Policies provided for review:
 - PeopleCert: https://www.peoplecert.org/-/media/folders-reorganized/legal-documents/qmepo13-marks-usage-policy.pdf
 - Atlassian: https://www.atlassian.com/legal/trademark
 - Scaled Agile: https://scaledagile.com/digital-badging-usage-restrictions/
+- Scaled Agile Content Usage FAQ: https://support.scaledagile.com/en/articles/9791354-general-content-usage-faqs-and-the-permission-request-form
+
+Please also review SAFe® and Scaled Agile Framework® as Scaled Agile, Inc. registered trademarks and its content-use restrictions. The project has added a source link and owner attribution, but this does not establish permission for any proprietary content.
 
 ### C. Copyright, AI assistance and source material
 Please review:
