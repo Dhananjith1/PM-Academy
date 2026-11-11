@@ -56,4 +56,4 @@ For a minor project owner, a parent/guardian or responsible adult should coordin
 - The current page's social-preview image metadata has been removed rather than relying on an unverified older graphic.
 - The repository slug and published URL remain historical technical identifiers, not a trademark-availability statement.
 
-**Status:** Preliminary risk mitigation only. Trademark clearance remains outstanding.
+**Status:** Preliminary risk mitigation only. Trademark clearance remains outstanding. See [LEGAL_REVIEW_BRIEF.md](LEGAL_REVIEW_BRIEF.md) for the topics prepared for a qualified professional review.
