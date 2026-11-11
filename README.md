@@ -1,12 +1,14 @@
-# PM Academy — Project Management, Made Simple
+# Independent Project Management Study Resource
 
 **Live website:** https://dhananjith1.github.io/PM-Academy/  
 **Repository:** https://github.com/Dhananjith1/PM-Academy  
 **Content review:** 11 November 2026
 
-PM Academy is an independent, free-to-access learning resource for people exploring project management. It provides concise educational explanations, practical examples, and lightweight interactive learning activities. The project was developed with AI-assisted front-end work and is hosted as a static GitHub Pages site.
+**Public title:** Project Management Study Resource. The legacy GitHub repository slug and Pages path are retained for link continuity; they are technical identifiers, not a claim that the former name is available or cleared.
 
-> PM Academy is an introductory educational resource. It is not affiliated with, endorsed by, sponsored by, or an official training, accreditation, or certification provider of PMI, PeopleCert, Scrum.org, Atlassian, or any other organization. It does not issue credentials.
+This is an independent, free-to-access learning resource for people exploring project management. It provides concise educational explanations, practical examples, and lightweight interactive learning activities. The project was developed with AI-assisted front-end work and is hosted as a static GitHub Pages site.
+
+> This website is an introductory educational resource. It is not affiliated with, endorsed by, sponsored by, or an official training, accreditation, or certification provider of PMI, PeopleCert, Scrum.org, Atlassian, or any other organization. It does not issue credentials.
 
 ## Features
 
@@ -66,7 +68,7 @@ The curriculum is an independent educational summary, not a reproduction of prop
 
 PMI®, PMP®, CAPM®, PMI-ACP®, and the *PMBOK® Guide* are marks of Project Management Institute, Inc. PRINCE2® is a registered trademark of PeopleCert group. Jira and Trello are trademarks of Atlassian. These names identify relevant products and methods only.
 
-The Scrum Guide is published under Creative Commons Attribution-ShareAlike 4.0. PM Academy links to the official Guide and presents independent summaries; see the licence before reproducing or adapting its text.
+The Scrum Guide is published under Creative Commons Attribution-ShareAlike 4.0. The website links to the official Guide and presents independent summaries; see the licence before reproducing or adapting its text.
 
 ## Privacy
 
@@ -74,8 +76,8 @@ Lesson completion IDs are stored in the current browser. The site uses local bro
 
 ## Validation and limitations
 
-A previous local Chromium smoke test checked page initialization, glossary search, EVM calculations and invalid-input handling, the 13-question quiz flow, modal Escape-key handling, and a 390px mobile viewport. GitHub Actions now runs HTML validation, Playwright checks across Chromium, Firefox, WebKit and a mobile viewport, and axe-core scans for selected WCAG 2.2 AA rules. Automated checks do not establish full WCAG conformance, and this is not a manual screen-reader/real-device audit. This source/content review is not a legal opinion or trademark clearance. See [VALIDATION_REPORT.md](VALIDATION_REPORT.md).
+A previous local Chromium smoke test checked page initialization, glossary search, EVM calculations and invalid-input handling, the 13-question quiz flow, modal Escape-key handling, and a 390px mobile viewport. GitHub Actions now runs HTML validation, Playwright checks across Chromium, Firefox, WebKit and a mobile viewport, and axe-core scans for selected WCAG 2.2 AA rules. Automated checks do not establish full WCAG conformance, and this is not a manual screen-reader/real-device audit. This source/content review is not a legal opinion or trademark clearance. See [VALIDATION_REPORT.md](VALIDATION_REPORT.md), [ACCESSIBILITY.md](ACCESSIBILITY.md), and [TRADEMARK_SCREENING.md](TRADEMARK_SCREENING.md).
 
 ## Rights and reuse
 
-The current repository root contains a Rights and Reuse Notice rather than a general open-source licence. Earlier commits contained an MIT License; this update does not purport to retroactively revoke permissions validly granted to copies obtained while that licence was present. See [LICENSE](LICENSE) and [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md).
+The current repository root contains a Rights and Reuse Notice rather than a general open-source licence. Earlier commits contained an MIT License; this update does not purport to retroactively revoke permissions validly granted to copies obtained while that licence was present. See [LICENSE](LICENSE), [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md), and [LEGAL_REVIEW_BRIEF.md](LEGAL_REVIEW_BRIEF.md).
