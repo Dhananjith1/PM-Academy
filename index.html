@@ -1383,7 +1383,7 @@ const L = [
     H("Organizational Contexts", U([
       "<b>Functional Organization:</b> Team members work inside traditional departments (Marketing, Finance). The PM acts mainly as a coordinator with limited authority.",
       "<b>Matrix Organization:</b> Staff report to both a department head and a project manager. Authority is shared depending on whether the matrix is weak, balanced, or strong.",
-      "<b>Project-Oriented (Projectized):</b> The enterprise is structured around dedicated project teams. The PM possesses full operational and resource authority."
+      "<b>Project-Oriented (Projectized):</b> The enterprise is structured around dedicated project teams. The project manager generally has greater dedicated authority over project work and resources, but exact decision rights still depend on organizational governance and delegated authority."
     ]))
   ],
 
@@ -1412,7 +1412,7 @@ const L = [
       "<b>Gold Plating:</b> Adding extra features not requested by the client, which consumes resources and adds risk without verified value."
     ]) +
     H("Sample Event WBS", F(["1.0 Planning", "2.0 Programming", "3.0 Marketing", "4.0 Staging", "5.0 Closeout"]) +
-      "<span class='fm'>1.0 Planning: 1.1 Secure Permits, 1.2 Book Venue, 1.3 Allocate Budget<br>2.0 Programming: 2.1 Confirm Speakers, 2.2 Print Agenda<br>3.0 Marketing: 3.1 Digital Flyers, 3.2 Social Media Campaign<br>4.0 Staging: 4.1 AV Equipment, 4.2 Attendee Registration<br>5.0 Closeout: 5.1 Settle Invoices, 5.2 Compile Feedback</span><p>Every leaf (e.g., 1.2 Book Venue) represents a concrete work package owned by a designated team member.</p>")
+      "<span class='fm'>1.0 Planning: 1.1 Secure Permits, 1.2 Book Venue, 1.3 Allocate Budget<br>2.0 Programming: 2.1 Confirm Speakers, 2.2 Print Agenda<br>3.0 Marketing: 3.1 Digital Flyers, 3.2 Social Media Campaign<br>4.0 Staging: 4.1 AV Equipment, 4.2 Attendee Registration<br>5.0 Closeout: 5.1 Settle Invoices, 5.2 Compile Feedback</span><p>Each lowest-level WBS element (for example, 1.2 Book Venue) represents a work package. Responsibility for it is assigned separately, often through a responsibility assignment matrix such as RACI.</p>")
   ],
 
   [
@@ -1426,8 +1426,8 @@ const L = [
       "<b>Lead Time:</b> Overlapping dependent activities so the successor starts earlier.",
       "<b>Lag Time:</b> A required pause between tasks (such as waiting 48 hours for concrete to cure)."
     ])) +
-    H("The Critical Path Method (CPM)", "<p>The <b>Critical Path</b> is the sequence of dependent tasks that constitutes the longest path through the project network. It dictates the earliest possible date the project can finish. Tasks on the critical path have <b>zero float (slack)</b>; any delay along this path causes a day-for-day delay to the overall completion date.</p>") +
-    H("PERT 3-Point Duration Estimating", "<span class='fm'>Expected Duration = (Optimistic + 4 × Most Likely + Pessimistic) ÷ 6</span>") +
+    H("The Critical Path Method (CPM)", "<p>The <b>Critical Path</b> is the sequence of dependent tasks that constitutes the longest path through the project network. It dictates the earliest possible date the project can finish. Tasks on the critical path have <b>zero float (slack)</b>; a delay to a critical activity will normally delay the forecast project finish unless recovery action or an approved schedule change offsets it. The critical path can change as durations, logic, constraints, or progress change.</p>") +
+    H("PERT Weighted 3-Point Estimate", "<span class='fm'>PERT Expected Duration = (Optimistic + 4 × Most Likely + Pessimistic) ÷ 6</span><p>This is the classic PERT weighted-average estimate, commonly associated with a beta-shaped activity-duration distribution. Other three-point methods may use different assumptions or weighting.</p>") +
     H("Calculation Example", "<p>Task duration: Optimistic = 2 days, Most Likely = 4 days, Pessimistic = 12 days.<br>Estimate = (2 + 4×4 + 12) ÷ 6 = 30 ÷ 6 = <b>5.0 days</b>.</p>") +
     H("Schedule Compression Techniques", U([
       "<b>Crashing:</b> Injecting additional resources (such as overtime or added contractors) into critical path activities to shorten duration at the lowest cost.",
@@ -1440,7 +1440,7 @@ const L = [
     H("Estimation Approaches", U([
       "<b>Analogous (Top-Down):</b> Using costs from a similar past project as a quick benchmark.",
       "<b>Parametric:</b> Multiplying unit metrics by historical rates (e.g., cost per square foot or cost per line of code).",
-      "<b>Bottom-Up:</b> Estimating the cost of every individual work package and summing them upward (most accurate, time-intensive)."
+      "<b>Bottom-Up:</b> Estimating the cost of every individual work package and summing them upward (more detailed but time-intensive; it is not automatically the most accurate approach)."
     ])) +
     H("Earned Value Analysis Fundamentals", C([
       ["PV (Planned Value)", "The authorized expenditure scheduled to be accomplished by a specific date."],
@@ -1457,29 +1457,29 @@ const L = [
     H("Distinguishing Quality from Grade", "<p><b>Quality</b> measures how reliably a product fulfills its stated requirements. <b>Grade</b> refers to its category of luxury or technical specifications.<br><i>A low-grade item (a basic, inexpensive phone) has high quality if it operates without bugs. A high-grade luxury smartphone has low quality if calls constantly drop.</i></p>") +
     H("The Three Pillars of Quality", U([
       "<b>Quality Planning:</b> Identifying applicable standards and establishing how to verify them.",
-      "<b>Quality Assurance (QA):</b> Auditing processes to ensure good engineering practices are followed (prevention).",
+      "<b>Quality Assurance (QA):</b> Evaluating whether the quality approach and processes are suitable and followed. Activities can include reviews, audits, and process improvement (prevention-oriented).",
       "<b>Quality Control (QC):</b> Inspecting deliverables and testing outputs to catch defects before delivery (detection)."
     ])) +
     H("The Cost of Quality (COQ)", C([
       ["Cost of Conformance", "Expenditures made to prevent defects: Quality training, automated testing, audits, code reviews."],
       ["Cost of Non-Conformance", "Expenses incurred due to defects: Rework, scrap, hotfixes, warranty claims, customer churn."]
     ])) +
-    T("Core Truth: Preventing defects upfront is dramatically cheaper than fixing bugs in production.")
+    T("Prevention and early detection often reduce the total cost of quality, although the actual cost trade-off depends on the product, risk, and delivery context.")
   ],
 
   [
     1, "🧑‍🤝‍🧑", "Team Dynamics & Resource Management", "#4338ca", "#4f46e5",
-    H("Tuckman's 5 Stages of Team Growth", F(["Forming", "Storming", "Norming", "Performing", "Adjourning"])) +
+    H("Tuckman's Team Development Model (One Useful Lens)", F(["Forming", "Storming", "Norming", "Performing", "Adjourning"])) +
     U([
       "<b>Forming:</b> Team members meet, maintain polite interactions, and explore initial roles.",
       "<b>Storming:</b> Interpersonal friction surfaces as differing working styles and priorities clash.",
       "<b>Norming:</b> Trust solidifies, shared working agreements are adopted, and collaboration improves.",
-      "<b>Performing:</b> The team operates smoothly as a productive, self-organizing unit.",
+      "<b>Performing:</b> The team may become more effective and capable of working with greater autonomy; teams do not always move through these stages in a fixed or one-way sequence.",
       "<b>Adjourning:</b> Project concludes, outcomes are handed off, and team members transition."
     ]) +
     H("The RACI Responsibility Matrix", C([
       ["Responsible (R)", "The person(s) who does the hands-on work to build the deliverable."],
-      ["Accountable (A)", "The single individual with final sign-off authority (strictly one 'A' per task)."],
+      ["Accountable (A)", "The person who is answerable for the result. Many organizations use one clearly identified Accountable (A) person per activity as a practical convention; follow the project's agreed governance."],
       ["Consulted (C)", "Subject matter experts providing two-way feedback before work finishes."],
       ["Informed (I)", "Stakeholders kept updated on progress through one-way reporting."]
     ])) +
@@ -1495,7 +1495,7 @@ const L = [
   [
     1, "💬", "Communications Management", "#0284c7", "#0369a1",
     H("The Basic Communication Cycle", "<p>Sender → Encodes thought → Transmits via Channel → Receiver Decodes → Provides Feedback.<br><b>Noise:</b> Any interference (technical distortion, jargon, cultural misunderstandings) that weakens message clarity.</p>") +
-    H("The Growth of Communication Channels", "<span class='fm'>Total Channels = [n × (n − 1)] ÷ 2 &nbsp;&nbsp;(where n = number of team members)</span><p>A team of 5 people has 10 potential communication pathways; a team of 10 people has 45! Communication complexity compounds exponentially as team size expands.</p>") +
+    H("The Growth of Communication Channels", "<span class='fm'>Total Channels = [n × (n − 1)] ÷ 2 &nbsp;&nbsp;(where n = number of team members)</span><p>A team of 5 people has 10 potential communication pathways; a team of 10 people has 45! The formula counts possible two-way pairwise links in a fully connected group. The number of potential links grows quadratically with team size; it is not a measure of actual messages or the complexity of every communication.</p>") +
     H("Transmission Methods", C([
       ["Interactive", "Multidirectional real-time exchange: In-person syncs, video calls, standups."],
       ["Push", "Direct delivery to targeted recipients: Weekly email summaries, memos, announcements."],
