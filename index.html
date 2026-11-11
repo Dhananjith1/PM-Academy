@@ -591,54 +591,13 @@ code, .fm {
   transform: none;
 }
 
-/* Glossary Section */
-#glossary {
-  background: #ffffff;
-  border-top: 1px solid var(--bd);
-  border-bottom: 1px solid var(--bd);
-}
-input[type=search] {
-  width: 100%;
-  max-width: 540px;
-  padding: 12px 18px;
-  border-radius: 10px;
-  border: 1px solid var(--bd);
-  background: var(--card);
-  color: var(--tx);
-  font-size: 16px;
-  margin-bottom: 24px;
-  box-shadow: var(--shadow-sm);
-}
-input[type=search]:focus {
-  outline: 2px solid var(--brand);
-  border-color: transparent;
-}
-.glos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-}
-.glos div {
-  background: var(--bg);
-  border: 1px solid var(--bd);
-  border-radius: 10px;
-  padding: 16px;
-  font-size: 15px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-.glos div:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
-  background: #ffffff;
-}
-.glos b {
-  color: var(--brand);
-  font-size: 16px;
-  display: block;
-  margin-bottom: 4px;
-}
+/* Compact glossary preview */
+.glossary-preview{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px 30px;background:#fff;border:1px solid var(--bd);border-radius:16px;box-shadow:var(--shadow-sm)}
+.glossary-preview h2{margin:0 0 7px;font-size:26px}
+.glossary-preview p{margin:0;color:var(--mu);max-width:680px;font-size:16px}
+@media(max-width:700px){.glossary-preview{align-items:flex-start;flex-direction:column;padding:22px}.glossary-preview .btn{width:100%;justify-content:center}}
 
-/* Quiz Section */
+/* Quiz Section *//* Quiz Section */
 #quiz {
   background: var(--bg);
 }
@@ -1046,7 +1005,7 @@ button:disabled { cursor:not-allowed; }
   <nav aria-label="Main navigation">
     <a class="nb" href="#learn">Lessons</a>
     <a class="nb" href="study-guides.html">Study Guides</a>
-    <a class="nb" href="#glossary">Glossary</a>
+    <a class="nb" href="project-management-glossary.html">Glossary</a>
     <a class="nb" href="#quiz">Quiz</a>
     <a class="nb" href="#sources">References</a>
     <a class="nb" href="#about">About</a>
@@ -1068,7 +1027,7 @@ button:disabled { cursor:not-allowed; }
       <p class="hero-topic-summary">Explore project initiation, project plans, WBS examples, Gantt charts and critical path, budgets, risk registers, RACI matrices, Agile, Scrum, Kanban, IT project management, project manager skills, and career fundamentals.</p>
       <div class="hero-actions">
         <a class="btn" href="#learn">Start Learning →</a>
-        <a class="btn sec" href="#glossary">Explore PM Glossary</a>
+        <a class="btn sec" href="project-management-glossary.html">Explore PM Glossary</a>
       </div>
       <div class="stats">
         <div class="stat-card">
@@ -1149,10 +1108,13 @@ button:disabled { cursor:not-allowed; }
 <!-- PM Glossary Section -->
 <section id="glossary">
   <div class="wrap">
-    <h2>Project Management Glossary</h2>
-    <p class="sub">Search project management terms, acronyms, planning concepts, delivery methods, metrics, and formulas.</p>
-    <input type="search" id="gs" placeholder="Search concepts: scope, CPI, sprint, critical path, WBS, EVM…" aria-label="Search glossary">
-    <div class="glos" id="gl" aria-live="polite" aria-atomic="true"></div>
+    <div class="glossary-preview">
+      <div>
+        <h2>Project Management Glossary</h2>
+        <p>Search 35 essential project management terms, acronyms, formulas, and Agile concepts in the dedicated glossary.</p>
+      </div>
+      <a class="btn sec" href="project-management-glossary.html">Browse full glossary →</a>
+    </div>
   </div>
 </section>
 
@@ -1803,44 +1765,7 @@ const L = [
   ]
 ];
 
-/* Original Glossary Terms (100% Independent Descriptions) */
-const G = [
-  ["Agile", "An adaptive delivery philosophy emphasizing short iterative cycles, working deliverables, and continuous collaboration."],
-  ["BAC (Budget at Completion)", "The approved total baseline budget authorized for the entire project."],
-  ["Baseline", "The formally approved version of scope, schedule, or cost against which actual execution is measured."],
-  ["Backlog", "A living, prioritized inventory of features, user stories, and technical requirements awaiting implementation in Agile."],
-  ["Burndown Chart", "A visual graph plotting work remaining to be completed against time left in a sprint or milestone."],
-  ["Business Case", "A formal justification document analyzing costs, benefits, and strategic alignment to determine if an initiative is worth funding."],
-  ["CAPM®", "Certified Associate in Project Management, an entry-level credential administered by PMI."],
-  ["CCB (Change Control Board)", "A designated governance group responsible for evaluating, approving, or declining proposed changes to project baselines."],
-  ["Charter", "A foundational document that formally authorizes a project and grants the PM authority to apply organizational resources."],
-  ["Cost Performance Index (CPI)", "CPI = EV ÷ AC. A value above 1.0 indicates favourable cost efficiency at the status date; by itself it does not prove the project is below its total Budget at Completion or guarantee its final cost."],
-  ["Critical Path", "The longest-duration path through a project activity network; it determines the earliest calculated project finish under the current logic and assumptions. The path can change as the schedule changes."],
-  ["Deliverable", "Any unique, verifiable outcome, product, or capability that must be produced to satisfy project requirements."],
-  ["Estimate at Completion (EAC)", "A forecast of total project cost at completion. One method is EAC = BAC ÷ CPI when current cost efficiency is expected to continue; other formulas suit different assumptions."],
-  ["Earned Value (EV)", "The budgeted value assigned to the work actually performed by the status date. It is measured using the approved performance measurement baseline, not the amount of cash received."],
-  ["Float (Slack)", "Total float is how long an activity can be delayed without delaying the project's calculated finish. Free float is how long it can be delayed without delaying the early start of any immediate successor."],
-  ["Gantt Chart", "A horizontal bar chart illustrating project tasks, start and end dates, durations, and dependency linkages."],
-  ["Gold Plating", "The practice of adding unrequested features or enhancements beyond agreed scope without client authorization."],
-  ["Issue", "An active problem or impediment that has already happened and requires immediate intervention."],
-  ["Kanban", "A method for defining, managing, and improving services and the flow of work. Common practices include visualizing work, limiting WIP, managing flow, making policies explicit, using feedback loops, and improving collaboratively; the specific workflow is context-dependent."],
-  ["Milestone", "A prominent checkpoint or milestone event in a schedule with zero duration."],
-  ["MVP (Minimum Viable Product)", "A version of a product that enables validated learning about key assumptions with the least effort; it is not necessarily just the smallest possible feature set."],
-  ["NPV (Net Present Value)", "The sum of expected net cash flows discounted to the evaluation date, including the initial investment and later operating cash flows, using an appropriate discount rate. A positive NPV indicates value above the assumed hurdle rate, subject to the cash-flow estimates and assumptions."],
-  ["<i>PMBOK® Guide</i>", "A Guide to the Project Management Body of Knowledge, an internationally respected standard published by PMI."],
-  ["PMO (Project Management Office)", "An organizational structure or function that supports, governs, or directly manages project work according to its mandate. A PMO may provide methods, standards, reporting, resources, or centralized control; its authority and scope vary."],
-  ["PMP®", "Project Management Professional, a globally recognized credential awarded by the Project Management Institute."],
-  ["RACI Matrix", "A matrix clarifying role accountability: Responsible, Accountable, Consulted, and Informed."],
-  ["Risk", "An uncertain future event or condition that, if it occurs, could produce an adverse (threat) or beneficial (opportunity) impact. A common qualitative scoring approach is Probability × Impact."],
-  ["Scope", "The defined sum of all deliverables, features, and activities required to complete a project."],
-  ["Scope Creep", "The uncontrolled, unapproved expansion of project requirements without adjustments to budget or deadlines."],
-  ["Schedule Performance Index (SPI)", "SPI = EV ÷ PV. A value above 1.0 indicates that more budgeted work value has been earned than was planned by the status date; it is not a direct measure of calendar days ahead."],
-  ["Sprint", "A fixed-length Scrum event of one month or less, during which the Scrum Team works toward the Sprint Goal and creates at least one usable Increment."],
-  ["Stakeholder", "Any person, team, or organization that can affect, or be affected by, the activities or outcome of a project."],
-  ["Triple Constraint", "A simplified model showing trade-offs among scope, schedule, and cost. Quality, risk, resources, benefits, and stakeholder value also influence project decisions; the triangle is not a complete success model."],
-  ["WBS (Work Breakdown Structure)", "A hierarchical decomposition of the total project scope into manageable components and work packages. Assignment of owners is handled separately, for example through a responsibility assignment matrix."],
-  ["WIP (Work in Progress)", "The number of work items that have started but are not yet finished within the defined workflow or system boundary. Depending on the team's explicit workflow policies, this can include blocked or waiting items, not only tasks someone is actively handling at that moment."]
-];
+/* Glossary terms are maintained in the dedicated searchable glossary page. */
 
 /* 13 mixed-format knowledge-check questions */
 const Q = [
@@ -2070,24 +1995,6 @@ function mark() {
   render();
 }
 
-/* Glossary Search */
-function gl(q) {
-  q = (q || "").trim();
-  const qLower = q.toLowerCase();
-  const res = G.filter(item => (item[0] + " " + item[1]).toLowerCase().includes(qLower));
-  if (res.length) {
-    $("gl").innerHTML = res.map(g => `<div><b>${g[0]}</b>${g[1]}</div>`).join("");
-  } else {
-    const p = document.createElement("p");
-    p.style.gridColumn = "1/-1";
-    p.style.color = "var(--mu)";
-    p.textContent = `No matching glossary terms found for "${q}". Try searching for 'scope', 'risk', or 'EVM'.`;
-    $("gl").innerHTML = "";
-    $("gl").appendChild(p);
-  }
-}
-$("gs").oninput = e => gl(e.target.value);
-
 /* Quiz Engine */
 let qi = 0, sc = 0;
 function quiz(moveFocus = false) {
@@ -2206,7 +2113,6 @@ document.addEventListener("keydown", event => {
 
 /* Global Init */
 render();
-gl();
 quiz();
 </script>
 
