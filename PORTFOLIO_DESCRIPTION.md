@@ -1,4 +1,4 @@
-# PM Academy — Portfolio Case Study
+# Independent Project Management Study Resource — Portfolio Case Study
 
 - **Live application:** https://dhananjith1.github.io/PM-Academy/
 - **Repository:** https://github.com/Dhananjith1/PM-Academy
@@ -8,7 +8,7 @@
 
 ## 1. Project overview
 
-PM Academy is an independent, free-to-access educational website designed to help students and early-career professionals explore core project-management concepts. It connects concise explanations with examples, common PM tools, and simple interactive learning activities.
+This is an independent, free-to-access educational website designed to help students and early-career professionals explore core project-management concepts. It connects concise explanations with examples, common PM tools, and simple interactive learning activities.
 
 This is a personal learning-resource and portfolio project. It is not an official training product, certification provider, or exam simulator. AI tools assisted front-end implementation. Describe only the planning, selection, editing, product decisions, and testing that accurately reflect your own contribution.
 
@@ -48,9 +48,9 @@ The site is presented as an independent educational resource, not an official co
 
 The site explains concepts in its own words and links to official references. It should not reproduce substantial extracts, official diagrams, screenshots, proprietary exam questions, or paid course material without checking rights and obtaining permission where required. The Scrum Guide is under CC BY-SA 4.0; this site links to it and provides independent summaries.
 
-PMI®, PMP®, CAPM®, PMI-ACP®, and the *PMBOK® Guide* are marks of Project Management Institute, Inc. PRINCE2® is a registered trademark of PeopleCert group. Jira and Trello are trademarks of Atlassian. PM Academy is not affiliated with or endorsed by those organizations.
+PMI®, PMP®, CAPM®, PMI-ACP®, and the *PMBOK® Guide* are marks of Project Management Institute, Inc. PRINCE2® is a registered trademark of PeopleCert group. Jira and Trello are trademarks of Atlassian. The resource is not affiliated with or endorsed by those organizations.
 
-See [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md) for the detailed notice, source links, reuse position, and historical MIT licence caveat. See [PRIVACY.md](PRIVACY.md) for local progress storage, GitHub Pages hosting, and Google Fonts.
+See [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md) and [TRADEMARK_SCREENING.md](TRADEMARK_SCREENING.md) for the detailed rights, name-risk, and reuse notes; [ACCESSIBILITY.md](ACCESSIBILITY.md) records the automated coverage and remaining manual work. See [PRIVACY.md](PRIVACY.md) for local progress storage, GitHub Pages hosting, and Google Fonts.
 
 ## 7. Product and implementation decisions
 
@@ -68,7 +68,7 @@ A previous local Chromium smoke test checked page initialization, glossary searc
 
 ## 9. Suggested CV description
 
-**PM Academy — Independent Project Management Learning Resource**  
+**Independent Project Management Study Resource**  
 *Project initiator / Product concept designer | AI-assisted personal project | 2026*
 
 - Initiated and shaped an independent learning resource for people exploring project management, organizing 27 lessons into six learning areas.
@@ -79,4 +79,4 @@ Use only responsibilities and activities that accurately describe your own contr
 
 ## 10. Limitations
 
-No legal adviser, trademark search provider, PMI, PeopleCert, Scrum.org, Atlassian, or independent PM-content expert has cleared or endorsed the website. This case study records the intended scope; it is not a certification of legal compliance or content perfection.
+No lawyer, trademark search provider, PMI, PeopleCert, Scrum.org, Atlassian, or independent PM-content expert has cleared or endorsed the website. The current public title is deliberately descriptive, following a preliminary web scan that identified existing same-name project-management training businesses. The repository and Pages URL retain the historical slug for link continuity; this is not trademark clearance. This case study records the intended scope; it is not a certification of legal compliance or content perfection.
