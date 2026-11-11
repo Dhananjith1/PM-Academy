@@ -72,7 +72,7 @@ A previous local Chromium smoke test checked page initialization, glossary searc
 *Project initiator / Product concept designer | AI-assisted personal project | 2026*
 
 - Initiated and shaped an independent learning resource for people exploring project management, organizing 27 lessons into six learning areas.
-- Defined interactive features including an EVM calculator, searchable glossary, scenario-based quiz, and browser-based progress tracking.
+- Defined interactive features including an EVM calculator, searchable glossary, mixed-format knowledge-check quiz, and browser-based progress tracking.
 - Used AI-assisted front-end development to build and publish a static web application through GitHub Pages.
 
 Use only responsibilities and activities that accurately describe your own contribution. Do not present this as client work, team-led delivery, full-stack engineering, or accredited certification training.
