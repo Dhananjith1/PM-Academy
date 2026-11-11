@@ -1,59 +1,50 @@
 # PM Academy — Project Management, Made Simple
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-PM_Academy-2563eb?style=for-the-badge&logo=github)](https://dhananjith1.github.io/PM-Academy/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-0d9488?style=for-the-badge)](LICENSE)
-[![Curriculum](https://img.shields.io/badge/Curriculum-27_Lessons_•_6_Parts-1e293b?style=for-the-badge)](#curriculum-structure)
+[Live website](https://dhananjith1.github.io/PM-Academy/) · [GitHub repository](https://github.com/Dhananjith1/PM-Academy)
 
-**PM Academy** is a free-to-access, zero-dependency educational web application designed to help aspiring and practicing project managers master fundamental principles, modern agile delivery, EVM mathematics, and essential software tools.
+PM Academy is an independent, free-to-access learning resource for people exploring Project Management. It connects structured explanations with practical examples, common PM tools, and lightweight interactive learning activities. The project was shaped and published with AI-assisted front-end development.
 
-🔗 **Live Website**: [https://dhananjith1.github.io/PM-Academy/](https://dhananjith1.github.io/PM-Academy/)
+> This is an introductory educational resource. It is not an official certification course, exam simulator, or substitute for current standards and provider guidance.
 
----
+## Features
+- **27 lessons across 6 learning areas:** foundations, planning, risk and change, Agile and frameworks, PM tools, and career fundamentals.
+- **Interactive EVM calculator:** calculates CV, SV, CPI, SPI, and an EAC estimate using BAC ÷ CPI. The page explains that this formula assumes current cost efficiency continues.
+- **Searchable PM glossary:** more than 35 concise definitions and formulas.
+- **13-question knowledge check:** explanations, shuffled answer choices, and a numerical EVM question.
+- **Lesson progress tracking:** completion markers are saved in the current browser using localStorage; progress is not synced across devices.
 
-## 🚀 Key Highlights
+## Learning areas
+| Area | Topics |
+|---|---|
+| Foundations | Project definitions, life cycles, business cases, plans and baselines, constraints, roles, and stakeholders |
+| Planning the Work | Scope and WBS, scheduling and CPM, EVM, quality, resources, and communications |
+| Risk & Change | Risk analysis, change control, and procurement contract types |
+| Methods & Frameworks | Predictive, Agile and hybrid delivery; Scrum, Kanban, PMBOK and PRINCE2 overviews |
+| PM Tools | Work-management boards, issue tracking, scheduling products, collaboration tools, and project artefacts |
+| Leadership & Career | Professional conduct, practical work cadence, interview preparation, project closure, and career pathways |
 
-- **27 Structured Lessons in 6 Parts**: Comprehensive coverage from foundational principles to advanced EVM formulas, PM tools, and career pathways.
-- **Aligned with Modern Global Frameworks**: Synthesizes principles from the **PMBOK® Guide**, **Process Groups: A Practice Guide**, Agile Alliance principles, and modern project delivery practices.
-- **Interactive Earned Value Management (EVM) Calculator**: Live recalculation of CV, SV, CPI, SPI, and EAC with automated health status interpretations.
-- **Instant Searchable PM Glossary**: Fast client-side keyword search across 35+ industry-standard definitions and formulas.
-- **12-Question Knowledge Check**: Scenario-based interactive quiz featuring detailed feedback and explanations for both correct and incorrect answers.
-- **Progress Persistence**: Uses browser `localStorage` to save completed lessons with a dynamic progress bar.
-- **Zero-Dependency Lightweight Build**: Pure Vanilla HTML5, modern CSS3, and ES6+ JavaScript. Loads rapidly without complex frameworks or bundling overhead.
+## Technology
+- HTML5, CSS3, and vanilla JavaScript (ES6+)
+- Responsive CSS Grid/Flexbox, keyboard focus styling, and reduced-motion support
+- Browser localStorage for lesson-completion markers
+- Static deployment through GitHub Pages; no server or database is required
 
----
+## Official references
+- [PMI — PMP certification requirements](https://www.pmi.org/certifications/project-management-pmp)
+- [PMI — 2026 PMP exam update](https://www.pmi.org/certifications/project-management-pmp/new-exam)
+- [PMI — PMBOK Guide](https://www.pmi.org/standards/pmbok)
+- [Scrum Guides — Official Scrum Guide](https://scrumguides.org/download.html)
+- [PeopleCert — PRINCE2](https://www.peoplecert.org/ways-to-certify/prince2)
+- [Agile Alliance](https://www.agilealliance.org/)
 
-## 📚 Curriculum Structure
+The PMP section reflects PMI's published 2026 education/experience pathways and exam information, including the announced live-training rule change effective 1 December 2026. These are time-sensitive details; verify the current position with PMI before making any training or application decision.
 
-| Part | Name | Lessons Count | Key Topics Covered |
-| :---: | :--- | :---: | :--- |
-| **Part 1** | **Foundations** | 7 | Project Definition, 5 Process Groups, Business Case & Selection (NPV/ROI), PMP Baselines, Triple Constraint, Roles, Stakeholder Engagement |
-| **Part 2** | **Planning the Work** | 6 | Scope & WBS (100% Rule), Schedule & CPM (PERT formulas), Cost & Earned Value (EVM), Quality Management, RACI Matrix, Communications Model |
-| **Part 3** | **Risk & Change** | 2 | Risk Analysis (EMV/Reserves), Integrated Change Control & Procurement Contract Types |
-| **Part 4** | **Methods & Frameworks** | 3 | Waterfall vs Agile vs Hybrid, Scrum & Kanban Systems (WIP limits, cycle time), PMBOK, PRINCE2, Lean & SAFe |
-| **Part 5** | **PM Tools** | 5 | Tool Ecosystem, Work Management Boards (Trello, Asana, Monday, ClickUp, Wrike), Enterprise Schedulers (Jira, MS Project, Primavera P6, Smartsheet), Everyday Stack, Key Templates |
-| **Part 6** | **Leadership & Career** | 4 | Leadership & Ethics (PMI Code of Conduct), Weekly Cadence & STAR Interviews, Project Closing, PM Standards Evolution & Certification Pathways |
+## Validation and limitations
+A local Chromium smoke test checked page initialization, glossary search, EVM calculations and invalid-input handling, the 13-question quiz flow, the numerical EVM answer, modal Escape-key handling, and a 390px mobile viewport. This is not a comprehensive cross-browser, real-device, assistive-technology, or formal WCAG audit. See [VALIDATION_REPORT.md](VALIDATION_REPORT.md).
 
----
+See [PORTFOLIO_DESCRIPTION.md](PORTFOLIO_DESCRIPTION.md) for portfolio documentation and suggested CV wording. See [CHANGELOG.md](CHANGELOG.md) for recent improvements.
 
-## 🛠️ Technology Stack
+## Independence, trademarks, and licence
+PM Academy is an independent educational and portfolio project. It is not affiliated with, endorsed by, sponsored by, or an official training provider of PMI, PeopleCert, Scrum.org, Atlassian, or any other organization. Third-party names and marks remain the property of their respective owners and are used only to identify concepts, standards, credentials, and products discussed in an educational context.
 
-- **Markup**: Semantic HTML5 (`<header>`, `<nav>`, `<aside>`, `<article>`, `<section>`, `<footer>`)
-- **Styles**: Modern Vanilla CSS with CSS Custom Properties, Flexbox, and CSS Grid.
-- **Typography**: Google Fonts (`Fraunces` serif for editorial warmth + `Plus Jakarta Sans` for clean UI readability).
-- **Logic**: Vanilla JavaScript (ES6+), LocalStorage API.
-- **Hosting**: GitHub Pages.
-
----
-
-## 📖 Portfolio Case Study
-
-For a full project description covering Problem/Purpose, Target Audience, Features, Planning & Delivery, and Testing, refer to [PORTFOLIO_DESCRIPTION.md](PORTFOLIO_DESCRIPTION.md).
-
-## ⚖️ Independence & Third-Party Notice
-
-- **Independent Educational Project**: PM Academy is an independent educational and portfolio initiative created for general self-study and learning purposes. It is **not** affiliated with, endorsed by, sponsored by, or an official training provider of PMI (Project Management Institute), PeopleCert, Scrum.org, Atlassian, or any other organization.
-- **Third-Party Trademarks**: Names of project management frameworks, certifications (such as PMP®, CAPM®, PRINCE2®), and software products (such as Jira®, Trello®) are mentioned solely to identify and discuss them in an educational context. All third-party names and marks remain the property of their respective owners.
-- **Educational Scope**: This website does not issue professional certifications, administer formal examinations, or guarantee certification exam results.
-- **License**: Code is made available under the [MIT License](LICENSE). Educational summaries and curriculum synthesis are independent developer creations.
-
-
+The site does not issue credentials, publish proprietary exam dumps, administer certification examinations, or guarantee certification outcomes. The project code is released under the MIT License in [LICENSE](LICENSE). Check third-party source terms before reusing their material.

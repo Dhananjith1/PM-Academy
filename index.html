@@ -4,7 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PM Academy — Project Management, Made Simple</title>
-<meta name="description" content="Master Project Management principles, modern agile frameworks, EVM calculations, and practical tools through structured, independent learning resources.">
+<meta name="description" content="Explore 27 structured Project Management lessons, practical EVM examples, a searchable PM glossary, and a scenario-based knowledge check. An independent learning resource.">
+<meta name="theme-color" content="#1e293b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PM Academy — Project Management, Made Simple">
+<meta property="og:description" content="An independent, interactive learning resource covering Project Management foundations, planning, risk, Agile, PM tools, and career essentials.">
+<meta property="og:url" content="https://dhananjith1.github.io/PM-Academy/">
+<meta property="og:image" content="https://dhananjith1.github.io/PM-Academy/og-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PM Academy — Project Management, Made Simple; 27 lessons, 6 learning areas, an EVM calculator, glossary and quiz.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dhananjith1.github.io/PM-Academy/og-preview.png">
+<link rel="canonical" href="https://dhananjith1.github.io/PM-Academy/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -1000,6 +1013,26 @@ footer {
     display: none;
   }
 }
+ .calc-note { display:inline-block; margin-top:8px; color:#475569; font-size:13.5px; line-height:1.5; }
+.skip-link { position:absolute; left:12px; top:-60px; z-index:1000; padding:10px 14px; border-radius:8px; background:#fff; color:#0f172a; border:2px solid var(--brand); box-shadow:var(--shadow-md); }
+.skip-link:focus { top:12px; }
+a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible { outline:3px solid #2563eb; outline-offset:3px; }
+button:disabled { cursor:not-allowed; }
+@media (max-width:900px) { .side { max-height:280px; overflow-y:auto; scroll-margin-top:16px; } }
+@media (max-width:600px) {
+ header { flex-wrap:wrap; gap:10px 16px; padding:12px 16px; }
+ header nav { width:100%; max-width:100%; overflow-x:auto; overscroll-behavior-x:contain; scrollbar-width:thin; }
+ a.nb { flex:0 0 auto; padding-bottom:3px; white-space:nowrap; }
+ .brand-group { flex:0 0 auto; }
+ .q-box { padding:24px 18px; }
+ .body { padding:22px 18px 28px; }
+ .nav2 { padding:0 18px 24px; }
+ .nav2 .b2 { flex:1 1 100%; }
+ .glos { grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion:reduce) {
+ *, *::before, *::after { scroll-behavior:auto !important; animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+}
 </style>
 </head>
 <body>
@@ -1011,7 +1044,7 @@ footer {
     <span class="brand-name">PM Academy</span>
     <span class="brand-badge">Learning Hub</span>
   </a>
-  <nav>
+  <nav aria-label="Main navigation">
     <a class="nb" href="#learn">Lessons</a>
     <a class="nb" href="#glossary">Glossary</a>
     <a class="nb" href="#quiz">Quiz</a>
@@ -1020,6 +1053,8 @@ footer {
     <a class="nb cta-nav" href="#learn">Start Learning</a>
   </nav>
 </header>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<main id="main-content">
 
 <!-- Hero Section -->
 <div class="hero">
@@ -1088,7 +1123,7 @@ footer {
     <h2>PM Glossary</h2>
     <p class="sub">Instant searchable index of standard project management terminology, acronyms, and formulas.</p>
     <input type="search" id="gs" placeholder="Search concepts: scope, CPI, sprint, critical path, WBS, EVM…" aria-label="Search glossary">
-    <div class="glos" id="gl"></div>
+    <div class="glos" id="gl" aria-live="polite" aria-atomic="true"></div>
   </div>
 </section>
 
@@ -1097,8 +1132,8 @@ footer {
   <div class="wrap">
     <div class="q-box">
       <h2>Knowledge Assessment Quiz</h2>
-      <p class="sub">12 scenario-based conceptual questions covering core fundamentals, EVM calculations, scheduling, and project governance.</p>
-      <div class="q" id="qz"></div>
+      <p class="sub">13 scenario-based questions covering PM fundamentals, EVM calculations, scheduling, and project governance.</p>
+      <div class="q" id="qz" aria-live="polite" aria-atomic="true"></div>
     </div>
   </div>
 </section>
@@ -1134,7 +1169,7 @@ footer {
           <h4>Scrum Guides</h4>
           <p>Publicly accessible reference publication by Ken Schwaber and Jeff Sutherland describing the foundational rules and roles of the Scrum framework.</p>
         </div>
-        <a class="ref-link" href="https://scrumguides.org/scrum-guide.html" target="_blank" rel="noopener noreferrer">Read the 2020 Scrum Guide →</a>
+        <a class="ref-link" href="https://scrumguides.org/download.html" target="_blank" rel="noopener noreferrer">Read the 2020 Scrum Guide →</a>
       </div>
 
       <div class="ref-card">
@@ -1145,11 +1180,19 @@ footer {
         </div>
         <a class="ref-link" href="https://www.peoplecert.org/ways-to-certify/prince2" target="_blank" rel="noopener noreferrer">Explore PRINCE2 on PeopleCert →</a>
       </div>
+      <div class="ref-card">
+        <div><span class="ref-tag">PMP® Certification</span><h4>PMI — 2026 PMP Exam Update</h4><p>Official information about the 2026 PMP examination, domain weighting, exam experience, and certification preparation.</p></div>
+        <a class="ref-link" href="https://www.pmi.org/certifications/project-management-pmp/new-exam" target="_blank" rel="noopener noreferrer">Review 2026 PMP updates →</a>
+      </div>
+      <div class="ref-card">
+        <div><span class="ref-tag">Project Management Standard</span><h4>PMI — PMBOK® Guide</h4><p>Official publisher information for the PMBOK® Guide, including its current edition, principles, and performance domains.</p></div>
+        <a class="ref-link" href="https://www.pmi.org/standards/pmbok" target="_blank" rel="noopener noreferrer">Explore the PMBOK® Guide →</a>
+      </div>
     </div>
 
     <div class="metadata-banner">
       <span><b>Curriculum Metadata:</b> Synthesized for modern predictive, agile, and hybrid delivery environments.</span>
-      <span style="font-weight:600; color:var(--brand-dark);">Content Reviewed: 2026</span>
+      <span style="font-weight:600; color:var(--brand-dark);">Content reviewed: 11 November 2026</span>
     </div>
   </div>
 </section>
@@ -1179,6 +1222,7 @@ footer {
     </div>
   </div>
 </section>
+</main>
 
 <!-- Footer -->
 <footer>
@@ -1207,11 +1251,11 @@ footer {
 </footer>
 
 <!-- Portfolio Case Study Modal -->
-<div class="modal-overlay" id="pfModal" onclick="closePortfolioModal(event)">
+<div class="modal-overlay" id="pfModal" role="dialog" aria-modal="true" aria-labelledby="pfModalTitle" onclick="closePortfolioModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
-    <button class="modal-close" onclick="closePortfolioModal()">&times;</button>
+    <button class="modal-close" type="button" aria-label="Close project overview" onclick="closePortfolioModal()">&times;</button>
     <span class="modal-tag">Project Overview</span>
-    <h3>PM Academy — Background &amp; Educational Purpose</h3>
+    <h3 id="pfModalTitle">PM Academy — Background &amp; Educational Purpose</h3>
     
     <div class="case-block">
       <h4>1. Problem & Purpose</h4>
@@ -1230,7 +1274,7 @@ footer {
       <h4>3. Key Features</h4>
       <p>• <b>27 Modular Lessons in 6 Progressive Parts:</b> Covering Foundations, Planning, Risk & Change, Agile Frameworks, PM Tool ecosystem (12+ reviews), and Leadership & Career paths.</p>
       <p>• <b>Live EVM Mathematical Calculator:</b> Instant recalculation of CV, SV, CPI, SPI, and EAC with automated health interpretations.</p>
-      <p>• <b>Interactive Scenario Quiz:</b> 12 scenario-based conceptual questions with detailed pedagogical feedback cards.</p>
+      <p>• <b>Interactive Scenario Quiz:</b> 13 scenario-based questions, including a numerical EVM calculation, with explanatory feedback.</p>
       <p>• <b>Instant Glossary Filter:</b> Client-side instant keyword lookup across 35 fundamental PM concepts.</p>
       <p>• <b>Progress Persistence:</b> Browser LocalStorage synchronization preserving completed lesson markers.</p>
     </div>
@@ -1245,7 +1289,7 @@ footer {
     <div class="case-block" style="border-bottom:none; margin-bottom:0; padding-bottom:0; text-align:center; padding-top:10px;">
       <p style="font-size:13.5px; color:var(--mu); margin-bottom:12px;">Full technical specifications, architectural choices, and delivery documentation are available in the repository.</p>
       <a href="https://github.com/Dhananjith1/PM-Academy/blob/main/PORTFOLIO_DESCRIPTION.md" target="_blank" rel="noopener noreferrer" class="btn sec" style="display:inline-flex; align-items:center; gap:6px; font-size:14px; padding:10px 18px;">
-        <span>View Full Technical Architecture on GitHub</span>
+        <span>View Project Documentation on GitHub</span>
         <span>→</span>
       </a>
     </div>
@@ -1271,7 +1315,7 @@ const P = [
   "Part 6 · Leadership & Career"
 ];
 
-/* Complete 27 Lessons Array with 100% Original Expressions */
+/* Complete 27-lesson curriculum with independent educational explanations */
 const L = [
   /* Part 1 · Foundations */
   [
@@ -1290,7 +1334,7 @@ const L = [
 
   [
     0, "⏳", "The Project Life Cycle & Core Phases", "#0f766e", "#14b8a6",
-    H("The 5 Essential Stages of Project Delivery", F(["Initiating", "Planning", "Executing", "Monitoring & Controlling", "Closing"])) +
+    H("The 5 Process Groups in Predictive Project Management", F(["Initiating", "Planning", "Executing", "Monitoring & Controlling", "Closing"])) +
     U([
       "<b>Initiating:</b> Clarifying the fundamental business problem or opportunity, gaining executive authorization (Charter), and identifying key participants.",
       "<b>Planning:</b> Crafting the strategic roadmap—defining deliverables, scheduling milestones, estimating budgets, and preparing risk mitigation plans.",
@@ -1298,7 +1342,7 @@ const L = [
       "<b>Monitoring & Controlling:</b> Continually comparing actual delivery against baseline plans, identifying variances, and steering course corrections when issues arise.",
       "<b>Closing:</b> Securing client sign-off, smoothly transitioning deliverables to operational teams, closing vendor accounts, and cataloging lessons learned."
     ]) +
-    H("Delivery Phases vs Management Processes", "<p><b>Project phases</b> represent chronological stages of technical execution (such as Discovery, Design, Build, Test, Deploy). The <b>5 management process groups</b> are managerial activities applied repeatedly across every single phase.</p>") +
+    H("Delivery Phases vs Management Process Groups", "<p><b>Project phases</b> are context-specific stages of work (such as Discovery, Design, Build, Test, and Deploy). The five <b>process groups</b> are a process-management model commonly used for predictive project management; they are not mandatory chronological phases and should be tailored to the project context.</p>") +
     T("The cost of making changes is minimal during early planning but increases exponentially as the project nears final delivery.")
   ],
 
@@ -1444,8 +1488,8 @@ const L = [
       ["AC (Actual Cost)", "The total realized expenses incurred in doing the completed work."],
       ["BAC (Budget at Completion)", "The approved total baseline budget for the whole initiative."]
     ])) +
-    H("Formulas & Status Diagnosis", "<span class='fm'>Cost Variance (CV) = EV − AC &nbsp;|&nbsp; Schedule Variance (SV) = EV − PV<br>Cost Performance Index (CPI) = EV ÷ AC &nbsp;|&nbsp; Schedule Performance Index (SPI) = EV ÷ PV<br>Estimate at Completion (EAC) = BAC ÷ CPI</span><p>An index <b>greater than 1.0 is favorable</b>; below 1.0 flags variance issues.<br>• CPI &lt; 1.0: Over budget (getting less value per dollar spent).<br>• SPI &lt; 1.0: Behind schedule (progressing slower than planned).</p>") +
-    H("Interactive EVM Calculator", '<div class="calc"><div><label>BAC ($)</label><input id="e1" type="number" value="100000"></div><div><label>PV ($)</label><input id="e2" type="number" value="40000"></div><div><label>EV ($)</label><input id="e3" type="number" value="35000"></div><div><label>AC ($)</label><input id="e4" type="number" value="45000"></div></div><div id="eo" class="tip"></div>')
+    H("Formulas & Status Diagnosis", "<span class='fm'>Cost Variance (CV) = EV − AC &nbsp;|&nbsp; Schedule Variance (SV) = EV − PV<br>Cost Performance Index (CPI) = EV ÷ AC &nbsp;|&nbsp; Schedule Performance Index (SPI) = EV ÷ PV<br>Estimate at Completion (EAC) = BAC ÷ CPI</span><p>An index <b>greater than 1.0 is favorable</b>; below 1.0 indicates an unfavorable variance. CV and SV are expressed in the project's budget currency; <b>SV is not a number of calendar days</b>. The EAC formula shown assumes current cost efficiency (CPI) continues for the remaining work. Other EAC formulas may be appropriate when future performance is expected to differ.</p>") +
+    H("Interactive EVM Calculator", '<div class="calc"><div><label for="e1">BAC ($)</label><input id="e1" type="number" min="0" step="any" inputmode="decimal" value="100000" aria-label="Budget at Completion"></div><div><label for="e2">PV ($)</label><input id="e2" type="number" min="0" step="any" inputmode="decimal" value="40000" aria-label="Planned Value"></div><div><label for="e3">EV ($)</label><input id="e3" type="number" min="0" step="any" inputmode="decimal" value="35000" aria-label="Earned Value"></div><div><label for="e4">AC ($)</label><input id="e4" type="number" min="0" step="any" inputmode="decimal" value="45000" aria-label="Actual Cost"></div></div><div id="eo" class="tip" aria-live="polite" aria-atomic="true"></div>')
   ],
 
   [
@@ -1555,12 +1599,12 @@ const L = [
   [
     3, "🏉", "Scrum Framework & Kanban Systems", "#0f766e", "#0d9488",
     H("The Scrum Delivery Model", C([
-      ["Core Roles", "<b>Product Owner</b> (curates backlog and business priority), <b>Scrum Master</b> (coaches team and clears blockers), <b>Developers</b> (cross-functional builders)."],
-      ["Cadence Events", "<b>Sprint</b> (1–4 week timebox), <b>Planning</b>, <b>Daily Sync</b> (15-min check-in), <b>Sprint Review</b> (demonstration), <b>Retrospective</b> (team process improvement)."],
-      ["Artifacts", "<b>Product Backlog</b> (prioritized roadmap), <b>Sprint Backlog</b> (work committed for current sprint), <b>Increment</b> (usable, tested deliverable meeting quality standards)."]
+      ["Accountabilities", "The Scrum Team consists of a <b>Product Owner</b> (accountable for maximizing product value and effective Product Backlog management), a <b>Scrum Master</b> (accountable for establishing Scrum and improving team effectiveness), and <b>Developers</b> (accountable for creating a usable Increment each Sprint)."],
+      ["Sprint and Events", "A <b>Sprint</b> is a fixed-length event of one month or less. It contains Sprint Planning, Daily Scrum, Sprint Review, and Sprint Retrospective. The <b>Daily Scrum</b> is a 15-minute event for Developers to inspect progress toward the Sprint Goal and adapt the plan."],
+      ["Artifacts and Commitments", "<b>Product Backlog</b> (commitment: Product Goal), <b>Sprint Backlog</b> (commitment: Sprint Goal), and <b>Increment</b> (commitment: Definition of Done). The Increment must meet the Definition of Done to be part of the product."]
     ])) +
-    H("Kanban Workflow Mechanics", F(["Visualize Work", "Cap Work-in-Progress (WIP)", "Streamline Flow", "Clarify Rules", "Iterate Continuously"])) +
-    "<p><b>Work-in-Progress (WIP) Limits:</b> Restricting active items in progress eliminates bottlenecks, avoids multitasking inefficiency, and speeds cycle times. Key metrics include <b>Lead Time</b> (request to delivery) and <b>Cycle Time</b> (active build to completion).</p>" +
+    H("Kanban Workflow Mechanics", F(["Visualize Work", "Limit Work-in-Progress (WIP)", "Manage Flow", "Make Policies Explicit", "Improve Collaboratively"])) +
+    "<p><b>Work-in-Progress (WIP) Limits:</b> Limiting active work helps expose bottlenecks, reduce context switching, and improve flow. Key metrics include <b>Lead Time</b> (request to delivery) and <b>Cycle Time</b> (start of active work to completion). Results depend on the workflow and team context.</p>" +
     H("User Story Architecture", "<span class='fm'>As a [user persona], I want [capability], so that [tangible benefit].</span><p>Example: <i>As a student, I want to filter lessons by completion status, so that I can resume studying without searching.</i></p>")
   ],
 
@@ -1568,18 +1612,20 @@ const L = [
     3, "🏛️", "PM Frameworks: PMBOK®, PRINCE2®, Lean, Six Sigma, SAFe®", "#1e293b", "#334155",
     H("Standards vs Methods vs Frameworks", "<p>A <b>standard</b> outlines agreed best-practice principles. A <b>methodology</b> prescribes a formal step-by-step procedure. A <b>framework</b> offers an adaptable structure that teams tailor to their context.</p>") +
     H("Overview of Prominent Frameworks", C([
-      ["PMBOK® Guide (PMI)", "Globally respected body of knowledge. The Seventh Edition established 12 stewardship principles and 8 performance domains; the Eighth Edition (November 2025) structured this into 6 core principles and 7 performance domains, focusing on adaptive value delivery systems, data/AI enablement, and business agility."],
+      ["PMBOK® Guide (PMI)", "Globally respected body of knowledge. The Seventh Edition established 12 project management principles and 8 performance domains; the Eighth Edition (November 2025) structured this into 6 core principles and 7 performance domains, focusing on adaptive value delivery systems, data/AI enablement, and business agility."],
       ["PRINCE2®", "A structured method originating in the UK, organized around business justification, defined management stages, and exception management."],
       ["Lean Delivery", "A philosophy originating in Japanese manufacturing focused on maximizing customer value while eliminating process waste."],
       ["Six Sigma", "A data-driven methodology targeting defect reduction and process consistency via the DMAIC cycle."],
       ["SAFe®", "A framework designed to coordinate multiple agile teams across large enterprise environments."]
     ])) +
-    H("Core Operating Principles of PRINCE2®", U([
-      "Ensuring continued business justification across the whole initiative.",
-      "Capturing lessons from past initiatives and applying them forward.",
-      "Clear, unambiguous governance roles spanning business, user, and supplier interests.",
-      "Dividing complex endeavors into discrete, controllable commitment stages.",
-      "Managing by exception—setting clear operational tolerances before escalating to executive boards."
+    H("The Seven PRINCE2® Principles (Version 7)", U([
+      "<b>Ensure continued business justification:</b> Keep the reason for the project valid and worthwhile.",
+      "<b>Learn from experience:</b> Seek, record, and apply lessons throughout the project.",
+      "<b>Define roles, responsibilities and relationships:</b> Make accountability and decision rights clear.",
+      "<b>Manage by stages:</b> Plan, monitor, and control the project in manageable stages.",
+      "<b>Manage by exception:</b> Set tolerances and escalate when forecasts show they may be exceeded.",
+      "<b>Focus on products:</b> Agree product requirements and quality expectations before delivery.",
+      "<b>Tailor to suit the project:</b> Adapt the method to the project's size, complexity, importance, capability, and context."
     ]))
   ],
 
@@ -1750,15 +1796,15 @@ const L = [
     5, "🏆", "Careers, Standards & Certification Pathways", "#b45309", "#d97706",
     H("Understanding PM Standards & Credential Pathways", "<p>Professional standards and credentials provide structured frameworks and shared terminology across global industries:</p>" +
       U([
-        "<b>PMBOK® Guide (PMI):</b> Globally recognized body of knowledge. The Seventh Edition established 12 stewardship principles and 8 performance domains; the Eighth Edition (November 2025) structured this into 6 core principles and 7 performance domains, emphasizing adaptive value delivery, data/AI enablement, and organizational alignment.",
+        "<b>PMBOK® Guide (PMI):</b> Globally recognized body of knowledge. The Seventh Edition established 12 project management principles and 8 performance domains; the Eighth Edition (November 2025) structured this into 6 core principles and 7 performance domains, emphasizing adaptive value delivery, data/AI enablement, and organizational alignment.",
         "<b>Process Groups Companion:</b> Retains the operational models across Initiating, Planning, Executing, Monitoring & Controlling, and Closing for teams managing predictive and hybrid lifecycles.",
         "<b>Agile & Hybrid Standards:</b> Synthesizes iterative Scrum ceremonies, Kanban flow limits, and scaled delivery practices widely adopted across digital transformation and technology sectors."
       ])) +
-    H("PMP® Certification: Exam Structure & 2026 Updates", C([
-      ["Eligibility Pathways", "<b>Option A (4-Year Degree):</b> 36 months of project leadership + 35 contact hours.<br><b>Option B (Secondary Diploma):</b> 60 months of project leadership + 35 contact hours.<br><b>Option C (GAC-Accredited Degree):</b> 24 months of project leadership (GAC programs waive 12 months) + 35 contact hours."],
-      ["Examination Blueprint (Current 2026 Outline)", "Current Domain Weights: <b>People (33%)</b>, <b>Process (41%)</b>, and <b>Business Environment (26%)</b> (evolving from earlier 42%/50%/8% blueprints). Format: <b>180 scenario questions</b> over <b>240 minutes (4 hours)</b> with two scheduled 10-minute breaks."],
-      ["Examination Format & Delivery", "Scenario-driven multiple-choice, multiple-response, matching, and hot-spot questions evaluating situational problem-solving across predictive, agile, and hybrid delivery methods."],
-      ["Official Verification", "Certification outlines, fees, and eligibility policies evolve periodically. Always review current official requirements on <a href='https://www.pmi.org/certifications/project-management-pmp' target='_blank' rel='noopener noreferrer' style='color:var(--brand); text-decoration:underline;'>PMI.org's Official PMP Page →</a>."]
+    H("PMP® Certification: 2026 Requirements & Exam", C([
+      ["Education and Experience Pathways", "<b>High school / secondary certificate:</b> 5 years managing projects.<br><b>Associate's degree or vocational trade school diploma:</b> 4 years.<br><b>Bachelor's degree or higher:</b> 3 years.<br><b>PMI GAC-accredited bachelor's or postgraduate degree:</b> 2 years. Experience must be from the <b>last 10 years</b>; overlapping project months are not double-counted."],
+      ["Project Professional Training", "Applicants also need <b>35 hours of project professional training</b>, or an active CAPM® certification that fulfils this training requirement. Self-paced on-demand training can be taken from any organization. From <b>1 December 2026</b>, live instructor-led training hours will be eligible only when delivered by a PMI Authorized Training Partner, China Registered Education Provider, or eligible accredited higher-education program. Verify current rules with PMI before applying."],
+      ["2026 Exam Blueprint", "The current exam weighting is <b>People (33%)</b>, <b>Process (41%)</b>, and <b>Business Environment (26%)</b>. PMI states the exam has <b>180 questions</b> and <b>240 minutes</b>, with two scheduled 10-minute breaks. Predictive, agile, and hybrid approaches appear across all three domains."],
+      ["Official Verification", "Eligibility, training acceptance, exam format, and fees may change. Review the <a href='https://www.pmi.org/certifications/project-management-pmp' target='_blank' rel='noopener noreferrer' style='color:var(--brand); text-decoration:underline;'>official PMP certification requirements</a> and the <a href='https://www.pmi.org/certifications/project-management-pmp/new-exam' target='_blank' rel='noopener noreferrer' style='color:var(--brand); text-decoration:underline;'>2026 exam update</a> before making an application or training decision."]
     ])) +
     H("Common PM Career Progression", F(["Project Coordinator / Associate PM", "Project Manager", "Senior Project Manager", "Program Manager", "Portfolio Manager / PMO Director"])) +
     T("Independence Notice: PMP®, CAPM®, PMBOK®, and PMI-ACP® are registered trademarks of the Project Management Institute, Inc. PM Academy is an independent educational initiative and is not affiliated with, endorsed by, or an official training provider of PMI.")
@@ -1797,14 +1843,14 @@ const G = [
   ["Scope", "The defined sum of all deliverables, features, and activities required to complete a project."],
   ["Scope Creep", "The uncontrolled, unapproved expansion of project requirements without adjustments to budget or deadlines."],
   ["Schedule Performance Index (SPI)", "Schedule efficiency ratio: SPI = EV ÷ PV. Values above 1.0 indicate delivery ahead of plan."],
-  ["Sprint", "A fixed timebox (typically 1 to 4 weeks) in Scrum during which the team builds a usable product increment."],
+  ["Sprint", "A fixed-length Scrum event of one month or less, during which the Scrum Team works toward the Sprint Goal and creates at least one usable Increment."],
   ["Stakeholder", "Any person, team, or organization that can affect, or be affected by, the activities or outcome of a project."],
   ["Triple Constraint", "The foundational balancing model linking Scope, Schedule, and Budget around core Project Quality."],
   ["WBS (Work Breakdown Structure)", "A hierarchical breakdown decomposing the total project scope into manageable, assignable work packages."],
   ["WIP (Work in Progress)", "The quantity of tasks currently being actively worked on in a delivery pipeline at any single point in time."]
 ];
 
-/* 12 Original Scenario-Based Conceptual Quiz Questions */
+/* 13 scenario-based knowledge-check questions */
 const Q = [
   {
     q: "Which two core attributes fundamentally differentiate a project from ongoing business operations?",
@@ -1897,10 +1943,16 @@ const Q = [
     exp: "PRINCE2® defines core principles, notably 'Manage by stages' (breaking work into discrete commitment horizons) and 'Manage by exception' (establishing pre-set tolerances before escalating to senior boards)."
   },
   {
-    q: "In professional project management credential blueprints, which domain historically and continuously carries the largest individual weight?",
-    a: "Process",
-    opts: ["Process", "People", "Business Environment"],
-    exp: "Process remains the largest individual domain (accounting for 41% in current 2026 outlines and 50% historically), alongside People (33% to 42%) and Business Environment (up to 26%)."
+    q: "A project has BAC = $200,000, PV = $80,000, EV = $72,000, and AC = $90,000. What are its CPI and CV?",
+    a: "CPI = 0.80 and CV = −$18,000",
+    opts: ["CPI = 1.11 and CV = +$18,000", "CPI = 0.80 and CV = −$18,000", "CPI = 0.90 and CV = −$8,000", "CPI = 1.25 and CV = +$10,000"],
+    exp: "CPI = EV ÷ AC = $72,000 ÷ $90,000 = 0.80. CV = EV − AC = $72,000 − $90,000 = −$18,000. A CPI below 1.0 and a negative CV both indicate an unfavorable cost position."
+  },
+  {
+    q: "In the 2026 PMP Examination Content Outline, which domain has the highest percentage of exam items?",
+    a: "Process (41%)",
+    opts: ["People (33%)", "Process (41%)", "Business Environment (26%)"],
+    exp: "The July 2026 PMP Examination Content Outline assigns 41% of exam items to Process, 33% to People, and 26% to Business Environment. These weights are specific to the PMP exam, not all project management certifications."
   }
 ];
 
@@ -1908,8 +1960,9 @@ const Q = [
 let cur = 0;
 let done = new Set();
 try {
-  done = new Set(JSON.parse(localStorage.getItem("pmDone_v2") || "[]"));
-} catch (e) {}
+  const savedProgress = JSON.parse(localStorage.getItem("pmDone_v3") || localStorage.getItem("pmDone_v2") || "[]");
+  if (Array.isArray(savedProgress)) done = new Set(savedProgress.filter(value => Number.isInteger(value) && value >= 0 && value < L.length));
+} catch (e) { done = new Set(); }
 
 const $ = id => document.getElementById(id);
 const N = L.length;
@@ -1919,6 +1972,15 @@ if ($("st-lessons")) $("st-lessons").textContent = N;
 if ($("st-parts")) $("st-parts").textContent = P.length;
 
 /* Render Navigation & Current Lesson */
+function shuffleOptions(options) {
+  const shuffled = [...options];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 function render() {
   let listHtml = "", currentPart = -1;
   L.forEach((l, i) => {
@@ -1929,7 +1991,7 @@ function render() {
     const isSelected = i === cur ? "on" : "";
     const isDone = done.has(i) ? "✅" : "";
     listHtml += `
-      <button class="l ${isSelected}" onclick="go(${i})">
+      <button class="l ${isSelected}" type="button" ${isSelected ? 'aria-current="step"' : ''} onclick="go(${i})">
         <span class="n">${String(i + 1).padStart(2, "0")}</span>
         <span>${l[2]}</span>
         <span class="ck">${isDone}</span>
@@ -1949,9 +2011,9 @@ function render() {
     </div>
     <div class="body">${l[5]}</div>
     <div class="nav2">
-      <button class="b2 g" onclick="go(cur - 1)" ${cur === 0 ? "disabled" : ""}>← Previous</button>
-      <button class="b2 ok" onclick="mark()">${done.has(cur) ? "✅ Completed (Tap to Undo)" : "Mark as Completed"}</button>
-      <button class="b2" onclick="go(cur + 1)" ${cur === N - 1 ? "disabled" : ""}>Next Lesson →</button>
+      <button class="b2 g" type="button" onclick="go(cur - 1)" ${cur === 0 ? "disabled" : ""}>← Previous</button>
+      <button class="b2 ok" type="button" aria-pressed="${done.has(cur)}" onclick="mark()">${done.has(cur) ? "✅ Completed (Tap to Undo)" : "Mark as Completed"}</button>
+      <button class="b2" type="button" onclick="go(cur + 1)" ${cur === N - 1 ? "disabled" : ""}>Next Lesson →</button>
     </div>
   `;
 
@@ -1970,28 +2032,26 @@ function render() {
 
 /* EVM Real-Time Calculation */
 function calc() {
-  const [a, p, e, c] = ["e1", "e2", "e3", "e4"].map(x => +$(x).value);
-  const cv = e - c;
-  const sv = e - p;
-  const hasAC = c > 0;
-  const hasPV = p > 0;
-  const cpi = hasAC ? e / c : null;
-  const spi = hasPV ? e / p : null;
-  const eac = (cpi && cpi > 0) ? a / cpi : null;
-
-  const cvLabel = cv < 0 ? "<span style='color:#b91c1c;'>Over Budget</span>" : cv === 0 ? "<span style='color:#0369a1;'>On Budget</span>" : "<span style='color:#047857;'>Under Budget</span>";
-  const svLabel = sv < 0 ? "<span style='color:#b91c1c;'>Behind Schedule</span>" : sv === 0 ? "<span style='color:#0369a1;'>On Schedule</span>" : "<span style='color:#047857;'>Ahead of Schedule</span>";
-  const cpiLabel = cpi === null ? "N/A (Actual Cost is $0)" : cpi < 0.995 ? "Over budget" : (cpi <= 1.005 ? "On budget" : "Under budget");
-  const spiLabel = spi === null ? "N/A (Planned Value is $0)" : spi < 0.995 ? "Behind schedule" : (spi <= 1.005 ? "On schedule" : "Ahead of schedule");
-
-  $("eo").innerHTML = `
-    <b>EVM Analysis Summary:</b><br>
-    • Cost Variance (CV) = $${cv.toLocaleString()} (${cvLabel})<br>
-    • Schedule Variance (SV) = $${sv.toLocaleString()} (${svLabel})<br>
-    • Cost Performance Index (CPI) = <b>${cpi !== null ? cpi.toFixed(2) : "N/A"}</b> (${cpiLabel})<br>
-    • Schedule Performance Index (SPI) = <b>${spi !== null ? spi.toFixed(2) : "N/A"}</b> (${spiLabel})<br>
-    • Estimate at Completion (EAC) = <b>${eac !== null ? "$" + Math.round(eac).toLocaleString() : "N/A"}</b> (Baseline BAC was $${a.toLocaleString()})
-  `;
+  const ids = ["e1", "e2", "e3", "e4"];
+  const values = ids.map(id => { const raw = $(id).value.trim(); return raw === "" ? NaN : Number(raw); });
+  const output = $("eo");
+  if (values.some(value => !Number.isFinite(value) || value < 0)) { output.textContent = "Enter valid, non-negative numbers in all four fields. Blank and negative values are not accepted."; return; }
+  const [bac, pv, ev, ac] = values;
+  if (bac <= 0) { output.textContent = "Budget at Completion (BAC) must be greater than zero to estimate the final project cost."; return; }
+  const cv = ev - ac, sv = ev - pv;
+  const cpi = ac > 0 ? ev / ac : null, spi = pv > 0 ? ev / pv : null;
+  const eac = cpi !== null && cpi > 0 ? bac / cpi : null;
+  const money = value => value < 0 ? "−$" + Math.abs(value).toLocaleString("en-US", { maximumFractionDigits: 2 }) : "$" + value.toLocaleString("en-US", { maximumFractionDigits: 2 });
+  const costStatus = value => value < 0 ? "Over budget" : value > 0 ? "Under budget" : "On budget";
+  const scheduleStatus = value => value < 0 ? "Behind schedule" : value > 0 ? "Ahead of schedule" : "On schedule";
+  const indexStatus = value => value === null ? "Not available (denominator is zero)" : value < 1 ? "Below 1.0" : value > 1 ? "Above 1.0" : "Exactly 1.0";
+  output.innerHTML = "<b>EVM Analysis Summary</b><br>" +
+    "Cost Variance (CV) = <b>" + money(cv) + "</b> (" + costStatus(cv) + ")<br>" +
+    "Schedule Variance (SV) = <b>" + money(sv) + "</b> (" + scheduleStatus(sv) + ")<br>" +
+    "Cost Performance Index (CPI) = <b>" + (cpi !== null ? cpi.toFixed(2) : "N/A") + "</b> (" + indexStatus(cpi) + ")<br>" +
+    "Schedule Performance Index (SPI) = <b>" + (spi !== null ? spi.toFixed(2) : "N/A") + "</b> (" + indexStatus(spi) + ")<br>" +
+    "Estimate at Completion (EAC) = <b>" + (eac !== null ? money(eac) : "N/A") + "</b><br>" +
+    '<span class="calc-note">EAC uses BAC ÷ CPI and assumes current cost efficiency continues. It is not meaningful when CPI is zero or unavailable.</span>';
 }
 
 function go(i) {
@@ -2008,7 +2068,7 @@ function mark() {
     done.add(cur);
   }
   try {
-    localStorage.setItem("pmDone_v2", JSON.stringify([...done]));
+    localStorage.setItem("pmDone_v3", JSON.stringify([...done]));
   } catch (e) {}
   render();
 }
@@ -2054,7 +2114,7 @@ function quiz() {
     <div class="q-progress">Question ${qi + 1} of ${Q.length} · Score: ${sc}</div>
     <h3>${q.q}</h3>
     <div class="q-options">
-      ${q.opts.map((o, k) => `<button class="o" data-val="${o}">${o}</button>`).join("")}
+      ${shuffleOptions(q.opts).map(o => `<button class="o" type="button" data-val="${o}">${o}</button>`).join("")}
     </div>
     <div id="q-feedback-slot"></div>
   `;
@@ -2093,14 +2153,23 @@ function quiz() {
 }
 
 /* Portfolio Modal Handling */
+let lastFocusedElement = null;
 function openPortfolioModal() {
+  lastFocusedElement = document.activeElement;
   $("pfModal").classList.add("active");
   document.body.style.overflow = "hidden";
+  const closeButton = $("pfModal").querySelector(".modal-close");
+  if (closeButton) closeButton.focus();
 }
 function closePortfolioModal(e) {
+  if (e && e.target !== e.currentTarget) return;
   $("pfModal").classList.remove("active");
   document.body.style.overflow = "";
+  if (lastFocusedElement && typeof lastFocusedElement.focus === "function") lastFocusedElement.focus();
 }
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && $("pfModal").classList.contains("active")) closePortfolioModal();
+});
 
 /* Global Init */
 render();
