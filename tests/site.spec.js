@@ -122,7 +122,9 @@ test('page has no horizontal overflow across representative responsive widths', 
   }
 });
 
-test('visitor analytics stays disabled on local test previews', async ({ page }) => {
+test('footer shows the visitor-count label while tracking stays disabled on local previews', async ({ page }) => {
+  await expect(page.locator('#unique-visitor-count')).toHaveText('—');
+  await expect(page.locator('footer')).toContainText('Unique visitors:');
   await expect(page.locator('.counterapi')).toHaveCount(0);
   const analyticsScripts = await page.locator('script[src]').evaluateAll(scripts =>
     scripts.map(script => script.src).filter(src => src.includes('counterapi.com'))
