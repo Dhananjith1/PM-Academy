@@ -34,7 +34,7 @@ The Sri Lankan official portal is the [NIPO IP Database](https://nipo.lk.wipo.ne
 
 Sri Lanka's [Intellectual Property Act, No. 36 of 2003](https://www.parliament.lk/uploads/acts/gbills/english/3726.pdf) includes provisions on marks capable of distinguishing goods/services and on conflicting earlier marks and trade names. Its copyright provisions also protect qualifying expression while excluding ideas, procedures, systems, methods, concepts, and principles. A lawyer should review the current Act together with applicable regulations and facts.
 
-PMI publishes [Trademark Usage Guidelines](https://www.pmi.org/-/media/pmi/documents/public/pdf/governance/intellectual-property-proper-use-guidelines.pdf), PeopleCert publishes a [Marks Usage Policy](https://www.peoplecert.org/-/media/folders-reorganized/legal-documents/qmepo13-marks-usage-policy.pdf), and Atlassian publishes [Trademark Guidelines](https://www.atlassian.com/legal/trademark). These are owners' policies and may change; this site links to them as references, not as a substitute for legal review.
+Scaled Agile states that SAFe® and Scaled Agile Framework® are its registered marks and restricts copying or modifying its courseware and copyrighted content; this site uses the name only as a reference and links to the official source. See [Scaled Agile's usage restrictions](https://scaledagile.com/digital-badging-usage-restrictions/) and [content-use FAQ](https://support.scaledagile.com/en/articles/9791354-general-content-usage-faqs-and-the-permission-request-form). PMI publishes [Trademark Usage Guidelines](https://www.pmi.org/-/media/pmi/documents/public/pdf/governance/intellectual-property-proper-use-guidelines.pdf), PeopleCert publishes a [Marks Usage Policy](https://www.peoplecert.org/-/media/folders-reorganized/legal-documents/qmepo13-marks-usage-policy.pdf), and Atlassian publishes [Trademark Guidelines](https://www.atlassian.com/legal/trademark). These are owners' policies and may change; this site links to them as references, not as a substitute for legal review.
 
 ## Required professional clearance steps
 
@@ -51,7 +51,7 @@ For a minor project owner, a parent/guardian or responsible adult should coordin
 ## Current mitigation
 
 - The public site title and top navigation display use the descriptive phrase “PM Study Resource” / “Independent Project Management Study Resource”.
-- The site does not claim to be affiliated with, approved by, or accredited by PMI, PeopleCert, Scrum.org, Atlassian, or other referenced providers.
+- The site does not claim to be affiliated with, approved by, or accredited by PMI, PeopleCert, Scrum.org, Scaled Agile, Atlassian, or other referenced providers.
 - Third-party word marks are used only to identify the relevant publications, certifications, or products; no third-party logos or certification seals are intentionally included in the reviewed HTML.
 - The current page's social-preview image metadata has been removed rather than relying on an unverified older graphic.
 - The repository slug and published URL remain historical technical identifiers, not a trademark-availability statement.
