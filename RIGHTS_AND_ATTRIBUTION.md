@@ -58,6 +58,12 @@ AI tools assisted development of this project. AI assistance does not establish 
 
 Earlier versions of this repository included an MIT License file. The current default-branch notice replaces that file and clarifies the reuse position for the current version. It does not purport to retroactively revoke permissions that may already have been validly granted to copies obtained while the earlier MIT License was included. Anyone relying on an earlier copy should inspect the licence included with that version and obtain appropriate advice if needed.
 
+## Sri Lankan trade-name protection context
+
+Section 144 of the Intellectual Property Act, No. 36 of 2003 states that a trade name may be protected against unlawful third-party acts even before or without registration, and that later use of the same or a similar trade name likely to mislead the public may be unlawful. This makes the historical public repository/Pages slug a point for specific legal review even though the visible page title has changed. It does not establish that any particular overseas business has enforceable rights in Sri Lanka, or that this site's use is unlawful; territory, prior commercial use, goodwill, relevant services, audience, and likelihood of confusion are fact-specific questions for a qualified Sri Lankan IP lawyer.
+
+Official source: [NIPO — Intellectual Property Act No. 36 of 2003, Section 144](https://www.nipo.gov.lk/web/images/pdf_downloads/Intellectual_Property_Act_No_36_of_2003.pdf).
+
 ## Name clearance
 
 The former public-facing name "PM Academy" was not cleared through the Sri Lankan trademark register or the WIPO Global Brand Database. A preliminary public-web scan found same-name project-management training businesses, so the public-facing title has been changed to the descriptive wording "Project Management Study Resource". The replacement wording has not itself been cleared or certified as available. The historical repository and Pages URL still contain the old slug. A web search or a database search that returns no obvious match does not prove that a name is available. Before commercialising, registering a business name, or using any name as a business brand, obtain an appropriate human-performed trademark search and written legal advice in the countries where you intend to operate.
