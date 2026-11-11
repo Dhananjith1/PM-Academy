@@ -30,12 +30,13 @@ The public-facing title has been changed to a descriptive phrase. The old GitHub
 The official Sri Lankan NIPO database is https://nipo.lk.wipo.net/. WIPO's Global Brand Database FAQ cautions that no result is not proof of availability and recommends national-office searching: https://www.wipo.int/en/web/global-brand-database/faqs_branddb.
 
 ### B. Third-party marks and references
-The site refers to PMI®, PMP®, CAPM®, PMI-ACP®, the *PMBOK® Guide*, PRINCE2®, Jira, Trello, Scrum, and their relevant owners/publishers. It includes ownership/independence statements and official links. Please review the placement, exact mark status, symbols, nominative use, disclaimers, and whether any owner-specific permission or wording is needed.
+The site refers to PMI®, PMP®, CAPM®, PMI-ACP®, the *PMBOK® Guide*, PRINCE2®, SAFe®, Scaled Agile Framework®, Jira, Trello, Scrum, and their relevant owners/publishers. It includes ownership/independence statements and official links. Please review the placement, exact mark status, symbols, nominative use, disclaimers, and whether any owner-specific permission or wording is needed.
 
 Policies provided for review:
 - PMI: https://www.pmi.org/-/media/pmi/documents/public/pdf/governance/intellectual-property-proper-use-guidelines.pdf
 - PeopleCert: https://www.peoplecert.org/-/media/folders-reorganized/legal-documents/qmepo13-marks-usage-policy.pdf
 - Atlassian: https://www.atlassian.com/legal/trademark
+- Scaled Agile: https://scaledagile.com/digital-badging-usage-restrictions/
 
 ### C. Copyright, AI assistance and source material
 Please review:
