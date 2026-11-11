@@ -47,3 +47,6 @@
 - Retained the legacy repository and Pages path only for link continuity; recorded that this is not trademark clearance.
 - Added a preliminary name-risk note, a lawyer review brief, and an accessibility statement with explicit test limitations.
 - Expanded Playwright/axe checks to all configured desktop and mobile browser projects, all 27 lesson states, and all quiz-feedback states.
+
+- Corrected the July 2026 PMP training note: an active CAPM holder receives 23 hours of credit and needs 12 additional hours; qualified exam-break wording by delivery format.
+- Made payback-period, present-value benefit-cost ratio, and NPV assumptions explicit in the business-case example.
