@@ -17,7 +17,7 @@ The EVM calculator and glossary search operate in the browser. Visitors should n
 
 The site is published using GitHub Pages. A visitor's browser sends requests to GitHub Pages to retrieve the site; GitHub may process technical request data, such as IP address and request logs, under its own terms and privacy statement. The site owner does not operate or control GitHub's hosting infrastructure.
 
-The site contains links to external organizations and product websites. Those websites are not loaded automatically by PM Academy; when a visitor chooses to follow a link, the external site applies its own privacy practices.
+The site contains links to external organizations and product websites. Those websites are not loaded automatically by this website; when a visitor chooses to follow a link, the external site applies its own privacy practices.
 
 - [GitHub Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement)
 
