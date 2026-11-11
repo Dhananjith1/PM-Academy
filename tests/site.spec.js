@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('page has one main landmark, a single h1, and no duplicate IDs', async ({ page }) => {
-  await expect(page).toHaveTitle(/PM Academy/);
+  await expect(page).toHaveTitle(/Independent Project Management Study Resource/);
   await expect(page.locator('main')).toHaveCount(1);
   await expect(page.locator('h1')).toHaveCount(1);
   const duplicateIds = await page.locator('[id]').evaluateAll(nodes => {
