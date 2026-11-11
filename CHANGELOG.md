@@ -10,3 +10,8 @@
 - Improved mobile navigation, keyboard focus visibility, reduced-motion behaviour, and modal keyboard handling.
 - Added official reference links, Open Graph metadata, a favicon, and a social preview image.
 - Rewrote project documentation to describe the project accurately as AI-assisted front-end work rather than full-stack/client work.
+
+## 11 November 2026 — Simplified About and legal notice
+- Replaced the two large bottom cards with one compact About PM Academy panel.
+- Removed repeated trademark and independence explanations from the page and project overview modal.
+- Retained a concise independence, trademark ownership, and non-certification statement in the footer.
