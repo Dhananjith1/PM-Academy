@@ -122,19 +122,42 @@ test('page has no horizontal overflow across representative responsive widths', 
   }
 });
 
-test('footer includes unique visitor counter but does not load it on local previews', async ({ page }) => {
+test('unique visitor counter is numeric by default and uses persistent browser deduplication', async ({ page }) => {
   const counter = page.locator('#unique-visitor-count');
-  await expect(counter).toHaveAttribute('class', /counterapi/);
-  await expect(counter).toHaveAttribute('ns', 'dhananjith1.github.io');
-  await expect(counter).toHaveAttribute('key', 'pm-academy-unique-visitors');
-  await expect(counter).toHaveAttribute('action', 'view');
-  await expect(counter).toHaveAttribute('unique', 'true');
+  await expect(counter).toHaveText('0');
   await expect(page.locator('footer')).toContainText('Unique visitors:');
+  const source = await page.locator('script').allTextContents();
+  const tracker = source.join('\n');
+  expect(tracker).toContain('pm-academy-visitor-counted-v1');
+  expect(tracker).toContain('abacus.jasoncameron.dev');
+  expect(tracker).toContain('/hit/');
+  expect(tracker).toContain('/get/');
+  expect(tracker).toContain('20000');
+  expect(tracker).not.toContain('Loading...');
+  expect(tracker).not.toContain('counterapi.com');
   await expect(page.locator('.analytics-privacy-note')).toHaveCount(0);
-  const analyticsScripts = await page.locator('script[src]').evaluateAll(scripts =>
-    scripts.map(script => script.src).filter(src => src.includes('counterapi.com'))
-  );
-  expect(analyticsScripts).toEqual([]);
+});
+
+test('Abacus counter API supports browser CORS hit and read requests', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'chromium', 'Run the live counter-provider smoke test once in desktop Chromium.');
+  const result = await page.evaluate(async () => {
+    const namespace = 'pm-academy-ci-smoke';
+    const key = 'run-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 9);
+    const base = 'https://abacus.jasoncameron.dev';
+    const hitResponse = await fetch(base + '/hit/' + namespace + '/' + key, {
+      method: 'GET', mode: 'cors', cache: 'no-store'
+    });
+    if (!hitResponse.ok) throw new Error('Abacus hit returned HTTP ' + hitResponse.status);
+    const hit = await hitResponse.json();
+    const getResponse = await fetch(base + '/get/' + namespace + '/' + key, {
+      method: 'GET', mode: 'cors', cache: 'no-store'
+    });
+    if (!getResponse.ok) throw new Error('Abacus get returned HTTP ' + getResponse.status);
+    const current = await getResponse.json();
+    return { hit: hit.value, current: current.value };
+  });
+  expect(Number.isSafeInteger(result.hit)).toBe(true);
+  expect(result.current).toBe(result.hit);
 });
 
 test('external links avoid direct PMI links and use safe new-tab attributes', async ({ page }) => {
