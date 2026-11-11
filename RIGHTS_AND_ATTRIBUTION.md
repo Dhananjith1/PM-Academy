@@ -14,16 +14,17 @@ The site contains original or AI-assisted educational explanations, examples, qu
 
 To the extent protected by applicable law and owned by the project creator, no general licence is granted by this notice to reproduce or adapt original lesson text, quiz questions, visual design, or other original creative material. This notice does not claim ownership of third-party marks, standards, publications, or material. It also does not claim that every AI-assisted output qualifies for copyright protection.
 
-The underlying concepts, methods, procedures, systems, and principles discussed are not claimed as original inventions of PM Academy. The intention is to explain them in independent wording and link to authoritative sources. Exact wording, diagrams, charts, screenshots, tables, exam questions, and substantial extracts from another publication may have separate copyright protection. Do not copy them into this site without checking applicable permission or licence.
+The underlying concepts, methods, procedures, systems, and principles discussed are not claimed as original inventions of this project. The intention is to explain them in independent wording and link to authoritative sources. Exact wording, diagrams, charts, screenshots, tables, exam questions, and substantial extracts from another publication may have separate copyright protection. Do not copy them into this site without checking applicable permission or licence.
 
 ## Third-party trademarks
 
 - **Project Management Institute (PMI):** PMI®, PMP®, CAPM®, PMI-ACP®, and the *PMBOK® Guide* are marks of Project Management Institute, Inc. They appear only to identify PMI publications and credentials discussed in the lessons.
-- **PeopleCert:** PRINCE2® is a registered trademark of PeopleCert group. PM Academy is not a PeopleCert training provider, accredited organization, or certification partner.
+- **PeopleCert:** PRINCE2® is a registered trademark of PeopleCert group. This website is not a PeopleCert training provider, accredited organization, or certification partner.
+- **Scaled Agile, Inc.:** SAFe® and Scaled Agile Framework® are registered trademarks of Scaled Agile, Inc. They are mentioned only to identify the framework; no Scaled Agile courseware, badges, graphics, or certification material is reproduced.
 - **Atlassian:** Jira and Trello are trademarks of Atlassian. They are mentioned only as examples of software products.
 - Other product, service, and organization names remain the property of their respective rights holders.
 
-No PMI, PeopleCert, Scrum.org, or Atlassian logo or certification seal is intentionally used in the reviewed HTML source. This is not a trademark-register clearance or a legal determination that every reference is permitted. Refer to each owner's current rules and seek written confirmation where a proposed use is uncertain.
+No PMI, PeopleCert, Scrum.org, Scaled Agile, or Atlassian logo or certification seal is intentionally used in the reviewed HTML source. This is not a trademark-register clearance or a legal determination that every reference is permitted. Refer to each owner's current rules and seek written confirmation where a proposed use is uncertain.
 
 ## Official references
 
@@ -33,6 +34,8 @@ No PMI, PeopleCert, Scrum.org, or Atlassian logo or certification seal is intent
 - [PeopleCert acknowledgements](https://www.peoplecert.org/acknowledgements)
 - [PeopleCert Marks Usage Policy](https://www.peoplecert.org/-/media/folders-reorganized/legal-documents/qmepo13-marks-usage-policy.pdf)
 - [Atlassian Trademark Guidelines](https://www.atlassian.com/legal/trademark)
+- [Scaled Agile — Trademark and Digital Badging Usage Restrictions](https://scaledagile.com/digital-badging-usage-restrictions/)
+- [Scaled Agile — Content Usage FAQs](https://support.scaledagile.com/en/articles/9791354-general-content-usage-faqs-and-the-permission-request-form)
 - [Official Scrum Guide](https://scrumguides.org/download.html)
 - [Scrum Guide Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 - [Open Guide to Kanban](https://kanbanguides.org/open-guide-to-kanban/2025.7/)
@@ -57,7 +60,7 @@ Earlier versions of this repository included an MIT License file. The current de
 
 ## Name clearance
 
-The name "PM Academy" has not been cleared through the Sri Lankan trademark register or the WIPO Global Brand Database as part of this review. A web search or a database search that returns no obvious match does not prove that a name is available. Before commercialising, registering a business name, or using this as a business brand, obtain an appropriate trademark search and legal advice in the countries where you intend to operate.
+The former public-facing name "PM Academy" was not cleared through the Sri Lankan trademark register or the WIPO Global Brand Database. A preliminary public-web scan found same-name project-management training businesses, so the public-facing title has been changed to the descriptive wording "Project Management Study Resource". The replacement wording has not itself been cleared or certified as available. The historical repository and Pages URL still contain the old slug. A web search or a database search that returns no obvious match does not prove that a name is available. Before commercialising, registering a business name, or using any name as a business brand, obtain an appropriate human-performed trademark search and written legal advice in the countries where you intend to operate.
 
 
 ## Preliminary name-risk action — 11 November 2026
