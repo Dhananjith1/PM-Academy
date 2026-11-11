@@ -8,7 +8,7 @@
 
 This is an independent, free-to-access learning resource for people exploring project management. It provides concise educational explanations, practical examples, and lightweight interactive learning activities. The project was developed with AI-assisted front-end work and is hosted as a static GitHub Pages site.
 
-> This website is an introductory educational resource. It is not affiliated with, endorsed by, sponsored by, or an official training, accreditation, or certification provider of PMI, PeopleCert, Scrum.org, Atlassian, or any other organization. It does not issue credentials.
+> This website is an introductory educational resource. It is not affiliated with, endorsed by, sponsored by, or an official training, accreditation, or certification provider of PMI, PeopleCert, Scrum.org, Scaled Agile, Atlassian, or any other organization. It does not issue credentials.
 
 ## Features
 
@@ -61,7 +61,7 @@ When AC or PV is zero, the corresponding index is unavailable. A negative CV ind
 - [Open Guide to Kanban](https://kanbanguides.org/open-guide-to-kanban/2025.7/)
 - [Agile Alliance](https://www.agilealliance.org/)
 
-The PMP section reflects PMI's July 2026 Examination Content Outline and its published training update effective 1 December 2026. These requirements are time-sensitive; verify them directly with PMI before applying or purchasing training. Tool descriptions are introductory summaries, not a current feature, plan, or price comparison; product capabilities and subscription terms may change.
+The PMP section reflects PMI's July 2026 Examination Content Outline and its published training update effective 1 December 2026. The outline says active CAPM holders who meet the other eligibility requirements receive a 35-training-hour credit and do not need to document the 35 training hours. These requirements are time-sensitive; verify them directly with PMI before applying or purchasing training. Tool descriptions are introductory summaries, not a current feature, plan, or price comparison; product capabilities and subscription terms may change.
 
 ## Copyright, trademarks and independence
 
