@@ -40,3 +40,10 @@
 - Distinguished project scope from product scope and refined PV/AC definitions.
 - Reframed CCB as an authorized change authority, made closeout sequence context-dependent, and changed product-tool “Best For” labels to “Typical Use”.
 - Paraphrased Agile Manifesto values instead of reproducing their exact wording.
+
+
+## 11 November 2026 — Brand-risk mitigation and broader automated coverage
+- Changed the public-facing title and header to the descriptive wording "Project Management Study Resource" after a preliminary web search found existing same-name project-management training businesses.
+- Retained the legacy repository and Pages path only for link continuity; recorded that this is not trademark clearance.
+- Added a preliminary name-risk note, a lawyer review brief, and an accessibility statement with explicit test limitations.
+- Expanded Playwright/axe checks to all configured desktop and mobile browser projects, all 27 lesson states, and all quiz-feedback states.
