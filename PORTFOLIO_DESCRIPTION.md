@@ -24,7 +24,8 @@ The resource is intended for students, people exploring a project-management car
 | EVM calculator | Experiment with CV, SV, CPI, SPI, and EAC | Client-side calculations with input validation and stated assumptions |
 | Searchable glossary | Locate common terminology | Client-side keyword filtering |
 | 13-question quiz | Knowledge check with explanations | Shuffled answer options, scoring, and feedback |
-| Lesson progress | Mark lessons complete | localStorage in current browser; no cross-device sync |\n| Approximate browser count | Display an approximate site-wide browser-profile total | External Abacus counter; localStorage deduplication across public pages; not a count of distinct people |
+| Lesson progress | Mark lessons complete | localStorage in current browser; no cross-device sync |
+| Approximate browser count | Display an approximate site-wide browser-profile total | External Abacus counter; localStorage deduplication across public pages; not a count of distinct people |
 | Responsive interface | Supports common desktop and mobile viewports | CSS Grid/Flexbox and responsive media queries |
 
 ## 4. Learning areas

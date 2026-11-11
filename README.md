@@ -86,6 +86,11 @@ These automated checks do not establish full WCAG conformance, replace manual as
 
 This source review is not a legal opinion, lawyer review, trademark clearance, or guarantee that no dispute can arise. A preliminary public-web scan previously found other project-management training businesses using the historical name "PM Academy"; the site title was changed, but the repository/Pages slug remains a point for qualified legal review under Sri Lankan law. See [TRADEMARK_SCREENING.md](TRADEMARK_SCREENING.md) and [LEGAL_REVIEW_BRIEF.md](LEGAL_REVIEW_BRIEF.md).
 
-## Public site notices\n\n- [Privacy Notice](privacy.html) — browser storage, hosting and the external counter service.\n- [Rights & Educational Disclaimer](rights.html) — independence, educational limits, trademarks, copyright and reuse.\n\n## Rights and reuse
+## Public site notices
+
+- [Privacy Notice](privacy.html) — browser storage, hosting and the external counter service.
+- [Rights & Educational Disclaimer](rights.html) — independence, educational limits, trademarks, copyright and reuse.
+
+## Rights and reuse
 
 The current repository root contains a Rights and Reuse Notice rather than a general open-source licence. Earlier commits contained an MIT License; this update does not purport to retroactively revoke permissions validly granted to copies obtained while that licence was present. See [LICENSE](LICENSE) and [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md).

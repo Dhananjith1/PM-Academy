@@ -4,6 +4,8 @@ import AxeBuilder from '@axe-core/playwright';
 const wcagTags = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 
 test.beforeEach(async ({ page }) => {
+  // Keep automated browser tests from inflating the public counter; the dedicated smoke test uses its own namespace.
+  await page.route('https://abacus.jasoncameron.dev/**', route => route.abort());
   await page.goto('/');
 });
 
@@ -103,7 +105,9 @@ test('robots.txt and sitemap.xml expose crawl directives and canonical guide URL
     'project-schedule-guide.html',
     'it-project-management-guide.html',
     'project-manager-career-guide.html',
-    'study-guides.html'
+    'study-guides.html',
+    'privacy.html',
+    'rights.html'
   ]) expect(sitemapText).toContain('https://dhananjith1.github.io/PM-Academy/' + slug);
 });
 
@@ -287,6 +291,7 @@ test('visitor counter uses approximate browser-profile deduplication without per
 
 test('Abacus counter API supports browser CORS hit and read requests', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'chromium', 'Run the live counter-provider smoke test once in desktop Chromium.');
+  await page.unroute('https://abacus.jasoncameron.dev/**');
   const result = await page.evaluate(async () => {
     const namespace = 'pm-academy-ci-smoke';
     const key = 'run-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 9);
