@@ -30,13 +30,13 @@ test('homepage exposes descriptive SEO metadata, structured data, and topic-guid
 
 test('topic guide pages expose unique metadata and learning-resource structured data', async ({ page }) => {
   const pages = [
-    ['project-management-basics.html', /Project Management Basics: A Beginner-Friendly Guide/],
-    ['project-planning-guide.html', /Project Planning Guide: Scope, Schedule, Budget & Quality/],
-    ['project-risk-management-guide.html', /Project Risk Management: Identify, Analyse & Respond/],
-    ['agile-project-management-guide.html', /Agile Project Management: Scrum, Kanban & Hybrid Delivery/],
-    ['earned-value-management-guide.html', /Earned Value Management \(EVM\): Formulas & Worked Example/],
-    ['project-management-tools-guide.html', /Project Management Tools: Boards, Scheduling & Reporting/],
-    ['project-management-glossary.html', /Project Management Glossary: 25 Essential PM Terms/]
+    ['project-management-basics.html', /Project Management Basics \| PM Study Resource/],
+    ['project-planning-guide.html', /Project Planning Guide \| PM Study Resource/],
+    ['project-risk-management-guide.html', /Project Risk Management \| PM Study Resource/],
+    ['agile-project-management-guide.html', /Agile Project Management \| PM Study Resource/],
+    ['earned-value-management-guide.html', /Earned Value Management \(EVM\) Guide \| PM Study Resource/],
+    ['project-management-tools-guide.html', /Project Management Tools Guide \| PM Study Resource/],
+    ['project-management-glossary.html', /Project Management Glossary \| PM Study Resource/]
   ];
   for (const [path, title] of pages) {
     await page.goto('/' + path);
