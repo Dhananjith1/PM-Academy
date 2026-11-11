@@ -1219,9 +1219,21 @@ button:disabled { cursor:not-allowed; }
     <span>Project initiated by Dhananjith Swarnahansa.</span>
     <span style="color:#cbd5e1;">Free-to-access learning initiative for the global PM community.</span>
   </div>
-  <p class="analytics-count" style="margin:10px 0 0; color:#cbd5e1; font-size:13px;" aria-live="polite" aria-atomic="true">
-    Unique visitors: <strong id="unique-visitor-count" style="color:#fff; font-variant-numeric:tabular-nums;">—</strong>
-  </p>
+  <div class="analytics-count" style="margin:10px 0 0; color:#cbd5e1; font-size:13px;" aria-live="polite" aria-atomic="true">
+    <span>Unique visitors: </span>
+    <div
+      id="unique-visitor-count"
+      class="counterapi"
+      ns="dhananjith1.github.io"
+      key="pm-academy-unique-visitors"
+      action="view"
+      unique="true"
+      noIcon="true"
+      noLink="true"
+      noCss="true"
+      style="display:inline-block; color:#fff; font-variant-numeric:tabular-nums;"
+    >Loading...</div>
+  </div>
 </footer>
 
 <!-- Portfolio Case Study Modal -->
@@ -2186,7 +2198,7 @@ gl();
 quiz();
 </script>
 
-<!-- Anonymous unique-visitor count; only runs on the published GitHub Pages site. -->
+<!-- CounterAPI's documented embed, restricted to the published site. -->
 <script>
 (() => {
   const isPublishedSite =
@@ -2195,25 +2207,12 @@ quiz();
   if (!isPublishedSite || window.__pmAcademyVisitorCounterLoaded) return;
 
   window.__pmAcademyVisitorCounterLoaded = true;
-  const countNode = document.getElementById("unique-visitor-count");
-  if (!countNode) return;
-
-  const callbackName = "__pmAcademyVisitorCountCallback";
-  window[callbackName] = (response) => {
-    const value = response && Number(response.value);
-    countNode.textContent =
-      Number.isFinite(value) && value >= 0 ? value.toLocaleString() : "Unavailable";
-    delete window[callbackName];
-  };
-
   const script = document.createElement("script");
-  script.src =
-    "https://counterapi.com/api/dhananjith1.github.io/view/pm-academy-unique-visitors?unique=true&callback=" +
-    callbackName;
+  script.src = "https://counterapi.com/c.js?ns=dhananjith1.github.io";
   script.async = true;
   script.onerror = () => {
-    countNode.textContent = "Unavailable";
-    delete window[callbackName];
+    const countNode = document.getElementById("unique-visitor-count");
+    if (countNode) countNode.textContent = "Count unavailable";
   };
   document.head.appendChild(script);
 })();
