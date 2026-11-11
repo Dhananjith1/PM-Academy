@@ -57,6 +57,7 @@ When AC or PV is zero, the corresponding index is unavailable. A negative CV ind
 - [PMI — *PMBOK® Guide*](https://www.pmi.org/standards/pmbok)
 - [Scrum Guides — Official Scrum Guide](https://scrumguides.org/download.html)
 - [PeopleCert — PRINCE2](https://www.peoplecert.org/ways-to-certify/prince2)
+- [Scaled Agile — SAFe Framework](https://scaledagile.com/)
 - [Open Guide to Kanban](https://kanbanguides.org/open-guide-to-kanban/2025.7/)
 - [Agile Alliance](https://www.agilealliance.org/)
 
@@ -66,7 +67,7 @@ The PMP section reflects PMI's July 2026 Examination Content Outline and its pub
 
 The curriculum is an independent educational summary, not a reproduction of proprietary guides, exam questions, diagrams, or course materials. Ideas and methods may be explained in independent wording, but exact expression, diagrams, substantial extracts, and software code can have separate rights. See [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md).
 
-PMI®, PMP®, CAPM®, PMI-ACP®, and the *PMBOK® Guide* are marks of Project Management Institute, Inc. PRINCE2® is a registered trademark of PeopleCert group. Jira and Trello are trademarks of Atlassian. These names identify relevant products and methods only.
+PMI®, PMP®, CAPM®, PMI-ACP®, and the *PMBOK® Guide* are marks of Project Management Institute, Inc. PRINCE2® is a registered trademark of PeopleCert group. SAFe® and Scaled Agile Framework® are registered trademarks of Scaled Agile, Inc. Jira and Trello are trademarks of Atlassian. These names identify relevant products and methods only.
 
 The Scrum Guide is published under Creative Commons Attribution-ShareAlike 4.0. The website links to the official Guide and presents independent summaries; see the licence before reproducing or adapting its text.
 
