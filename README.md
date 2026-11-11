@@ -15,7 +15,7 @@ This is an independent, free-to-access introductory learning resource for people
 - **Searchable glossary:** concise definitions for common project-management terminology.
 - **13-question knowledge check:** explanatory feedback, shuffled answer choices, and a numerical EVM question.
 - **Lesson progress:** completed lesson IDs are stored in the current browser's localStorage; they are not synchronized across browsers or devices.
-- **Approximate unique-visitor analytics:** CounterAPI records privacy-oriented unique-visitor statistics only on the published GitHub Pages site; the counter is hidden from visitors and disabled on local test previews. It is not a verified count of distinct people, and its public API/report is not password-protected.
+- **Approximate unique visitors:** the footer displays the cumulative unique-visitor count returned by CounterAPI. The visitor event is recorded only on the published GitHub Pages site; the count is approximate and does not guarantee a one-to-one count of distinct people.
 - **Accessibility foundations:** skip navigation, visible keyboard focus, dynamic-content focus management, dialog focus trapping, reduced-motion support, and semantic progress state.
 
 ## EVM calculation reference
