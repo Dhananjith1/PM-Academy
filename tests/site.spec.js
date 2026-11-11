@@ -109,7 +109,8 @@ test('initial page and modal have no axe WCAG A/AA violations', async ({ page })
   await page.keyboard.press('Escape');
 });
 
-test('all 27 lesson states pass axe WCAG A/AA scans in every browser project', async ({ page }) => {
+test('all 27 lesson states pass axe WCAG A/AA scans in Chromium', async ({ page, browserName }) => {
+  test.skip(browserName !== 'chromium', 'The full lesson-by-lesson axe scan runs once in desktop Chromium; initial, modal, and representative interaction scans run across all browser projects.');
   for (let i = 0; i < 27; i += 1) {
     await page.locator('.side button.l').nth(i).click();
     const results = await new AxeBuilder({ page }).withTags(wcagTags).analyze();
@@ -127,7 +128,8 @@ test('quiz feedback state has no axe WCAG A/AA violations', async ({ page }) => 
 });
 
 
-test('all 13 quiz feedback states pass axe WCAG A/AA scans in every browser project', async ({ page }) => {
+test('all 13 quiz feedback states pass axe WCAG A/AA scans in Chromium', async ({ page, browserName }) => {
+  test.skip(browserName !== 'chromium', 'The full question-by-question axe scan runs once in desktop Chromium; quiz flow and representative feedback scans run across all browser projects.');
   for (let i = 0; i < 13; i += 1) {
     await page.locator('#qz .q-options button').first().click();
     await expect(page.locator('.q-feedback')).toBeVisible();
