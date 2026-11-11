@@ -65,4 +65,82 @@ footer{background:var(--navy);color:#cbd5e1;padding:26px 22px;text-align:center;
 <details><summary>What is IT project management?</summary><p>IT project management coordinates technology work such as software, websites, system upgrades, migrations, testing, releases, and service handover. Explore the <a href="it-project-management-guide.html">IT project management guide</a>.</p></details>
 <details><summary>What skills does a project manager need?</summary><p>Planning, communication, organisation, stakeholder coordination, critical thinking, and risk awareness are useful foundations. See the <a href="project-manager-career-guide.html">beginner project manager career guide</a>.</p></details>
 </section></main>
-<footer><p>PM Study Resource is an independent, free-to-access educational initiative.</p><p>It is not affiliated with or endorsed by PMI, Atlassian, or any publisher or standards body mentioned on the website.</p><p><a href="https://dhananjith1.github.io/PM-Academy/">Return to the main study resource</a></p></footer></body></html>
+<footer><p>PM Study Resource is an independent, free-to-access educational initiative.</p><p>It is not affiliated with or endorsed by PMI, Atlassian, or any publisher or standards body mentioned on the website.</p><p><a href="https://dhananjith1.github.io/PM-Academy/">Return to the main study resource</a></p><div class="analytics-count" style="margin:10px 0 0;color:#cbd5e1;font-size:13px;" aria-live="polite" aria-atomic="true"><span>Approx. unique browsers: </span><strong id="unique-visitor-count" style="display:inline-block;color:#fff;font-variant-numeric:tabular-nums;">0</strong></div>
+<p class="footer-legal-links" style="margin:10px auto 0;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;"><a href="privacy.html" style="color:#bfdbfe;text-underline-offset:3px;">Privacy Notice</a><a href="rights.html" style="color:#bfdbfe;text-underline-offset:3px;">Rights &amp; Educational Disclaimer</a></p>
+</footer><!-- Approximate unique browser-profile counter; no periodic polling. -->
+<script>
+(() => {
+  const isPublishedSite = window.location.hostname === "dhananjith1.github.io" &&
+    window.location.pathname.startsWith("/PM-Academy/");
+  if (!isPublishedSite || window.__pmAcademyVisitorCounterLoaded) return;
+  window.__pmAcademyVisitorCounterLoaded = true;
+  const countNode = document.getElementById("unique-visitor-count");
+  if (!countNode) return;
+  const namespace = "pm-academy-dhananjith1-4d59c2b8a7e3f610";
+  const counterKey = "unique-visitors";
+  const storageCounted = "pm-academy-visitor-counted-v1";
+  const storagePending = "pm-academy-visitor-pending-v1";
+  const storageValue = "pm-academy-visitor-value-v1";
+  const apiBase = "https://abacus.jasoncameron.dev";
+  const showCount = (value) => {
+    const count = Number(value);
+    if (!Number.isSafeInteger(count) || count < 0) return false;
+    countNode.textContent = count.toLocaleString();
+    try { localStorage.setItem(storageValue, String(count)); } catch (_) {}
+    return true;
+  };
+  try {
+    const cachedValue = localStorage.getItem(storageValue);
+    if (cachedValue !== null) showCount(cachedValue);
+  } catch (_) {}
+  const getCount = async () => {
+    const response = await fetch(apiBase + "/get/" + namespace + "/" + counterKey,
+      { method: "GET", mode: "cors", cache: "no-store", credentials: "omit" });
+    if (!response.ok) throw new Error("Counter read failed: " + response.status);
+    const result = await response.json();
+    if (!showCount(result.value)) throw new Error("Counter API returned an invalid value");
+  };
+  const updateCount = async () => {
+    let shouldCountThisBrowser = false;
+    let canUseStorage = true;
+    try {
+      if (localStorage.getItem(storageCounted) !== "1") {
+        const pendingAt = Number(localStorage.getItem(storagePending) || "0");
+        const anotherTabIsCounting = pendingAt > 0 && Date.now() - pendingAt < 15000;
+        if (!anotherTabIsCounting) {
+          localStorage.setItem(storagePending, String(Date.now()));
+          shouldCountThisBrowser = true;
+        }
+      }
+    } catch (_) {
+      canUseStorage = false;
+      shouldCountThisBrowser = false;
+    }
+    if (!canUseStorage || !shouldCountThisBrowser) {
+      await getCount();
+      return;
+    }
+    try {
+      const response = await fetch(apiBase + "/hit/" + namespace + "/" + counterKey,
+        { method: "GET", mode: "cors", cache: "no-store", credentials: "omit" });
+      if (!response.ok) throw new Error("Counter increment failed: " + response.status);
+      const result = await response.json();
+      if (!showCount(result.value)) throw new Error("Counter API returned an invalid value");
+      localStorage.setItem(storageCounted, "1");
+      localStorage.removeItem(storagePending);
+    } catch (error) {
+      try { localStorage.removeItem(storagePending); } catch (_) {}
+      console.warn("Unique browser counter could not be updated.", error);
+      try {
+        const cachedValue = localStorage.getItem(storageValue);
+        if (cachedValue !== null) showCount(cachedValue);
+      } catch (_) {}
+    }
+  };
+  updateCount().catch(error => console.warn("Unique browser counter could not be read.", error));
+  window.addEventListener("storage", event => {
+    if (event.key === storageValue && event.newValue !== null) showCount(event.newValue);
+  });
+})();
+</script>
+</body></html>

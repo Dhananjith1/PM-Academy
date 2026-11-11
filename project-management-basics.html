@@ -17,4 +17,82 @@ p{margin:0 0 16px}ul,ol{padding-left:24px;margin:12px 0 20px}li{margin:7px 0}dl{
 <header><a class="brand" href="https://dhananjith1.github.io/PM-Academy/">PM Study Resource</a><nav class="top-nav" aria-label="Main navigation"><a href="https://dhananjith1.github.io/PM-Academy/">27 Free Lessons</a><a href="https://dhananjith1.github.io/PM-Academy/project-management-glossary.html">PM Glossary</a><a href="https://dhananjith1.github.io/PM-Academy/#quiz">Knowledge Quiz</a></nav></header>
 <main><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="https://dhananjith1.github.io/PM-Academy/">Home</a> / <span aria-current="page">Project Management Basics</span></nav><article><p class="eyebrow">Free project management study guide</p><h1>Project Management Basics</h1><p class="lead">A practical introduction to what project management is, how projects are organised, and the decisions that help teams deliver useful outcomes.</p><h2>What is project management?</h2><p>Project management is the discipline of defining a temporary piece of work, organising the people and resources needed, and guiding delivery towards an agreed outcome. Examples include launching a website, introducing a service system, opening a facility, or delivering an event.</p><p>It connects the intended outcome to scope, schedule, cost, quality, resources, communication, risk, and stakeholder expectations. A project manager helps a team make trade-offs, surface uncertainty early, and keep decisions visible. A plan supports good decisions; it cannot guarantee success.</p><h2>Projects, programmes, portfolios, and operations</h2><ul><li><strong>Project:</strong> a temporary initiative that creates a defined product, service, or result.</li><li><strong>Programme:</strong> coordinated related projects managed to achieve broader benefits.</li><li><strong>Portfolio:</strong> projects, programmes, and other work selected to support strategic objectives.</li><li><strong>Operations:</strong> ongoing activities that keep an organisation functioning.</li></ul><h2>Common project life-cycle activities</h2><p>Many projects include initiation, planning, execution, monitoring and controlling, and closing activities. These are useful ways to understand the work, not a rigid one-size-fits-all sequence. Predictive projects define much of the scope and schedule before delivery. Adaptive projects revisit priorities and deliver in increments. Hybrid projects combine practices to suit their context.</p><ol><li><strong>Initiate:</strong> clarify the business need, outcomes, feasibility, sponsor, and authority to proceed.</li><li><strong>Plan:</strong> define scope, deliverables, dependencies, schedule, budget, quality, roles, communication, and risks.</li><li><strong>Deliver:</strong> coordinate people and work, resolve issues, and produce agreed outputs.</li><li><strong>Monitor and adapt:</strong> compare progress with the plan, manage changes, and respond to new information.</li><li><strong>Close:</strong> obtain acceptance, hand over outputs, and record lessons learned.</li></ol><h2>Key roles and success</h2><p>The sponsor supports authorisation, direction, and resources. The project manager coordinates planning, communication, delivery, and governance within the authority assigned. Team members complete specialist work. Stakeholders can affect, be affected by, or perceive themselves to be affected by the project.</p><p>Scope, schedule, and cost are important controls, but success may also involve quality, compliance, customer experience, adoption, benefits, operational readiness, and stakeholder satisfaction. Agree measurable success criteria early.</p><h2>Where to study next</h2><p>Continue with the <a href="https://dhananjith1.github.io/PM-Academy/">27-lesson project management curriculum</a>, the <a href="project-planning-guide.html">project planning guide</a>, or the <a href="project-risk-management-guide.html">risk management guide</a>.</p></article>
 <section class="related" aria-labelledby="related-heading"><h2 id="related-heading">Explore more project management topics</h2><ul><li><a href="project-planning-guide.html">Project Planning Guide</a></li><li><a href="project-risk-management-guide.html">Project Risk Management</a></li><li><a href="agile-project-management-guide.html">Agile Project Management</a></li><li><a href="earned-value-management-guide.html">Earned Value Management (EVM)</a></li><li><a href="https://dhananjith1.github.io/PM-Academy/">Open the complete 27-lesson PM Study Resource</a></li></ul></section></main>
-<footer><p>PM Study Resource is an independent, free-to-access educational initiative.</p><p>It is not affiliated with or endorsed by PMI, Atlassian, or any publisher or standards body mentioned on the website.</p><p><a href="https://dhananjith1.github.io/PM-Academy/">Return to the main study resource</a></p></footer></body></html>
+<footer><p>PM Study Resource is an independent, free-to-access educational initiative.</p><p>It is not affiliated with or endorsed by PMI, Atlassian, or any publisher or standards body mentioned on the website.</p><p><a href="https://dhananjith1.github.io/PM-Academy/">Return to the main study resource</a></p><div class="analytics-count" style="margin:10px 0 0;color:#cbd5e1;font-size:13px;" aria-live="polite" aria-atomic="true"><span>Approx. unique browsers: </span><strong id="unique-visitor-count" style="display:inline-block;color:#fff;font-variant-numeric:tabular-nums;">0</strong></div>
+<p class="footer-legal-links" style="margin:10px auto 0;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;"><a href="privacy.html" style="color:#bfdbfe;text-underline-offset:3px;">Privacy Notice</a><a href="rights.html" style="color:#bfdbfe;text-underline-offset:3px;">Rights &amp; Educational Disclaimer</a></p>
+</footer><!-- Approximate unique browser-profile counter; no periodic polling. -->
+<script>
+(() => {
+  const isPublishedSite = window.location.hostname === "dhananjith1.github.io" &&
+    window.location.pathname.startsWith("/PM-Academy/");
+  if (!isPublishedSite || window.__pmAcademyVisitorCounterLoaded) return;
+  window.__pmAcademyVisitorCounterLoaded = true;
+  const countNode = document.getElementById("unique-visitor-count");
+  if (!countNode) return;
+  const namespace = "pm-academy-dhananjith1-4d59c2b8a7e3f610";
+  const counterKey = "unique-visitors";
+  const storageCounted = "pm-academy-visitor-counted-v1";
+  const storagePending = "pm-academy-visitor-pending-v1";
+  const storageValue = "pm-academy-visitor-value-v1";
+  const apiBase = "https://abacus.jasoncameron.dev";
+  const showCount = (value) => {
+    const count = Number(value);
+    if (!Number.isSafeInteger(count) || count < 0) return false;
+    countNode.textContent = count.toLocaleString();
+    try { localStorage.setItem(storageValue, String(count)); } catch (_) {}
+    return true;
+  };
+  try {
+    const cachedValue = localStorage.getItem(storageValue);
+    if (cachedValue !== null) showCount(cachedValue);
+  } catch (_) {}
+  const getCount = async () => {
+    const response = await fetch(apiBase + "/get/" + namespace + "/" + counterKey,
+      { method: "GET", mode: "cors", cache: "no-store", credentials: "omit" });
+    if (!response.ok) throw new Error("Counter read failed: " + response.status);
+    const result = await response.json();
+    if (!showCount(result.value)) throw new Error("Counter API returned an invalid value");
+  };
+  const updateCount = async () => {
+    let shouldCountThisBrowser = false;
+    let canUseStorage = true;
+    try {
+      if (localStorage.getItem(storageCounted) !== "1") {
+        const pendingAt = Number(localStorage.getItem(storagePending) || "0");
+        const anotherTabIsCounting = pendingAt > 0 && Date.now() - pendingAt < 15000;
+        if (!anotherTabIsCounting) {
+          localStorage.setItem(storagePending, String(Date.now()));
+          shouldCountThisBrowser = true;
+        }
+      }
+    } catch (_) {
+      canUseStorage = false;
+      shouldCountThisBrowser = false;
+    }
+    if (!canUseStorage || !shouldCountThisBrowser) {
+      await getCount();
+      return;
+    }
+    try {
+      const response = await fetch(apiBase + "/hit/" + namespace + "/" + counterKey,
+        { method: "GET", mode: "cors", cache: "no-store", credentials: "omit" });
+      if (!response.ok) throw new Error("Counter increment failed: " + response.status);
+      const result = await response.json();
+      if (!showCount(result.value)) throw new Error("Counter API returned an invalid value");
+      localStorage.setItem(storageCounted, "1");
+      localStorage.removeItem(storagePending);
+    } catch (error) {
+      try { localStorage.removeItem(storagePending); } catch (_) {}
+      console.warn("Unique browser counter could not be updated.", error);
+      try {
+        const cachedValue = localStorage.getItem(storageValue);
+        if (cachedValue !== null) showCount(cachedValue);
+      } catch (_) {}
+    }
+  };
+  updateCount().catch(error => console.warn("Unique browser counter could not be read.", error));
+  window.addEventListener("storage", event => {
+    if (event.key === storageValue && event.newValue !== null) showCount(event.newValue);
+  });
+})();
+</script>
+</body></html>
