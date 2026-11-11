@@ -93,16 +93,31 @@ test('project overview modal traps focus, closes on Escape and restores focus', 
 });
 
 test('page has no horizontal overflow across representative responsive widths', async ({ page }) => {
-  const widths = [320, 360, 375, 390, 414, 600, 768, 1024, 1280, 1440];
+  const widths = [320, 360, 375, 390, 414, 600, 768, 820, 900, 1024, 1280, 1440];
   for (const width of widths) {
     await page.setViewportSize({ width, height: 900 });
-    const dimensions = await page.evaluate(() => ({
-      viewport: document.documentElement.clientWidth,
-      content: document.documentElement.scrollWidth
-    }));
+    const dimensions = await page.evaluate(() => {
+      const viewport = document.documentElement.clientWidth;
+      const content = document.documentElement.scrollWidth;
+      const offenders = [...document.querySelectorAll('body *')]
+        .map(el => {
+          const rect = el.getBoundingClientRect();
+          return {
+            tag: el.tagName.toLowerCase(),
+            id: el.id || undefined,
+            className: typeof el.className === 'string' ? el.className : undefined,
+            left: Math.round(rect.left),
+            right: Math.round(rect.right),
+            width: Math.round(rect.width)
+          };
+        })
+        .filter(el => el.left < -1 || el.right > viewport + 1)
+        .slice(0, 12);
+      return { viewport, content, offenders };
+    });
     expect(
       dimensions.content,
-      `Horizontal overflow at viewport width ${width}px`
+      `Horizontal overflow at viewport width ${width}px. Offenders: ${JSON.stringify(dimensions.offenders)}`
     ).toBeLessThanOrEqual(dimensions.viewport);
   }
 });
