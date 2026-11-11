@@ -1540,16 +1540,17 @@ const L = [
   [
     3, "🛠️", "Waterfall, Agile & Hybrid Approaches", "#4f46e5", "#6366f1",
     H("Methodological Paradigms", C([
-      ["Predictive (Waterfall)", "Linear, planned stages. Extensive upfront specification, strict change controls, and late delivery validation. Well suited for stable physical construction."],
-      ["Adaptive (Agile)", "Iterative and incremental evolution. Short development loops, frequent user validation, working prototypes, and rapid pivots."],
-      ["Hybrid Delivery", "A practical blend. High-level planning and governance follow structured milestones, while engineering proceeds in agile team sprints."]
+      ["Predictive", "Plans scope, sequence, estimates, and controls in more detail up front, then manages delivery against an agreed baseline. It can suit work with relatively stable requirements or strong assurance needs; review and validation should still occur throughout."],
+      ["Adaptive (Agile)", "Uses iterative and incremental delivery, frequent feedback, and reprioritization as learning develops. Specific practices depend on the framework and team."],
+      ["Hybrid Delivery", "Combines selected predictive and adaptive practices to fit the project. For example, governance milestones may coexist with iterative product delivery; the mix should be deliberately tailored."]
     ])) +
-    H("Core Philosophical Shifts in Agile Practice", U([
-      "Prioritizing direct human collaboration over rigid procedural rules.",
-      "Prioritizing functioning deliverables over exhaustive documentation.",
-      "Prioritizing active customer partnership over contentious contract debates.",
-      "Prioritizing responsiveness to changing realities over rigid compliance with early assumptions."
+    H("The Four Agile Manifesto Values", U([
+      "Individuals and interactions over processes and tools.",
+      "Working software over comprehensive documentation.",
+      "Customer collaboration over contract negotiation.",
+      "Responding to change over following a plan."
     ])) +
+    "<p>The Manifesto values the items on the left more, while still recognizing value in the items on the right. This is a preference, not a claim that processes, documentation, contracts, or plans have no value.</p>" +
     H("Practical Delivery Concepts", U([
       "<b>MVP (Minimum Viable Product):</b> The simplest usable version of a product required to test core assumptions with real users.",
       "<b>Iterative vs Incremental:</b> Iterative means continually refining an existing feature; incremental means delivering finished, functional modules one by one."
@@ -1563,16 +1564,16 @@ const L = [
       ["Sprint and Events", "A <b>Sprint</b> is a fixed-length event of one month or less. It contains Sprint Planning, Daily Scrum, Sprint Review, and Sprint Retrospective. The <b>Daily Scrum</b> is a 15-minute event for Developers to inspect progress toward the Sprint Goal and adapt the plan."],
       ["Artifacts and Commitments", "<b>Product Backlog</b> (commitment: Product Goal), <b>Sprint Backlog</b> (commitment: Sprint Goal), and <b>Increment</b> (commitment: Definition of Done). The Increment must meet the Definition of Done to be part of the product."]
     ])) +
-    H("Kanban Workflow Mechanics", F(["Visualize Work", "Limit Work-in-Progress (WIP)", "Manage Flow", "Make Policies Explicit", "Improve Collaboratively"])) +
-    "<p><b>Work-in-Progress (WIP) Limits:</b> Limiting active work helps expose bottlenecks, reduce context switching, and improve flow. Key metrics include <b>Lead Time</b> (request to delivery) and <b>Cycle Time</b> (start of active work to completion). Results depend on the workflow and team context.</p>" +
-    H("User Story Architecture", "<span class='fm'>As a [user persona], I want [capability], so that [tangible benefit].</span><p>Example: <i>As a student, I want to filter lessons by completion status, so that I can resume studying without searching.</i></p>")
+    H("Six General Kanban Practices", F(["Visualize", "Limit WIP", "Manage Flow", "Make Policies Explicit", "Implement Feedback Loops", "Improve Collaboratively"])) +
+    "<p><b>Work-in-Progress (WIP) Limits:</b> Limiting active work helps expose bottlenecks, reduce context switching, and improve flow. Key metrics include <b>Lead Time</b> (elapsed time from a consistently defined request or commitment point to delivery) and <b>Cycle Time</b> (elapsed time from a consistently defined work-start point to completion). Define start and end points consistently for the team.</p>" +
+    H("User Story Example", "<span class='fm'>As a [user persona], I want [capability], so that [benefit]. This is a common user-story template, not a mandatory format.</span><p>Example: <i>As a student, I want to filter lessons by completion status, so that I can resume studying without searching.</i></p>")
   ],
 
   [
     3, "🏛️", "PM Frameworks: PMBOK®, PRINCE2®, Lean, Six Sigma, SAFe®", "#1e293b", "#334155",
     H("Standards vs Methods vs Frameworks", "<p>A <b>standard</b> outlines agreed best-practice principles. A <b>methodology</b> prescribes a formal step-by-step procedure. A <b>framework</b> offers an adaptable structure that teams tailor to their context.</p>") +
     H("Overview of Prominent Frameworks", C([
-      ["PMBOK® Guide (PMI)", "Globally respected body of knowledge. The Seventh Edition established 12 project management principles and 8 performance domains; the Eighth Edition (November 2025) structured this into 6 core principles and 7 performance domains, focusing on adaptive value delivery systems, data/AI enablement, and business agility."],
+      ["PMBOK® Guide (PMI)", "The Seventh Edition presented 12 project-management principles and 8 performance domains. The Eighth Edition (published November 2025) has 6 core principles and 7 performance domains; it expands coverage of AI, PMOs, and procurement and presents process guidance in an evolved, non-prescriptive way."],
       ["PRINCE2®", "A structured method originating in the UK, organized around business justification, defined management stages, and exception management."],
       ["Lean Delivery", "A philosophy originating in Japanese manufacturing focused on maximizing customer value while eliminating process waste."],
       ["Six Sigma", "A data-driven methodology targeting defect reduction and process consistency via the DMAIC cycle."],
@@ -1756,8 +1757,8 @@ const L = [
     5, "🏆", "Careers, Standards & Certification Pathways", "#b45309", "#d97706",
     H("Understanding PM Standards & Credential Pathways", "<p>Professional standards and credentials provide structured frameworks and shared terminology across global industries:</p>" +
       U([
-        "<b>PMBOK® Guide (PMI):</b> Globally recognized body of knowledge. The Seventh Edition established 12 project management principles and 8 performance domains; the Eighth Edition (November 2025) structured this into 6 core principles and 7 performance domains, emphasizing adaptive value delivery, data/AI enablement, and organizational alignment.",
-        "<b>Process Groups Companion:</b> Retains the operational models across Initiating, Planning, Executing, Monitoring & Controlling, and Closing for teams managing predictive and hybrid lifecycles.",
+        "<b>PMBOK® Guide (PMI):</b> Globally recognized body of knowledge. The Seventh Edition presented 12 project-management principles and 8 performance domains. The Eighth Edition (published November 2025) has 6 core principles and 7 performance domains, with expanded coverage of AI, PMOs, and procurement and evolved, non-prescriptive process guidance.",
+        "<b>Process Groups: A Practice Guide:</b> Retains the operational models across Initiating, Planning, Executing, Monitoring & Controlling, and Closing for teams managing predictive and hybrid lifecycles.",
         "<b>Agile & Hybrid Standards:</b> Synthesizes iterative Scrum ceremonies, Kanban flow limits, and scaled delivery practices widely adopted across digital transformation and technology sectors."
       ])) +
     H("PMP® Certification: 2026 Requirements & Exam", C([
