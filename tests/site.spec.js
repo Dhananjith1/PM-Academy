@@ -122,6 +122,25 @@ test('page has no horizontal overflow across representative responsive widths', 
   }
 });
 
+test('external links avoid direct PMI links and use safe new-tab attributes', async ({ page }) => {
+  const externalLinks = await page.locator('a[href^="http://"], a[href^="https://"]').evaluateAll(anchors =>
+    anchors.map(anchor => ({
+      hostname: new URL(anchor.href).hostname.toLowerCase(),
+      target: anchor.target.toLowerCase(),
+      rel: [...anchor.relList]
+    }))
+  );
+
+  expect(externalLinks.length).toBeGreaterThan(0);
+  for (const link of externalLinks) {
+    expect(link.hostname === 'pmi.org' || link.hostname.endsWith('.pmi.org')).toBe(false);
+    if (link.target === '_blank') {
+      expect(link.rel).toContain('noopener');
+      expect(link.rel).toContain('noreferrer');
+    }
+  }
+});
+
 test('initial page and modal have no axe WCAG A/AA violations', async ({ page }) => {
   const initial = await new AxeBuilder({ page }).withTags(wcagTags).analyze();
   expect(initial.violations.map(v => ({ id: v.id, impact: v.impact, nodes: v.nodes.map(n => n.target) }))).toEqual([]);
