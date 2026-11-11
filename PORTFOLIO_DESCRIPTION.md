@@ -32,7 +32,7 @@ The resource is intended for students, people exploring a project-management car
 1. **Foundations:** projects, predictive process groups, business cases, baselines, constraints, roles, and stakeholders.
 2. **Planning:** scope and WBS, schedule networks, budgeting and EVM, quality, resources, and communication.
 3. **Risk & Change:** risk assessment, responses, reserves, change governance, and procurement.
-4. **Methods & Frameworks:** predictive, adaptive and hybrid approaches; Scrum, Kanban, and introductory PMBOK and PRINCE2 summaries.
+4. **Methods & Frameworks:** predictive, adaptive and hybrid approaches; Agile values, Scrum, Kanban, and introductory PM standards.
 5. **PM Tools:** work-management boards, issue tracking, scheduling, spreadsheets, documentation, and collaboration.
 6. **Leadership & Career:** team practices, professional ethics, adaptable reporting routines, interviews, and project closure.
 
@@ -40,17 +40,19 @@ The resource is intended for students, people exploring a project-management car
 
 This revision qualifies or corrects project/change-cost claims, financial evaluation formulas, an EVM cost-variance example, WBS work packages versus assignment of owners, critical-path and PERT statements, QA/QC definitions, RACI and Tuckman descriptions, communication-channel mathematics, risk responses/reserves, change-control governance, procurement risk allocation, Agile values, Scrum and Kanban summaries, tool-plan claims, project-closing routines, and PMP 2026 details.
 
-The PMP section was aligned to PMI's July 2026 Examination Content Outline, including qualification-level mappings, non-overlapping experience periods, the 35-hour training credit/waiver for active CAPM holders, training rules, exam weights, question counts and delivery-mode qualifications for breaks. These are time-sensitive rules; verify current requirements with PMI before using them for an application.
+The PMP section summarises selected items from PMI's July 2026 Examination Content Outline, including qualification pathways, non-overlapping experience periods, the training credit for active CAPM holders, training rules, exam weights, question counts, and delivery-mode qualifications for breaks. These requirements can change; consult PMI's official material directly before using the information for an application.
 
 ## 6. Legal and attribution approach
 
-The site is presented as an independent educational resource, not an official course or credential provider. Third-party names identify products, methods, and certifications. The reviewed HTML contains no inserted PMI, PeopleCert, Scrum.org, Scaled Agile, or Atlassian logo or certification seal.
+The site is presented as an independent educational resource, not an official course or credential provider. The current learning page uses PMI word marks only to identify the publisher of publications or credentials discussed. Direct PMI hyperlinks are omitted because PMI's Digital Properties Linking Agreement requires links to appear on approved webpages and not on home/about pages; the site has not obtained separate approval for link placement. PMBOK® Guide styling and ownership attribution are maintained, and no PMI logo is used.
 
-The site explains concepts in its own words and links to official references. It should not reproduce substantial extracts, official diagrams, screenshots, proprietary exam questions, or paid course material without checking rights and obtaining permission where required. The Scrum Guide is under CC BY-SA 4.0; this site links to it and provides independent summaries.
+Jira and Trello are mentioned only as examples of software products. Atlassian's published trademark guidance allows fair use to identify its products when the use is not misleading and does not imply affiliation; no Atlassian logo is used.
 
-PMI®, PMP®, CAPM®, PMI-ACP®, and the *PMBOK® Guide* are marks of Project Management Institute, Inc. PRINCE2® is a registered trademark of PeopleCert group. SAFe® and Scaled Agile Framework® are registered trademarks of Scaled Agile, Inc. Jira and Trello are trademarks of Atlassian. The resource is not affiliated with or endorsed by those organizations, including Scaled Agile, Inc.
+Third-party certification or framework marks whose policies restrict website use to licensed/approved services or require permission for proprietary content have been removed from the current learning page. Related branded material was replaced with independently written, general project-governance concepts. Prior public revisions may remain in repository history; a qualified adviser should assess any historical-use implications.
 
-See [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md) and [TRADEMARK_SCREENING.md](TRADEMARK_SCREENING.md) for the detailed rights, name-risk, and reuse notes; [ACCESSIBILITY.md](ACCESSIBILITY.md) records the automated coverage and remaining manual work. See [PRIVACY.md](PRIVACY.md) for local progress storage, GitHub Pages hosting, and removal of automatic external font requests.
+The Scrum Guide and Open Guide to Kanban summaries are identified, attributed, and offered under CC BY-SA 4.0 within the specific lesson portions identified in the source note. Changes and the applicable licence are stated. No substantial proprietary courseware, official diagrams, screenshots, or examination items are intentionally reproduced.
+
+See [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md), [TRADEMARK_SCREENING.md](TRADEMARK_SCREENING.md), and [LEGAL_REVIEW_BRIEF.md](LEGAL_REVIEW_BRIEF.md) for rights and naming-risk notes; [ACCESSIBILITY.md](ACCESSIBILITY.md) records automated coverage and remaining manual work. See [PRIVACY.md](PRIVACY.md) for local progress storage and GitHub Pages hosting.
 
 ## 7. Product and implementation decisions
 
@@ -58,13 +60,16 @@ See [RIGHTS_AND_ATTRIBUTION.md](RIGHTS_AND_ATTRIBUTION.md) and [TRADEMARK_SCREEN
 - Used browser-side JavaScript for lessons, calculator, glossary, quiz, and navigation.
 - Stored only lesson-completion IDs in localStorage in the current browser.
 - Added responsive layout, visible keyboard focus, skip navigation, reduced-motion support, and modal keyboard dismissal.
-- Added official reference links and clear independence/trademark wording.
+- Kept references to source publications separate from the independently written lesson content.
+- Removed direct PMI links and third-party framework/certification marks that would require approved or licensed placement.
 
 Tool summaries are introductory and are not a current product-feature, plan, or price benchmark. Availability and capabilities vary by product edition, region, and configuration.
 
 ## 8. Validation and limitations
 
-The latest automated regression run on 11 November 2026 completed with 52 passed, 8 intentionally skipped, and 0 failed across 60 test executions. HTML validation passed. The 8 skips avoid repeating the exhaustive lesson/quiz axe scans in four additional browser profiles; representative browser and accessibility checks remain active in all five profiles. The run and matching successful Pages deployment are linked from the [README](README.md).
+GitHub Actions runs HTML validation and Playwright checks across desktop Chromium, Firefox, WebKit, and Chromium/WebKit mobile emulation. It checks responsive widths, interaction flows, representative axe-core scans across configured browser profiles, and exhaustive lesson/quiz-feedback scans in desktop Chromium. Automated checks are regression aids, not a formal WCAG audit or manual screen-reader evaluation.
+
+The current content-and-branding revision is awaiting a fresh CI result. Do not treat it as validated until the workflow for the current main-branch commit completes successfully. The [README](README.md) links to the current workflow history.
 
 A previous local Chromium smoke test checked page initialization, glossary search, EVM calculations and invalid-input handling, the 13-question quiz, modal Escape-key handling, and a 390px mobile viewport. It is not exhaustive QA, a formal WCAG audit, or a legal opinion. No standards body or certification organization has reviewed or endorsed this project.
 
@@ -81,4 +86,4 @@ Use only responsibilities and activities that accurately describe your own contr
 
 ## 10. Limitations
 
-No lawyer, trademark search provider, PMI, PeopleCert, Scrum.org, Atlassian, or independent PM-content expert has cleared or endorsed the website. The current public title is deliberately descriptive, following a preliminary web scan that identified existing same-name project-management training businesses. The repository and Pages URL retain the historical slug for link continuity; this is not trademark clearance. This case study records the intended scope; it is not a certification of legal compliance or content perfection.
+No lawyer, trademark search provider, PMI, Atlassian, or independent PM-content expert has cleared or endorsed the website. The current public title is deliberately descriptive, following a preliminary web scan that identified existing same-name project-management training businesses. The repository and Pages URL retain the historical slug for link continuity; this remains a legal-review item. This case study is not a certification of legal compliance or content perfection.
