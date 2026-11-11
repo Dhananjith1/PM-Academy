@@ -15,3 +15,11 @@
 - Replaced the two large bottom cards with one compact About PM Academy panel.
 - Removed repeated trademark and independence explanations from the page and project overview modal.
 - Retained a concise independence, trademark ownership, and non-certification statement in the footer.
+
+
+## 11 November 2026 — Deep content and rights review
+- Qualified project, lifecycle, change-cost, financial evaluation, EVM, WBS, critical-path, PERT, QA, RACI, communication-channel, risk-reserve, change-control, procurement, Agile, Scrum, Kanban, tool and closeout guidance.
+- Updated PMP 2026 qualification pathways, training eligibility, exam weights, scored/unscored question count, and duration.
+- Replaced dynamic product-plan and pricing claims with plan-aware summaries.
+- Added Rights & Attribution and Privacy notices.
+- Replaced the current root MIT licence text with a Rights and Reuse Notice and documented the historical MIT caveat.
