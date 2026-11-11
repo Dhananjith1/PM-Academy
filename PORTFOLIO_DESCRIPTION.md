@@ -64,6 +64,8 @@ Tool summaries are introductory and are not a current product-feature, plan, or 
 
 ## 8. Validation and limitations
 
+The latest automated regression run on 11 November 2026 completed with 52 passed, 8 intentionally skipped, and 0 failed across 60 test executions. HTML validation passed. The 8 skips avoid repeating the exhaustive lesson/quiz axe scans in four additional browser profiles; representative browser and accessibility checks remain active in all five profiles. The run and matching successful Pages deployment are linked from the [README](README.md).
+
 A previous local Chromium smoke test checked page initialization, glossary search, EVM calculations and invalid-input handling, the 13-question quiz, modal Escape-key handling, and a 390px mobile viewport. It is not exhaustive QA, a formal WCAG audit, or a legal opinion. No standards body or certification organization has reviewed or endorsed this project.
 
 ## 9. Suggested CV description
