@@ -40,7 +40,7 @@ The resource is intended for students, people exploring a project-management car
 
 This revision qualifies or corrects project/change-cost claims, financial evaluation formulas, an EVM cost-variance example, WBS work packages versus assignment of owners, critical-path and PERT statements, QA/QC definitions, RACI and Tuckman descriptions, communication-channel mathematics, risk responses/reserves, change-control governance, procurement risk allocation, Agile values, Scrum and Kanban summaries, tool-plan claims, project-closing routines, and PMP 2026 details.
 
-The PMP section was aligned to PMI's July 2026 Examination Content Outline, including qualification-level mappings, non-overlapping experience periods, training rules, exam weights, question counts and duration. These are time-sensitive rules; verify current requirements with PMI before using them for an application.
+The PMP section was aligned to PMI's July 2026 Examination Content Outline, including qualification-level mappings, non-overlapping experience periods, the 23-hour credit for active CAPM holders (12 additional training hours), training rules, exam weights, question counts and delivery-mode qualifications for breaks. These are time-sensitive rules; verify current requirements with PMI before using them for an application.
 
 ## 6. Legal and attribution approach
 
