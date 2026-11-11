@@ -270,29 +270,26 @@ test('page has no horizontal overflow across representative responsive widths', 
   }
 });
 
-test('visitor counter is optional, explicit opt-in, and does not poll', async ({ page }) => {
+test('visitor counter is compact, optional, and times out instead of hanging', async ({ page }) => {
   const counter = page.locator('#unique-visitor-count');
   await expect(counter).toHaveText('Not enabled');
   await expect(page.locator('footer')).toContainText('Approx. unique browsers:');
-  const source = await page.locator('script').allTextContents();
-  const tracker = source.join('\n');
+  await expect(page.getByRole('button', { name: 'Enable approximate visitor counting' })).toBeVisible();
+  await expect(page.locator('details summary')).toHaveText('About the counter');
+  const tracker = (await page.locator('script').allTextContents()).join('\n');
   expect(tracker).toContain('pm-academy-visitor-counted-v1');
   expect(tracker).toContain('abacus.jasoncameron.dev');
   expect(tracker).toContain('/hit/');
   expect(tracker).toContain('/get/');
+  expect(tracker).toContain('AbortController');
+  expect(tracker).toContain('requestTimeoutMs = 7000');
   expect(tracker).not.toContain('setInterval');
-  expect(tracker).not.toContain('visibilitychange');
   expect(tracker).not.toContain('20000');
-  expect(tracker).not.toContain('Loading...');
-  expect(tracker).not.toContain('counterapi.com');
-  expect(tracker).toContain('pm-academy-counter-consent-v1');
-  expect(tracker).toContain('counter-consent-allow');
-  expect(tracker).toContain('counter-consent-decline');
-  expect(tracker).toContain('counter-consent-stop');
+  expect(tracker).not.toContain('counter-consent-decline');
   await expect(page.locator('a[href="privacy.html"]')).toHaveCount(1);
 });
 
-test('visitor counter sends no external request before consent or after decline', async ({ page }) => {
+test('visitor counter sends no external request before opt-in', async ({ page }) => {
   const requests = [];
   page.on('request', request => {
     if (request.url().startsWith('https://abacus.jasoncameron.dev/')) requests.push(request.url());
@@ -300,7 +297,7 @@ test('visitor counter sends no external request before consent or after decline'
   await page.reload();
   await expect(page.locator('#unique-visitor-count')).toHaveText('Not enabled');
   expect(requests).toEqual([]);
-  await page.getByRole('button', { name: 'No thanks' }).click();
+  await expect(page.getByRole('button', { name: 'Enable approximate visitor counting' })).toBeVisible();
   expect(requests).toEqual([]);
 });
 
@@ -317,7 +314,7 @@ test('visitor counter increments only after opt-in, reads later, and stops after
     });
   });
 
-  await page.getByRole('button', { name: 'Allow approximate counting' }).click();
+  await page.getByRole('button', { name: 'Enable approximate visitor counting' }).click();
   await expect(page.locator('#unique-visitor-count')).toHaveText('31');
   expect(requests).toHaveLength(1);
   expect(new URL(requests[0]).pathname).toContain('/hit/');

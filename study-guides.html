@@ -65,33 +65,30 @@ footer{background:var(--navy);color:#cbd5e1;padding:26px 22px;text-align:center;
 <details><summary>What is IT project management?</summary><p>IT project management coordinates technology work such as software, websites, system upgrades, migrations, testing, releases, and service handover. Explore the <a href="it-project-management-guide.html">IT project management guide</a>.</p></details>
 <details><summary>What skills does a project manager need?</summary><p>Planning, communication, organisation, stakeholder coordination, critical thinking, and risk awareness are useful foundations. See the <a href="project-manager-career-guide.html">beginner project manager career guide</a>.</p></details>
 </section></main>
-<footer><p>PM Study Resource is an independent, free-to-access educational initiative.</p><p>It is not affiliated with or endorsed by PMI, Atlassian, or any publisher or standards body mentioned on the website.</p><p><a href="https://dhananjith1.github.io/PM-Academy/">Return to the main study resource</a></p><div class="analytics-count" style="margin:10px 0 0;color:#cbd5e1;font-size:13px;" role="group" aria-label="Optional approximate visitor counter">
-  <p style="margin:0 0 6px;"><span>Approx. unique browsers: </span><strong id="unique-visitor-count" style="display:inline-block;color:#fff;font-variant-numeric:tabular-nums;">Not enabled</strong></p>
-  <p id="counter-consent-copy" style="margin:0 0 7px;color:#cbd5e1;">Optional: allow the external counter to receive basic connection information. Read the <a href="privacy.html" style="color:#bfdbfe;">Privacy Notice</a>.</p>
-  <div id="counter-consent-actions" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
-    <button id="counter-consent-allow" type="button" style="border:0;border-radius:6px;padding:6px 11px;background:#e2e8f0;color:#0f172a;font:inherit;font-weight:600;cursor:pointer;">Allow approximate counting</button>
-    <button id="counter-consent-decline" type="button" style="border:1px solid #94a3b8;border-radius:6px;padding:6px 11px;background:transparent;color:#e2e8f0;font:inherit;cursor:pointer;">No thanks</button>
-  </div>
-  <p id="counter-consent-status" style="margin:7px 0 0;color:#cbd5e1;" aria-live="polite">Counter is off until you choose.</p>
-  <button id="counter-consent-stop" type="button" hidden style="margin-top:6px;border:1px solid #94a3b8;border-radius:6px;padding:5px 10px;background:transparent;color:#e2e8f0;font:inherit;cursor:pointer;">Turn off counting on this browser</button>
+<footer><p>PM Study Resource is an independent, free-to-access educational initiative.</p><p>It is not affiliated with or endorsed by PMI, Atlassian, or any publisher or standards body mentioned on the website.</p><p><a href="https://dhananjith1.github.io/PM-Academy/">Return to the main study resource</a></p><div class="analytics-count" style="margin:12px auto 0;max-width:620px;color:#cbd5e1;font-size:13px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;" role="group" aria-label="Optional visitor counter">
+  <span>Approx. unique browsers:</span>
+  <strong id="unique-visitor-count" style="color:#fff;font-variant-numeric:tabular-nums;">Not enabled</strong>
+  <button id="counter-consent-allow" type="button" aria-label="Enable approximate visitor counting" style="border:1px solid #94a3b8;border-radius:6px;padding:4px 9px;background:#e2e8f0;color:#0f172a;font:inherit;font-weight:600;cursor:pointer;">Enable</button>
+  <button id="counter-consent-stop" type="button" aria-label="Turn off counting on this browser" hidden style="border:1px solid #94a3b8;border-radius:6px;padding:4px 9px;background:transparent;color:#e2e8f0;font:inherit;cursor:pointer;">Turn off</button>
+  <span id="counter-consent-status" aria-live="polite" style="flex-basis:100%;text-align:center;min-height:1em;">Optional counter is off.</span>
+  <details style="flex-basis:100%;text-align:center;color:#cbd5e1;">
+    <summary style="cursor:pointer;display:inline-block;">About the counter</summary>
+    <p style="margin:6px auto;max-width:560px;">The counter stays off unless you enable it. After you enable it, the external service may receive your IP address and ordinary connection details. The figure estimates browser profiles, not individual people. See the <a href="privacy.html" style="color:#bfdbfe;text-decoration:underline;text-underline-offset:3px;">Privacy Notice</a>.</p>
+  </details>
 </div>
 <p class="footer-legal-links" style="margin:10px auto 0;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;"><a href="privacy.html" style="color:#bfdbfe;text-underline-offset:3px;">Privacy Notice</a><a href="rights.html" style="color:#bfdbfe;text-underline-offset:3px;">Rights &amp; Educational Disclaimer</a></p>
-</footer><!-- Optional visitor counter: no external request until the visitor opts in. -->
+</footer><!-- Optional visitor counter: compact opt-in UI with a bounded network timeout. -->
 <script>
 (() => {
   const isPublishedSite = window.location.hostname === "dhananjith1.github.io" &&
     window.location.pathname.startsWith("/PM-Academy/");
   if (!isPublishedSite || window.__pmAcademyVisitorCounterLoaded) return;
   window.__pmAcademyVisitorCounterLoaded = true;
-
   const countNode = document.getElementById("unique-visitor-count");
-  const actions = document.getElementById("counter-consent-actions");
   const status = document.getElementById("counter-consent-status");
-  const allowButton = document.getElementById("counter-consent-allow");
-  const declineButton = document.getElementById("counter-consent-decline");
+  const enableButton = document.getElementById("counter-consent-allow");
   const stopButton = document.getElementById("counter-consent-stop");
-  if (!countNode || !actions || !status || !allowButton || !declineButton || !stopButton) return;
-
+  if (!countNode || !status || !enableButton || !stopButton) return;
   const namespace = "pm-academy-dhananjith1-4d59c2b8a7e3f610";
   const counterKey = "unique-visitors";
   const consentKey = "pm-academy-counter-consent-v1";
@@ -99,7 +96,8 @@ footer{background:var(--navy);color:#cbd5e1;padding:26px 22px;text-align:center;
   const storagePending = "pm-academy-visitor-pending-v1";
   const storageValue = "pm-academy-visitor-value-v1";
   const apiBase = "https://abacus.jasoncameron.dev";
-
+  const requestTimeoutMs = 7000;
+  let requestInProgress = false;
   const showCount = (value) => {
     const count = Number(value);
     if (!Number.isSafeInteger(count) || count < 0) return false;
@@ -107,18 +105,26 @@ footer{background:var(--navy);color:#cbd5e1;padding:26px 22px;text-align:center;
     try { localStorage.setItem(storageValue, String(count)); } catch (_) {}
     return true;
   };
-
-  const getCount = async () => {
-    const response = await fetch(apiBase + "/get/" + namespace + "/" + counterKey,
-      { method: "GET", mode: "cors", cache: "no-store", credentials: "omit" });
-    if (!response.ok) throw new Error("Counter read failed: " + response.status);
-    const result = await response.json();
-    if (!showCount(result.value)) throw new Error("Counter API returned an invalid value");
+  const requestCounter = async (endpoint) => {
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), requestTimeoutMs);
+    try {
+      const response = await fetch(apiBase + endpoint, {
+        method: "GET", mode: "cors", cache: "no-store",
+        credentials: "omit", signal: controller.signal
+      });
+      if (!response.ok) throw new Error("Counter request failed: " + response.status);
+      const result = await response.json();
+      if (!showCount(result.value)) throw new Error("Counter API returned an invalid value");
+      return result;
+    } finally {
+      window.clearTimeout(timeoutId);
+    }
   };
-
   const updateCount = async () => {
-    let shouldCountThisBrowser = false;
-    let canUseStorage = true;
+    if (requestInProgress) return;
+    requestInProgress = true;
+    let shouldIncrement = false;
     try {
       if (localStorage.getItem(consentKey) !== "granted") return;
       if (localStorage.getItem(storageCounted) !== "1") {
@@ -126,109 +132,68 @@ footer{background:var(--navy);color:#cbd5e1;padding:26px 22px;text-align:center;
         const anotherTabIsCounting = pendingAt > 0 && Date.now() - pendingAt < 15000;
         if (!anotherTabIsCounting) {
           localStorage.setItem(storagePending, String(Date.now()));
-          shouldCountThisBrowser = true;
+          shouldIncrement = true;
         }
       }
-    } catch (_) {
-      canUseStorage = false;
-    }
-    if (!canUseStorage) {
-      countNode.textContent = "Not enabled";
-      status.textContent = "Browser storage is unavailable, so no counter request was sent.";
-      return;
-    }
-    if (!shouldCountThisBrowser) {
-      await getCount();
-      return;
-    }
-    try {
-      const response = await fetch(apiBase + "/hit/" + namespace + "/" + counterKey,
-        { method: "GET", mode: "cors", cache: "no-store", credentials: "omit" });
-      if (!response.ok) throw new Error("Counter increment failed: " + response.status);
-      const result = await response.json();
-      if (!showCount(result.value)) throw new Error("Counter API returned an invalid value");
-      localStorage.setItem(storageCounted, "1");
-      localStorage.removeItem(storagePending);
+      if (shouldIncrement) {
+        await requestCounter("/hit/" + namespace + "/" + counterKey);
+        localStorage.setItem(storageCounted, "1");
+        localStorage.removeItem(storagePending);
+      } else {
+        await requestCounter("/get/" + namespace + "/" + counterKey);
+      }
+      status.textContent = "";
     } catch (error) {
       try { localStorage.removeItem(storagePending); } catch (_) {}
-      console.warn("Unique browser counter could not be updated.", error);
       countNode.textContent = "Unavailable";
-      status.textContent = "The counter could not be reached. No personal details are entered into this feature.";
+      status.textContent = "Counter unavailable. You can turn it off.";
+      console.warn("Visitor counter request failed or timed out.", error);
+    } finally {
+      requestInProgress = false;
     }
   };
-
   const renderChoice = (choice) => {
     if (choice === "granted") {
-      actions.hidden = true;
+      enableButton.hidden = true;
       stopButton.hidden = false;
-      status.textContent = "You allowed approximate browser counting on this browser. You can turn it off here.";
-      countNode.textContent = "Updating";
-      updateCount().catch(error => {
-        console.warn("Unique browser counter could not be read.", error);
-        countNode.textContent = "Unavailable";
-        status.textContent = "The counter could not be reached.";
-      });
-    } else if (choice === "denied") {
-      actions.hidden = false;
-      stopButton.hidden = true;
-      countNode.textContent = "Not enabled";
-      status.textContent = "The counter is off on this browser. No counter request is sent unless you choose Allow.";
+      countNode.textContent = "Checking…";
+      status.textContent = "Checking counter…";
+      updateCount();
     } else {
-      actions.hidden = false;
+      enableButton.hidden = false;
       stopButton.hidden = true;
       countNode.textContent = "Not enabled";
-      status.textContent = "Counter is off until you choose.";
+      status.textContent = "Optional counter is off.";
     }
   };
-
   let choice = null;
   try {
     choice = localStorage.getItem(consentKey);
   } catch (_) {
-    actions.hidden = true;
-    stopButton.hidden = true;
-    status.textContent = "Browser storage is unavailable, so the counter remains off and no request is sent.";
+    enableButton.disabled = true;
+    status.textContent = "Browser storage is unavailable; the counter stays off.";
     return;
   }
   renderChoice(choice);
-
-  allowButton.addEventListener("click", () => {
+  enableButton.addEventListener("click", () => {
     try {
       localStorage.setItem(consentKey, "granted");
       renderChoice("granted");
     } catch (_) {
       countNode.textContent = "Not enabled";
-      status.textContent = "Your browser could not save this choice. No counter request was sent.";
+      status.textContent = "Could not save your choice; no counter request was sent.";
     }
   });
-
-  declineButton.addEventListener("click", () => {
-    try { localStorage.setItem(consentKey, "denied"); } catch (_) {}
-    countNode.textContent = "Not enabled";
-    actions.hidden = false;
-    stopButton.hidden = true;
-    status.textContent = "The counter is off on this browser. No counter request is sent.";
-  });
-
   stopButton.addEventListener("click", () => {
     try {
       localStorage.removeItem(consentKey);
       localStorage.removeItem(storagePending);
     } catch (_) {}
-    countNode.textContent = "Not enabled";
-    actions.hidden = false;
-    stopButton.hidden = true;
-    status.textContent = "Counting has been turned off for this browser. Previous aggregate counts cannot be individually removed.";
+    renderChoice(null);
   });
-
-  window.addEventListener("storage", event => {
-    if (event.key === consentKey && event.newValue !== "granted") {
-      countNode.textContent = "Not enabled";
-      actions.hidden = false;
-      stopButton.hidden = true;
-      status.textContent = "The counter is off on this browser.";
-    } else if (event.key === consentKey && event.newValue === "granted") {
-      renderChoice("granted");
+  window.addEventListener("storage", (event) => {
+    if (event.key === consentKey) {
+      renderChoice(event.newValue);
     } else if (event.key === storageValue && event.newValue !== null) {
       showCount(event.newValue);
     }
