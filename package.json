@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test:html": "html-validate index.html",
+    "test:html": "html-validate index.html *.html",
     "test:e2e": "playwright test",
     "test": "npm run test:html && npm run test:e2e"
   },
