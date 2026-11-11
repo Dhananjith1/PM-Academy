@@ -24,10 +24,10 @@ The public-facing title has been changed to a descriptive phrase. The old GitHub
 - Sri Lankan exact/similar/phonetic/conceptual trademark searches;
 - prior registered and unregistered use, passing-off and confusion risk;
 - the appropriate Nice classes for the activities actually offered;
-- whether the historical URL/repository name should be changed, redirected, or otherwise handled;
+- the effect of Section 144 of the Intellectual Property Act, No. 36 of 2003 on prior unregistered trade-name use and whether the historical repository/Pages slug should be changed, redirected, or otherwise handled;
 - any separate search required before use outside Sri Lanka.
 
-The official Sri Lankan NIPO database is https://nipo.lk.wipo.net/. WIPO's Global Brand Database FAQ cautions that no result is not proof of availability and recommends national-office searching: https://www.wipo.int/en/web/global-brand-database/faqs_branddb.
+Section 144 of the Sri Lankan Intellectual Property Act No. 36 of 2003 addresses protection of trade names even before or without registration and potentially misleading later use of the same or a similar trade name. The exact application to the project and to prior overseas businesses requires legal advice. The official Sri Lankan NIPO database is https://nipo.lk.wipo.net/. WIPO's Global Brand Database FAQ cautions that no result is not proof of availability and recommends national-office searching: https://www.wipo.int/en/web/global-brand-database/faqs_branddb.
 
 ### B. Third-party marks and references
 The site refers to PMI®, PMP®, CAPM®, PMI-ACP®, the *PMBOK® Guide*, PRINCE2®, SAFe®, Scaled Agile Framework®, Jira, Trello, Scrum, and their relevant owners/publishers. It includes ownership/independence statements and official links. Please review the placement, exact mark status, symbols, nominative use, disclaimers, and whether any owner-specific permission or wording is needed.
