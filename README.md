@@ -18,6 +18,20 @@ This is an independent, free-to-access introductory learning resource for people
 - **Approximate unique visitors:** a public Abacus counter increments once per persistent browser storage profile and displays the returned total in the footer. Existing visitors refresh the displayed total every 20 seconds. Clearing browser storage or using another browser/device may count the same person again; it is not a verified count of distinct humans.
 - **Accessibility foundations:** skip navigation, visible keyboard focus, dynamic-content focus management, dialog focus trapping, reduced-motion support, and semantic progress state.
 
+## Search discovery
+
+The site includes `robots.txt`, an XML sitemap, descriptive page titles and descriptions, canonical URLs, JSON-LD that reflects visible page content, and separate introductory guides for major project-management topics. These help search engines discover and understand pages; they do not guarantee indexing or ranking position. Google Search Console ownership verification and sitemap submission must be completed by the site owner.
+
+## Topic guides
+
+- [Project Management Basics](project-management-basics.html)
+- [Project Planning Guide](project-planning-guide.html)
+- [Project Risk Management](project-risk-management-guide.html)
+- [Agile Project Management](agile-project-management-guide.html)
+- [Earned Value Management](earned-value-management-guide.html)
+- [Project Management Tools](project-management-tools-guide.html)
+- [Project Management Glossary](project-management-glossary.html)
+
 ## EVM calculation reference
 
 The calculator and learning examples use these Earned Value Management relationships:
