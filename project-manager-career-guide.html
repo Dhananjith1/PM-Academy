@@ -44,13 +44,10 @@ p{margin:0 0 16px}ul,ol{padding-left:24px;margin:12px 0 20px}li{margin:7px 0}
     <strong style="color:#f8fafc;font-size:13px;font-weight:700;">Visitors</strong>
     <span style="color:#94a3b8;font-size:11px;">Approx. unique browsers</span>
   </span>
-  <strong id="unique-visitor-count" style="min-width:2.5ch;color:#fff;font-size:20px;line-height:1;font-variant-numeric:tabular-nums;text-align:center;">—</strong>
-  <button id="counter-consent-allow" type="button" aria-label="Enable approximate visitor counting" style="border:1px solid #bfdbfe;border-radius:7px;padding:5px 10px;background:#dbeafe;color:#1e3a8a;font:inherit;font-size:12px;font-weight:700;cursor:pointer;">Enable</button>
-  <button id="counter-consent-stop" type="button" aria-label="Turn off counting on this browser" hidden style="border:1px solid rgba(148,163,184,.42);border-radius:7px;padding:5px 10px;background:transparent;color:#e2e8f0;font:inherit;font-size:12px;cursor:pointer;">Turn off</button>
-  <span id="counter-consent-status" aria-live="polite" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Counter is off.</span>
+  <strong id="unique-visitor-count" aria-live="polite" style="min-width:2.5ch;color:#fff;font-size:20px;line-height:1;font-variant-numeric:tabular-nums;text-align:center;">—</strong>
 </div>
 <p class="footer-legal-links" style="margin:10px auto 0;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;"><a href="privacy.html" style="color:#bfdbfe;text-underline-offset:3px;">Privacy Notice</a><a href="rights.html" style="color:#bfdbfe;text-underline-offset:3px;">Rights &amp; Educational Disclaimer</a></p>
-</footer><!-- Optional unique-visitor counter. -->
+</footer><!-- Automatic approximate unique-browser counter. -->
 <script>
 (() => {
   const isPublishedSite = window.location.hostname === "dhananjith1.github.io" &&
@@ -59,14 +56,10 @@ p{margin:0 0 16px}ul,ol{padding-left:24px;margin:12px 0 20px}li{margin:7px 0}
   window.__pmAcademyVisitorCounterLoaded = true;
 
   const countNode = document.getElementById("unique-visitor-count");
-  const status = document.getElementById("counter-consent-status");
-  const enableButton = document.getElementById("counter-consent-allow");
-  const stopButton = document.getElementById("counter-consent-stop");
-  if (!countNode || !status || !enableButton || !stopButton) return;
+  if (!countNode) return;
 
   const apiBase = "https://countapi.mileshilliard.com/api/v1";
   const counterKey = "pm_academy_4d59c2b8a7e3f610_unique_browsers_v2";
-  const consentKey = "pm-academy-counter-consent-v1";
   const storageCounted = "pm-academy-visitor-counted-v2";
   const storagePending = "pm-academy-visitor-pending-v2";
   const storageValue = "pm-academy-visitor-value-v2";
@@ -111,7 +104,7 @@ p{margin:0 0 16px}ul,ol{padding-left:24px;margin:12px 0 20px}li{margin:7px 0}
     requestInProgress = true;
     let pendingWasSet = false;
     try {
-      if (localStorage.getItem(consentKey) !== "granted") return;
+      // Browser storage prevents repeat counts from the same persistent browser profile.
       const alreadyCounted = localStorage.getItem(storageCounted) === "1";
       if (alreadyCounted) {
         await requestCounter("get");
@@ -119,7 +112,7 @@ p{margin:0 0 16px}ul,ol{padding-left:24px;margin:12px 0 20px}li{margin:7px 0}
         const pendingAt = Number(localStorage.getItem(storagePending) || "0");
         const anotherTabIsCounting = pendingAt > 0 && Date.now() - pendingAt < 15000;
         if (anotherTabIsCounting) {
-          status.textContent = "This browser is being counted in another tab.";
+          showCachedCount();
           return;
         }
         localStorage.setItem(storagePending, String(Date.now()));
@@ -129,67 +122,19 @@ p{margin:0 0 16px}ul,ol{padding-left:24px;margin:12px 0 20px}li{margin:7px 0}
         localStorage.removeItem(storagePending);
         pendingWasSet = false;
       }
-      status.textContent = "Visitor count updated.";
     } catch (error) {
       if (pendingWasSet) {
         try { localStorage.removeItem(storagePending); } catch (_) {}
       }
       showCachedCount();
-      status.textContent = "The visitor count could not be refreshed. Showing the last saved value, if available.";
       console.warn("Visitor counter request failed or timed out.", error);
     } finally {
       requestInProgress = false;
     }
   };
 
-  const renderChoice = (choice) => {
-    showCachedCount();
-    if (choice === "granted") {
-      enableButton.hidden = true;
-      stopButton.hidden = false;
-      status.textContent = "Checking visitor count.";
-      updateCount();
-    } else {
-      enableButton.hidden = false;
-      stopButton.hidden = true;
-      status.textContent = "Counter is off. Enable it to include this browser in the approximate count.";
-    }
-  };
-
-  let choice = null;
-  try {
-    choice = localStorage.getItem(consentKey);
-  } catch (_) {
-    enableButton.disabled = true;
-    status.textContent = "Browser storage is unavailable; the counter stays off.";
-    return;
-  }
-  renderChoice(choice);
-
-  enableButton.addEventListener("click", () => {
-    try {
-      localStorage.setItem(consentKey, "granted");
-      renderChoice("granted");
-    } catch (_) {
-      status.textContent = "Could not save your choice; no counter request was sent.";
-    }
-  });
-
-  stopButton.addEventListener("click", () => {
-    try {
-      localStorage.removeItem(consentKey);
-      localStorage.removeItem(storagePending);
-    } catch (_) {}
-    renderChoice(null);
-  });
-
-  window.addEventListener("storage", (event) => {
-    if (event.key === consentKey) {
-      renderChoice(event.newValue);
-    } else if (event.key === storageValue && event.newValue !== null) {
-      showCount(event.newValue);
-    }
-  });
+  showCachedCount();
+  updateCount();
 })();
 </script>
 </body></html>

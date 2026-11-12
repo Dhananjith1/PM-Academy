@@ -270,11 +270,12 @@ test('page has no horizontal overflow across representative responsive widths', 
   }
 });
 
-test('visitor counter is compact, optional, and uses the global counter API', async ({ page }) => {
+test('visitor counter has no on/off controls and automatically loads its aggregate', async ({ page }) => {
   const counter = page.locator('#unique-visitor-count');
   await expect(counter).toHaveText('—');
   await expect(page.locator('footer')).toContainText('Visitors');
-  await expect(page.getByRole('button', { name: 'Enable approximate visitor counting' })).toBeVisible();
+  await expect(page.locator('#counter-consent-allow')).toHaveCount(0);
+  await expect(page.locator('#counter-consent-stop')).toHaveCount(0);
   const tracker = (await page.locator('script').allTextContents()).join('\\n');
   expect(tracker).toContain('pm-academy-visitor-counted-v2');
   expect(tracker).toContain('countapi.mileshilliard.com');
@@ -282,23 +283,13 @@ test('visitor counter is compact, optional, and uses the global counter API', as
   expect(tracker).toContain('requestCounter("get")');
   expect(tracker).toContain('AbortController');
   expect(tracker).toContain('requestTimeoutMs = 7000');
+  expect(tracker).not.toContain('counter-consent-allow');
+  expect(tracker).not.toContain('counter-consent-stop');
   expect(tracker).not.toContain('setInterval');
-  expect(tracker).not.toContain('countapi.mileshilliard.com');
   await expect(page.locator('footer a[href="privacy.html"]')).toHaveCount(1);
 });
 
-test('visitor counter sends no external request before opt-in', async ({ page }) => {
-  const requests = [];
-  page.on('request', request => {
-    if (request.url().startsWith('https://countapi.mileshilliard.com/')) requests.push(request.url());
-  });
-  await page.reload();
-  await expect(page.locator('#unique-visitor-count')).toHaveText('—');
-  expect(requests).toEqual([]);
-  await expect(page.getByRole('button', { name: 'Enable approximate visitor counting' })).toBeVisible();
-});
-
-test('visitor counter counts once per browser profile, refreshes later, and stops after withdrawal', async ({ page }) => {
+test('visitor counter automatically counts a browser profile once and reads it on later visits', async ({ page }) => {
   await page.unroute('https://countapi.mileshilliard.com/**');
   const requests = [];
   await page.route('https://countapi.mileshilliard.com/**', async route => {
@@ -311,21 +302,15 @@ test('visitor counter counts once per browser profile, refreshes later, and stop
     });
   });
 
-  await page.getByRole('button', { name: 'Enable approximate visitor counting' }).click();
+  await page.reload();
   await expect(page.locator('#unique-visitor-count')).toHaveText('31');
   expect(requests).toHaveLength(1);
   expect(new URL(requests[0]).pathname).toContain('/hit/');
-  await expect(page.getByRole('button', { name: 'Turn off counting on this browser' })).toBeVisible();
 
   await page.reload();
   await expect(page.locator('#unique-visitor-count')).toHaveText('31');
   expect(requests.filter(url => new URL(url).pathname.includes('/hit/'))).toHaveLength(1);
   expect(requests.filter(url => new URL(url).pathname.includes('/get/'))).toHaveLength(1);
-
-  await page.getByRole('button', { name: 'Turn off counting on this browser' }).click();
-  await page.reload();
-  await expect(page.locator('#unique-visitor-count')).toHaveText('31');
-  expect(requests).toHaveLength(2);
 });
 
 test('CountAPI supports browser CORS hit and read requests', async ({ page }, testInfo) => {
