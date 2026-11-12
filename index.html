@@ -990,6 +990,14 @@ button:disabled { cursor:not-allowed; }
  *, *::before, *::after { scroll-behavior:auto !important; animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
 }
 .hero p.hero-topic-summary{color:var(--mu);font-size:15.5px;line-height:1.65;max-width:820px;margin:-12px auto 28px}
+
+/* Keep the full desktop navigation inside medium-width screens. */
+@media (min-width: 901px) and (max-width: 1100px) {
+  header { gap: 8px; padding-left: 16px; padding-right: 16px; }
+  header nav { gap: 0; }
+  a.nb { padding-left: 8px; padding-right: 8px; font-size: 13px; }
+  a.nb.cta-nav { margin-left: 2px; }
+}
 </style>
 </head>
 <body>

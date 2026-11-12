@@ -18,6 +18,14 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.25;color:var(
 .faq{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(22px,4vw,36px);margin-top:42px}.faq h2{margin-bottom:18px}.faq details{padding:15px 0;border-top:1px solid var(--line)}.faq summary{font-weight:700;color:var(--navy);cursor:pointer}.faq details p{color:#475569;margin:10px 0 0}
 footer{background:var(--navy);color:#cbd5e1;padding:26px 22px;text-align:center;font-size:13px}footer a{color:#bfdbfe}
 @media(max-width:600px){header{padding:14px 16px}nav.top-nav{gap:10px}main{padding:22px 14px 50px}.guide-grid{grid-template-columns:1fr}.guide-card{min-height:0}}
+
+/* Keep the full desktop navigation inside medium-width screens. */
+@media (min-width: 901px) and (max-width: 1100px) {
+  header { gap: 8px; padding-left: 16px; padding-right: 16px; }
+  header nav { gap: 0; }
+  a.nb { padding-left: 8px; padding-right: 8px; font-size: 13px; }
+  a.nb.cta-nav { margin-left: 2px; }
+}
 </style></head><body>
 <header><a class="brand" href="https://dhananjith1.github.io/PM-Academy/">PM Study Resource</a><nav class="top-nav" aria-label="Main navigation"><a href="https://dhananjith1.github.io/PM-Academy/">Home</a><a href="https://dhananjith1.github.io/PM-Academy/#learn">27 Free Lessons</a><a href="https://dhananjith1.github.io/PM-Academy/project-management-glossary.html">PM Glossary</a><a href="https://dhananjith1.github.io/PM-Academy/#quiz">Knowledge Quiz</a></nav></header>
 <main><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="https://dhananjith1.github.io/PM-Academy/">Home</a> / <span aria-current="page">Study Guides</span></nav>

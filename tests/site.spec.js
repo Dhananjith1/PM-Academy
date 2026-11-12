@@ -278,7 +278,7 @@ test('visitor counter has no on/off controls and automatically loads its aggrega
   await expect(page.locator('#counter-consent-allow')).toHaveCount(0);
   await expect(page.locator('#counter-consent-stop')).toHaveCount(0);
   const tracker = (await page.locator('script').allTextContents()).join('\\n');
-  expect(tracker).toContain('pm-academy-visitor-counted-v2');
+  expect(tracker).toContain('pm-academy-visitor-counted-v3');
   expect(tracker).toContain('countapi.mileshilliard.com');
   expect(tracker).toContain('requestCounter("hit")');
   expect(tracker).toContain('requestCounter("get")');
@@ -286,7 +286,7 @@ test('visitor counter has no on/off controls and automatically loads its aggrega
   expect(tracker).toContain('requestTimeoutMs = 7000');
   expect(tracker).not.toContain('counter-consent-allow');
   expect(tracker).not.toContain('counter-consent-stop');
-  expect(tracker).not.toContain('setInterval');
+  expect(tracker).toContain('setInterval(refreshCount, pollIntervalMs)');
   await expect(page.locator('footer a[href="privacy.html"]')).toHaveCount(1);
 });
 
