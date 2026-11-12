@@ -278,7 +278,9 @@ test('visitor counter has no on/off controls and automatically loads its aggrega
   await expect(page.locator('#counter-consent-allow')).toHaveCount(0);
   await expect(page.locator('#counter-consent-stop')).toHaveCount(0);
   const tracker = (await page.locator('script').allTextContents()).join('\\n');
-  expect(tracker).toContain('pm-academy-visitor-counted-v3');
+  expect(tracker).toContain('pm-academy-visitor-counted-v4');
+  expect(tracker).toContain('_unique_browsers_v4');
+  expect(tracker).not.toContain('_unique_browsers_v3');
   expect(tracker).toContain('countapi.mileshilliard.com');
   expect(tracker).toContain('requestCounter("hit")');
   expect(tracker).toContain('requestCounter("get")');
