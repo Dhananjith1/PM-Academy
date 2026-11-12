@@ -55,8 +55,9 @@ footer{background:var(--navy);color:#cbd5e1;padding:26px 22px;text-align:center;
 <!-- Automatic approximate unique-browser counter. -->
 <script>
 (() => {
-  const isPublishedSite = window.location.hostname === "dhananjith1.github.io" &&
-    window.location.pathname.startsWith("/PM-Academy/");
+  const isPublishedSite = (window.location.hostname === "dhananjith1.github.io" &&
+    window.location.pathname.startsWith("/PM-Academy/")) ||
+    window.__PM_ACADEMY_TEST_MODE__ === true;
   if (!isPublishedSite || window.__pmAcademyVisitorCounterLoaded) return;
   window.__pmAcademyVisitorCounterLoaded = true;
 

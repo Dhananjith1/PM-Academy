@@ -13,17 +13,17 @@ When a visitor marks a lesson complete, the browser stores that lesson's numeric
 
 The automatic visitor counter uses these browser-local keys:
 
-- `pm-academy-visitor-counted-v2` — whether this persistent browser profile has already incremented the aggregate;
-- `pm-academy-visitor-pending-v2` — coordination between simultaneous tabs;
-- `pm-academy-visitor-value-v2` — cached display value.
+- `pm-academy-visitor-counted-v3` — whether this persistent browser profile has already incremented the aggregate;
+- `pm-academy-visitor-pending-v3` — coordination between simultaneous tabs;
+- `pm-academy-visitor-value-v3` — cached display value.
 
-The counter contacts the external service automatically when a public learning page is opened. The first visit from a browser profile uses the provider's `/api/v1/hit/` endpoint; later page loads use `/api/v1/get/` without incrementing again. There is no on/off button. Clearing browser storage or changing browsers/devices may cause repeat counts. If browser storage is unavailable, the counter skips the request because it cannot reliably prevent repeat counts.
+The counter contacts the external service automatically when a public learning page is opened. The first visit from a browser profile uses the provider's `/api/v1/hit/` endpoint; later page loads use `/api/v1/get/` without incrementing again. While a page is visible, it requests the latest total every 15 seconds; when a hidden tab becomes visible again, it refreshes immediately. There is no on/off button. Clearing browser storage or changing browsers/devices may cause repeat counts. If browser storage is unavailable, the counter skips the request because it cannot reliably prevent repeat counts.
 
 The EVM calculator, lesson navigation, quiz, and glossary search operate in the browser. Quiz answers and calculator values are not deliberately submitted to a site backend by these features. Visitors should not enter confidential project, client, financial, or personal information into examples.
 
 ## External visitor-counter provider
 
-The browser automatically contacts `https://countapi.mileshilliard.com` when a public learning page is opened. The first visit from a persistent browser profile sends a request to the provider's `/api/v1/hit/` endpoint to increment the shared aggregate; later page loads request the aggregate through `/api/v1/get/`. The site stores a browser-local marker to avoid counting the same persistent browser profile more than once. The counter has no on/off button and does not claim to count distinct people.
+The browser automatically contacts `https://countapi.mileshilliard.com` when a public learning page is opened. The first visit from a persistent browser profile sends a request to the provider's `/api/v1/hit/` endpoint to increment the shared aggregate; later page loads request the aggregate through `/api/v1/get/`. The site stores a browser-local marker to avoid counting the same persistent browser profile more than once. The counter has no on/off button and does not claim to count distinct people. The counter key and endpoints are public, so requests can be manually submitted by others; the number is not fraud-proof and should be treated only as an approximate browser-profile estimate.
 
 The provider's server can receive an IP address and standard technical request metadata, such as request headers and request time. The site's request does not append a visitor's name, email address, or account details. The provider's operator, processing location, server-side logging, retention period, deletion method, and privacy terms have not been independently verified for this project. The project therefore cannot promise what the provider records or retains.
 

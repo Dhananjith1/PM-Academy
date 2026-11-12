@@ -4,7 +4,8 @@ import AxeBuilder from '@axe-core/playwright';
 const wcagTags = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 
 test.beforeEach(async ({ page }) => {
-  // Keep automated browser tests from inflating the public counter; the dedicated smoke test uses its own namespace.
+  // Exercise the counter in tests, while blocking all requests to the public counter service.
+  await page.addInitScript(() => { window.__PM_ACADEMY_TEST_MODE__ = true; });
   await page.route('https://countapi.mileshilliard.com/**', route => route.abort());
   await page.goto('/');
 });
@@ -144,7 +145,7 @@ test('all public pages expose privacy and rights links and a shared approximate 
     await expect(page.locator('footer a[href="privacy.html"]')).toHaveCount(1);
     await expect(page.locator('footer a[href="rights.html"]')).toHaveCount(1);
     await expect(page.locator('#unique-visitor-count')).toHaveCount(1);
-    await expect(page.locator('footer')).toContainText('Approx. unique browsers:');
+    await expect(page.locator('footer')).toContainText('Approx. unique browsers');
   }
 });
 
@@ -289,28 +290,33 @@ test('visitor counter has no on/off controls and automatically loads its aggrega
   await expect(page.locator('footer a[href="privacy.html"]')).toHaveCount(1);
 });
 
-test('visitor counter automatically counts a browser profile once and reads it on later visits', async ({ page }) => {
+test('visitor counter counts a browser profile once and refreshes the shared total', async ({ page }) => {
+  await page.addInitScript(() => { window.__PM_ACADEMY_TEST_POLL_MS__ = 50; });
   await page.unroute('https://countapi.mileshilliard.com/**');
   const requests = [];
+  let serverValue = 31;
   await page.route('https://countapi.mileshilliard.com/**', async route => {
     const url = route.request().url();
     requests.push(url);
     await route.fulfill({
       status: 200,
       contentType: 'application/json',
-      body: JSON.stringify({ key: 'test', value: 31 })
+      body: JSON.stringify({ key: 'test', value: serverValue })
     });
   });
 
   await page.reload();
   await expect(page.locator('#unique-visitor-count')).toHaveText('31');
-  expect(requests).toHaveLength(1);
   expect(new URL(requests[0]).pathname).toContain('/hit/');
 
+  // Simulate another browser arriving: the open page should display the new total automatically.
+  serverValue = 32;
+  await expect(page.locator('#unique-visitor-count')).toHaveText('32', { timeout: 3000 });
+
   await page.reload();
-  await expect(page.locator('#unique-visitor-count')).toHaveText('31');
+  await expect(page.locator('#unique-visitor-count')).toHaveText('32');
   expect(requests.filter(url => new URL(url).pathname.includes('/hit/'))).toHaveLength(1);
-  expect(requests.filter(url => new URL(url).pathname.includes('/get/'))).toHaveLength(1);
+  expect(requests.some(url => new URL(url).pathname.includes('/get/'))).toBe(true);
 });
 
 test('CountAPI supports browser CORS hit and read requests', async ({ page }, testInfo) => {

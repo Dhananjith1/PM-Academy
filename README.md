@@ -15,7 +15,7 @@ This is an independent, free-to-access introductory learning resource for people
 - **Searchable glossary:** concise definitions for common project-management terminology.
 - **13-question knowledge check:** explanatory feedback, shuffled answer choices, and a numerical EVM question.
 - **Lesson progress:** completed lesson IDs are stored in the current browser's localStorage; they are not synchronized across browsers or devices.
-- **Approximate visitor count:** an automatic counter estimates unique browser profiles across the public pages. It stores a browser-local marker to avoid counting repeat visits from the same persistent profile. The external counter provider may receive IP and standard request metadata; see [Privacy Notice](privacy.html).
+- **Approximate visitor count:** the counter starts fresh and counts persistent browser profiles once, then refreshes the shared total every 15 seconds while a page is visible. It is an estimate, not a verified count of individual people; clearing browser storage, using another browser/device, shared profiles, bots, or direct public counter requests can affect it. The external counter provider may receive IP and standard request metadata; see [Privacy Notice](privacy.html).
 - **Accessibility foundations:** skip navigation, visible keyboard focus, dynamic-content focus management, dialog focus trapping, reduced-motion support, and semantic progress state.
 
 ## Search discovery

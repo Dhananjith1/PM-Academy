@@ -50,8 +50,9 @@ p{margin:0 0 16px}ul,ol{padding-left:24px;margin:12px 0 20px}li{margin:7px 0}
 </footer><!-- Automatic approximate unique-browser counter. -->
 <script>
 (() => {
-  const isPublishedSite = window.location.hostname === "dhananjith1.github.io" &&
-    window.location.pathname.startsWith("/PM-Academy/");
+  const isPublishedSite = (window.location.hostname === "dhananjith1.github.io" &&
+    window.location.pathname.startsWith("/PM-Academy/")) ||
+    window.__PM_ACADEMY_TEST_MODE__ === true;
   if (!isPublishedSite || window.__pmAcademyVisitorCounterLoaded) return;
   window.__pmAcademyVisitorCounterLoaded = true;
 
