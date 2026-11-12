@@ -29,7 +29,7 @@ footer{background:var(--navy);color:#cbd5e1;padding:26px 22px;text-align:center;
 <h2>Optional external visitor-counter service</h2>
 <p>The approximate visitor counter runs automatically when a public learning page is opened. The site contacts <code>countapi.mileshilliard.com</code> to maintain one aggregate count per persistent browser profile. The browser stores a small localStorage marker so repeat visits from that same browser profile do not add another unique-browser count. While the page remains visible, the browser refreshes the displayed total every 15 seconds without requiring a reload. This counter has no on/off button.</p>
 <p>On the first visit from a browser profile, the browser uses the provider's <code>/api/v1/hit/</code> endpoint to increment the aggregate. Later page loads use <code>/api/v1/get/</code> to read the total without incrementing it again. Clearing browser storage, using another browser, or using another device can result in the same person being counted more than once.</p>
-<p>When the counter contacts the external service, that provider can receive the connection's IP address and standard technical request information, such as request headers and request time. The website's counter request does not append a visitor's name, email address, or account details. The counter key and endpoints are public, so the count is not protected against manually submitted requests and is not fraud-proof. The provider's operator, hosting location, server-side logging, retention period, deletion process, and privacy terms have not been independently verified for this project. The site owner therefore cannot promise what the provider logs or retains.</p>
+<p>When the counter contacts the external service, that provider can receive the connection's IP address and standard technical request information, such as request headers and request time. The website's counter request does not append a visitor's name, email address, or account details. The counter key and endpoints are public, so the count is not protected against manually submitted requests and is not fraud-proof. The counter key and endpoints are public, so the count is not protected against manually submitted requests and is not fraud-proof. The provider's operator, hosting location, server-side logging, retention period, deletion process, and privacy terms have not been independently verified for this project. The site owner therefore cannot promise what the provider logs or retains.</p>
 <p>If browser storage is unavailable, the counter cannot reliably recognise a returning browser profile, so the site does not send a count request from that page. The displayed figure is an approximate count of browser profiles, not a verified count of individual people.</p>
 <h2>Website hosting and external links</h2>
 <p>The site is hosted using GitHub Pages. When your browser requests a page or file, GitHub receives the request and may process technical information such as IP address, browser information, and request logs under its own privacy and service terms. The site owner does not control GitHub's hosting infrastructure. Read the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a>.</p>
@@ -65,11 +65,12 @@ footer{background:var(--navy);color:#cbd5e1;padding:26px 22px;text-align:center;
   if (!countNode) return;
 
   const apiBase = "https://countapi.mileshilliard.com/api/v1";
-  const counterKey = "pm_academy_4d59c2b8a7e3f610_unique_browsers_v2";
-  const storageCounted = "pm-academy-visitor-counted-v2";
-  const storagePending = "pm-academy-visitor-pending-v2";
-  const storageValue = "pm-academy-visitor-value-v2";
+  const counterKey = "pm_academy_20261112_ef1d5c8a7b30429a9c5e6d1f2a8b7c40_unique_browsers_v3";
+  const storageCounted = "pm-academy-visitor-counted-v3";
+  const storagePending = "pm-academy-visitor-pending-v3";
+  const storageValue = "pm-academy-visitor-value-v3";
   const requestTimeoutMs = 7000;
+  const pollIntervalMs = window.__PM_ACADEMY_TEST_MODE__ === true ? Math.max(25, Number(window.__PM_ACADEMY_TEST_POLL_MS__) || 15000) : 15000;
   let requestInProgress = false;
 
   const showCount = (value) => {
@@ -138,8 +139,19 @@ footer{background:var(--navy);color:#cbd5e1;padding:26px 22px;text-align:center;
     }
   };
 
+  const refreshCount = async () => {
+    if (requestInProgress || document.visibilityState !== "visible") return;
+    requestInProgress = true;
+    try { await requestCounter("get"); }
+    catch (error) { console.warn("Visitor counter refresh failed; keeping the last known value.", error); }
+    finally { requestInProgress = false; }
+  };
   showCachedCount();
   updateCount();
+  window.setInterval(refreshCount, pollIntervalMs);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") refreshCount();
+  });
 })();
 </script>
 </body></html>
