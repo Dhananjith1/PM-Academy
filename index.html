@@ -2137,11 +2137,12 @@ quiz();
   if (!countNode) return;
 
   const apiBase = "https://countapi.mileshilliard.com/api/v1";
-  const counterKey = "pm_academy_4d59c2b8a7e3f610_unique_browsers_v2";
-  const storageCounted = "pm-academy-visitor-counted-v2";
-  const storagePending = "pm-academy-visitor-pending-v2";
-  const storageValue = "pm-academy-visitor-value-v2";
+  const counterKey = "pm_academy_20261112_ef1d5c8a7b30429a9c5e6d1f2a8b7c40_unique_browsers_v3";
+  const storageCounted = "pm-academy-visitor-counted-v3";
+  const storagePending = "pm-academy-visitor-pending-v3";
+  const storageValue = "pm-academy-visitor-value-v3";
   const requestTimeoutMs = 7000;
+  const pollIntervalMs = 15000;
   let requestInProgress = false;
 
   const showCount = (value) => {
@@ -2213,6 +2214,21 @@ quiz();
 
   showCachedCount();
   updateCount();
+
+  // Keep the visible total current while this page remains open.
+  window.setInterval(async () => {
+    if (document.visibilityState !== "visible" || requestInProgress) return;
+    requestInProgress = true;
+    try { await requestCounter("get"); }
+    catch (error) { console.warn("Visitor counter refresh failed.", error); }
+    finally { requestInProgress = false; }
+  }, pollIntervalMs);
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible" && !requestInProgress) {
+      requestCounter("get").catch(error => console.warn("Visitor counter refresh failed.", error));
+    }
+  });
 })();
 </script>
 </body>
