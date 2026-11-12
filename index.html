@@ -2142,7 +2142,7 @@ quiz();
   const storagePending = "pm-academy-visitor-pending-v3";
   const storageValue = "pm-academy-visitor-value-v3";
   const requestTimeoutMs = 7000;
-  const pollIntervalMs = 15000;
+  const pollIntervalMs = window.__PM_ACADEMY_TEST_MODE__ === true ? Math.max(25, Number(window.__PM_ACADEMY_TEST_POLL_MS__) || 15000) : 15000;
   let requestInProgress = false;
 
   const showCount = (value) => {
@@ -2216,18 +2216,16 @@ quiz();
   updateCount();
 
   // Keep the visible total current while this page remains open.
-  window.setInterval(async () => {
-    if (document.visibilityState !== "visible" || requestInProgress) return;
+  const refreshCount = async () => {
+    if (requestInProgress || document.visibilityState !== "visible") return;
     requestInProgress = true;
     try { await requestCounter("get"); }
-    catch (error) { console.warn("Visitor counter refresh failed.", error); }
+    catch (error) { console.warn("Visitor counter refresh failed; keeping the last known value.", error); }
     finally { requestInProgress = false; }
-  }, pollIntervalMs);
-
+  };
+  window.setInterval(refreshCount, pollIntervalMs);
   document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible" && !requestInProgress) {
-      requestCounter("get").catch(error => console.warn("Visitor counter refresh failed.", error));
-    }
+    if (document.visibilityState === "visible") refreshCount();
   });
 })();
 </script>

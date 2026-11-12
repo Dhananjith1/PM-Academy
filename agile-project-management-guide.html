@@ -41,10 +41,10 @@ p{margin:0 0 16px}ul,ol{padding-left:24px;margin:12px 0 20px}li{margin:7px 0}dl{
   if (!countNode) return;
 
   const apiBase = "https://countapi.mileshilliard.com/api/v1";
-  const counterKey = "pm_academy_4d59c2b8a7e3f610_unique_browsers_v2";
-  const storageCounted = "pm-academy-visitor-counted-v2";
-  const storagePending = "pm-academy-visitor-pending-v2";
-  const storageValue = "pm-academy-visitor-value-v2";
+  const counterKey = "pm_academy_20261112_ef1d5c8a7b30429a9c5e6d1f2a8b7c40_unique_browsers_v3";
+  const storageCounted = "pm-academy-visitor-counted-v3";
+  const storagePending = "pm-academy-visitor-pending-v3";
+  const storageValue = "pm-academy-visitor-value-v3";
   const requestTimeoutMs = 7000;
   let requestInProgress = false;
 
@@ -115,8 +115,19 @@ p{margin:0 0 16px}ul,ol{padding-left:24px;margin:12px 0 20px}li{margin:7px 0}dl{
     }
   };
 
+  const refreshCount = async () => {
+    if (requestInProgress || document.visibilityState !== "visible") return;
+    requestInProgress = true;
+    try { await requestCounter("get"); }
+    catch (error) { console.warn("Visitor counter refresh failed; keeping the last known value.", error); }
+    finally { requestInProgress = false; }
+  };
   showCachedCount();
   updateCount();
+  window.setInterval(refreshCount, pollIntervalMs);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") refreshCount();
+  });
 })();
 </script>
 </body></html>
