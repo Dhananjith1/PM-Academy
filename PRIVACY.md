@@ -13,9 +13,9 @@ When a visitor marks a lesson complete, the browser stores that lesson's numeric
 
 The automatic visitor counter uses these browser-local keys:
 
-- `pm-academy-visitor-counted-v3` — whether this persistent browser profile has already incremented the aggregate;
-- `pm-academy-visitor-pending-v3` — coordination between simultaneous tabs;
-- `pm-academy-visitor-value-v3` — cached display value.
+- `pm-academy-visitor-counted-v4` — whether this persistent browser profile has already incremented the aggregate;
+- `pm-academy-visitor-pending-v4` — coordination between simultaneous tabs;
+- `pm-academy-visitor-value-v4` — cached display value.
 
 The counter contacts the external service automatically when a public learning page is opened. The first visit from a browser profile uses the provider's `/api/v1/hit/` endpoint; later page loads use `/api/v1/get/` without incrementing again. While a page is visible, it requests the latest total every 15 seconds; when a hidden tab becomes visible again, it refreshes immediately. There is no on/off button. Clearing browser storage or changing browsers/devices may cause repeat counts. If browser storage is unavailable, the counter skips the request because it cannot reliably prevent repeat counts.
 
